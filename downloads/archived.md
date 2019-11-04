@@ -1,6 +1,7 @@
 ---
 layout: ballerina-landing-page
 title: Release Notes
+permalink: /downloads/archived/
 ---
 
 <link rel="stylesheet" href="/css/download-page.css" />

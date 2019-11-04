@@ -1,6 +1,12 @@
 ---
 layout: ballerina-inner-page
 title: Ballerina Website License
+permalink: /spec/
+redirect_from:
+  - /learn/language-specification
+  - /learn/language-specification/
+  - /v0-991/learn/language-specification
+  - /v0-991/learn/language-specification/
 ---
 
 # Ballerina Platform Specifications

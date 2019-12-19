@@ -1,7 +1,7 @@
 ---
 layout: ballerina-inner-page
-title: How to Structure Ballerina Code
-permalink: /learn/how-to-structure-ballerina-code/
+title: How to Keep Ballerina up to date
+permalink: /learn/how-to-keep-ballerina-up-to-date/
 ---
 
 # How to Keep Ballerina up to date

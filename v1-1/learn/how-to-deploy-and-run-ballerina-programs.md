@@ -45,7 +45,7 @@ A project is a folder that manages modules as part of a common versioning, depen
 
 Build all modules of a project:
 ```bash    
-$ ballerina build
+$ ballerina build --all
 ```
 
 Build a single module in a project:

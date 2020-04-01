@@ -318,7 +318,7 @@ Generating executables
 
 Now, we need to pass the YAML file name as the first argument. 
 ```sh
-> ballerina run target/bin/yamlparser.jar invoice.yaml
+> ballerina run target/bin/yamlparser.jar invoice.yml
 {invoice=34843, date=Mon Jan 22 16:00:00 PST 2001, bill-to={given=Chris, family=Dumars, address={lines=458 Walkman Dr.
 Suite #292
 , city=Royal Oak, state=MI, postal=48046}}, ship-to={given=Chris, family=Dumars, address={lines=458 Walkman Dr.

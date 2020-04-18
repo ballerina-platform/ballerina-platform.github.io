@@ -1,0 +1,378 @@
+---
+layout: ballerina-example-page
+title: Error Handling
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /0.990/learn/by-example/error-handling
+redirect_from:
+  - /v0-990/learn/by-example/error-handling
+  - /v0-990/learn/by-example/error-handling.html
+---
+<div class="row cBallerina-io-Gray-row">
+        <div class="container cBallerinaBySampleContainer">
+            <div class="FullCode">
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">type</span> <span class="nx">AccountNotFoundErrorData</span> <span class="nx">record</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">accountID</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">type</span> <span class="nx">AccountNotFoundError</span> <span class="nx">error</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="nx">AccountNotFoundErrorData</span><span class="p">&gt;;</span>
+<span class="kd">function</span> <span class="nx">getAccountBalance</span><span class="p">(</span><span class="kt">int</span> <span class="nx">accountID</span><span class="p">)</span> <span class="nx">returns</span> <span class="p">(</span><span class="kt">int</span><span class="p">|</span><span class="nx">AccountNotFoundError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">accountID</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">AccountNotFoundError</span> <span class="nx">accountNotFoundError</span> <span class="p">=</span> <span class="nx">error</span><span class="p">(</span><span class="s">&quot;Account with ID: &quot;</span>
+                                        <span class="o">+</span> <span class="nx">accountID</span> <span class="o">+</span> <span class="s">&quot; is not found&quot;</span><span class="p">,</span>
+                                        <span class="p">{</span> <span class="nx">accountID</span><span class="p">:</span> <span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span><span class="nx">accountID</span> <span class="p">});</span>
+        <span class="k">return</span> <span class="nx">accountNotFoundError</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">600</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nx">r</span> <span class="p">=</span> <span class="nx">getAccountBalance</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">is</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Error occurred: &quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">reason</span><span class="p">(),</span> <span class="s">&quot;, accountID: &quot;</span><span class="p">,</span>
+                        <span class="nx">r</span><span class="p">.</span><span class="nx">detail</span><span class="p">().</span><span class="nx">accountID</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table class="cTopInfoContainer cTopControlsContainer">
+                    <tr>
+                        <td class="cLeftTD">
+                            <h2>Error Handling</h2>
+                            <p><p>In Ballerina, error handling can be performed either by returning a value of type <code>error</code>, or by panic.
+ An <code>error</code> type in Ballerina should be structurally equivalent to the built-in <code>error</code> type.</p>
+</p>
+
+                        </td>
+                        <td class="cRightTD">
+                            <div class="cTopButtonContainer">
+                                
+                                <div class="cButtonInfoContainer">
+                                    <a class="prev" href="record-destructure-binding-pattern.html">
+                                        <span>< PREVIOUS</span>
+                                        <p>Record Destructure Binding Pattern</p>
+                                    </a>
+                                </div>
+                                 
+                                <div class="cButtonInfoContainer">
+                                    <a class="next" href="error-lifting.html">
+                                        <span>NEXT ></span>
+                                        <p>Error Lifting</p>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="example" id="error-handling">
+                <div class="col-xs-12 col-sm-12 col-md-12 cBBETable-container cCodeLeft">
+                    <table class="cTopControlsContainer">
+                        <tr>
+                            <td class="cLeftTD">
+                                <div class="cBBE-links">
+                                    <ul>
+                                        <li>
+                                            <a class="copy"><img src="/img/copy-icon.svg" /></a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/error-handling/"><img src="/img/github-logo-green.svg" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <table class="cTopBorder-table">
+                        <tr>
+                            <td class="cCodeTD"></td>
+                            <td class="cDescTD"></td>
+                        </tr>
+                    </table>
+
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+
+                    <div>
+
+                        <table class="cBBE-body">
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>type AccountNotFoundErrorData record {
+    string accountID;
+};
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>type AccountNotFoundError error&lt;string, AccountNotFoundErrorData&gt;;
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Extended error types can be declared from <code>error</code> type. Thus <code>error</code> can be extended for single level.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>function getAccountBalance(int accountID) returns (int|AccountNotFoundError) {
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Note that type <code>error</code> is a built-in reference type.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>    if (accountID &lt; 100) {
+        AccountNotFoundError accountNotFoundError = error(&quot;Account with ID: &quot;
+                                        + accountID + &quot; is not found&quot;,
+                                        { accountID: &lt;string&gt;accountID });
+        return accountNotFoundError;
+    } else {
+        return 600;
+    }
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Create an instance of the error record and return it.
+ The logic used here is a sample to demonstrate the concept of error handling.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>    var r = getAccountBalance(24);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>As a best practice, check whether an error occurrs.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>    if (r is int) {
+        io:println(r);
+    } else {
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Type-guard check (<code>is</code> check) for variable type checking.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code">
+                                    <div class="highlight"><pre><code class=ballerina>        io:println(&quot;Error occurred: &quot;, r.reason(), &quot;, accountID: &quot;,
+                        r.detail().accountID);
+    }
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p><code>error</code> type has 3 functions <code>reason()</code>, <code>detail()</code> and &lsquo;stacktarce()&rsquo;. Only <code>reason()</code> can be set from construtor.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    
+                        
+                            
+                                
+                            
+                        
+
+                    <div>
+
+                        <table class="cBBE-body">
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
+# `.bal` file and issue the `ballerina run` command.
+$ ballerina run error_handling.bal
+Error occurred: Account with ID: 24 is not found, accountID: 24
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    
+
+
+                    <table class="cBottomBorder-table">
+                        <tr>
+                            <td class="cCodeTD"></td>
+                            <td class="cDescTD"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <script>
+            $(document).ready(function() {
+
+                hljs.initHighlightingOnLoad();
+
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
+            });
+
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
+
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

@@ -1,0 +1,476 @@
+---
+layout: ballerina-example-page
+title: Functions as Entry Points
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /0.990/learn/by-example/functions-as-entry-points
+redirect_from:
+  - /v0-990/learn/by-example/functions-as-entry-points
+  - /v0-990/learn/by-example/functions-as-entry-points.html
+---
+<div class="row cBallerina-io-Gray-row">
+        <div class="container cBallerinaBySampleContainer">
+            <div class="FullCode">
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">error</span> <span class="nx">unknownOpError</span> <span class="p">=</span> <span class="nx">error</span><span class="p">(</span><span class="s">&quot;unknown operation&quot;</span><span class="p">);</span>
+<span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="kt">int</span> <span class="nx">i</span><span class="p">,</span> <span class="kt">int</span> <span class="nx">j</span><span class="p">,</span> <span class="kt">string</span> <span class="nx">s</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span> <span class="o">==</span> <span class="s">&quot;add&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Operation: Addition&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">add</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">s</span> <span class="o">==</span> <span class="s">&quot;subtract&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Operation: Subtraction&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">subtract</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">panic</span> <span class="nx">unknownOpError</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">public</span> <span class="kd">function</span> <span class="nx">performMathOp</span><span class="p">(</span><span class="kt">string</span> <span class="nx">op</span> <span class="p">=</span> <span class="s">&quot;add&quot;</span><span class="p">,</span> <span class="kt">int</span><span class="o">...</span> <span class="nx">values</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isKnownOp</span><span class="p">(</span><span class="nx">op</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">error</span> <span class="nx">invalidArgsError</span> <span class="p">=</span> <span class="nx">error</span><span class="p">(</span><span class="s">&quot;insufficient arguments specified&quot;</span><span class="p">);</span>
+        <span class="nx">panic</span> <span class="nx">invalidArgsError</span><span class="p">;</span>
+    <span class="p">}</span>    <span class="kt">int</span> <span class="nx">value</span> <span class="p">=</span> <span class="nx">values</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">op</span> <span class="o">==</span> <span class="s">&quot;add&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">foreach</span> <span class="k">var</span> <span class="nx">i</span> <span class="nx">in</span> <span class="mi">1</span> <span class="p">..&lt;</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">value</span> <span class="p">=</span> <span class="nx">add</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">op</span> <span class="o">==</span> <span class="s">&quot;subtract&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">foreach</span> <span class="k">var</span> <span class="nx">i</span> <span class="nx">in</span> <span class="mi">1</span> <span class="p">..&lt;</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">value</span> <span class="p">=</span> <span class="nx">subtract</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">panic</span> <span class="nx">unknownOpError</span><span class="p">;</span>
+<span class="p">}</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="kt">int</span> <span class="nx">i</span><span class="p">,</span> <span class="kt">int</span> <span class="nx">j</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+<span class="p">}</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">subtract</span><span class="p">(</span><span class="kt">int</span> <span class="nx">i</span><span class="p">,</span> <span class="kt">int</span> <span class="nx">j</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">i</span> <span class="o">-</span> <span class="nx">j</span><span class="p">;</span>
+<span class="p">}</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">isKnownOp</span><span class="p">(</span><span class="kt">string</span> <span class="nx">op</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">op</span> <span class="o">==</span> <span class="s">&quot;add&quot;</span> <span class="o">||</span> <span class="nx">op</span> <span class="o">==</span><span class="s">&quot;subtract&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span> <span class="nx">and</span> <span class="nx">issue</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">with</span> <span class="nx">the</span> <span class="s">`--printreturn`</span>
+<span class="err">#</span> <span class="nx">option</span> <span class="nx">set</span> <span class="nx">to</span> <span class="nx">print</span> <span class="nx">the</span> <span class="k">return</span> <span class="nx">value</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">standard</span> <span class="nx">out</span> <span class="nx">stream</span><span class="p">.</span>
+</pre></div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table class="cTopInfoContainer cTopControlsContainer">
+                    <tr>
+                        <td class="cLeftTD">
+                            <h2>Functions as Entry Points</h2>
+                            <p><p>Any <code>public</code> function can be an entry point to a Ballerina program. The function to be considered as the entry point
+ could be specified with the ballerina <code>run</code> command. If a function is not specified with the ballerina <code>run</code> command,
+ the <code>main</code> function is considered to be the entry point.
+ Entry point functions can be data-binding, and can have zero or more parameters of any supported type, including any
+ number of required/defaultable parameters and/or a single rest parameter.
+ To print the return value of an entry point function to the standard out stream, set the <code>--printreturn</code> option
+ with the <code>run</code> command.</p>
+</p>
+
+                        </td>
+                        <td class="cRightTD">
+                            <div class="cTopButtonContainer">
+                                
+                                <div class="cButtonInfoContainer">
+                                    <a class="prev" href="functional-iteration.html">
+                                        <span>< PREVIOUS</span>
+                                        <p>Functional Iteration</p>
+                                    </a>
+                                </div>
+                                 
+                                <div class="cButtonInfoContainer">
+                                    <a class="next" href="if-else.html">
+                                        <span>NEXT ></span>
+                                        <p>If/Else</p>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="example" id="functions-as-entry-points">
+                <div class="col-xs-12 col-sm-12 col-md-12 cBBETable-container cCodeLeft">
+                    <table class="cTopControlsContainer">
+                        <tr>
+                            <td class="cLeftTD">
+                                <div class="cBBE-links">
+                                    <ul>
+                                        <li>
+                                            <a class="copy"><img src="/img/copy-icon.svg" /></a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/functions-as-entry-points/"><img src="/img/github-logo-green.svg" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <table class="cTopBorder-table">
+                        <tr>
+                            <td class="cCodeTD"></td>
+                            <td class="cDescTD"></td>
+                        </tr>
+                    </table>
+
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+
+                    <div>
+
+                        <table class="cBBE-body">
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>error unknownOpError = error(&quot;unknown operation&quot;);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>public function main(int i, int j, string s) returns int {
+    if (s == &quot;add&quot;) {
+        io:println(&quot;Operation: Addition&quot;);
+        return add(i, j);
+    } else if (s == &quot;subtract&quot;) {
+        io:println(&quot;Operation: Subtraction&quot;);
+        return subtract(i, j);
+    }
+    panic unknownOpError;
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>A function named <code>main</code> acts as a default entry point to a Ballerina program.
+ This entry function can have zero or more parameters, and can either return
+ an int or can have no return value.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>public function performMathOp(string op = &quot;add&quot;, int... values) returns int {
+    if (isKnownOp(op) &amp;&amp; values.length() == 0) {
+        error invalidArgsError = error(&quot;insufficient arguments specified&quot;);
+        panic invalidArgsError;
+    }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>A public function to perform a math operation. The first parameter <code>op</code>,
+ representing the operation, is a defaultable parameter with the default
+ value <code>add</code>.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>    int value = values[0];
+    if (op == &quot;add&quot;) {
+        foreach var i in 1 ..&lt; values.length() {
+            value = add(value, values[i]);
+        }
+        return value;
+    } else if (op == &quot;subtract&quot;) {
+        foreach var i in 1 ..&lt; values.length() {
+            value = subtract(value, values[i]);
+        }
+        return value;
+    }
+    panic unknownOpError;
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>public function add(int i, int j) returns int {
+    return i + j;
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=ballerina>public function subtract(int i, int j) returns int {
+    return i - j;
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code">
+                                    <div class="highlight"><pre><code class=ballerina>public function isKnownOp(string op) returns boolean {
+    return op == &quot;add&quot; || op ==&quot;subtract&quot;;
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                        
+
+                    <div>
+
+                        <table class="cBBE-body">
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code leading cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
+# `.bal` file and issue the `ballerina run` command with the `--printreturn`
+# option set to print the return value to the standard out stream.
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code leading cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># Use the ballerina `run` command to invoke the `main` function, specifying `4` and
+# `8` as the integer arguments on which the operation is to be performed, and `add`
+# as the string argument for `op`.
+$ ballerina run --printreturn functions_as_entry_points.bal 4 8 add
+Operation: Addition
+12
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code leading cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># Use the ballerina `run` command specifying `add` as the function to invoke and `14`
+# and `8` as the integer arguments to add.
+$ ballerina run --printreturn functions_as_entry_points.bal:add 14 8
+22
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code leading cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># Use the ballerina `run` command specifying `performMathOp` as the function to invoke.
+# Since no argument is specified as a named argument, the default value `add`
+# would be used as the value for the defaultable param `op`. `12`, `13` and `14` would
+# be considered the integer arguments to add.
+$ ballerina run --printreturn functions_as_entry_points.bal:performMathOp 12 13 14
+39
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code leading cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># Use the ballerina `run` command specifying `performMathOp` as the function to invoke.
+# The string value `subtract` is specified as a named argument for the defaultable parameter
+# `op` with the argument `-op=subtract`. `15` and `3` would be considered the integer
+# arguments for which subtraction is to be done.
+$ ballerina run --printreturn functions_as_entry_points.bal:performMathOp -op=subtract 15 3
+12
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code cOutput">
+                                    <div class="highlight"><pre><code class=shell-session># Use the ballerina `run` command specifying `isKnownOp` as the function to invoke,
+# where the return value is not an int.
+$ ballerina run --printreturn functions_as_entry_points.bal:isKnownOp multiplication
+false
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    
+
+
+                    <table class="cBottomBorder-table">
+                        <tr>
+                            <td class="cCodeTD"></td>
+                            <td class="cDescTD"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <script>
+            $(document).ready(function() {
+
+                hljs.initHighlightingOnLoad();
+
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
+            });
+
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
+
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

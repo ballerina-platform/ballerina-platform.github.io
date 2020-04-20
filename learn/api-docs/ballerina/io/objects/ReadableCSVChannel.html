@@ -793,6 +793,9 @@
     <div class="param-details"> 
             
         Indicates whether there's another record, which could be read.
+<pre><code class="language-ballerina"> boolean hasNext = readableCSVChannel.hasNext();
+</code></pre>
+
     </div>
 </div>
 
@@ -805,6 +808,9 @@
     <div class="param-details"> 
             
         Gets the next record from the CSV file.
+<pre><code class="language-ballerina"> string[]|io:Error record = readableCSVChannel.getNext();
+</code></pre>
+
     </div>
 </div>
 
@@ -817,6 +823,9 @@
     <div class="param-details"> 
             
         Closes a given <code>CSVChannel</code>.
+<pre><code class="language-ballerina"> io:Error? err = readableCSVChannel.close();
+</code></pre>
+
     </div>
 </div>
 
@@ -829,6 +838,9 @@
     <div class="param-details"> 
             
         Returns a table, which corresponds to the CSV records.
+<pre><code class="language-ballerina"> var tblResult = readableCSVChannel.getTable(Employee);
+</code></pre>
+
     </div>
 </div>
 
@@ -856,10 +868,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Indicates whether there's another record, which could be read.
+        Indicates whether there's another record, which could be read.
 <pre><code class="language-ballerina"> boolean hasNext = readableCSVChannel.hasNext();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -891,10 +903,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Gets the next record from the CSV file.
+        Gets the next record from the CSV file.
 <pre><code class="language-ballerina"> string[]|io:Error record = readableCSVChannel.getNext();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -926,10 +938,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Closes a given <code>CSVChannel</code>.
+        Closes a given <code>CSVChannel</code>.
 <pre><code class="language-ballerina"> io:Error? err = readableCSVChannel.close();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -961,10 +973,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns a table, which corresponds to the CSV records.
+        Returns a table, which corresponds to the CSV records.
 <pre><code class="language-ballerina"> var tblResult = readableCSVChannel.getTable(Employee);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

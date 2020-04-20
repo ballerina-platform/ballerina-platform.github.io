@@ -676,6 +676,9 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Waits for the process to finish its work and exit.
+<pre><code class="language-ballerina"> int|error exitCode = process.waitForExit();
+</code></pre>
+
     </div>
 </div>
 
@@ -688,6 +691,10 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Returns the exit code of the process when it has finished the execution.
+Error if the process has not exited yet.
+<pre><code class="language-ballerina"> int|error exitCode = process.exitCode();
+</code></pre>
+
     </div>
 </div>
 
@@ -700,6 +707,9 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Destroys the process.
+<pre><code class="language-ballerina"> process.destroy();
+</code></pre>
+
     </div>
 </div>
 
@@ -712,6 +722,9 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Provides a channel (to write into), which is made available as the 'standard input' for the process.
+<pre><code class="language-ballerina"> io:WritableByteChannel output = process.stdin();
+</code></pre>
+
     </div>
 </div>
 
@@ -724,6 +737,9 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Provides a channel (to read from), which is made available as the 'standard output' of the process.
+<pre><code class="language-ballerina"> io:ReadableByteChannel input = process.stdout();
+</code></pre>
+
     </div>
 </div>
 
@@ -736,6 +752,9 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Provides a channel (to read from), which is made available as the 'standard error' of the process.
+<pre><code class="language-ballerina"> io:ReadableByteChannel input = process.stderr();
+</code></pre>
+
     </div>
 </div>
 
@@ -748,6 +767,9 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     <div class="param-details"> 
             
         Pipes the standard output of the current process to the standard input of the given process.
+<pre><code class="language-ballerina"> var x3out = x1.pipe(x2).pipe(x3).stdout();
+</code></pre>
+
     </div>
 </div>
 
@@ -775,10 +797,10 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     </div>
     <div class="function-desc">
         
-        <p>Waits for the process to finish its work and exit.
+        Waits for the process to finish its work and exit.
 <pre><code class="language-ballerina"> int|error exitCode = process.waitForExit();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -810,11 +832,11 @@ This is returned from the <code>exec</code> function in the <code>system</code> 
     </div>
     <div class="function-desc">
         
-        <p>Returns the exit code of the process when it has finished the execution.
+        Returns the exit code of the process when it has finished the execution.
 Error if the process has not exited yet.
 <pre><code class="language-ballerina"> int|error exitCode = process.exitCode();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -841,10 +863,10 @@ Error if the process has not exited yet.
     </div>
     <div class="function-desc">
         
-        <p>Destroys the process.
+        Destroys the process.
 <pre><code class="language-ballerina"> process.destroy();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -866,10 +888,10 @@ Error if the process has not exited yet.
     </div>
     <div class="function-desc">
         
-        <p>Provides a channel (to write into), which is made available as the 'standard input' for the process.
+        Provides a channel (to write into), which is made available as the 'standard input' for the process.
 <pre><code class="language-ballerina"> io:WritableByteChannel output = process.stdin();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -901,10 +923,10 @@ Error if the process has not exited yet.
     </div>
     <div class="function-desc">
         
-        <p>Provides a channel (to read from), which is made available as the 'standard output' of the process.
+        Provides a channel (to read from), which is made available as the 'standard output' of the process.
 <pre><code class="language-ballerina"> io:ReadableByteChannel input = process.stdout();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -936,10 +958,10 @@ Error if the process has not exited yet.
     </div>
     <div class="function-desc">
         
-        <p>Provides a channel (to read from), which is made available as the 'standard error' of the process.
+        Provides a channel (to read from), which is made available as the 'standard error' of the process.
 <pre><code class="language-ballerina"> io:ReadableByteChannel input = process.stderr();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -971,10 +993,10 @@ Error if the process has not exited yet.
     </div>
     <div class="function-desc">
         
-        <p>Pipes the standard output of the current process to the standard input of the given process.
+        Pipes the standard output of the current process to the standard input of the given process.
 <pre><code class="language-ballerina"> var x3out = x1.pipe(x2).pipe(x3).stdout();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

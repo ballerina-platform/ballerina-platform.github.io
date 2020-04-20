@@ -897,6 +897,7 @@ assignment of the consumers.
     <div class="param-details"> 
             
         Starts the registered services.
+
     </div>
 </div>
 
@@ -909,6 +910,7 @@ assignment of the consumers.
     <div class="param-details"> 
             
         Stops the kafka listener.
+
     </div>
 </div>
 
@@ -921,6 +923,7 @@ assignment of the consumers.
     <div class="param-details"> 
             
         Stops the kafka listener.
+
     </div>
 </div>
 
@@ -933,6 +936,7 @@ assignment of the consumers.
     <div class="param-details"> 
             
         Gets called every time a service attaches itself to the listener.
+
     </div>
 </div>
 
@@ -945,6 +949,7 @@ assignment of the consumers.
     <div class="param-details"> 
             
         Detaches a consumer service from the listener.
+
     </div>
 </div>
 
@@ -1041,8 +1046,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Assigns consumer to a set of topic partitions.
-</p>
+        Assigns consumer to a set of topic partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -1092,10 +1097,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Closes consumer connection to the external Kafka broker.
+        Closes consumer connection to the external Kafka broker.
 <pre><code class="language-ballerina"> kafka:ConsumerError? result = consumer-&gt;close();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1145,10 +1150,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Commits current consumed offsets for consumer.
+        Commits current consumed offsets for consumer.
 <pre><code class="language-ballerina"> kafka:ConsumerError? result = consumer-&gt;commit();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1180,8 +1185,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Commits given offsets and partitions for the given topics, for consumer.
-</p>
+        Commits given offsets and partitions for the given topics, for consumer.
+
     </div>
     
         <div class="data-wrapper">
@@ -1244,10 +1249,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Connects consumer to the provided host in the consumer configs.
+        Connects consumer to the provided host in the consumer configs.
 <pre><code class="language-ballerina"> kafka:ConsumerError? result = consumer-&gt;connect();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1279,10 +1284,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the currently assigned partitions for the consumer.
+        Retrieves the currently assigned partitions for the consumer.
 <pre><code class="language-ballerina"> kafka:TopicPartition[]|kafka:ConsumerError result = consumer-&gt;getAssignment();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1314,10 +1319,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the available list of topics for a particular consumer.
+        Retrieves the available list of topics for a particular consumer.
 <pre><code class="language-ballerina"> string[]|kafka:ConsumerError result = consumer-&gt;getAvailableTopics();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1368,8 +1373,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the start offsets for given set of partitions.
-</p>
+        Retrieves the start offsets for given set of partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -1432,8 +1437,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the last committed offsets for the given topic partitions.
-</p>
+        Retrieves the last committed offsets for the given topic partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -1497,8 +1502,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the last offsets for given set of partitions.
-</p>
+        Retrieves the last offsets for given set of partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -1561,10 +1566,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the partitions, which are currently paused.
+        Retrieves the partitions, which are currently paused.
 <pre><code class="language-ballerina"> kafka:TopicPartition[]|kafka:ConsumerError result = consumer-&gt;getPausedPartitions();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1597,8 +1602,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the offset of the next record that will be fetched, if a records exists in that position.
-</p>
+        Retrieves the offset of the next record that will be fetched, if a records exists in that position.
+
     </div>
     
         <div class="data-wrapper">
@@ -1662,10 +1667,10 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the set of topics which are currently subscribed by the consumer.
+        Retrieves the set of topics which are currently subscribed by the consumer.
 <pre><code class="language-ballerina"> string[]|kafka:ConsumerError result = consumer-&gt;getSubscription();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1697,10 +1702,10 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the set of partitions in which the topic belongs to.
+        Retrieves the set of partitions in which the topic belongs to.
 <pre><code class="language-ballerina"> kafka:TopicPartition[]|kafka:ConsumerError result = consumer-&gt;getTopicPartitions(&quot;kafka-topic&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1763,8 +1768,8 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Pauses retrieving messages from a set of partitions.
-</p>
+        Pauses retrieving messages from a set of partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -1814,10 +1819,10 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Polls the consumer for external broker for records.
+        Polls the consumer for external broker for records.
 <pre><code class="language-ballerina"> kafka:ConsumerRecord[]|kafka:ConsumerError result = consumer-&gt;poll(1000);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1867,8 +1872,8 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Resumes consumer retrieving messages from set of partitions which were paused earlier.
-</p>
+        Resumes consumer retrieving messages from set of partitions which were paused earlier.
+
     </div>
     
         <div class="data-wrapper">
@@ -1918,8 +1923,8 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Seeks for a given offset in a topic partition.
-</p>
+        Seeks for a given offset in a topic partition.
+
     </div>
     
         <div class="data-wrapper">
@@ -1969,8 +1974,8 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Seeks the beginning of the offsets for the given set of topic partitions.
-</p>
+        Seeks the beginning of the offsets for the given set of topic partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -2020,8 +2025,8 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Seeks end of the offsets for the given set of topic partitions.
-</p>
+        Seeks end of the offsets for the given set of topic partitions.
+
     </div>
     
         <div class="data-wrapper">
@@ -2071,10 +2076,10 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Subscribes the consumer to the provided set of topics.
+        Subscribes the consumer to the provided set of topics.
 <pre><code class="language-ballerina"> kafka:ConsumerError? result = consumer-&gt;subscribe([&quot;kafka-topic-1&quot;, &quot;kafka-topic-2&quot;]);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -2124,10 +2129,10 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Subscribes the consumer to the topics which matches to the provided pattern.
+        Subscribes the consumer to the topics which matches to the provided pattern.
 <pre><code class="language-ballerina"> kafka:ConsumerError? result = consumer-&gt;subscribeToPattern(&quot;kafka.*&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -2177,10 +2182,10 @@ the operation fails</p>
     </div>
     <div class="function-desc">
         
-        <p>Subscribes to the provided set of topics with rebalance listening enabled.
+        Subscribes to the provided set of topics with rebalance listening enabled.
 This function can be used inside a service, to subscribe to a set of topics, while rebalancing the patition
 assignment of the consumers.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -2256,10 +2261,10 @@ assignment of the consumers.
     </div>
     <div class="function-desc">
         
-        <p>Unsubscribes from all the topic subscriptions.
+        Unsubscribes from all the topic subscriptions.
 <pre><code class="language-ballerina"> kafka:ConsumerError? result = consumer-&gt;unsubscribe();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -2295,8 +2300,8 @@ assignment of the consumers.
     </div>
     <div class="function-desc">
         
-        <p>Starts the registered services.
-</p>
+        Starts the registered services.
+
     </div>
     
 
@@ -2328,8 +2333,8 @@ assignment of the consumers.
     </div>
     <div class="function-desc">
         
-        <p>Stops the kafka listener.
-</p>
+        Stops the kafka listener.
+
     </div>
     
 
@@ -2361,8 +2366,8 @@ assignment of the consumers.
     </div>
     <div class="function-desc">
         
-        <p>Stops the kafka listener.
-</p>
+        Stops the kafka listener.
+
     </div>
     
 
@@ -2394,8 +2399,8 @@ assignment of the consumers.
     </div>
     <div class="function-desc">
         
-        <p>Gets called every time a service attaches itself to the listener.
-</p>
+        Gets called every time a service attaches itself to the listener.
+
     </div>
     
         <div class="data-wrapper">
@@ -2458,8 +2463,8 @@ assignment of the consumers.
     </div>
     <div class="function-desc">
         
-        <p>Detaches a consumer service from the listener.
-</p>
+        Detaches a consumer service from the listener.
+
     </div>
     
         <div class="data-wrapper">

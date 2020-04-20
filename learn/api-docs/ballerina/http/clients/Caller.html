@@ -903,7 +903,11 @@ that will be removed.
     </div>
     <div class="param-details"> 
             
-        Gets the hostname from the remote address.
+        Gets the hostname from the remote address. This method may trigger a DNS reverse lookup if the address was created
+with a literal IP address.
+<pre><code class="language-ballerina"> string? remoteHost = caller.getRemoteHostName();
+</code></pre>
+
     </div>
 </div>
 
@@ -1034,8 +1038,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller.
-</p>
+        Sends the outbound response to the caller.
+
     </div>
     
         <div class="data-wrapper">
@@ -1086,8 +1090,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Pushes a promise to the caller.
-</p>
+        Pushes a promise to the caller.
+
     </div>
     
         <div class="data-wrapper">
@@ -1137,8 +1141,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Sends a promised push response to the caller.
-</p>
+        Sends a promised push response to the caller.
+
     </div>
     
         <div class="data-wrapper">
@@ -1201,8 +1205,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Sends an upgrade request with custom headers.
-</p>
+        Sends an upgrade request with custom headers.
+
     </div>
     
         <div class="data-wrapper">
@@ -1252,8 +1256,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Cancels the handshake.
-</p>
+        Cancels the handshake.
+
     </div>
     
         <div class="data-wrapper">
@@ -1317,8 +1321,8 @@ This error status code need to be 4xx or 5xx else the default status code would 
     </div>
     <div class="function-desc">
         
-        <p>Sends a <code>100-continue</code> response to the caller.
-</p>
+        Sends a <code>100-continue</code> response to the caller.
+
     </div>
     
 
@@ -1350,8 +1354,8 @@ This error status code need to be 4xx or 5xx else the default status code would 
     </div>
     <div class="function-desc">
         
-        <p>Sends a redirect response to the user with the specified redirection status code.
-</p>
+        Sends a redirect response to the user with the specified redirection status code.
+
     </div>
     
         <div class="data-wrapper">
@@ -1427,8 +1431,8 @@ This error status code need to be 4xx or 5xx else the default status code would 
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 200 OK.
-</p>
+        Sends the outbound response to the caller with the status 200 OK.
+
     </div>
     
         <div class="data-wrapper">
@@ -1479,8 +1483,8 @@ or <code>mime:Entity[]</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 201 Created.
-</p>
+        Sends the outbound response to the caller with the status 201 Created.
+
     </div>
     
         <div class="data-wrapper">
@@ -1544,8 +1548,8 @@ or <code>mime:Entity[]</code>. This message is optional.</p>
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 202 Accepted.
-</p>
+        Sends the outbound response to the caller with the status 202 Accepted.
+
     </div>
     
         <div class="data-wrapper">
@@ -1596,11 +1600,11 @@ or <code>mime:Entity[]</code>. This message is optional.</p>
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 204 No Content. If the given response contains a body
+        Sends the outbound response to the caller with the status 204 No Content. If the given response contains a body
 that will be removed.
 <pre><code class="language-ballerina"> http:ListenerError? err = caller-&gt;noContent();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1650,10 +1654,10 @@ that will be removed.
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 400 Bad Request.
+        Sends the outbound response to the caller with the status 400 Bad Request.
 <pre><code class="language-ballerina"> http:ListenerError? err = caller-&gt;badRequest();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1704,10 +1708,10 @@ or <code>mime:Entity[]</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 404 Not Found.
+        Sends the outbound response to the caller with the status 404 Not Found.
 <pre><code class="language-ballerina"> http:ListenerError? err = caller-&gt;notFound();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1758,10 +1762,10 @@ or <code>mime:Entity[]</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Sends the outbound response to the caller with the status 500 Internal Server Error.
+        Sends the outbound response to the caller with the status 500 Internal Server Error.
 <pre><code class="language-ballerina"> http:ListenerError? err = caller-&gt;internalServerError();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1816,11 +1820,11 @@ or <code>mime:Entity[]</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Gets the hostname from the remote address. This method may trigger a DNS reverse lookup if the address was created
+        Gets the hostname from the remote address. This method may trigger a DNS reverse lookup if the address was created
 with a literal IP address.
 <pre><code class="language-ballerina"> string? remoteHost = caller.getRemoteHostName();
 </code></pre>
-</p>
+
     </div>
     
 

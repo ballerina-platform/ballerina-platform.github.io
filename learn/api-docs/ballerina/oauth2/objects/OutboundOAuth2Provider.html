@@ -731,6 +731,9 @@ The <code>oauth2:OutboundOAuth2Provider</code> is an implementation of the <code
     <div class="param-details"> 
             
         Generate a token for the OAuth2 authentication.
+<pre><code class="language-ballerina"> string:auth:Error token = outboundOAuth2Provider.generateToken();
+</code></pre>
+
     </div>
 </div>
 
@@ -743,6 +746,9 @@ The <code>oauth2:OutboundOAuth2Provider</code> is an implementation of the <code
     <div class="param-details"> 
             
         Inspects the incoming data and generates the token for the OAuth2 authentication.
+<pre><code class="language-ballerina"> string:auth:Error? token = outboundOAuth2Provider.inspect(data);
+</code></pre>
+
     </div>
 </div>
 
@@ -856,10 +862,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Generate a token for the OAuth2 authentication.
+        Generate a token for the OAuth2 authentication.
 <pre><code class="language-ballerina"> string:auth:Error token = outboundOAuth2Provider.generateToken();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -891,10 +897,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Inspects the incoming data and generates the token for the OAuth2 authentication.
+        Inspects the incoming data and generates the token for the OAuth2 authentication.
 <pre><code class="language-ballerina"> string:auth:Error? token = outboundOAuth2Provider.inspect(data);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

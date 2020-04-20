@@ -723,6 +723,9 @@
     <div class="param-details"> 
             
         Adds or updates subscription details.
+<pre><code class="language-ballerina"> error? result = hubPersistenceStore.addSubscription(subscriptionDetails);
+</code></pre>
+
     </div>
 </div>
 
@@ -735,6 +738,9 @@
     <div class="param-details"> 
             
         Removes subscription details.
+<pre><code class="language-ballerina"> error? result = hubPersistenceStore.removeSubscription(subscriptionDetails);
+</code></pre>
+
     </div>
 </div>
 
@@ -747,6 +753,9 @@
     <div class="param-details"> 
             
         Function to add a topic.
+<pre><code class="language-ballerina"> error? result = hubPersistenceStore.addTopic(&quot;topic&quot;);
+</code></pre>
+
     </div>
 </div>
 
@@ -759,6 +768,9 @@
     <div class="param-details"> 
             
         Function to remove a topic.
+<pre><code class="language-ballerina"> error? result = hubPersistenceStore.removeTopic(&quot;topic&quot;);
+</code></pre>
+
     </div>
 </div>
 
@@ -771,6 +783,9 @@
     <div class="param-details"> 
             
         Function to retrieve subscription details of all subscribers.
+<pre><code class="language-ballerina"> SubscriptionDetails[]|error result = hubPersistenceStore.retrieveAllSubscribers();
+</code></pre>
+
     </div>
 </div>
 
@@ -783,6 +798,9 @@
     <div class="param-details"> 
             
         Function to retrieve all registered topics.
+<pre><code class="language-ballerina"> string[]|error result = hubPersistenceStore.retrieveTopics();
+</code></pre>
+
     </div>
 </div>
 
@@ -810,10 +828,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Adds or updates subscription details.
+        Adds or updates subscription details.
 <pre><code class="language-ballerina"> error? result = hubPersistenceStore.addSubscription(subscriptionDetails);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -863,10 +881,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Removes subscription details.
+        Removes subscription details.
 <pre><code class="language-ballerina"> error? result = hubPersistenceStore.removeSubscription(subscriptionDetails);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -916,10 +934,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Function to add a topic.
+        Function to add a topic.
 <pre><code class="language-ballerina"> error? result = hubPersistenceStore.addTopic(&quot;topic&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -969,10 +987,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Function to remove a topic.
+        Function to remove a topic.
 <pre><code class="language-ballerina"> error? result = hubPersistenceStore.removeTopic(&quot;topic&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1022,10 +1040,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Function to retrieve subscription details of all subscribers.
+        Function to retrieve subscription details of all subscribers.
 <pre><code class="language-ballerina"> SubscriptionDetails[]|error result = hubPersistenceStore.retrieveAllSubscribers();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1058,10 +1076,10 @@ the subscriptions</p>
     </div>
     <div class="function-desc">
         
-        <p>Function to retrieve all registered topics.
+        Function to retrieve all registered topics.
 <pre><code class="language-ballerina"> string[]|error result = hubPersistenceStore.retrieveTopics();
 </code></pre>
-</p>
+
     </div>
     
 

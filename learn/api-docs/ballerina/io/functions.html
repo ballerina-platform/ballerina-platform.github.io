@@ -724,6 +724,9 @@
                                     <div class="function-desc">
                                         
                                         Creates an in-memory channel, which will be a reference stream of bytes.
+<pre><code class="language-ballerina"> var byteChannel = io:createReadableChannel(content);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -736,6 +739,9 @@
                                     <div class="function-desc">
                                         
                                         Retrieves a readable CSV channel from a given file path.
+<pre><code class="language-ballerina"> io:ReadableCSVChannel rCsvChannel = check io:openReadableCsvFile(srcFileName);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -748,6 +754,9 @@
                                     <div class="function-desc">
                                         
                                         Retrieves a <code>ReadableByteChannel</code> from a given file path.
+<pre><code class="language-ballerina"> io:ReadableByteChannel readableFieldResult = check io:openReadableFile(&quot;./files/sample.txt&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -760,6 +769,9 @@
                                     <div class="function-desc">
                                         
                                         Retrieves a writable CSV channel from a given file path.
+<pre><code class="language-ballerina"> io:WritableCSVChannel wCsvChannel = check io:openWritableCsvFile(srcFileName);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -772,6 +784,9 @@
                                     <div class="function-desc">
                                         
                                         Retrieves a <code>WritableByteChannel</code> from a given file path.
+<pre><code class="language-ballerina"> io:WritableByteChannel writableFileResult = check io:openWritableFile(&quot;./files/sampleResponse.txt&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -784,6 +799,9 @@
                                     <div class="function-desc">
                                         
                                         Prints <code>any</code> or <code>error</code> value(s) to the STDOUT.
+<pre><code class="language-ballerina">io:print(&quot;Start processing the CSV file from &quot;, srcFileName);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -796,6 +814,9 @@
                                     <div class="function-desc">
                                         
                                         Prints <code>any</code> or <code>error</code> value(s) to the STDOUT followed by a new line.
+<pre><code class="language-ballerina">io:println(&quot;Start processing the CSV file from &quot;, srcFileName);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -808,6 +829,9 @@
                                     <div class="function-desc">
                                         
                                         Retrieves the input read from the STDIN.
+<pre><code class="language-ballerina"> string choice = io:readln(&quot;Enter choice 1 - 5: &quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -819,7 +843,18 @@
                                 <td width="70%">
                                     <div class="function-desc">
                                         
-                                        Returns a formatted string using the specified format string and arguments.
+                                        Returns a formatted string using the specified format string and arguments. Following format specifiers are allowed.
+b - boolean
+B - boolean (ALL_CAPS)
+d - int
+f - float
+x - hex
+X - HEX (ALL_CAPS)
+s - string (This specifier is applicable for any of the supported types in Ballerina.
+These values will be converted to their string representation.)
+<pre><code class="language-ballerina"> string s8 = io:sprintf(&quot;%s scored %d for %s and has an average of %.2f.&quot;, name, marks, subjects[0], average);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -845,10 +880,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Creates an in-memory channel, which will be a reference stream of bytes.
+        Creates an in-memory channel, which will be a reference stream of bytes.
 <pre><code class="language-ballerina"> var byteChannel = io:createReadableChannel(content);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -898,10 +933,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Retrieves a readable CSV channel from a given file path.
+        Retrieves a readable CSV channel from a given file path.
 <pre><code class="language-ballerina"> io:ReadableCSVChannel rCsvChannel = check io:openReadableCsvFile(srcFileName);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -990,10 +1025,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Retrieves a <code>ReadableByteChannel</code> from a given file path.
+        Retrieves a <code>ReadableByteChannel</code> from a given file path.
 <pre><code class="language-ballerina"> io:ReadableByteChannel readableFieldResult = check io:openReadableFile(&quot;./files/sample.txt&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1043,10 +1078,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Retrieves a writable CSV channel from a given file path.
+        Retrieves a writable CSV channel from a given file path.
 <pre><code class="language-ballerina"> io:WritableCSVChannel wCsvChannel = check io:openWritableCsvFile(srcFileName);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1135,10 +1170,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Retrieves a <code>WritableByteChannel</code> from a given file path.
+        Retrieves a <code>WritableByteChannel</code> from a given file path.
 <pre><code class="language-ballerina"> io:WritableByteChannel writableFileResult = check io:openWritableFile(&quot;./files/sampleResponse.txt&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1196,10 +1231,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Prints <code>any</code> or <code>error</code> value(s) to the STDOUT.
+        Prints <code>any</code> or <code>error</code> value(s) to the STDOUT.
 <pre><code class="language-ballerina">io:print(&quot;Start processing the CSV file from &quot;, srcFileName);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1234,10 +1269,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Prints <code>any</code> or <code>error</code> value(s) to the STDOUT followed by a new line.
+        Prints <code>any</code> or <code>error</code> value(s) to the STDOUT followed by a new line.
 <pre><code class="language-ballerina">io:println(&quot;Start processing the CSV file from &quot;, srcFileName);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1277,10 +1312,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the input read from the STDIN.
+        Retrieves the input read from the STDIN.
 <pre><code class="language-ballerina"> string choice = io:readln(&quot;Enter choice 1 - 5: &quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1330,7 +1365,7 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns a formatted string using the specified format string and arguments. Following format specifiers are allowed.
+        Returns a formatted string using the specified format string and arguments. Following format specifiers are allowed.
 b - boolean
 B - boolean (ALL_CAPS)
 d - int
@@ -1341,7 +1376,7 @@ s - string (This specifier is applicable for any of the supported types in Balle
 These values will be converted to their string representation.)
 <pre><code class="language-ballerina"> string s8 = io:sprintf(&quot;%s scored %d for %s and has an average of %.2f.&quot;, name, marks, subjects[0], average);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

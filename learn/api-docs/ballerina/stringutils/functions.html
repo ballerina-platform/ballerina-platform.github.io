@@ -692,6 +692,9 @@
                                     <div class="function-desc">
                                         
                                         Checks whether the given string contains a particular substring.
+<pre><code class="language-ballerina"> boolean contains = stringutils:contains(&quot;Ballerina&quot;, &quot;in&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -704,6 +707,9 @@
                                     <div class="function-desc">
                                         
                                         Checks if two strings are equal ignoring the case of the strings.
+<pre><code class="language-ballerina"> boolean isEqual = stringutils:equalsIgnoreCase(&quot;BaLLerinA&quot;, &quot;ballERina&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -716,6 +722,9 @@
                                     <div class="function-desc">
                                         
                                         Returns a hash code for a given string.
+<pre><code class="language-ballerina"> int hashCode = stringutils:hashCode(&quot;Ballerina&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -728,6 +737,9 @@
                                     <div class="function-desc">
                                         
                                         Returns the last index of the provided substring within a string.
+<pre><code class="language-ballerina"> int lastIndex = stringutils:lastIndexOf(&quot;int values in Ballerina&quot;, &quot;in&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -740,6 +752,9 @@
                                     <div class="function-desc">
                                         
                                         Checks whether the given string matches the provided regex.
+<pre><code class="language-ballerina"> boolean isMatched = stringutils:matches(&quot;Ballerina is great&quot;, &quot;Ba[a-z ]+&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -753,6 +768,9 @@
                                         
                                         Replaces each occurrence of the provided <code>substring</code> inside the provided
 <code>originalString</code> with the specified <code>replacement</code> string.
+<pre><code class="language-ballerina"> string result = stringutils:replace(&quot;Ballerina is great&quot;, &quot; &quot;, &quot;_&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -767,6 +785,9 @@
                                         Replaces each occurrence of the substrings, which matches the provided
 regular expression from the given original string value with the
 provided replacement string.
+<pre><code class="language-ballerina"> string result = stringutils:replaceAll(&quot;Ballerina is great&quot;, &quot;\s+&quot;, &quot;_&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -780,6 +801,9 @@ provided replacement string.
                                         
                                         Replaces the first substring that matches the given regular expression with
 the provided <code>replacement</code> string.
+<pre><code class="language-ballerina"> string result = stringutils:replaceFirst(&quot;Ballerina is great&quot;, &quot;\s+&quot;, &quot;_&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -793,6 +817,9 @@ the provided <code>replacement</code> string.
                                         
                                         Returns an array of strings by splitting a string using the provided
 delimiter.
+<pre><code class="language-ballerina"> string[] result = stringutils:split(&quot;Ballerina is great&quot;, &quot; &quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -805,6 +832,9 @@ delimiter.
                                     <div class="function-desc">
                                         
                                         Returns a boolean value of a given string.
+<pre><code class="language-ballerina"> boolean result = stringutils:toBoolean(&quot;true&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -830,10 +860,10 @@ delimiter.
     </div>
     <div class="function-desc">
         
-        <p>Checks whether the given string contains a particular substring.
+        Checks whether the given string contains a particular substring.
 <pre><code class="language-ballerina"> boolean contains = stringutils:contains(&quot;Ballerina&quot;, &quot;in&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -897,10 +927,10 @@ or else <code>false</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Checks if two strings are equal ignoring the case of the strings.
+        Checks if two strings are equal ignoring the case of the strings.
 <pre><code class="language-ballerina"> boolean isEqual = stringutils:equalsIgnoreCase(&quot;BaLLerinA&quot;, &quot;ballERina&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -963,10 +993,10 @@ or else <code>false</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Returns a hash code for a given string.
+        Returns a hash code for a given string.
 <pre><code class="language-ballerina"> int hashCode = stringutils:hashCode(&quot;Ballerina&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1016,10 +1046,10 @@ or else <code>false</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Returns the last index of the provided substring within a string.
+        Returns the last index of the provided substring within a string.
 <pre><code class="language-ballerina"> int lastIndex = stringutils:lastIndexOf(&quot;int values in Ballerina&quot;, &quot;in&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1083,10 +1113,10 @@ if the <code>originalString</code> contains the <code>substring</code> or else <
     </div>
     <div class="function-desc">
         
-        <p>Checks whether the given string matches the provided regex.
+        Checks whether the given string matches the provided regex.
 <pre><code class="language-ballerina"> boolean isMatched = stringutils:matches(&quot;Ballerina is great&quot;, &quot;Ba[a-z ]+&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1150,11 +1180,11 @@ if the <code>originalString</code> contains the <code>substring</code> or else <
     </div>
     <div class="function-desc">
         
-        <p>Replaces each occurrence of the provided <code>substring</code> inside the provided
+        Replaces each occurrence of the provided <code>substring</code> inside the provided
 <code>originalString</code> with the specified <code>replacement</code> string.
 <pre><code class="language-ballerina"> string result = stringutils:replace(&quot;Ballerina is great&quot;, &quot; &quot;, &quot;_&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1231,12 +1261,12 @@ the <code>stringToReplace</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Replaces each occurrence of the substrings, which matches the provided
+        Replaces each occurrence of the substrings, which matches the provided
 regular expression from the given original string value with the
 provided replacement string.
 <pre><code class="language-ballerina"> string result = stringutils:replaceAll(&quot;Ballerina is great&quot;, &quot;\s+&quot;, &quot;_&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1314,11 +1344,11 @@ match the <code>regex</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Replaces the first substring that matches the given regular expression with
+        Replaces the first substring that matches the given regular expression with
 the provided <code>replacement</code> string.
 <pre><code class="language-ballerina"> string result = stringutils:replaceFirst(&quot;Ballerina is great&quot;, &quot;\s+&quot;, &quot;_&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1397,11 +1427,11 @@ matches the <code>regex</code></p>
     </div>
     <div class="function-desc">
         
-        <p>Returns an array of strings by splitting a string using the provided
+        Returns an array of strings by splitting a string using the provided
 delimiter.
 <pre><code class="language-ballerina"> string[] result = stringutils:split(&quot;Ballerina is great&quot;, &quot; &quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1464,10 +1494,10 @@ delimiter.
     </div>
     <div class="function-desc">
         
-        <p>Returns a boolean value of a given string.
+        Returns a boolean value of a given string.
 <pre><code class="language-ballerina"> boolean result = stringutils:toBoolean(&quot;true&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

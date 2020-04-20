@@ -884,7 +884,9 @@ Any RequestFilter implementation should be structurally similar to or implement 
     </div>
     <div class="param-details"> 
             
-        Request filter function.
+        Request filter function. If a false is returned the response should have been sent from this function as it will
+not be dispatched to the next filter or the resource.
+
     </div>
 </div>
 
@@ -912,9 +914,9 @@ Any RequestFilter implementation should be structurally similar to or implement 
     </div>
     <div class="function-desc">
         
-        <p>Request filter function. If a false is returned the response should have been sent from this function as it will
+        Request filter function. If a false is returned the response should have been sent from this function as it will
 not be dispatched to the next filter or the resource.
-</p>
+
     </div>
     
         <div class="data-wrapper">

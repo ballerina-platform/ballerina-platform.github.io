@@ -691,7 +691,9 @@ Any custom cache implementation should be object-wise similar.
     </div>
     <div class="param-details"> 
             
-        Adds the given key value pair to the cache.
+        Adds the given key value pair to the cache. If the cache previously contained a value associated with the key, the
+old value is replaced by the new value.
+
     </div>
 </div>
 
@@ -704,6 +706,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Returns the cached value associated with the provided key.
+
     </div>
 </div>
 
@@ -716,6 +719,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Discards a cached value from the cache.
+
     </div>
 </div>
 
@@ -728,6 +732,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Discards all the cached values from the cache.
+
     </div>
 </div>
 
@@ -740,6 +745,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Checks whether the given key has an associated cache value.
+
     </div>
 </div>
 
@@ -752,6 +758,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Returns all keys from the cache.
+
     </div>
 </div>
 
@@ -764,6 +771,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Returns the current size of the cache.
+
     </div>
 </div>
 
@@ -776,6 +784,7 @@ Any custom cache implementation should be object-wise similar.
     <div class="param-details"> 
             
         Returns the capacity of the cache.
+
     </div>
 </div>
 
@@ -803,9 +812,9 @@ Any custom cache implementation should be object-wise similar.
     </div>
     <div class="function-desc">
         
-        <p>Adds the given key value pair to the cache. If the cache previously contained a value associated with the key, the
+        Adds the given key value pair to the cache. If the cache previously contained a value associated with the key, the
 old value is replaced by the new value.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -883,8 +892,8 @@ to the cache</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns the cached value associated with the provided key.
-</p>
+        Returns the cached value associated with the provided key.
+
     </div>
     
         <div class="data-wrapper">
@@ -935,8 +944,8 @@ available or if any error occurred while retrieving from the cache</p>
     </div>
     <div class="function-desc">
         
-        <p>Discards a cached value from the cache.
-</p>
+        Discards a cached value from the cache.
+
     </div>
     
         <div class="data-wrapper">
@@ -987,8 +996,8 @@ error occurred while discarding from the cache</p>
     </div>
     <div class="function-desc">
         
-        <p>Discards all the cached values from the cache.
-</p>
+        Discards all the cached values from the cache.
+
     </div>
     
 
@@ -1021,8 +1030,8 @@ cache</p>
     </div>
     <div class="function-desc">
         
-        <p>Checks whether the given key has an associated cache value.
-</p>
+        Checks whether the given key has an associated cache value.
+
     </div>
     
         <div class="data-wrapper">
@@ -1073,8 +1082,8 @@ cache value associated with the provided key</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns all keys from the cache.
-</p>
+        Returns all keys from the cache.
+
     </div>
     
 
@@ -1106,8 +1115,8 @@ cache value associated with the provided key</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns the current size of the cache.
-</p>
+        Returns the current size of the cache.
+
     </div>
     
 
@@ -1139,8 +1148,8 @@ cache value associated with the provided key</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns the capacity of the cache.
-</p>
+        Returns the capacity of the cache.
+
     </div>
     
 

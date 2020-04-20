@@ -668,6 +668,11 @@
                                     <div class="function-desc">
                                         
                                         Returns a clone of <code>v</code>.
+A clone is a deep copy that does not copy immutable subtrees.
+A clone can therefore safely be used concurrently with the original.
+It corresponds to the Clone(v) abstract operation,
+defined in the Ballerina Language Specification.
+
                                     </div>
                                 </td>
                             </tr>
@@ -679,7 +684,10 @@
                                 <td width="70%">
                                     <div class="function-desc">
                                         
-                                        Returns a clone of <code>v</code> that is read-only, i.
+                                        Returns a clone of <code>v</code> that is read-only, i.e. immutable.
+It corresponds to the ImmutableClone(v) abstract operation,
+defined in the Ballerina Language Specification.
+
                                     </div>
                                 </td>
                             </tr>
@@ -692,6 +700,9 @@
                                     <div class="function-desc">
                                         
                                         Parses a string in JSON format and returns the the value that it represents.
+All numbers in the JSON will be represented as float values.
+Returns an error if the string cannot be parsed.
+
                                     </div>
                                 </td>
                             </tr>
@@ -703,7 +714,9 @@
                                 <td width="70%">
                                     <div class="function-desc">
                                         
-                                        Tests whether <code>v</code> is read-only, i.
+                                        Tests whether <code>v</code> is read-only, i.e. immutable
+Returns true if read-only, false otherwise.
+
                                     </div>
                                 </td>
                             </tr>
@@ -716,6 +729,7 @@
                                     <div class="function-desc">
                                         
                                         Merges two json values.
+
                                     </div>
                                 </td>
                             </tr>
@@ -728,6 +742,7 @@
                                     <div class="function-desc">
                                         
                                         Returns the string that represents <code>v</code> in JSON format.
+
                                     </div>
                                 </td>
                             </tr>
@@ -740,6 +755,10 @@
                                     <div class="function-desc">
                                         
                                         Performs a minimal conversion of a value to a string.
+The conversion is minimal in particular in the sense
+that the conversion applied to a value that is already
+a string does nothing.
+
                                     </div>
                                 </td>
                             </tr>
@@ -765,12 +784,12 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns a clone of <code>v</code>.
+        Returns a clone of <code>v</code>.
 A clone is a deep copy that does not copy immutable subtrees.
 A clone can therefore safely be used concurrently with the original.
 It corresponds to the Clone(v) abstract operation,
 defined in the Ballerina Language Specification.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -820,10 +839,10 @@ defined in the Ballerina Language Specification.
     </div>
     <div class="function-desc">
         
-        <p>Returns a clone of <code>v</code> that is read-only, i.e. immutable.
+        Returns a clone of <code>v</code> that is read-only, i.e. immutable.
 It corresponds to the ImmutableClone(v) abstract operation,
 defined in the Ballerina Language Specification.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -873,10 +892,10 @@ defined in the Ballerina Language Specification.
     </div>
     <div class="function-desc">
         
-        <p>Parses a string in JSON format and returns the the value that it represents.
+        Parses a string in JSON format and returns the the value that it represents.
 All numbers in the JSON will be represented as float values.
 Returns an error if the string cannot be parsed.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -926,9 +945,9 @@ Returns an error if the string cannot be parsed.
     </div>
     <div class="function-desc">
         
-        <p>Tests whether <code>v</code> is read-only, i.e. immutable
+        Tests whether <code>v</code> is read-only, i.e. immutable
 Returns true if read-only, false otherwise.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -978,8 +997,8 @@ Returns true if read-only, false otherwise.
     </div>
     <div class="function-desc">
         
-        <p>Merges two json values.
-</p>
+        Merges two json values.
+
     </div>
     
         <div class="data-wrapper">
@@ -1057,8 +1076,8 @@ If the merge fails, then <code>j1</code> is unchanged.</li>
     </div>
     <div class="function-desc">
         
-        <p>Returns the string that represents <code>v</code> in JSON format.
-</p>
+        Returns the string that represents <code>v</code> in JSON format.
+
     </div>
     
         <div class="data-wrapper">
@@ -1108,11 +1127,11 @@ If the merge fails, then <code>j1</code> is unchanged.</li>
     </div>
     <div class="function-desc">
         
-        <p>Performs a minimal conversion of a value to a string.
+        Performs a minimal conversion of a value to a string.
 The conversion is minimal in particular in the sense
 that the conversion applied to a value that is already
 a string does nothing.
-</p>
+
     </div>
     
         <div class="data-wrapper">

@@ -798,6 +798,9 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     <div class="param-details"> 
             
         Retrieves the connection, which carries this channel.
+<pre><code class="language-ballerina"> rabbitmq:Connection|rabbitmq:Error connResult = newChannel.getConnection();
+</code></pre>
+
     </div>
 </div>
 
@@ -810,6 +813,9 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     <div class="param-details"> 
             
         Closes the <code>rabbitmq:Channel</code>.
+<pre><code class="language-ballerina"> rabbitmq:Error? closeResult = newChannel.close();
+</code></pre>
+
     </div>
 </div>
 
@@ -821,7 +827,11 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     </div>
     <div class="param-details"> 
             
-        Aborts the RabbitMQ <code>rabbitmq:Channel</code>.
+        Aborts the RabbitMQ <code>rabbitmq:Channel</code>. Forces the <code>rabbitmq:Channel</code> to close and waits for all the close operations
+to complete. Any encountered exceptions in the close operations are discarded silently.
+<pre><code class="language-ballerina"> rabbitmq:Error? abortResult = newChannel.abortChannel(320, &quot;Channel Aborted&quot;);
+</code></pre>
+
     </div>
 </div>
 
@@ -849,10 +859,10 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     </div>
     <div class="function-desc">
         
-        <p>Declares a non-exclusive, auto-delete, or non-durable queue with the given configurations.
+        Declares a non-exclusive, auto-delete, or non-durable queue with the given configurations.
 <pre><code class="language-ballerina"> string|rabbitmq:Error? queueResult = newChannel-&gt;queueDeclare();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -903,7 +913,7 @@ generated with the given parameters, or else a <code>rabbitmq:Error</code> if an
     </div>
     <div class="function-desc">
         
-        <p>Declares a non-auto-delete, non-durable exchange with no extra arguments.
+        Declares a non-auto-delete, non-durable exchange with no extra arguments.
 If the arguments are specified, then the exchange is declared accordingly.
 <pre><code class="language-ballerina"> rabbitmq:Error? exchangeResult = newChannel-&gt;exchangeDeclare({
                                                exchangeName: &quot;MyExchange&quot;,
@@ -911,7 +921,7 @@ If the arguments are specified, then the exchange is declared accordingly.
                                                durable: true,
                                                autoDelete: true });
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -961,10 +971,10 @@ If the arguments are specified, then the exchange is declared accordingly.
     </div>
     <div class="function-desc">
         
-        <p>Binds a queue to an exchange with the given binding key.
+        Binds a queue to an exchange with the given binding key.
 <pre><code class="language-ballerina"> rabbitmq:Error? bindResult = newChannel.queueBind(&quot;MyQueue&quot;, &quot;MyExchange&quot;, &quot;routing-key&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1040,11 +1050,11 @@ If the arguments are specified, then the exchange is declared accordingly.
     </div>
     <div class="function-desc">
         
-        <p>Publishes a message. Publishing to a non-existent exchange will result in a channel-level
+        Publishes a message. Publishing to a non-existent exchange will result in a channel-level
 protocol error, which closes the channel.
 <pre><code class="language-ballerina"> rabbitmq:Error? sendResult = newChannel-&gt;basicPublish(&quot;Hello from Ballerina&quot;, &quot;MyQueue&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1133,11 +1143,11 @@ protocol error, which closes the channel.
     </div>
     <div class="function-desc">
         
-        <p>Deletes the queue with the given name although it is in use or has messages in it.
+        Deletes the queue with the given name although it is in use or has messages in it.
 If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the queue is checked before deleting.
 <pre><code class="language-ballerina"> rabbitmq:Error? deleteResult = newChannel-&gt;queueDelete(&quot;MyQueue&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1213,10 +1223,10 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     </div>
     <div class="function-desc">
         
-        <p>Deletes the exchange with the given name.
+        Deletes the exchange with the given name.
 <pre><code class="language-ballerina"> rabbitmq:Error? deleteResult = newChannel-&gt;exchangeDelete(&quot;MyExchange&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1266,10 +1276,10 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     </div>
     <div class="function-desc">
         
-        <p>Purges the content of the given queue.
+        Purges the content of the given queue.
 <pre><code class="language-ballerina"> rabbitmq:Error? purgeResult = newChannel-&gt;queuePurge(&quot;MyQueue&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1319,10 +1329,10 @@ If the <code>ifUnused</code> or <code>ifEmpty</code> parameters are given, the q
     </div>
     <div class="function-desc">
         
-        <p>Retrieves a message synchronously from the given queue providing direct access to the messages in the queue.
+        Retrieves a message synchronously from the given queue providing direct access to the messages in the queue.
 <pre><code class="language-ballerina"> rabbitmq:Message|rabbitmq:Error getResult = newChannel-&gt;basicGet(&quot;MyQueue&quot;, rabbitmq:AUTO_ACK);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1390,10 +1400,10 @@ I/O error is encountered</p>
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the connection, which carries this channel.
+        Retrieves the connection, which carries this channel.
 <pre><code class="language-ballerina"> rabbitmq:Connection|rabbitmq:Error connResult = newChannel.getConnection();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -1425,10 +1435,10 @@ I/O error is encountered</p>
     </div>
     <div class="function-desc">
         
-        <p>Closes the <code>rabbitmq:Channel</code>.
+        Closes the <code>rabbitmq:Channel</code>.
 <pre><code class="language-ballerina"> rabbitmq:Error? closeResult = newChannel.close();
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1492,11 +1502,11 @@ I/O error is encountered</p>
     </div>
     <div class="function-desc">
         
-        <p>Aborts the RabbitMQ <code>rabbitmq:Channel</code>. Forces the <code>rabbitmq:Channel</code> to close and waits for all the close operations
+        Aborts the RabbitMQ <code>rabbitmq:Channel</code>. Forces the <code>rabbitmq:Channel</code> to close and waits for all the close operations
 to complete. Any encountered exceptions in the close operations are discarded silently.
 <pre><code class="language-ballerina"> rabbitmq:Error? abortResult = newChannel.abortChannel(320, &quot;Channel Aborted&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

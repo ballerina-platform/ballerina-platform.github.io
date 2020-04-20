@@ -698,6 +698,9 @@
     <div class="param-details"> 
             
         Stops the <code>socket:Listener</code> gracefully.
+<pre><code class="language-ballerina"> socket:error? result = socketListener.__gracefulStop();
+</code></pre>
+
     </div>
 </div>
 
@@ -710,6 +713,9 @@
     <div class="param-details"> 
             
         Stops the <code>socket:Listener</code> forcefully.
+<pre><code class="language-ballerina"> socket:error? result = socketListener.__immediateStop();
+</code></pre>
+
     </div>
 </div>
 
@@ -722,6 +728,9 @@
     <div class="param-details"> 
             
         Stops consuming messages and detaches the service from the <code>socket:Listener</code>.
+<pre><code class="language-ballerina"> socket:error? result = socketListener.__detach(helloService);
+</code></pre>
+
     </div>
 </div>
 
@@ -741,6 +750,9 @@
     <div class="param-details"> 
             
         Starts the <code>socket:Listener</code>.
+<pre><code class="language-ballerina"> socket:error? result = socketListener.__start();
+</code></pre>
+
     </div>
 </div>
 
@@ -753,6 +765,9 @@
     <div class="param-details"> 
             
         Binds a service to the <code>socket:Listener</code>.
+<pre><code class="language-ballerina"> socket:error? result = socketListener.__attach(helloService);
+</code></pre>
+
     </div>
 </div>
 
@@ -781,10 +796,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Stops the <code>socket:Listener</code> gracefully.
+        Stops the <code>socket:Listener</code> gracefully.
 <pre><code class="language-ballerina"> socket:error? result = socketListener.__gracefulStop();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -816,10 +831,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Stops the <code>socket:Listener</code> forcefully.
+        Stops the <code>socket:Listener</code> forcefully.
 <pre><code class="language-ballerina"> socket:error? result = socketListener.__immediateStop();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -851,10 +866,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Stops consuming messages and detaches the service from the <code>socket:Listener</code>.
+        Stops consuming messages and detaches the service from the <code>socket:Listener</code>.
 <pre><code class="language-ballerina"> socket:error? result = socketListener.__detach(helloService);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -909,10 +924,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Starts the <code>socket:Listener</code>.
+        Starts the <code>socket:Listener</code>.
 <pre><code class="language-ballerina"> socket:error? result = socketListener.__start();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -944,10 +959,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Binds a service to the <code>socket:Listener</code>.
+        Binds a service to the <code>socket:Listener</code>.
 <pre><code class="language-ballerina"> socket:error? result = socketListener.__attach(helloService);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

@@ -802,6 +802,9 @@
     <div class="param-details"> 
             
         Checks whether there's a record left to be read.
+<pre><code class="language-ballerina"> boolean hasNext = readableRecChannel.hasNext();
+</code></pre>
+
     </div>
 </div>
 
@@ -814,6 +817,9 @@
     <div class="param-details"> 
             
         Get the next record from the input/output resource.
+<pre><code class="language-ballerina"> string[]|io:Error record = readableRecChannel.getNext();
+</code></pre>
+
     </div>
 </div>
 
@@ -826,6 +832,9 @@
     <div class="param-details"> 
             
         Closes a given record channel.
+<pre><code class="language-ballerina"> io:Error err = readableRecChannel.close();
+</code></pre>
+
     </div>
 </div>
 
@@ -853,10 +862,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Checks whether there's a record left to be read.
+        Checks whether there's a record left to be read.
 <pre><code class="language-ballerina"> boolean hasNext = readableRecChannel.hasNext();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -888,10 +897,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Get the next record from the input/output resource.
+        Get the next record from the input/output resource.
 <pre><code class="language-ballerina"> string[]|io:Error record = readableRecChannel.getNext();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -923,10 +932,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Closes a given record channel.
+        Closes a given record channel.
 <pre><code class="language-ballerina"> io:Error err = readableRecChannel.close();
 </code></pre>
-</p>
+
     </div>
     
 

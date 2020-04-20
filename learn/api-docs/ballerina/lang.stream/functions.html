@@ -684,6 +684,8 @@
                                     <div class="function-desc">
                                         
                                         Closes a stream.
+This releases any system resources being used by the stream.
+
                                     </div>
                                 </td>
                             </tr>
@@ -696,6 +698,7 @@
                                     <div class="function-desc">
                                         
                                         Selects the members from a stream for which a function returns true.
+
                                     </div>
                                 </td>
                             </tr>
@@ -708,6 +711,8 @@
                                     <div class="function-desc">
                                         
                                         Applies a function to each member of a stream.
+The Combining function is applied to each member of stream in order.
+
                                     </div>
                                 </td>
                             </tr>
@@ -720,6 +725,7 @@
                                     <div class="function-desc">
                                         
                                         Returns an iterator over a stream.
+
                                     </div>
                                 </td>
                             </tr>
@@ -732,6 +738,7 @@
                                     <div class="function-desc">
                                         
                                         Applies a function to each member of a stream and returns a stream of the results.
+
                                     </div>
                                 </td>
                             </tr>
@@ -744,6 +751,7 @@
                                     <div class="function-desc">
                                         
                                         Returns the next element in the stream wrapped in a record or () if the stream ends.
+
                                     </div>
                                 </td>
                             </tr>
@@ -756,6 +764,9 @@
                                     <div class="function-desc">
                                         
                                         Combines the members of a stream using a combining function.
+The combining function takes the combined value so far and a member of the stream,
+and returns a new combined value.
+
                                     </div>
                                 </td>
                             </tr>
@@ -781,9 +792,9 @@
     </div>
     <div class="function-desc">
         
-        <p>Closes a stream.
+        Closes a stream.
 This releases any system resources being used by the stream.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -833,8 +844,8 @@ This releases any system resources being used by the stream.
     </div>
     <div class="function-desc">
         
-        <p>Selects the members from a stream for which a function returns true.
-</p>
+        Selects the members from a stream for which a function returns true.
+
     </div>
     
         <div class="data-wrapper">
@@ -897,9 +908,9 @@ This releases any system resources being used by the stream.
     </div>
     <div class="function-desc">
         
-        <p>Applies a function to each member of a stream.
+        Applies a function to each member of a stream.
 The Combining function is applied to each member of stream in order.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -962,8 +973,8 @@ The Combining function is applied to each member of stream in order.
     </div>
     <div class="function-desc">
         
-        <p>Returns an iterator over a stream.
-</p>
+        Returns an iterator over a stream.
+
     </div>
     
         <div class="data-wrapper">
@@ -1013,8 +1024,8 @@ The Combining function is applied to each member of stream in order.
     </div>
     <div class="function-desc">
         
-        <p>Applies a function to each member of a stream and returns a stream of the results.
-</p>
+        Applies a function to each member of a stream and returns a stream of the results.
+
     </div>
     
         <div class="data-wrapper">
@@ -1077,8 +1088,8 @@ The Combining function is applied to each member of stream in order.
     </div>
     <div class="function-desc">
         
-        <p>Returns the next element in the stream wrapped in a record or () if the stream ends.
-</p>
+        Returns the next element in the stream wrapped in a record or () if the stream ends.
+
     </div>
     
         <div class="data-wrapper">
@@ -1129,10 +1140,10 @@ otherwise returns ()</p>
     </div>
     <div class="function-desc">
         
-        <p>Combines the members of a stream using a combining function.
+        Combines the members of a stream using a combining function.
 The combining function takes the combined value so far and a member of the stream,
 and returns a new combined value.
-</p>
+
     </div>
     
         <div class="data-wrapper">

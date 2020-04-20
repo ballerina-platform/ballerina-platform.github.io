@@ -796,6 +796,10 @@
                                     <div class="function-desc">
                                         
                                         Lexicographically compares strings using their Unicode code points.
+This orders strings in a consistent and well-defined way,
+but the ordering will often not be consistent with cultural expectations
+for sorted order.
+
                                     </div>
                                 </td>
                             </tr>
@@ -808,6 +812,7 @@
                                     <div class="function-desc">
                                         
                                         Concatenates zero or more strings.
+
                                     </div>
                                 </td>
                             </tr>
@@ -820,6 +825,7 @@
                                     <div class="function-desc">
                                         
                                         Tests whether a string ends with another string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -832,6 +838,8 @@
                                     <div class="function-desc">
                                         
                                         Tests whether two strings are the same, ignoring the case of ASCII characters.
+A character in the range a-z is treated the same as the corresponding character in the range A-Z.
+
                                     </div>
                                 </td>
                             </tr>
@@ -844,6 +852,7 @@
                                     <div class="function-desc">
                                         
                                         Constructs a string from its UTF-8 representation in <code>bytes</code>.
+
                                     </div>
                                 </td>
                             </tr>
@@ -856,6 +865,9 @@
                                     <div class="function-desc">
                                         
                                         Constructs a single character string from a code point.
+An int is a valid code point if it is in the range 0 to 0x10FFFF inclusive,
+but not in the range 0xD800 or 0xDFFF inclusive.
+
                                     </div>
                                 </td>
                             </tr>
@@ -868,6 +880,9 @@
                                     <div class="function-desc">
                                         
                                         Constructs a string from an array of code points.
+An int is a valid code point if it is in the range 0 to 0x10FFFF inclusive,
+but not in the range 0xD800 or 0xDFFF inclusive.
+
                                     </div>
                                 </td>
                             </tr>
@@ -880,6 +895,7 @@
                                     <div class="function-desc">
                                         
                                         Returns the code point of a character in a string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -892,6 +908,7 @@
                                     <div class="function-desc">
                                         
                                         Finds the first occurrence of one string in another string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -904,6 +921,8 @@
                                     <div class="function-desc">
                                         
                                         Returns an iterator over the string.
+The iterator will yield the substrings of length 1 in order.
+
                                     </div>
                                 </td>
                             </tr>
@@ -916,6 +935,7 @@
                                     <div class="function-desc">
                                         
                                         Joins zero or more strings together with a separator.
+
                                     </div>
                                 </td>
                             </tr>
@@ -928,6 +948,7 @@
                                     <div class="function-desc">
                                         
                                         Finds the last occurrence of one string in another string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -940,6 +961,7 @@
                                     <div class="function-desc">
                                         
                                         Returns the length of the string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -952,6 +974,7 @@
                                     <div class="function-desc">
                                         
                                         Tests whether a string starts with another string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -964,6 +987,7 @@
                                     <div class="function-desc">
                                         
                                         Returns a substring of a string.
+
                                     </div>
                                 </td>
                             </tr>
@@ -976,6 +1000,7 @@
                                     <div class="function-desc">
                                         
                                         Represents <code>str</code> as an array of bytes using UTF-8.
+
                                     </div>
                                 </td>
                             </tr>
@@ -988,6 +1013,7 @@
                                     <div class="function-desc">
                                         
                                         Converts a single character string to a code point.
+
                                     </div>
                                 </td>
                             </tr>
@@ -1000,6 +1026,7 @@
                                     <div class="function-desc">
                                         
                                         Converts a string to an array of code points.
+
                                     </div>
                                 </td>
                             </tr>
@@ -1012,6 +1039,8 @@
                                     <div class="function-desc">
                                         
                                         Converts occurrences of A-Z to a-z.
+Other characters are left unchanged.
+
                                     </div>
                                 </td>
                             </tr>
@@ -1024,6 +1053,8 @@
                                     <div class="function-desc">
                                         
                                         Converts occurrences of a-z to A-Z.
+Other characters are left unchanged.
+
                                     </div>
                                 </td>
                             </tr>
@@ -1036,6 +1067,8 @@
                                     <div class="function-desc">
                                         
                                         Removes ASCII white space characters from the start and end of a string.
+The ASCII white space characters are 0x9...0xD, 0x20.
+
                                     </div>
                                 </td>
                             </tr>
@@ -1061,11 +1094,11 @@
     </div>
     <div class="function-desc">
         
-        <p>Lexicographically compares strings using their Unicode code points.
+        Lexicographically compares strings using their Unicode code points.
 This orders strings in a consistent and well-defined way,
 but the ordering will often not be consistent with cultural expectations
 for sorted order.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1129,8 +1162,8 @@ according as <code>str1</code> is less than, equal to or greater than <code>str2
     </div>
     <div class="function-desc">
         
-        <p>Concatenates zero or more strings.
-</p>
+        Concatenates zero or more strings.
+
     </div>
     
         <div class="data-wrapper">
@@ -1180,8 +1213,8 @@ according as <code>str1</code> is less than, equal to or greater than <code>str2
     </div>
     <div class="function-desc">
         
-        <p>Tests whether a string ends with another string.
-</p>
+        Tests whether a string ends with another string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1244,9 +1277,9 @@ according as <code>str1</code> is less than, equal to or greater than <code>str2
     </div>
     <div class="function-desc">
         
-        <p>Tests whether two strings are the same, ignoring the case of ASCII characters.
+        Tests whether two strings are the same, ignoring the case of ASCII characters.
 A character in the range a-z is treated the same as the corresponding character in the range A-Z.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1310,8 +1343,8 @@ ASCII letters as the same; false, otherwise</p>
     </div>
     <div class="function-desc">
         
-        <p>Constructs a string from its UTF-8 representation in <code>bytes</code>.
-</p>
+        Constructs a string from its UTF-8 representation in <code>bytes</code>.
+
     </div>
     
         <div class="data-wrapper">
@@ -1361,10 +1394,10 @@ ASCII letters as the same; false, otherwise</p>
     </div>
     <div class="function-desc">
         
-        <p>Constructs a single character string from a code point.
+        Constructs a single character string from a code point.
 An int is a valid code point if it is in the range 0 to 0x10FFFF inclusive,
 but not in the range 0xD800 or 0xDFFF inclusive.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1415,10 +1448,10 @@ if <code>codePoint</code> is not a valid code point</p>
     </div>
     <div class="function-desc">
         
-        <p>Constructs a string from an array of code points.
+        Constructs a string from an array of code points.
 An int is a valid code point if it is in the range 0 to 0x10FFFF inclusive,
 but not in the range 0xD800 or 0xDFFF inclusive.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1469,8 +1502,8 @@ if any member of <code>codePoints</code> is not a valid code point</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns the code point of a character in a string.
-</p>
+        Returns the code point of a character in a string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1533,8 +1566,8 @@ if any member of <code>codePoints</code> is not a valid code point</p>
     </div>
     <div class="function-desc">
         
-        <p>Finds the first occurrence of one string in another string.
-</p>
+        Finds the first occurrence of one string in another string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1611,9 +1644,9 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns an iterator over the string.
+        Returns an iterator over the string.
 The iterator will yield the substrings of length 1 in order.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1663,8 +1696,8 @@ The iterator will yield the substrings of length 1 in order.
     </div>
     <div class="function-desc">
         
-        <p>Joins zero or more strings together with a separator.
-</p>
+        Joins zero or more strings together with a separator.
+
     </div>
     
         <div class="data-wrapper">
@@ -1728,8 +1761,8 @@ with <code>separator</code> in between them</p>
     </div>
     <div class="function-desc">
         
-        <p>Finds the last occurrence of one string in another string.
-</p>
+        Finds the last occurrence of one string in another string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1806,8 +1839,8 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns the length of the string.
-</p>
+        Returns the length of the string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1857,8 +1890,8 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Tests whether a string starts with another string.
-</p>
+        Tests whether a string starts with another string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1921,8 +1954,8 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Returns a substring of a string.
-</p>
+        Returns a substring of a string.
+
     </div>
     
         <div class="data-wrapper">
@@ -1998,8 +2031,8 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Represents <code>str</code> as an array of bytes using UTF-8.
-</p>
+        Represents <code>str</code> as an array of bytes using UTF-8.
+
     </div>
     
         <div class="data-wrapper">
@@ -2049,8 +2082,8 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Converts a single character string to a code point.
-</p>
+        Converts a single character string to a code point.
+
     </div>
     
         <div class="data-wrapper">
@@ -2100,8 +2133,8 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Converts a string to an array of code points.
-</p>
+        Converts a string to an array of code points.
+
     </div>
     
         <div class="data-wrapper">
@@ -2151,9 +2184,9 @@ or <code>()</code> if there is no such occurrence</p>
     </div>
     <div class="function-desc">
         
-        <p>Converts occurrences of A-Z to a-z.
+        Converts occurrences of A-Z to a-z.
 Other characters are left unchanged.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -2203,9 +2236,9 @@ Other characters are left unchanged.
     </div>
     <div class="function-desc">
         
-        <p>Converts occurrences of a-z to A-Z.
+        Converts occurrences of a-z to A-Z.
 Other characters are left unchanged.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -2255,9 +2288,9 @@ Other characters are left unchanged.
     </div>
     <div class="function-desc">
         
-        <p>Removes ASCII white space characters from the start and end of a string.
+        Removes ASCII white space characters from the start and end of a string.
 The ASCII white space characters are 0x9...0xD, 0x20.
-</p>
+
     </div>
     
         <div class="data-wrapper">

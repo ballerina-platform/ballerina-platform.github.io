@@ -683,7 +683,8 @@ producers.
     </div>
     <div class="param-details"> 
             
-        Closes the serialization process.
+        Closes the serialization process. This function runs after the serialization process is done.
+
     </div>
 </div>
 
@@ -695,7 +696,9 @@ producers.
     </div>
     <div class="param-details"> 
             
-        Serializes the provided data.
+        Serializes the provided data. Implement this to serialize any data type and return the <code>byte[]</code> value to use in
+the Kafka producer.
+
     </div>
 </div>
 
@@ -718,8 +721,8 @@ producers.
     </div>
     <div class="function-desc">
         
-        <p>Closes the serialization process. This function runs after the serialization process is done.
-</p>
+        Closes the serialization process. This function runs after the serialization process is done.
+
     </div>
     
 
@@ -741,9 +744,9 @@ producers.
     </div>
     <div class="function-desc">
         
-        <p>Serializes the provided data. Implement this to serialize any data type and return the <code>byte[]</code> value to use in
+        Serializes the provided data. Implement this to serialize any data type and return the <code>byte[]</code> value to use in
 the Kafka producer.
-</p>
+
     </div>
     
         <div class="data-wrapper">

@@ -729,7 +729,8 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     </div>
     <div class="param-details"> 
             
-        Stops the service listener gracefully.
+        Stops the service listener gracefully. Already-accepted requests will be served before connection closure.
+
     </div>
 </div>
 
@@ -741,7 +742,8 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     </div>
     <div class="param-details"> 
             
-        Stops the service listener immediately.
+        Stops the service listener immediately. It is not implemented yet.
+
     </div>
 </div>
 
@@ -753,7 +755,9 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     </div>
     <div class="param-details"> 
             
-        Detaches a Http or WebSocket service from the listener.
+        Detaches a Http or WebSocket service from the listener. Note that detaching a WebSocket service would not affect
+The functionality of the existing connections.
+
     </div>
 </div>
 
@@ -766,6 +770,7 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     <div class="param-details"> 
             
         Gets invoked during module initialization to initialize the endpoint.
+
     </div>
 </div>
 
@@ -797,6 +802,7 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     <div class="param-details"> 
             
         Starts the registered service programmatically.
+
     </div>
 </div>
 
@@ -809,6 +815,7 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     <div class="param-details"> 
             
         Attaches a service to the listener.
+
     </div>
 </div>
 
@@ -837,8 +844,8 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     </div>
     <div class="function-desc">
         
-        <p>Stops the service listener gracefully. Already-accepted requests will be served before connection closure.
-</p>
+        Stops the service listener gracefully. Already-accepted requests will be served before connection closure.
+
     </div>
     
 
@@ -870,8 +877,8 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     </div>
     <div class="function-desc">
         
-        <p>Stops the service listener immediately. It is not implemented yet.
-</p>
+        Stops the service listener immediately. It is not implemented yet.
+
     </div>
     
 
@@ -903,9 +910,9 @@ remote callers. The <code>Listener</code> is responsible for initializing the en
     </div>
     <div class="function-desc">
         
-        <p>Detaches a Http or WebSocket service from the listener. Note that detaching a WebSocket service would not affect
+        Detaches a Http or WebSocket service from the listener. Note that detaching a WebSocket service would not affect
 The functionality of the existing connections.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -950,8 +957,8 @@ The functionality of the existing connections.
     </div>
     <div class="function-desc">
         
-        <p>Gets invoked during module initialization to initialize the endpoint.
-</p>
+        Gets invoked during module initialization to initialize the endpoint.
+
     </div>
     
         <div class="data-wrapper">
@@ -991,7 +998,7 @@ The functionality of the existing connections.
     </div>
     <div class="function-desc">
         
-        <p></p>
+        
     </div>
     
 
@@ -1027,8 +1034,8 @@ The functionality of the existing connections.
     </div>
     <div class="function-desc">
         
-        <p>Starts the registered service programmatically.
-</p>
+        Starts the registered service programmatically.
+
     </div>
     
 
@@ -1060,8 +1067,8 @@ The functionality of the existing connections.
     </div>
     <div class="function-desc">
         
-        <p>Attaches a service to the listener.
-</p>
+        Attaches a service to the listener.
+
     </div>
     
         <div class="data-wrapper">

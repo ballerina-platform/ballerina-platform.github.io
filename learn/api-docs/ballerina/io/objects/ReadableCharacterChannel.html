@@ -782,7 +782,11 @@
     </div>
     <div class="param-details"> 
             
-        Reads a given number of characters.
+        Reads a given number of characters. This will attempt to read up to the <code>numberOfChars</code> characters of the channel.
+An <code>io:EofError</code> will return once the channel reaches the end.
+<pre><code class="language-ballerina"> string|io:Error result = readableCharChannel.read(1000);
+</code></pre>
+
     </div>
 </div>
 
@@ -795,6 +799,9 @@
     <div class="param-details"> 
             
         Reads a JSON from the given channel.
+<pre><code class="language-ballerina"> json|io:Error result = readableCharChannel.readJson();
+</code></pre>
+
     </div>
 </div>
 
@@ -807,6 +814,9 @@
     <div class="param-details"> 
             
         Reads an XML from the given channel.
+<pre><code class="language-ballerina"> json|io:Error result = readableCharChannel.readXml();
+</code></pre>
+
     </div>
 </div>
 
@@ -819,6 +829,9 @@
     <div class="param-details"> 
             
         Closes a given character channel.
+<pre><code class="language-ballerina"> io:Error? err = readableCharChannel.close();
+</code></pre>
+
     </div>
 </div>
 
@@ -846,11 +859,11 @@
     </div>
     <div class="function-desc">
         
-        <p>Reads a given number of characters. This will attempt to read up to the <code>numberOfChars</code> characters of the channel.
+        Reads a given number of characters. This will attempt to read up to the <code>numberOfChars</code> characters of the channel.
 An <code>io:EofError</code> will return once the channel reaches the end.
 <pre><code class="language-ballerina"> string|io:Error result = readableCharChannel.read(1000);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -900,10 +913,10 @@ An <code>io:EofError</code> will return once the channel reaches the end.
     </div>
     <div class="function-desc">
         
-        <p>Reads a JSON from the given channel.
+        Reads a JSON from the given channel.
 <pre><code class="language-ballerina"> json|io:Error result = readableCharChannel.readJson();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -935,10 +948,10 @@ An <code>io:EofError</code> will return once the channel reaches the end.
     </div>
     <div class="function-desc">
         
-        <p>Reads an XML from the given channel.
+        Reads an XML from the given channel.
 <pre><code class="language-ballerina"> json|io:Error result = readableCharChannel.readXml();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -970,10 +983,10 @@ An <code>io:EofError</code> will return once the channel reaches the end.
     </div>
     <div class="function-desc">
         
-        <p>Closes a given character channel.
+        Closes a given character channel.
 <pre><code class="language-ballerina"> io:Error? err = readableCharChannel.close();
 </code></pre>
-</p>
+
     </div>
     
 

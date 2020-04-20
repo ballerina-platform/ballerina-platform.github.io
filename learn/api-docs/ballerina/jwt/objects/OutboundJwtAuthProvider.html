@@ -715,6 +715,9 @@ The <code>jwt:OutboundJwtAuthProvider</code> is another implementation of the <c
     <div class="param-details"> 
             
         Generates the token for JWT authentication.
+<pre><code class="language-ballerina"> string|auth:Error token = outboundJwtAuthProvider.generateToken();
+</code></pre>
+
     </div>
 </div>
 
@@ -727,6 +730,7 @@ The <code>jwt:OutboundJwtAuthProvider</code> is another implementation of the <c
     <div class="param-details"> 
             
         Inspects the incoming data and generates the token for JWT authentication.
+
     </div>
 </div>
 
@@ -823,10 +827,10 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Generates the token for JWT authentication.
+        Generates the token for JWT authentication.
 <pre><code class="language-ballerina"> string|auth:Error token = outboundJwtAuthProvider.generateToken();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -858,8 +862,8 @@ contentWrapper.addEventListener("scroll", event => {
     </div>
     <div class="function-desc">
         
-        <p>Inspects the incoming data and generates the token for JWT authentication.
-</p>
+        Inspects the incoming data and generates the token for JWT authentication.
+
     </div>
     
         <div class="data-wrapper">

@@ -676,6 +676,7 @@
                                     <div class="function-desc">
                                         
                                         Returns absolute value of an int.
+
                                     </div>
                                 </td>
                             </tr>
@@ -688,6 +689,11 @@
                                     <div class="function-desc">
                                         
                                         Returns the integer that <code>s</code> represents in hexadecimal.
+Both uppercase A-F and lowercase a-f are allowed.
+It may start with an optional <code>+</code> or <code>-</code> sign.
+No <code>0x</code> or <code>0X</code> prefix is allowed.
+Returns an error if the <code>s</code> is not in an allowed format.
+
                                     </div>
                                 </td>
                             </tr>
@@ -700,6 +706,10 @@
                                     <div class="function-desc">
                                         
                                         Returns the integer that <code>s</code> represents in decimal.
+Returns error if <code>s</code> is not the decimal representation of an integer.
+The first character may be <code>+</code> or <code>-</code>.
+This is the inverse of <code>value:toString</code> applied to an <code>int</code>.
+
                                     </div>
                                 </td>
                             </tr>
@@ -712,6 +722,7 @@
                                     <div class="function-desc">
                                         
                                         Maximum of one or more int values.
+
                                     </div>
                                 </td>
                             </tr>
@@ -737,6 +748,7 @@
                                     <div class="function-desc">
                                         
                                         Returns sum of zero or more int values.
+
                                     </div>
                                 </td>
                             </tr>
@@ -749,6 +761,10 @@
                                     <div class="function-desc">
                                         
                                         Returns representation of <code>n</code> as hexdecimal string.
+There is no <code>0x</code> prefix. Lowercase letters a-f are used.
+Negative numbers will have a <code>-</code> prefix. No sign for
+non-negative numbers.
+
                                     </div>
                                 </td>
                             </tr>
@@ -774,8 +790,8 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns absolute value of an int.
-</p>
+        Returns absolute value of an int.
+
     </div>
     
         <div class="data-wrapper">
@@ -825,12 +841,12 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns the integer that <code>s</code> represents in hexadecimal.
+        Returns the integer that <code>s</code> represents in hexadecimal.
 Both uppercase A-F and lowercase a-f are allowed.
 It may start with an optional <code>+</code> or <code>-</code> sign.
 No <code>0x</code> or <code>0X</code> prefix is allowed.
 Returns an error if the <code>s</code> is not in an allowed format.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -880,11 +896,11 @@ Returns an error if the <code>s</code> is not in an allowed format.
     </div>
     <div class="function-desc">
         
-        <p>Returns the integer that <code>s</code> represents in decimal.
+        Returns the integer that <code>s</code> represents in decimal.
 Returns error if <code>s</code> is not the decimal representation of an integer.
 The first character may be <code>+</code> or <code>-</code>.
 This is the inverse of <code>value:toString</code> applied to an <code>int</code>.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -934,8 +950,8 @@ This is the inverse of <code>value:toString</code> applied to an <code>int</code
     </div>
     <div class="function-desc">
         
-        <p>Maximum of one or more int values.
-</p>
+        Maximum of one or more int values.
+
     </div>
     
         <div class="data-wrapper">
@@ -998,8 +1014,8 @@ This is the inverse of <code>value:toString</code> applied to an <code>int</code
     </div>
     <div class="function-desc">
         
-        <p>Minimum of one or more int values
-</p>
+        Minimum of one or more int values
+
     </div>
     
         <div class="data-wrapper">
@@ -1062,8 +1078,8 @@ This is the inverse of <code>value:toString</code> applied to an <code>int</code
     </div>
     <div class="function-desc">
         
-        <p>Returns sum of zero or more int values.
-</p>
+        Returns sum of zero or more int values.
+
     </div>
     
         <div class="data-wrapper">
@@ -1113,11 +1129,11 @@ This is the inverse of <code>value:toString</code> applied to an <code>int</code
     </div>
     <div class="function-desc">
         
-        <p>Returns representation of <code>n</code> as hexdecimal string.
+        Returns representation of <code>n</code> as hexdecimal string.
 There is no <code>0x</code> prefix. Lowercase letters a-f are used.
 Negative numbers will have a <code>-</code> prefix. No sign for
 non-negative numbers.
-</p>
+
     </div>
     
         <div class="data-wrapper">

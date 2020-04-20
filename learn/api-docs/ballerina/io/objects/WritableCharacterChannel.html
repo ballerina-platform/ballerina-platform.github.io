@@ -783,6 +783,9 @@
     <div class="param-details"> 
             
         Writes a given sequence of characters (string).
+<pre><code class="language-ballerina"> int|io:Error result = writableCharChannel.write(&quot;Content&quot;, 0);
+</code></pre>
+
     </div>
 </div>
 
@@ -795,6 +798,9 @@
     <div class="param-details"> 
             
         Writes a given JSON to the given channel.
+<pre><code class="language-ballerina"> io:Error? err = writableCharChannel.writeJson(inputJson, 0);
+</code></pre>
+
     </div>
 </div>
 
@@ -807,6 +813,9 @@
     <div class="param-details"> 
             
         Writes a given XML to the channel.
+<pre><code class="language-ballerina"> io:Error? err = writableCharChannel.writeXml(inputXml, 0);
+</code></pre>
+
     </div>
 </div>
 
@@ -819,6 +828,9 @@
     <div class="param-details"> 
             
         Closes a given <code>WritableCharacterChannel</code> channel.
+<pre><code class="language-ballerina"> io:Error err = writableCharChannel.close();
+</code></pre>
+
     </div>
 </div>
 
@@ -846,10 +858,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Writes a given sequence of characters (string).
+        Writes a given sequence of characters (string).
 <pre><code class="language-ballerina"> int|io:Error result = writableCharChannel.write(&quot;Content&quot;, 0);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -912,10 +924,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Writes a given JSON to the given channel.
+        Writes a given JSON to the given channel.
 <pre><code class="language-ballerina"> io:Error? err = writableCharChannel.writeJson(inputJson, 0);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -965,10 +977,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Writes a given XML to the channel.
+        Writes a given XML to the channel.
 <pre><code class="language-ballerina"> io:Error? err = writableCharChannel.writeXml(inputXml, 0);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1018,10 +1030,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Closes a given <code>WritableCharacterChannel</code> channel.
+        Closes a given <code>WritableCharacterChannel</code> channel.
 <pre><code class="language-ballerina"> io:Error err = writableCharChannel.close();
 </code></pre>
-</p>
+
     </div>
     
 

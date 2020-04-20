@@ -676,6 +676,7 @@
                                     <div class="function-desc">
                                         
                                         Add record to the table.
+
                                     </div>
                                 </td>
                             </tr>
@@ -687,7 +688,9 @@
                                 <td width="70%">
                                     <div class="function-desc">
                                         
-                                        Releases the database connection.
+                                        Releases the database connection. If the table data is fully iterated, it will be automatically closed. This explicit
+close is required only if it is not fully iterated.
+
                                     </div>
                                 </td>
                             </tr>
@@ -700,6 +703,7 @@
                                     <div class="function-desc">
                                         
                                         Retrives the current row and return a record with the data in the columns.
+
                                     </div>
                                 </td>
                             </tr>
@@ -711,7 +715,8 @@
                                 <td width="70%">
                                     <div class="function-desc">
                                         
-                                        Checks for a new row in the given table.
+                                        Checks for a new row in the given table. If a new row is found, moves the cursor to it.
+
                                     </div>
                                 </td>
                             </tr>
@@ -724,6 +729,8 @@
                                     <div class="function-desc">
                                         
                                         Returns an iterator over the members of <code>tbl</code>.
+The iterator will iterate over the rows of the table in order.
+
                                     </div>
                                 </td>
                             </tr>
@@ -736,6 +743,7 @@
                                     <div class="function-desc">
                                         
                                         Remove data from the table.
+
                                     </div>
                                 </td>
                             </tr>
@@ -761,8 +769,8 @@
     </div>
     <div class="function-desc">
         
-        <p>Add record to the table.
-</p>
+        Add record to the table.
+
     </div>
     
         <div class="data-wrapper">
@@ -820,9 +828,9 @@
     </div>
     <div class="function-desc">
         
-        <p>Releases the database connection. If the table data is fully iterated, it will be automatically closed. This explicit
+        Releases the database connection. If the table data is fully iterated, it will be automatically closed. This explicit
 close is required only if it is not fully iterated.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -862,8 +870,8 @@ close is required only if it is not fully iterated.
     </div>
     <div class="function-desc">
         
-        <p>Retrives the current row and return a record with the data in the columns.
-</p>
+        Retrives the current row and return a record with the data in the columns.
+
     </div>
     
         <div class="data-wrapper">
@@ -913,8 +921,8 @@ close is required only if it is not fully iterated.
     </div>
     <div class="function-desc">
         
-        <p>Checks for a new row in the given table. If a new row is found, moves the cursor to it.
-</p>
+        Checks for a new row in the given table. If a new row is found, moves the cursor to it.
+
     </div>
     
         <div class="data-wrapper">
@@ -964,9 +972,9 @@ close is required only if it is not fully iterated.
     </div>
     <div class="function-desc">
         
-        <p>Returns an iterator over the members of <code>tbl</code>.
+        Returns an iterator over the members of <code>tbl</code>.
 The iterator will iterate over the rows of the table in order.
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -1016,8 +1024,8 @@ The iterator will iterate over the rows of the table in order.
     </div>
     <div class="function-desc">
         
-        <p>Remove data from the table.
-</p>
+        Remove data from the table.
+
     </div>
     
         <div class="data-wrapper">

@@ -754,7 +754,12 @@
     </div>
     <div class="param-details"> 
             
-        Source bytes from a given input/output resource.
+        Source bytes from a given input/output resource. The number of bytes returned will be &lt; 0 if the file reached its end.
+This operation will be asynchronous in which the total number of required bytes might not be returned at a given
+time. An <code>io:EofError</code> will return once the channel reaches the end.
+<pre><code class="language-ballerina"> byte[]|io:Error result = readableByteChannel.read(1000);
+</code></pre>
+
     </div>
 </div>
 
@@ -767,6 +772,9 @@
     <div class="param-details"> 
             
         Encodes a given <code>ReadableByteChannel</code> using the Base64 encoding scheme.
+<pre><code class="language-ballerina"> ReadableByteChannel|Error encodedChannel = readableByteChannel.base64Encode();
+</code></pre>
+
     </div>
 </div>
 
@@ -779,6 +787,9 @@
     <div class="param-details"> 
             
         Decodes a given <code>ReadableByteChannel</code> using the Base64 encoding scheme.
+<pre><code class="language-ballerina"> ReadableByteChannel|Error encodedChannel = readableByteChannel.base64Decode();
+</code></pre>
+
     </div>
 </div>
 
@@ -791,6 +802,9 @@
     <div class="param-details"> 
             
         Closes a given <code>ReadableByteChannel</code>.
+<pre><code class="language-ballerina"> io:Error? err = readableByteChannel.close();
+</code></pre>
+
     </div>
 </div>
 
@@ -818,12 +832,12 @@
     </div>
     <div class="function-desc">
         
-        <p>Source bytes from a given input/output resource. The number of bytes returned will be &lt; 0 if the file reached its end.
+        Source bytes from a given input/output resource. The number of bytes returned will be &lt; 0 if the file reached its end.
 This operation will be asynchronous in which the total number of required bytes might not be returned at a given
 time. An <code>io:EofError</code> will return once the channel reaches the end.
 <pre><code class="language-ballerina"> byte[]|io:Error result = readableByteChannel.read(1000);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -873,10 +887,10 @@ time. An <code>io:EofError</code> will return once the channel reaches the end.
     </div>
     <div class="function-desc">
         
-        <p>Encodes a given <code>ReadableByteChannel</code> using the Base64 encoding scheme.
+        Encodes a given <code>ReadableByteChannel</code> using the Base64 encoding scheme.
 <pre><code class="language-ballerina"> ReadableByteChannel|Error encodedChannel = readableByteChannel.base64Encode();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -908,10 +922,10 @@ time. An <code>io:EofError</code> will return once the channel reaches the end.
     </div>
     <div class="function-desc">
         
-        <p>Decodes a given <code>ReadableByteChannel</code> using the Base64 encoding scheme.
+        Decodes a given <code>ReadableByteChannel</code> using the Base64 encoding scheme.
 <pre><code class="language-ballerina"> ReadableByteChannel|Error encodedChannel = readableByteChannel.base64Decode();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -943,10 +957,10 @@ time. An <code>io:EofError</code> will return once the channel reaches the end.
     </div>
     <div class="function-desc">
         
-        <p>Closes a given <code>ReadableByteChannel</code>.
+        Closes a given <code>ReadableByteChannel</code>.
 <pre><code class="language-ballerina"> io:Error? err = readableByteChannel.close();
 </code></pre>
-</p>
+
     </div>
     
 

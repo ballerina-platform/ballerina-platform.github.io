@@ -680,6 +680,9 @@
                                     <div class="function-desc">
                                         
                                         Retrieves the array of <code>runtime:CallStackElement</code> instances.
+<pre><code class="language-ballerina"> runtime:CallStackElement[] callStackElements = runtime:getCallStack();
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -692,6 +695,9 @@
                                     <div class="function-desc">
                                         
                                         Returns the <code>runtime:InvocationContext</code> instance.
+<pre><code class="language-ballerina"> runtime:InvocationContext invocationContext = runtime:getInvocationContext();
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -704,6 +710,9 @@
                                     <div class="function-desc">
                                         
                                         Returns the system property value associated with the specified property name.
+<pre><code class="language-ballerina"> string userHome = runtime:getProperty(&quot;user.home&quot;);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -716,6 +725,9 @@
                                     <div class="function-desc">
                                         
                                         Halts the current worker for a predefined amount of time.
+<pre><code class="language-ballerina"> runtime:sleep(1000);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -728,6 +740,9 @@
                                     <div class="function-desc">
                                         
                                         Gives a timeout to the current worker for a predefined amount of time.
+<pre><code class="language-ballerina"> future&lt;()&gt; f1 = runtime:timeout(2000);
+</code></pre>
+
                                     </div>
                                 </td>
                             </tr>
@@ -753,7 +768,7 @@
     </div>
     <div class="function-desc">
         
-        <p></p>
+        
     </div>
     
         <div class="data-wrapper">
@@ -801,10 +816,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Retrieves the array of <code>runtime:CallStackElement</code> instances.
+        Retrieves the array of <code>runtime:CallStackElement</code> instances.
 <pre><code class="language-ballerina"> runtime:CallStackElement[] callStackElements = runtime:getCallStack();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -836,10 +851,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns the <code>runtime:InvocationContext</code> instance.
+        Returns the <code>runtime:InvocationContext</code> instance.
 <pre><code class="language-ballerina"> runtime:InvocationContext invocationContext = runtime:getInvocationContext();
 </code></pre>
-</p>
+
     </div>
     
 
@@ -871,10 +886,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Returns the system property value associated with the specified property name.
+        Returns the system property value associated with the specified property name.
 <pre><code class="language-ballerina"> string userHome = runtime:getProperty(&quot;user.home&quot;);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -919,10 +934,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Halts the current worker for a predefined amount of time.
+        Halts the current worker for a predefined amount of time.
 <pre><code class="language-ballerina"> runtime:sleep(1000);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">
@@ -962,10 +977,10 @@
     </div>
     <div class="function-desc">
         
-        <p>Gives a timeout to the current worker for a predefined amount of time.
+        Gives a timeout to the current worker for a predefined amount of time.
 <pre><code class="language-ballerina"> future&lt;()&gt; f1 = runtime:timeout(2000);
 </code></pre>
-</p>
+
     </div>
     
         <div class="data-wrapper">

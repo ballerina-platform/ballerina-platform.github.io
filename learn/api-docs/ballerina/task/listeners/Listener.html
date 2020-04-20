@@ -689,6 +689,7 @@
     <div class="param-details"> 
             
         Detaches the given <code>service</code> from the <code>task:Listener</code>.
+
     </div>
 </div>
 
@@ -700,7 +701,9 @@
     </div>
     <div class="param-details"> 
             
-        Stops the <code>task:Listener</code> and the attached services gracefully.
+        Stops the <code>task:Listener</code> and the attached services gracefully. It will wait if there are any tasks still to be
+completed. This may panic if the stopping causes any error.
+
     </div>
 </div>
 
@@ -712,7 +715,9 @@
     </div>
     <div class="param-details"> 
             
-        Stops the <code>task:Listener</code> and the attached services immediately.
+        Stops the <code>task:Listener</code> and the attached services immediately. This will cancel any ongoing tasks. This may
+panic if the stopping causes any error.
+
     </div>
 </div>
 
@@ -725,6 +730,7 @@
     <div class="param-details"> 
             
         Pauses the <code>task:Listener</code> and the attached services.
+
     </div>
 </div>
 
@@ -736,7 +742,8 @@
     </div>
     <div class="param-details"> 
             
-        Resumes a paused <code>task:Listener</code>.
+        Resumes a paused <code>task:Listener</code>. Calling this on an already-running <code>task:Listener</code> will not cause any error.
+
     </div>
 </div>
 
@@ -755,7 +762,8 @@
     </div>
     <div class="param-details"> 
             
-        Attaches the given <code>service</code> to the <code>task:Listener</code>.
+        Attaches the given <code>service</code> to the <code>task:Listener</code>. This may panic if the service attachment is fails.
+
     </div>
 </div>
 
@@ -767,7 +775,9 @@
     </div>
     <div class="param-details"> 
             
-        Starts dispatching the services attached to the <code>task:Listener</code>.
+        Starts dispatching the services attached to the <code>task:Listener</code>. This may panic if the service dispatching causes
+any error.
+
     </div>
 </div>
 
@@ -796,8 +806,8 @@
     </div>
     <div class="function-desc">
         
-        <p>Detaches the given <code>service</code> from the <code>task:Listener</code>.
-</p>
+        Detaches the given <code>service</code> from the <code>task:Listener</code>.
+
     </div>
     
         <div class="data-wrapper">
@@ -847,9 +857,9 @@
     </div>
     <div class="function-desc">
         
-        <p>Stops the <code>task:Listener</code> and the attached services gracefully. It will wait if there are any tasks still to be
+        Stops the <code>task:Listener</code> and the attached services gracefully. It will wait if there are any tasks still to be
 completed. This may panic if the stopping causes any error.
-</p>
+
     </div>
     
 
@@ -881,9 +891,9 @@ completed. This may panic if the stopping causes any error.
     </div>
     <div class="function-desc">
         
-        <p>Stops the <code>task:Listener</code> and the attached services immediately. This will cancel any ongoing tasks. This may
+        Stops the <code>task:Listener</code> and the attached services immediately. This will cancel any ongoing tasks. This may
 panic if the stopping causes any error.
-</p>
+
     </div>
     
 
@@ -915,8 +925,8 @@ panic if the stopping causes any error.
     </div>
     <div class="function-desc">
         
-        <p>Pauses the <code>task:Listener</code> and the attached services.
-</p>
+        Pauses the <code>task:Listener</code> and the attached services.
+
     </div>
     
 
@@ -948,8 +958,8 @@ panic if the stopping causes any error.
     </div>
     <div class="function-desc">
         
-        <p>Resumes a paused <code>task:Listener</code>. Calling this on an already-running <code>task:Listener</code> will not cause any error.
-</p>
+        Resumes a paused <code>task:Listener</code>. Calling this on an already-running <code>task:Listener</code> will not cause any error.
+
     </div>
     
 
@@ -986,8 +996,8 @@ panic if the stopping causes any error.
     </div>
     <div class="function-desc">
         
-        <p>Attaches the given <code>service</code> to the <code>task:Listener</code>. This may panic if the service attachment is fails.
-</p>
+        Attaches the given <code>service</code> to the <code>task:Listener</code>. This may panic if the service attachment is fails.
+
     </div>
     
         <div class="data-wrapper">
@@ -1050,9 +1060,9 @@ panic if the stopping causes any error.
     </div>
     <div class="function-desc">
         
-        <p>Starts dispatching the services attached to the <code>task:Listener</code>. This may panic if the service dispatching causes
+        Starts dispatching the services attached to the <code>task:Listener</code>. This may panic if the service dispatching causes
 any error.
-</p>
+
     </div>
     
 

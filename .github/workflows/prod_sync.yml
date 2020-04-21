@@ -14,12 +14,6 @@ jobs:
     - name: Clone production b.io
       run: git clone https://shafreenAnfar:$GITHUB_TOKEN@github.com/ballerina-platform/ballerina-platform.github.io.git
 
-    # - name: Generate the new release-notes-json file
-    #   run: python3 ballerina-release/publish_scripts/publish_json.py _data/release_notes_versions.json _data/latest/metadata.json
-
-    # - name: Copy newly generated release-notes-json file
-    #   run: cp ballerina-release/publish_scripts/target/output/release_notes_versions.json _data/release_notes_versions.json
-
     - name: Sync production repo with prod-sync branch
       run: |
         cd ballerina-platform.github.io

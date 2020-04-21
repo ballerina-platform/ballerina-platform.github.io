@@ -23,11 +23,11 @@ jobs:
         # git checkout automate-release-notes-json-$GITHUB_SHA 2>/dev/null || git checkout -b automate-release-notes-json-$GITHUB_SHA
         git pull origin master
 
-        git remote add dev https://github.com/shafreenAnfar/ballerina-dev-website.git
-        git pull dev prod-sync --no-edit
-        
         git config --global user.email "ballerina-bot@ballerina.org"
         git config --global user.name "shafreenAnfar"
+
+        git remote add dev https://github.com/shafreenAnfar/ballerina-dev-website.git
+        git pull dev prod-sync --no-edit
         
         git push --set-upstream origin master
         echo 'Successfully pushed to master branch'

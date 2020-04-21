@@ -1,9 +1,6 @@
 name: Production Sync
 
-on:
-  push:
-    branches:
-      - prod-sync
+on: [push]
 
 jobs:
   prod-sync:

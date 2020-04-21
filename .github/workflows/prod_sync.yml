@@ -20,7 +20,7 @@ jobs:
     - name: Sync production repo with prod-sync branch
       run: |
         cd ballerina-platform.github.io
-        # git checkout automate-release-notes-json-$GITHUB_SHA 2>/dev/null || git checkout -b automate-release-notes-json-$GITHUB_SHA
+        git checkout automate-prod-sync-$GITHUB_SHA 2>/dev/null || git checkout -b automate-prod-sync-$GITHUB_SHA
         git pull origin master
 
         git config --global user.email "ballerina-bot@ballerina.org"
@@ -29,7 +29,7 @@ jobs:
         git remote add dev https://github.com/shafreenAnfar/ballerina-dev-website.git
         git pull dev prod-sync --no-edit
         
-        git push --set-upstream origin master
+        git push --set-upstream origin automate-prod-sync-$GITHUB_SHA
         echo 'Successfully pushed to master branch'
 
     - name: Create pull request for new BBEs

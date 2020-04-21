@@ -1,0 +1,44 @@
+name: Production Sync
+
+on:
+  push:
+    branches:
+      - prod-sync
+
+jobs:
+  prod-sync:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{secrets.TEST}}
+    steps:   
+    - name: Clone production b.io
+      run: git clone https://shafreenAnfar:$GITHUB_TOKEN@github.com/shafreenAnfar/ballerina-platform.github.io.git
+
+    # - name: Generate the new release-notes-json file
+    #   run: python3 ballerina-release/publish_scripts/publish_json.py _data/release_notes_versions.json _data/latest/metadata.json
+
+    # - name: Copy newly generated release-notes-json file
+    #   run: cp ballerina-release/publish_scripts/target/output/release_notes_versions.json _data/release_notes_versions.json
+
+    - name: Sync production repo with prod-sync branch
+      run: |
+        cd ballerina-platform.github.io
+        # git checkout automate-release-notes-json-$GITHUB_SHA 2>/dev/null || git checkout -b automate-release-notes-json-$GITHUB_SHA
+        git pull origin master
+
+        git remote add dev git@github.com:shafreenAnfar/ballerina-dev-website.git
+        git pull dev prod-sync --no-edit
+        
+        git config --global user.email "ballerina-bot@ballerina.org"
+        git config --global user.name "shafreenAnfar"
+        
+        git push --set-upstream origin master
+        echo 'Successfully pushed to master branch'
+
+    - name: Create pull request for new BBEs
+      shell: bash
+      run: |
+        curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
+        bin/hub pull-request -m '[Automated] Sync production site with dev site'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

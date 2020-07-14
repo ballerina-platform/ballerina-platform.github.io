@@ -91,4 +91,4 @@ $ cat response.txt
 "dd9446a11b2021b753a5df48d11f339055375b59cd81d7559d36b652aaff849d"
 ```
 
-In a more practical scenario, the AWS Lambda functions will be used by associating it to an external event source, such as Amazon DynamoDB or Amazon SQS. More information on this can be found in [AWS Lambda event source mapping documentation](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html).
+In a more practical scenario, the AWS Lambda functions will be used by associating them to an external event source such as Amazon DynamoDB or Amazon SQS. For more information on this, go to [AWS Lambda event source mapping documentation](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html).

@@ -11,7 +11,7 @@ redirect_from:
 
 # AWS Lambda
 
-The AWS Lambda extension provides the functionality in order to expose a Ballerina function as an AWS Lambda function. This is done by importing the `ballerinax/awslambda` module, and simply annotating our Ballerina function with the `awslambda:Function` annotation. The Ballerina function also must have the following signature: `function (awslambda:Context, json) returns json|error`. 
+The AWS Lambda extension provides the functionality to expose a Ballerina function as an AWS Lambda function. This is done by importing the `ballerinax/awslambda` module and simply annotating the Ballerina function with the `awslambda:Function` annotation. Also, the Ballerina function must have the following signature: `function (awslambda:Context, json) returns json|error`. 
 
 The following Ballerina code gives an example on how to expose a function which generates a SHA256 hash from the given input in AWS Lambda. 
 

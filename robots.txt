@@ -1,4 +1,2 @@
 User-Agent: *
-Disallow: /
-User-Agent: web-site-map
 Allow: /

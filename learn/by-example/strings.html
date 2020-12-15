@@ -1,157 +1,80 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: String" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: String</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: String
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/strings
+redirect_from:
+  - /v1-2/learn/by-example/strings
+  - /v1-2/learn/by-example/strings.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
-                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">encoding</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>    <span class="kt">string</span> <span class="nx">statement</span> <span class="p">=</span> <span class="s">&quot;Lion in Town. Catch the Lion&quot;</span><span class="p">;</span>    <span class="kt">string</span> <span class="nx">s1</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">toUpper</span><span class="p">();</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ToUpper: &quot;</span> <span class="o">+</span> <span class="nx">s1</span><span class="p">);</span>    <span class="kt">string</span> <span class="nx">s2</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">toLower</span><span class="p">();</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ToLower: &quot;</span> <span class="o">+</span> <span class="nx">s2</span><span class="p">);</span>
-    <span class="kt">boolean</span> <span class="nx">isEqual</span> <span class="p">=</span>
-            <span class="nx">statement</span><span class="p">.</span><span class="nx">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;lion in town. catch the lion&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;EqualsIgnoreCase: &quot;</span> <span class="o">+</span> <span class="nx">isEqual</span><span class="p">);</span>
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">lang</span><span class="p">.</span><span class="err">&#39;</span><span class="kt">string</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>    <span class="kt">string</span> <span class="nx">statement</span> <span class="p">=</span> <span class="s">&quot;Lion in Town. Catch the Lion&quot;</span><span class="p">;</span>    <span class="kt">string</span> <span class="nx">s1</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">toUpperAscii</span><span class="p">();</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ToUpper: &quot;</span><span class="p">,</span> <span class="nx">s1</span><span class="p">);</span>    <span class="kt">string</span> <span class="nx">s2</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">toLowerAscii</span><span class="p">();</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ToLower: &quot;</span><span class="p">,</span> <span class="nx">s2</span><span class="p">);</span>
     <span class="kt">string</span> <span class="nx">s3</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;SubString: &quot;</span> <span class="o">+</span> <span class="nx">s3</span><span class="p">);</span>
-    <span class="kt">boolean</span> <span class="nx">contains</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Contains: &quot;</span> <span class="o">+</span> <span class="nx">contains</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="nx">index</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s">&quot;on&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;IndexOf: &quot;</span> <span class="o">+</span> <span class="nx">index</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="nx">lastIndex</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s">&quot;on&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;LastIndexOf: &quot;</span> <span class="o">+</span> <span class="nx">lastIndex</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="nx">s5</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">replaceFirst</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">,</span> <span class="s">&quot;Tiger&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ReplaceFirst: &quot;</span> <span class="o">+</span> <span class="nx">s5</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="nx">s6</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">,</span> <span class="s">&quot;Tiger&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Replace: &quot;</span> <span class="o">+</span> <span class="nx">s6</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="nx">s7</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s">&quot;[o]+&quot;</span><span class="p">,</span> <span class="s">&quot;0&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ReplaceAll: &quot;</span> <span class="o">+</span> <span class="nx">s7</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;SubString: &quot;</span><span class="p">,</span> <span class="nx">s3</span><span class="p">);</span>
+    <span class="kt">int</span><span class="err">?</span> <span class="nx">index</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s">&quot;on&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="nx">is</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;IndexOf: &quot;</span><span class="p">,</span> <span class="nx">index</span><span class="p">);</span>
+    <span class="p">}</span>
     <span class="kt">int</span> <span class="nx">length</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">length</span><span class="p">();</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Length: &quot;</span> <span class="o">+</span> <span class="nx">length</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="nx">s8</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Trim: &quot;</span> <span class="o">+</span> <span class="nx">s8</span><span class="p">);</span>
-    <span class="kt">boolean</span> <span class="nx">hasSuffix</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">hasSuffix</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;HasSuffix: &quot;</span> <span class="o">+</span> <span class="nx">hasSuffix</span><span class="p">);</span>
-    <span class="kt">boolean</span> <span class="nx">hasPrefix</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">hasPrefix</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;HasPrefix: &quot;</span> <span class="o">+</span> <span class="nx">hasPrefix</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="nx">s9</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">unescape</span><span class="p">();</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Unescape: &quot;</span> <span class="o">+</span> <span class="nx">s9</span><span class="p">);</span>
-    <span class="kt">string</span><span class="p">[]</span> <span class="nx">array</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Split: &quot;</span> <span class="o">+</span> <span class="nx">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Split: &quot;</span> <span class="o">+</span> <span class="nx">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Split: &quot;</span> <span class="o">+</span> <span class="nx">array</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-    <span class="nx">byte</span><span class="p">[]</span> <span class="nx">bytes</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">toByteArray</span><span class="p">(</span><span class="s">&quot;UTF-8&quot;</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="nx">s10</span> <span class="p">=</span> <span class="nx">encoding</span><span class="p">:</span><span class="nx">byteArrayToString</span><span class="p">(</span><span class="nx">bytes</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Bytes: &quot;</span> <span class="o">+</span> <span class="nx">s10</span><span class="p">);</span>
-    <span class="kt">float</span> <span class="nx">value</span> <span class="p">=</span> <span class="mf">5.8</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="nx">s11</span> <span class="p">=</span> <span class="nx">io</span><span class="p">:</span><span class="nx">sprintf</span><span class="p">(</span><span class="s">&quot;%s %f&quot;</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">value</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Sprintf: &quot;</span> <span class="o">+</span> <span class="nx">s11</span><span class="p">);</span>
-<span class="p">}</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Length: &quot;</span><span class="p">,</span> <span class="nx">length</span><span class="p">);</span>    <span class="kt">string</span> <span class="nx">hello</span> <span class="p">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">ballerina</span> <span class="p">=</span> <span class="s">&quot;Ballerina!&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">s4</span> <span class="p">=</span> <span class="nx">hello</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="nx">ballerina</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Concat: &quot;</span><span class="p">,</span> <span class="nx">s4</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nx">s5</span> <span class="p">=</span> <span class="s">&quot;,&quot;</span><span class="p">.</span><span class="err">&#39;</span><span class="k">join</span><span class="p">(</span><span class="nx">hello</span><span class="p">,</span> <span class="nx">ballerina</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Join: &quot;</span><span class="p">,</span> <span class="nx">s5</span><span class="p">);</span>
+    <span class="nx">byte</span><span class="p">[]</span> <span class="nx">bArray</span> <span class="p">=</span> <span class="nx">hello</span><span class="p">.</span><span class="nx">toBytes</span><span class="p">();</span>
+    <span class="kt">string</span><span class="p">|</span><span class="nx">error</span> <span class="nx">s6</span> <span class="p">=</span> <span class="p">&#39;string:fromBytes(</span><span class="nx">bArray</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s6</span> <span class="nx">is</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;From bytes: &quot;</span><span class="p">,</span> <span class="nx">s6</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="nx">toTrim</span> <span class="p">=</span> <span class="s">&quot;  Ballerina Programming Language  &quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">s7</span> <span class="p">=</span> <span class="nx">toTrim</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Trim: &quot;</span><span class="p">,</span> <span class="nx">s7</span><span class="p">);</span>
+    <span class="kt">boolean</span> <span class="nx">hasSuffix</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;HasSuffix: &quot;</span><span class="p">,</span> <span class="nx">hasSuffix</span><span class="p">);</span>
+    <span class="kt">boolean</span> <span class="nx">hasPrefix</span> <span class="p">=</span> <span class="nx">statement</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s">&quot;Lion&quot;</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;HasPrefix: &quot;</span><span class="p">,</span> <span class="nx">hasPrefix</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nx">name</span> <span class="p">=</span> <span class="s">&quot;Sam&quot;</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nx">marks</span> <span class="p">=</span> <span class="mi">90</span><span class="p">;</span>
+    <span class="kt">string</span><span class="p">[]</span> <span class="nx">subjects</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;English&quot;</span><span class="p">,</span> <span class="s">&quot;Science&quot;</span><span class="p">];</span>
+    <span class="kt">float</span> <span class="nx">average</span> <span class="p">=</span> <span class="mf">71.5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">s8</span> <span class="p">=</span> <span class="nx">io</span><span class="p">:</span><span class="nx">sprintf</span><span class="p">(</span><span class="s">&quot;%s scored %d for %s and has an average of %.2f.&quot;</span><span class="p">,</span>
+     <span class="nx">name</span><span class="p">,</span> <span class="nx">marks</span><span class="p">,</span> <span class="nx">subjects</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">average</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Sprintf: &quot;</span><span class="p">,</span> <span class="nx">s8</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nx">country</span> <span class="p">=</span> <span class="s">&quot;Sri Lanka&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">c</span> <span class="p">=</span> <span class="nx">country</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Member Access: &quot;</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">bal</span>
+<span class="nx">ToUpper</span><span class="p">:</span> <span class="nx">LION</span> <span class="nx">IN</span> <span class="nx">TOWN</span><span class="p">.</span> <span class="nx">CATCH</span> <span class="nx">THE</span> <span class="nx">LION</span>
+<span class="nx">ToLower</span><span class="p">:</span> <span class="nx">lion</span> <span class="nx">in</span> <span class="nx">town</span><span class="p">.</span> <span class="nx">catch</span> <span class="nx">the</span> <span class="nx">lion</span>
+<span class="nx">SubString</span><span class="p">:</span> <span class="nx">Lion</span>
+<span class="nx">IndexOf</span><span class="p">:</span> <span class="mi">2</span>
+<span class="nx">Length</span><span class="p">:</span> <span class="mi">28</span>
+<span class="nx">Concat</span><span class="p">:</span> <span class="nx">Hello</span> <span class="nx">Ballerina</span><span class="p">!</span>
+<span class="nx">Join</span><span class="p">:</span> <span class="nx">Hello</span><span class="p">,</span><span class="nx">Ballerina</span><span class="p">!</span>
+<span class="nx">From</span> <span class="nx">bytes</span><span class="p">:</span> <span class="nx">Hello</span>
+<span class="nx">Trim</span><span class="p">:</span> <span class="nx">Ballerina</span> <span class="nx">Programming</span> <span class="nx">Language</span>
+<span class="nx">HasSuffix</span><span class="p">:</span> <span class="kc">true</span>
+<span class="nx">HasPrefix</span><span class="p">:</span> <span class="kc">true</span>
+<span class="nx">Sprintf</span><span class="p">:</span> <span class="nx">Sam</span> <span class="nx">scored</span> <span class="mi">90</span> <span class="k">for</span> <span class="nx">English</span> <span class="nx">and</span> <span class="nx">has</span> <span class="nx">an</span> <span class="nx">average</span> <span class="nx">of</span> <span class="mf">71.50</span><span class="p">.</span>
+<span class="nx">Member</span> <span class="nx">Access</span><span class="p">:</span> <span class="nx">L</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
                             <h2>String</h2>
-                            <p><p>Ballerina contains a comprehensive set of functions to manipulate strings.</p>
+                            <p><p>Ballerina contains a comprehensive set of functions to manipulate Strings.</p>
 </p>
 
                         </td>
@@ -182,25 +105,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>String</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/strings/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/strings/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=33c5f8668646f7759e68eac89f24ee5e&file=strings.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -253,14 +170,6 @@
                         
                             
                         
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
 
                     <div>
 
@@ -269,8 +178,8 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/encoding;
-import ballerina/io;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/io;
+import ballerina/lang.&#39;string;
 </code></pre></div>
 
                                 </td>
@@ -282,7 +191,7 @@ import ballerina/io;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
 </code></pre></div>
 
                                 </td>
@@ -294,7 +203,7 @@ import ballerina/io;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string statement = &quot;Lion in Town. Catch the Lion&quot;;
+                                    <div class="highlight"><pre><code class=language-ballerina>    string statement = &quot;Lion in Town. Catch the Lion&quot;;
 </code></pre></div>
 
                                 </td>
@@ -306,8 +215,8 @@ import ballerina/io;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s1 = statement.toUpper();
-    io:println(&quot;ToUpper: &quot; + s1);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string s1 = statement.toUpperAscii();
+    io:println(&quot;ToUpper: &quot;, s1);
 </code></pre></div>
 
                                 </td>
@@ -319,8 +228,8 @@ import ballerina/io;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s2 = statement.toLower();
-    io:println(&quot;ToLower: &quot; + s2);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string s2 = statement.toLowerAscii();
+    io:println(&quot;ToLower: &quot;, s2);
 </code></pre></div>
 
                                 </td>
@@ -332,9 +241,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean isEqual =
-            statement.equalsIgnoreCase(&quot;lion in town. catch the lion&quot;);
-    io:println(&quot;EqualsIgnoreCase: &quot; + isEqual);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string s3 = statement.substring(0, 4);
+    io:println(&quot;SubString: &quot;, s3);
 </code></pre></div>
 
                                 </td>
@@ -342,8 +250,9 @@ import ballerina/io;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Compare two strings ignoring the case.
- Returns <code>true</code> if the strings are equal, or <code>false</code> if they are not equal.</p>
+                                            <p>Create a new <code>string</code>, which is a substring of the specified string.
+ You must provide the original <code>string</code>
+ and the starting and ending indexes of the substring.</p>
 
                                         </div>
                                     </div>
@@ -354,49 +263,10 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s3 = statement.substring(0, 4);
-    io:println(&quot;SubString: &quot; + s3);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Create a new <code>string</code> that is a substring of the specified string. You must provide the original <code>string</code>,
-and the starting and ending indexes of the substring.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean contains = statement.contains(&quot;Lion&quot;);
-    io:println(&quot;Contains: &quot; + contains);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Check if the <code>statement</code> string contains the string &ldquo;Lion&rdquo;.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    int index = statement.indexOf(&quot;on&quot;);
-    io:println(&quot;IndexOf: &quot; + index);
+                                    <div class="highlight"><pre><code class=language-ballerina>    int? index = statement.indexOf(&quot;on&quot;);
+    if (index is int) {
+        io:println(&quot;IndexOf: &quot;, index);
+    }
 </code></pre></div>
 
                                 </td>
@@ -415,89 +285,8 @@ and the starting and ending indexes of the substring.</p>
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    int lastIndex = statement.lastIndexOf(&quot;on&quot;);
-    io:println(&quot;LastIndexOf: &quot; + lastIndex);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Retrieve the starting index of the last occurrence of the substring &ldquo;on&rdquo; within the <code>statement</code> string.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s5 = statement.replaceFirst(&quot;Lion&quot;, &quot;Tiger&quot;);
-    io:println(&quot;ReplaceFirst: &quot; + s5);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Replace the first instance of the string &ldquo;Lion&rdquo; in the <code>statement</code> string, with the string &ldquo;Tiger&rdquo;.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s6 = statement.replace(&quot;Lion&quot;, &quot;Tiger&quot;);
-    io:println(&quot;Replace: &quot; + s6);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Replace the string &ldquo;Lion&rdquo; in the <code>statement</code> string, with the string &ldquo;Tiger&rdquo;.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s7 = statement.replaceAll(&quot;[o]+&quot;, &quot;0&quot;);
-    io:println(&quot;ReplaceAll: &quot; + s7);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Replace each substring of the <code>statement</code> string that matches the given
- regular expression with the replacement string &ldquo;0&rdquo;.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    int length = statement.length();
-    io:println(&quot;Length: &quot; + length);
+                                    <div class="highlight"><pre><code class=language-ballerina>    int length = statement.length();
+    io:println(&quot;Length: &quot;, length);
 </code></pre></div>
 
                                 </td>
@@ -513,11 +302,24 @@ and the starting and ending indexes of the substring.</p>
                                 </td>
                             </tr>
                             
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    string hello = &quot;Hello&quot;;
+    string ballerina = &quot;Ballerina!&quot;;
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s8 = statement.trim();
-    io:println(&quot;Trim: &quot; + s8);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string s4 = hello.concat(&quot; &quot;, ballerina);
+    io:println(&quot;Concat: &quot;, s4);
 </code></pre></div>
 
                                 </td>
@@ -525,7 +327,7 @@ and the starting and ending indexes of the substring.</p>
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Remove any leading and trailing white spaces.</p>
+                                            <p>Concat multiple strings.</p>
 
                                         </div>
                                     </div>
@@ -536,8 +338,90 @@ and the starting and ending indexes of the substring.</p>
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean hasSuffix = statement.hasSuffix(&quot;Lion&quot;);
-    io:println(&quot;HasSuffix: &quot; + hasSuffix);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string s5 = &quot;,&quot;.&#39;join(hello, ballerina);
+    io:println(&quot;Join: &quot;, s5);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Join strings with a separator.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    byte[] bArray = hello.toBytes();
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Convert <code>hello</code> to a <code>byte</code> array.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    string|error s6 = &#39;string:fromBytes(bArray);
+    if (s6 is string) {
+        io:println(&quot;From bytes: &quot;, s6);
+    }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Convert a <code>byte</code> array to a <code>string</code>.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    string toTrim = &quot;  Ballerina Programming Language  &quot;;
+    string s7 = toTrim.trim();
+    io:println(&quot;Trim: &quot;, s7);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Remove leading and trailing white spaces.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    boolean hasSuffix = statement.endsWith(&quot;Lion&quot;);
+    io:println(&quot;HasSuffix: &quot;, hasSuffix);
 </code></pre></div>
 
                                 </td>
@@ -556,8 +440,8 @@ and the starting and ending indexes of the substring.</p>
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean hasPrefix = statement.hasPrefix(&quot;Lion&quot;);
-    io:println(&quot;HasPrefix: &quot; + hasPrefix);
+                                    <div class="highlight"><pre><code class=language-ballerina>    boolean hasPrefix = statement.startsWith(&quot;Lion&quot;);
+    io:println(&quot;HasPrefix: &quot;, hasPrefix);
 </code></pre></div>
 
                                 </td>
@@ -576,8 +460,13 @@ and the starting and ending indexes of the substring.</p>
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s9 = statement.unescape();
-    io:println(&quot;Unescape: &quot; + s9);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string name = &quot;Sam&quot;;
+    int marks = 90;
+    string[] subjects = [&quot;English&quot;, &quot;Science&quot;];
+    float average = 71.5;
+    string s8 = io:sprintf(&quot;%s scored %d for %s and has an average of %.2f.&quot;,
+     name, marks, subjects[0], average);
+    io:println(&quot;Sprintf: &quot;, s8);
 </code></pre></div>
 
                                 </td>
@@ -585,68 +474,7 @@ and the starting and ending indexes of the substring.</p>
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Retrieve an unescaped string by omitting the escape characters of the original string.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string[] array = statement.split(&quot; &quot;);
-    io:println(&quot;Split: &quot; + array[0]);
-    io:println(&quot;Split: &quot; + array[1]);
-    io:println(&quot;Split: &quot; + array[2]);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Split the <code>string</code> based on the given regular expression to produce a string array.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    byte[] bytes = statement.toByteArray(&quot;UTF-8&quot;);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Convert the <code>string</code> to a <code>byte</code> array.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string s10 = encoding:byteArrayToString(bytes);
-    io:println(&quot;Bytes: &quot; + s10);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Convert a <code>byte</code> array to a string.</p>
+                                            <p>Format a <code>string</code> according to the given format arguments.</p>
 
                                         </div>
                                     </div>
@@ -657,9 +485,9 @@ and the starting and ending indexes of the substring.</p>
                             <tr class="cTR hover-enable">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>    float value = 5.8;
-    string s11 = io:sprintf(&quot;%s %f&quot;, array[0], value);
-    io:println(&quot;Sprintf: &quot; + s11);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string country = &quot;Sri Lanka&quot;;
+    string c = country[4];
+    io:println(&quot;Member Access: &quot;, c);
 }
 </code></pre></div>
 
@@ -668,7 +496,8 @@ and the starting and ending indexes of the substring.</p>
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Format a <code>string</code> according to the given format arguments.</p>
+                                            <p>Member access is allowed with strings to access individual characters
+ of a string. Member access panics if the integer index is out of range.</p>
 
                                         </div>
                                     </div>
@@ -693,28 +522,21 @@ and the starting and ending indexes of the substring.</p>
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command.
-$ ballerina run strings.bal
+# `.bal` file, and execute the `ballerina run` command below.
+ballerina run strings.bal
 ToUpper: LION IN TOWN. CATCH THE LION
 ToLower: lion in town. catch the lion
-EqualsIgnoreCase: true
 SubString: Lion
-Contains: true
 IndexOf: 2
-LastIndexOf: 26
-ReplaceFirst: Tiger in Town. Catch the Lion
-Replace: Tiger in Town. Catch the Tiger
-ReplaceAll: Li0n in T0wn. Catch the Li0n
 Length: 28
-Trim: Lion in Town. Catch the Lion
+Concat: Hello Ballerina!
+Join: Hello,Ballerina!
+From bytes: Hello
+Trim: Ballerina Programming Language
 HasSuffix: true
 HasPrefix: true
-Unescape: Lion in Town. Catch the Lion
-Split: Lion
-Split: in
-Split: Town.
-Bytes: Lion in Town. Catch the Lion
-Sprintf: Lion 5.800000
+Sprintf: Sam scored 90 for English and has an average of 71.50.
+Member Access: L
 </code></pre></div>
 
                                 </td>
@@ -739,56 +561,49 @@ Sprintf: Lion 5.800000
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

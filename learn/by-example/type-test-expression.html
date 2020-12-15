@@ -1,101 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Type Test Expression" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Type Test Expression</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Type Test Expression
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/type-test-expression
+redirect_from:
+  - /v1-2/learn/by-example/type-test-expression
+  - /v1-2/learn/by-example/type-test-expression.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
                 <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
@@ -109,7 +21,7 @@
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;&#39;a&#39; is not an int or string, with value: &quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="nx">Student</span> <span class="nx">alex</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">name</span> <span class="p">:</span> <span class="s">&quot;Alex&quot;</span> <span class="p">};</span>
+    <span class="nx">Student</span> <span class="nx">alex</span> <span class="p">=</span> <span class="p">{</span><span class="nx">name</span> <span class="p">:</span> <span class="s">&quot;Alex&quot;</span><span class="p">};</span>
     <span class="nx">Student</span><span class="p">|</span><span class="nx">Person</span><span class="p">|</span><span class="nx">Vehicle</span> <span class="nx">x</span> <span class="p">=</span> <span class="nx">alex</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="nx">is</span> <span class="nx">Student</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Alex is a student&quot;</span><span class="p">);</span>
@@ -127,9 +39,9 @@
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Alex is not a vehicle&quot;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="kt">boolean</span> <span class="nx">isStudent</span> <span class="p">=</span> <span class="nx">foo</span><span class="p">(</span><span class="s">&quot;student&quot;</span><span class="p">)</span> <span class="nx">is</span> <span class="nx">Student</span><span class="p">;</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Is foo returns a student?&quot;</span><span class="p">,</span> <span class="nx">isStudent</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Does foo return a student? &quot;</span><span class="p">,</span> <span class="nx">isStudent</span><span class="p">);</span>
     <span class="nx">isStudent</span> <span class="p">=</span> <span class="nx">foo</span><span class="p">(</span><span class="s">&quot;vehicle&quot;</span><span class="p">)</span> <span class="nx">is</span> <span class="nx">Student</span><span class="p">;</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Is foo returns a student?&quot;</span><span class="p">,</span> <span class="nx">isStudent</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Does foo return a student? &quot;</span><span class="p">,</span> <span class="nx">isStudent</span><span class="p">);</span>
 <span class="p">}</span><span class="nx">type</span> <span class="nx">Person</span> <span class="nx">record</span> <span class="p">{</span>
     <span class="kt">string</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">};</span><span class="nx">type</span> <span class="nx">Student</span> <span class="nx">record</span> <span class="p">{</span>
@@ -139,19 +51,26 @@
     <span class="kt">string</span> <span class="nx">brand</span><span class="p">;</span>
 <span class="p">};</span><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="kt">string</span> <span class="nx">t</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">any</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">t</span> <span class="o">==</span> <span class="s">&quot;student&quot;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">&lt;</span><span class="nx">Student</span><span class="p">&gt;{</span> <span class="nx">name</span><span class="p">:</span> <span class="s">&quot;Alex&quot;</span> <span class="p">};</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">t</span> <span class="o">==</span> <span class="s">&quot;vehicle&quot;</span><span class="p">){</span>
-        <span class="k">return</span> <span class="p">&lt;</span><span class="nx">Vehicle</span><span class="p">&gt;{</span> <span class="nx">brand</span><span class="p">:</span> <span class="s">&quot;Honda&quot;</span> <span class="p">};</span>
+        <span class="k">return</span> <span class="p">&lt;</span><span class="nx">Student</span><span class="p">&gt;{</span><span class="nx">name</span><span class="p">:</span> <span class="s">&quot;Alex&quot;</span><span class="p">};</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">t</span> <span class="o">==</span> <span class="s">&quot;vehicle&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">&lt;</span><span class="nx">Vehicle</span><span class="p">&gt;{</span><span class="nx">brand</span><span class="p">:</span> <span class="s">&quot;Honda&quot;</span><span class="p">};</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="s">&quot;invalid type&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">type_test_expression</span><span class="p">.</span><span class="nx">bal</span>
+<span class="nx">Is</span> <span class="sc">&#39;a&#39;</span> <span class="nx">a</span> <span class="kt">string</span><span class="err">?</span> <span class="kc">true</span>
+<span class="sc">&#39;a&#39;</span> <span class="nx">is</span> <span class="nx">a</span> <span class="kt">string</span> <span class="nx">with</span> <span class="nx">value</span><span class="p">:</span> <span class="nx">Hello</span><span class="p">,</span> <span class="nx">world</span><span class="p">!</span>
+<span class="nx">Alex</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">student</span>
+<span class="nx">Alex</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">person</span>
+<span class="nx">Alex</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">a</span> <span class="nx">vehicle</span>
+<span class="nx">Does</span> <span class="nx">foo</span> <span class="k">return</span> <span class="nx">a</span> <span class="nx">student</span><span class="err">?</span> <span class="kc">true</span>
+<span class="nx">Does</span> <span class="nx">foo</span> <span class="k">return</span> <span class="nx">a</span> <span class="nx">student</span><span class="err">?</span> <span class="kc">false</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
@@ -188,25 +107,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Type Test Expression</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/type-test-expression/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/type-test-expression/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=58d09bd9466b88034edd5cc3418bf687&file=type_test_expression.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -257,7 +170,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/io;
 </code></pre></div>
 
                                 </td>
@@ -269,7 +182,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
     any a = &quot;Hello, world!&quot;;
 </code></pre></div>
 
@@ -282,7 +195,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean b = a is string;
+                                    <div class="highlight"><pre><code class=language-ballerina>    boolean b = a is string;
     io:println(&quot;Is &#39;a&#39; a string? &quot;, b);
 </code></pre></div>
 
@@ -291,7 +204,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Check whether the actual value inside the <code>any</code> type variable is a <code>string</code>.</p>
+                                            <p>Checks whether the actual value of the <code>any</code> type variable is a <code>string</code>.</p>
 
                                         </div>
                                     </div>
@@ -302,7 +215,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    if (a is int) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (a is int) {
         io:println(&quot;&#39;a&#39; is an int with value: &quot;, a);
     } else if (a is string) {
         io:println(&quot;&#39;a&#39; is a string with value: &quot;, a);
@@ -327,7 +240,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    Student alex = { name : &quot;Alex&quot; };
+                                    <div class="highlight"><pre><code class=language-ballerina>    Student alex = {name : &quot;Alex&quot;};
     Student|Person|Vehicle x = alex;
 </code></pre></div>
 
@@ -347,7 +260,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    if (x is Student) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (x is Student) {
         io:println(&quot;Alex is a student&quot;);
     } else {
         io:println(&quot;Alex is not a student&quot;);
@@ -370,7 +283,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    if (x is Person) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (x is Person) {
         io:println(&quot;Alex is a person&quot;);
     } else {
         io:println(&quot;Alex is not a person&quot;);
@@ -394,7 +307,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    if (x is Vehicle) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (x is Vehicle) {
         io:println(&quot;Alex is a vehicle&quot;);
     } else {
         io:println(&quot;Alex is not a vehicle&quot;);
@@ -417,10 +330,10 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean isStudent = foo(&quot;student&quot;) is Student;
-    io:println(&quot;Is foo returns a student?&quot;, isStudent);
+                                    <div class="highlight"><pre><code class=language-ballerina>    boolean isStudent = foo(&quot;student&quot;) is Student;
+    io:println(&quot;Does foo return a student? &quot;, isStudent);
     isStudent = foo(&quot;vehicle&quot;) is Student;
-    io:println(&quot;Is foo returns a student?&quot;, isStudent);
+    io:println(&quot;Does foo return a student? &quot;, isStudent);
 }
 </code></pre></div>
 
@@ -440,7 +353,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>type Person record {
+                                    <div class="highlight"><pre><code class=language-ballerina>type Person record {
     string name;
 };
 </code></pre></div>
@@ -454,7 +367,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>type Student record {
+                                    <div class="highlight"><pre><code class=language-ballerina>type Student record {
     string name;
     int age = 0;
 };
@@ -469,7 +382,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>type Vehicle record {
+                                    <div class="highlight"><pre><code class=language-ballerina>type Vehicle record {
     string brand;
 };
 </code></pre></div>
@@ -483,11 +396,11 @@
                             <tr class="cTR">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>function foo(string t) returns any {
+                                    <div class="highlight"><pre><code class=language-ballerina>function foo(string t) returns any {
     if (t == &quot;student&quot;) {
-        return &lt;Student&gt;{ name: &quot;Alex&quot; };
-    } else if (t == &quot;vehicle&quot;){
-        return &lt;Vehicle&gt;{ brand: &quot;Honda&quot; };
+        return &lt;Student&gt;{name: &quot;Alex&quot;};
+    } else if (t == &quot;vehicle&quot;) {
+        return &lt;Vehicle&gt;{brand: &quot;Honda&quot;};
     }
     return &quot;invalid type&quot;;
 }
@@ -516,13 +429,15 @@
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command.
-$ ballerina run type_test_expression.bal
+# `.bal` file, and execute the `ballerina run` command below.
+ballerina run type_test_expression.bal
 Is &#39;a&#39; a string? true
 &#39;a&#39; is a string with value: Hello, world!
 Alex is a student
 Alex is a person
 Alex is not a vehicle
+Does foo return a student? true
+Does foo return a student? false
 </code></pre></div>
 
                                 </td>
@@ -547,56 +462,49 @@ Alex is not a vehicle
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

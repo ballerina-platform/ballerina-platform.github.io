@@ -1,104 +1,17 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: JSON to XML Conversion" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: JSON to XML Conversion</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: JSON to XML Conversion
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/json-to-xml-conversion
+redirect_from:
+  - /v1-2/learn/by-example/json-to-xml-conversion
+  - /v1-2/learn/by-example/json-to-xml-conversion.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
-                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">xmlutils</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">json</span> <span class="nx">j1</span> <span class="p">=</span> <span class="p">{</span>
         <span class="s">&quot;Store&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s">&quot;@id&quot;</span><span class="p">:</span> <span class="s">&quot;AST&quot;</span><span class="p">,</span>
@@ -110,9 +23,8 @@
             <span class="s">&quot;codes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;4&quot;</span><span class="p">,</span> <span class="s">&quot;8&quot;</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">};</span>
-    <span class="k">var</span> <span class="nx">x1</span> <span class="p">=</span> <span class="nx">j1</span><span class="p">.</span><span class="nx">toXML</span><span class="p">({});</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">x1</span><span class="p">);</span>
-    <span class="kt">json</span> <span class="nx">j2</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nx">x1</span> <span class="p">=</span> <span class="nx">xmlutils</span><span class="p">:</span><span class="nx">fromJSON</span><span class="p">(</span><span class="nx">j1</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">x1</span><span class="p">);</span>    <span class="kt">json</span> <span class="nx">j2</span> <span class="p">=</span> <span class="p">{</span>
         <span class="s">&quot;Store&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s">&quot;#id&quot;</span><span class="p">:</span> <span class="s">&quot;AST&quot;</span><span class="p">,</span>
             <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Anne&quot;</span><span class="p">,</span>
@@ -123,26 +35,29 @@
             <span class="s">&quot;codes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;4&quot;</span><span class="p">,</span> <span class="s">&quot;8&quot;</span><span class="p">]</span>
         <span class="p">}</span>
     <span class="p">};</span>
-    <span class="k">var</span> <span class="nx">x2</span> <span class="p">=</span> <span class="nx">j2</span><span class="p">.</span><span class="nx">toXML</span><span class="p">({</span> <span class="nx">attributePrefix</span><span class="p">:</span> <span class="s">&quot;#&quot;</span><span class="p">,</span> <span class="nx">arrayEntryTag</span><span class="p">:</span> <span class="s">&quot;wrapper&quot;</span> <span class="p">});</span>
+    <span class="k">var</span> <span class="nx">x2</span> <span class="p">=</span> <span class="nx">xmlutils</span><span class="p">:</span><span class="nx">fromJSON</span><span class="p">(</span><span class="nx">j2</span><span class="p">,</span> <span class="p">{</span><span class="nx">attributePrefix</span><span class="p">:</span> <span class="s">&quot;#&quot;</span><span class="p">,</span> <span class="nx">arrayEntryTag</span><span class="p">:</span> <span class="s">&quot;wrapper&quot;</span><span class="p">});</span>
     <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">x2</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">json_to_xml_conversion</span><span class="p">.</span><span class="nx">bal</span>
+<span class="p">&lt;</span><span class="nx">Store</span> <span class="nx">id</span><span class="p">=</span><span class="s">&quot;AST&quot;</span><span class="p">&gt;&lt;</span><span class="nx">name</span><span class="p">&gt;</span><span class="nx">Anne</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">name</span><span class="p">&gt;&lt;</span><span class="nx">address</span><span class="p">&gt;&lt;</span><span class="nx">street</span><span class="p">&gt;</span><span class="nx">Main</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">street</span><span class="p">&gt;&lt;</span><span class="nx">city</span><span class="p">&gt;</span><span class="mi">94</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">city</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">address</span><span class="p">&gt;&lt;</span><span class="nx">codes</span><span class="p">&gt;&lt;</span><span class="nx">root</span><span class="p">&gt;</span><span class="mi">4</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">root</span><span class="p">&gt;&lt;</span><span class="nx">root</span><span class="p">&gt;</span><span class="mi">8</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">root</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">codes</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">Store</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nx">Store</span> <span class="nx">id</span><span class="p">=</span><span class="s">&quot;AST&quot;</span><span class="p">&gt;&lt;</span><span class="nx">name</span><span class="p">&gt;</span><span class="nx">Anne</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">name</span><span class="p">&gt;&lt;</span><span class="nx">address</span><span class="p">&gt;&lt;</span><span class="nx">street</span><span class="p">&gt;</span><span class="nx">Main</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">street</span><span class="p">&gt;&lt;</span><span class="nx">city</span><span class="p">&gt;</span><span class="mi">94</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">city</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">address</span><span class="p">&gt;&lt;</span><span class="nx">codes</span><span class="p">&gt;&lt;</span><span class="nx">wrapper</span><span class="p">&gt;</span><span class="mi">4</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">wrapper</span><span class="p">&gt;&lt;</span><span class="nx">wrapper</span><span class="p">&gt;</span><span class="mi">8</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">wrapper</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">codes</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">Store</span><span class="p">&gt;</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
                             <h2>JSON to XML Conversion</h2>
-                            <p><p>JSON to XML conversion can be done using the <code>toXML</code> function. This function takes
- a record of options as an argument. The options record has two fields:
- the <code>attributePrefix</code> and the <code>arrayEntryTag</code>. The <code>attributePrefix</code> is a
- prefix used to identify the XML attributes. The default value of the <code>attributePrefix</code>
- option is <code>@</code>. The <code>arrayEntryTag</code> is the name of the tag that is to be added
- to each entry of the JSON array. The default value of the <code>arrayEntryTag</code> option is <code>item</code>.</p>
+                            <p><p>JSON to XML conversions can be done using the <code>xmlutils:fromJSON()</code> function.
+ This function takes a <code>xmlutils:JsonOptions</code> record as an argument.
+ The <code>JsonOptions</code> record has two fields: the <code>attributePrefix</code> and the <code>arrayEntryTag</code>.
+ The <code>attributePrefix</code> is a prefix that is used to identify the XML attributes.
+ The default value of the <code>attributePrefix</code> option is <code>@</code>.
+ The <code>arrayEntryTag</code> is the name of the tag that is to be added to each entry of
+ the JSON array. The default value of the <code>arrayEntryTag</code> option is <code>root</code>.</p>
 </p>
 
                         </td>
@@ -173,25 +88,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>JSON to XML Conversion</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/json-to-xml-conversion/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/json-to-xml-conversion/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=f6f6a83e48e795d20e92b7d42cbdefb0&file=json_to_xml_conversion.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -218,6 +127,8 @@
                         
                             
                         
+                            
+                        
 
                     <div>
 
@@ -226,7 +137,8 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/io;
+import ballerina/xmlutils;
 </code></pre></div>
 
                                 </td>
@@ -238,7 +150,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
 </code></pre></div>
 
                                 </td>
@@ -250,7 +162,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j1 = {
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j1 = {
         &quot;Store&quot;: {
             &quot;@id&quot;: &quot;AST&quot;,
             &quot;name&quot;: &quot;Anne&quot;,
@@ -268,7 +180,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Create a JSON object.</p>
+                                            <p>Creates a JSON object.</p>
 
                                         </div>
                                     </div>
@@ -279,7 +191,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    var x1 = j1.toXML({});
+                                    <div class="highlight"><pre><code class=language-ballerina>    var x1 = xmlutils:fromJSON(j1);
     io:println(x1);
 </code></pre></div>
 
@@ -288,7 +200,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Convert the JSON object to XML using the default <code>attributePrefix</code>
+                                            <p>Converts the JSON object to XML using the default <code>attributePrefix</code>
  and the default <code>arrayEntryTag</code>.</p>
 
                                         </div>
@@ -297,10 +209,10 @@
                                 </td>
                             </tr>
                             
-                            <tr class="cTR hover-enable">
+                            <tr class="cTR">
 
-                                <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>    json j2 = {
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j2 = {
         &quot;Store&quot;: {
             &quot;#id&quot;: &quot;AST&quot;,
             &quot;name&quot;: &quot;Anne&quot;,
@@ -311,7 +223,18 @@
             &quot;codes&quot;: [&quot;4&quot;, &quot;8&quot;]
         }
     };
-    var x2 = j2.toXML({ attributePrefix: &quot;#&quot;, arrayEntryTag: &quot;wrapper&quot; });
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code">
+                                    <div class="highlight"><pre><code class=language-ballerina>    var x2 = xmlutils:fromJSON(j2, {attributePrefix: &quot;#&quot;, arrayEntryTag: &quot;wrapper&quot;});
     io:println(x2);
 }
 </code></pre></div>
@@ -321,8 +244,8 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Convert the JSON object to XML using a custom <code>attributePrefix</code> (i.e., the <code>#</code> character),
- and custom <code>arrayEntryTag</code> (i.e., <code>wrapper</code>).</p>
+                                            <p>Converts the JSON object to XML using a custom <code>attributePrefix</code> (i.e., the <code>#</code> character)
+ and the custom <code>arrayEntryTag</code> (i.e., <code>wrapper</code>).</p>
 
                                         </div>
                                     </div>
@@ -347,9 +270,9 @@
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command.
-$ ballerina run json_to_xml_conversion.bal
-&lt;Store id=&quot;AST&quot;&gt;&lt;name&gt;Anne&lt;/name&gt;&lt;address&gt;&lt;street&gt;Main&lt;/street&gt;&lt;city&gt;94&lt;/city&gt;&lt;/address&gt;&lt;codes&gt;&lt;item&gt;4&lt;/item&gt;&lt;item&gt;8&lt;/item&gt;&lt;/codes&gt;&lt;/Store&gt;
+# `.bal` file, and execute the `ballerina run` command below.
+ballerina run json_to_xml_conversion.bal
+&lt;Store id=&quot;AST&quot;&gt;&lt;name&gt;Anne&lt;/name&gt;&lt;address&gt;&lt;street&gt;Main&lt;/street&gt;&lt;city&gt;94&lt;/city&gt;&lt;/address&gt;&lt;codes&gt;&lt;root&gt;4&lt;/root&gt;&lt;root&gt;8&lt;/root&gt;&lt;/codes&gt;&lt;/Store&gt;
 &lt;Store id=&quot;AST&quot;&gt;&lt;name&gt;Anne&lt;/name&gt;&lt;address&gt;&lt;street&gt;Main&lt;/street&gt;&lt;city&gt;94&lt;/city&gt;&lt;/address&gt;&lt;codes&gt;&lt;wrapper&gt;4&lt;/wrapper&gt;&lt;wrapper&gt;8&lt;/wrapper&gt;&lt;/codes&gt;&lt;/Store&gt;
 </code></pre></div>
 
@@ -375,56 +298,49 @@ $ ballerina run json_to_xml_conversion.bal
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

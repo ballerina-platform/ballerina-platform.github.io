@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /v1-2/learn/api-docs/ballerina/crypto/functions
+  - /v1-2/learn/api-docs/ballerina/crypto/functions.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +10,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module provides the necessary utilities that are required to hash content using different hashing mechanisms and algorithms.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,crypto">
 
     <title>API Docs - Functions : crypto</title>
     <script src="../html-template-resources/jquery.min.js"></script>
@@ -16,6 +24,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +41,7 @@
     <link rel="stylesheet" href="../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../html-template-resources/styles/css/font.css">
     <script src="../html-template-resources/semantic.min.js"></script>
-    <script src="../vs/monaco.js"></script>
+    <script src="../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -49,152 +58,163 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../index.html">
+            <a href="
+    ../index.html">
     <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
             <div class="primary-list">
                 <h3>Functions</h3>
                 <ul>
                     
                         <li >
-                            <a href="#crc32b">crc32b</a>
+                            <a href="#buildRsaPublicKey" onclick="menuLinkClick()">buildRsaPublicKey</a>
                         </li>
                     
                         <li >
-                            <a href="#decodePrivateKey">decodePrivateKey</a>
+                            <a href="#crc32b" onclick="menuLinkClick()">crc32b</a>
                         </li>
                     
                         <li >
-                            <a href="#decodePublicKey">decodePublicKey</a>
+                            <a href="#decodePrivateKey" onclick="menuLinkClick()">decodePrivateKey</a>
                         </li>
                     
                         <li >
-                            <a href="#decryptAesCbc">decryptAesCbc</a>
+                            <a href="#decodePublicKey" onclick="menuLinkClick()">decodePublicKey</a>
                         </li>
                     
                         <li >
-                            <a href="#decryptAesEcb">decryptAesEcb</a>
+                            <a href="#decryptAesCbc" onclick="menuLinkClick()">decryptAesCbc</a>
                         </li>
                     
                         <li >
-                            <a href="#decryptAesGcm">decryptAesGcm</a>
+                            <a href="#decryptAesEcb" onclick="menuLinkClick()">decryptAesEcb</a>
                         </li>
                     
                         <li >
-                            <a href="#decryptRsaEcb">decryptRsaEcb</a>
+                            <a href="#decryptAesGcm" onclick="menuLinkClick()">decryptAesGcm</a>
                         </li>
                     
                         <li >
-                            <a href="#encryptAesCbc">encryptAesCbc</a>
+                            <a href="#decryptRsaEcb" onclick="menuLinkClick()">decryptRsaEcb</a>
                         </li>
                     
                         <li >
-                            <a href="#encryptAesEcb">encryptAesEcb</a>
+                            <a href="#encryptAesCbc" onclick="menuLinkClick()">encryptAesCbc</a>
                         </li>
                     
                         <li >
-                            <a href="#encryptAesGcm">encryptAesGcm</a>
+                            <a href="#encryptAesEcb" onclick="menuLinkClick()">encryptAesEcb</a>
                         </li>
                     
                         <li >
-                            <a href="#encryptRsaEcb">encryptRsaEcb</a>
+                            <a href="#encryptAesGcm" onclick="menuLinkClick()">encryptAesGcm</a>
                         </li>
                     
                         <li >
-                            <a href="#hashMd5">hashMd5</a>
+                            <a href="#encryptRsaEcb" onclick="menuLinkClick()">encryptRsaEcb</a>
                         </li>
                     
                         <li >
-                            <a href="#hashSha1">hashSha1</a>
+                            <a href="#hashMd5" onclick="menuLinkClick()">hashMd5</a>
                         </li>
                     
                         <li >
-                            <a href="#hashSha256">hashSha256</a>
+                            <a href="#hashSha1" onclick="menuLinkClick()">hashSha1</a>
                         </li>
                     
                         <li >
-                            <a href="#hashSha384">hashSha384</a>
+                            <a href="#hashSha256" onclick="menuLinkClick()">hashSha256</a>
                         </li>
                     
                         <li >
-                            <a href="#hashSha512">hashSha512</a>
+                            <a href="#hashSha384" onclick="menuLinkClick()">hashSha384</a>
                         </li>
                     
                         <li >
-                            <a href="#hmacMd5">hmacMd5</a>
+                            <a href="#hashSha512" onclick="menuLinkClick()">hashSha512</a>
                         </li>
                     
                         <li >
-                            <a href="#hmacSha1">hmacSha1</a>
+                            <a href="#hmacMd5" onclick="menuLinkClick()">hmacMd5</a>
                         </li>
                     
                         <li >
-                            <a href="#hmacSha256">hmacSha256</a>
+                            <a href="#hmacSha1" onclick="menuLinkClick()">hmacSha1</a>
                         </li>
                     
                         <li >
-                            <a href="#hmacSha384">hmacSha384</a>
+                            <a href="#hmacSha256" onclick="menuLinkClick()">hmacSha256</a>
                         </li>
                     
                         <li >
-                            <a href="#hmacSha512">hmacSha512</a>
+                            <a href="#hmacSha384" onclick="menuLinkClick()">hmacSha384</a>
                         </li>
                     
                         <li >
-                            <a href="#signRsaMd5">signRsaMd5</a>
+                            <a href="#hmacSha512" onclick="menuLinkClick()">hmacSha512</a>
                         </li>
                     
                         <li >
-                            <a href="#signRsaSha1">signRsaSha1</a>
+                            <a href="#signRsaMd5" onclick="menuLinkClick()">signRsaMd5</a>
                         </li>
                     
                         <li >
-                            <a href="#signRsaSha256">signRsaSha256</a>
+                            <a href="#signRsaSha1" onclick="menuLinkClick()">signRsaSha1</a>
                         </li>
                     
                         <li >
-                            <a href="#signRsaSha384">signRsaSha384</a>
+                            <a href="#signRsaSha256" onclick="menuLinkClick()">signRsaSha256</a>
                         </li>
                     
                         <li >
-                            <a href="#signRsaSha512">signRsaSha512</a>
+                            <a href="#signRsaSha384" onclick="menuLinkClick()">signRsaSha384</a>
                         </li>
                     
                         <li >
-                            <a href="#verifyRsaMd5Signature">verifyRsaMd5Signature</a>
+                            <a href="#signRsaSha512" onclick="menuLinkClick()">signRsaSha512</a>
                         </li>
                     
                         <li >
-                            <a href="#verifyRsaSha1Signature">verifyRsaSha1Signature</a>
+                            <a href="#verifyRsaMd5Signature" onclick="menuLinkClick()">verifyRsaMd5Signature</a>
                         </li>
                     
                         <li >
-                            <a href="#verifyRsaSha256Signature">verifyRsaSha256Signature</a>
+                            <a href="#verifyRsaSha1Signature" onclick="menuLinkClick()">verifyRsaSha1Signature</a>
                         </li>
                     
                         <li >
-                            <a href="#verifyRsaSha384Signature">verifyRsaSha384Signature</a>
+                            <a href="#verifyRsaSha256Signature" onclick="menuLinkClick()">verifyRsaSha256Signature</a>
                         </li>
                     
                         <li >
-                            <a href="#verifyRsaSha512Signature">verifyRsaSha512Signature</a>
+                            <a href="#verifyRsaSha384Signature" onclick="menuLinkClick()">verifyRsaSha384Signature</a>
+                        </li>
+                    
+                        <li >
+                            <a href="#verifyRsaSha512Signature" onclick="menuLinkClick()">verifyRsaSha512Signature</a>
                         </li>
                     
                 </ul>
             </div>
             <div class="ui divider"></div>
-            <div class="primary-list module">
+            
+
     
-        <a href="../crypto/index.html">
+        <div class="version">v1.2.8</div>
+    
+
+
+<div class="primary-list module">
+    
+        <a href="../crypto/index.html" onclick="menuLinkClick()">
             <h3>crypto</h3>
         </a>
     
     <ul>
         
         <li>
-            <a data="records" href="../crypto/index.html#records">Records</a>
+            <a data="records" href="../crypto/index.html#records" onclick="menuLinkClick()">Records</a>
         </li>
         
         
@@ -202,23 +222,23 @@
         
         
             <li>
-                <a data="functions" href="../crypto/index.html#functions">Functions</a>
+                <a data="functions" href="../crypto/index.html#functions" onclick="menuLinkClick()">Functions</a>
             </li>
         
         
             <li>
-                <a data="constants" href="../crypto/index.html#constants">Constants</a>
+                <a data="constants" href="../crypto/index.html#constants" onclick="menuLinkClick()">Constants</a>
             </li>
         
         
         
             <li>
-                <a data="types" href="../crypto/index.html#types">Types</a>
+                <a data="types" href="../crypto/index.html#types" onclick="menuLinkClick()">Types</a>
             </li>
         
         
             <li>
-                <a data="errors" href="../crypto/index.html#errors">Errors</a>
+                <a data="errors" href="../crypto/index.html#errors" onclick="menuLinkClick()">Errors</a>
             </li>
         
     </ul>
@@ -247,7 +267,7 @@
                 </li>
             
                 <li>
-                    <a href="../docker/index.html">docker</a>
+                    <a href="../email/index.html">email</a>
                 </li>
             
                 <li>
@@ -275,10 +295,6 @@
                 </li>
             
                 <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
                     <a href="../java/index.html">java</a>
                 </li>
             
@@ -303,11 +319,11 @@
                 </li>
             
                 <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
+                    <a href="../lang.array/index.html">lang.array</a>
                 </li>
             
                 <li>
-                    <a href="../lang.array/index.html">lang.array</a>
+                    <a href="../lang.boolean/index.html">lang.boolean</a>
                 </li>
             
                 <li>
@@ -363,406 +379,7 @@
                 </li>
             
                 <li>
-                    <a href="../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-        </div>
-    </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../index.html">
-    <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                <div class="primary-list">
-                    <h3>Functions</h3>
-                    <ul>
-                        
-                            <li >
-                                <a href="#crc32b">crc32b</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#decodePrivateKey">decodePrivateKey</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#decodePublicKey">decodePublicKey</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#decryptAesCbc">decryptAesCbc</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#decryptAesEcb">decryptAesEcb</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#decryptAesGcm">decryptAesGcm</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#decryptRsaEcb">decryptRsaEcb</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#encryptAesCbc">encryptAesCbc</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#encryptAesEcb">encryptAesEcb</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#encryptAesGcm">encryptAesGcm</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#encryptRsaEcb">encryptRsaEcb</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hashMd5">hashMd5</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hashSha1">hashSha1</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hashSha256">hashSha256</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hashSha384">hashSha384</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hashSha512">hashSha512</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hmacMd5">hmacMd5</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hmacSha1">hmacSha1</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hmacSha256">hmacSha256</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hmacSha384">hmacSha384</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#hmacSha512">hmacSha512</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#signRsaMd5">signRsaMd5</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#signRsaSha1">signRsaSha1</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#signRsaSha256">signRsaSha256</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#signRsaSha384">signRsaSha384</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#signRsaSha512">signRsaSha512</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#verifyRsaMd5Signature">verifyRsaMd5Signature</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#verifyRsaSha1Signature">verifyRsaSha1Signature</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#verifyRsaSha256Signature">verifyRsaSha256Signature</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#verifyRsaSha384Signature">verifyRsaSha384Signature</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#verifyRsaSha512Signature">verifyRsaSha512Signature</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-                <div class="ui divider"></div>
-                <div class="primary-list module">
-    
-        <a href="../crypto/index.html">
-            <h3>crypto</h3>
-        </a>
-    
-    <ul>
-        
-        <li>
-            <a data="records" href="../crypto/index.html#records">Records</a>
-        </li>
-        
-        
-        
-        
-        
-            <li>
-                <a data="functions" href="../crypto/index.html#functions">Functions</a>
-            </li>
-        
-        
-            <li>
-                <a data="constants" href="../crypto/index.html#constants">Constants</a>
-            </li>
-        
-        
-        
-            <li>
-                <a data="types" href="../crypto/index.html#types">Types</a>
-            </li>
-        
-        
-            <li>
-                <a data="errors" href="../crypto/index.html#errors">Errors</a>
-            </li>
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.xml/index.html">lang.xml</a>
+                    <a href="../ldap/index.html">ldap</a>
                 </li>
             
                 <li>
@@ -794,7 +411,7 @@
                 </li>
             
                 <li>
-                    <a href="../openshift/index.html">openshift</a>
+                    <a href="../rabbitmq/index.html">rabbitmq</a>
                 </li>
             
                 <li>
@@ -807,10 +424,6 @@
             
                 <li>
                     <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
                 </li>
             
                 <li>
@@ -838,6 +451,10 @@
                 </li>
             
                 <li>
+                    <a href="../websub/index.html">websub</a>
+                </li>
+            
+                <li>
                     <a href="../xmlutils/index.html">xmlutils</a>
                 </li>
             
@@ -849,19 +466,18 @@
         <div class="ui divider"></div>
     
 </div>
-            </div>
         </div>
     </div>
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper">
             <h1>
-                <a class="breadcrumb-home" href="../index.html">
+                <a class="breadcrumb-home" href="
+    ../index.html">
     <img class="breadcrumb-home-icon" src="../html-template-resources/images/home.svg">
 </a>
                 <span class="title-type">Functions - </span>
@@ -870,289 +486,450 @@
                 
             </h1>
             <div class="constants">
-                <table class="ui table details-table">
-                    
-                        <tbody>
+                <table class="ui table row-border details-table">
+                    <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#crc32b">crc32b</a></td>
-                                <td width="70%"><p>Returns Hex encoded CRC32B value for the provided element.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#buildRsaPublicKey">buildRsaPublicKey</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the <code>crypto:PublicKey</code> created with the modulus and exponent retrieved from the JWK's endpoint.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#decodePrivateKey">decodePrivateKey</a></td>
-                                <td width="70%"><p>Read a private key from the provided PKCS#12 archive file.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#crc32b">crc32b</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the Hex-encoded CRC32B value for the provided element.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#decodePublicKey">decodePublicKey</a></td>
-                                <td width="70%"><p>Read a public key from the provided PKCS#12 archive file.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#decodePrivateKey">decodePrivateKey</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Reads a private key from the provided PKCS#12 archive file.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#decryptAesCbc">decryptAesCbc</a></td>
-                                <td width="70%"><p>Returns AES CBC decrypted value for the given AES CBC encrypted data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#decodePublicKey">decodePublicKey</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Reads a public key from the provided PKCS#12 archive file.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#decryptAesEcb">decryptAesEcb</a></td>
-                                <td width="70%"><p>Returns AES ECB decrypted value for the given AES ECB encrypted data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#decryptAesCbc">decryptAesCbc</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the AES-CBC-decrypted value for the given AES-CBC-encrypted data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#decryptAesGcm">decryptAesGcm</a></td>
-                                <td width="70%"><p>Returns AES GCM decrypted value for the given AES GCM encrypted data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#decryptAesEcb">decryptAesEcb</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the AES-ECB-decrypted value for the given AES-ECB-encrypted data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#decryptRsaEcb">decryptRsaEcb</a></td>
-                                <td width="70%"><p>Returns RSA decrypted value for the given RSA encrypted data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#decryptAesGcm">decryptAesGcm</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the AES-GCM-decrypted value for the given AES-GCM-encrypted data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#encryptAesCbc">encryptAesCbc</a></td>
-                                <td width="70%"><p>Returns AES CBC encrypted value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#decryptRsaEcb">decryptRsaEcb</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-decrypted value for the given RSA-encrypted data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#encryptAesEcb">encryptAesEcb</a></td>
-                                <td width="70%"><p>Returns AES ECB encrypted value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#encryptAesCbc">encryptAesCbc</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the AES-CBC-encrypted value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#encryptAesGcm">encryptAesGcm</a></td>
-                                <td width="70%"><p>Returns AES GCM encrypted value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#encryptAesEcb">encryptAesEcb</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the AES-ECB-encrypted value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#encryptRsaEcb">encryptRsaEcb</a></td>
-                                <td width="70%"><p>Returns RSA encrypted value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#encryptAesGcm">encryptAesGcm</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the AES-GCM-encrypted value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hashMd5">hashMd5</a></td>
-                                <td width="70%"><p>Returns the MD5 hash of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#encryptRsaEcb">encryptRsaEcb</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-encrypted value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hashSha1">hashSha1</a></td>
-                                <td width="70%"><p>Returns the SHA-1 hash of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hashMd5">hashMd5</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the MD5 hash of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hashSha256">hashSha256</a></td>
-                                <td width="70%"><p>Returns the SHA-256 hash of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hashSha1">hashSha1</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the SHA-1 hash of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hashSha384">hashSha384</a></td>
-                                <td width="70%"><p>Returns the SHA-384 hash of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hashSha256">hashSha256</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the SHA-256 hash of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hashSha512">hashSha512</a></td>
-                                <td width="70%"><p>Returns the SHA-512 hash of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hashSha384">hashSha384</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the SHA-384 hash of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hmacMd5">hmacMd5</a></td>
-                                <td width="70%"><p>Returns the HMAC using MD-5 hash function of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hashSha512">hashSha512</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the SHA-512 hash of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hmacSha1">hmacSha1</a></td>
-                                <td width="70%"><p>Returns the HMAC using SHA-1 hash function of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hmacMd5">hmacMd5</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the HMAC using the MD-5 hash function of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hmacSha256">hmacSha256</a></td>
-                                <td width="70%"><p>Returns the HMAC using SHA-256 hash function of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hmacSha1">hmacSha1</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the HMAC using the SHA-1 hash function of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hmacSha384">hmacSha384</a></td>
-                                <td width="70%"><p>Returns the HMAC using SHA-384 hash function of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hmacSha256">hmacSha256</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the HMAC using the SHA-256 hash function of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#hmacSha512">hmacSha512</a></td>
-                                <td width="70%"><p>Returns the HMAC using SHA-512 hash function of the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hmacSha384">hmacSha384</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the HMAC using the SHA-384 hash function of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#signRsaMd5">signRsaMd5</a></td>
-                                <td width="70%"><p>Returns RSA-MD5 based signature value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#hmacSha512">hmacSha512</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the HMAC using the SHA-512 hash function of the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#signRsaSha1">signRsaSha1</a></td>
-                                <td width="70%"><p>Returns RSA-SHA1 based signature value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#signRsaMd5">signRsaMd5</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-MD5-based signature value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#signRsaSha256">signRsaSha256</a></td>
-                                <td width="70%"><p>Returns RSA-SHA256 based signature value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#signRsaSha1">signRsaSha1</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-SHA1-based signature value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#signRsaSha384">signRsaSha384</a></td>
-                                <td width="70%"><p>Returns RSA-SHA384 based signature value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#signRsaSha256">signRsaSha256</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-SHA256-based signature value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#signRsaSha512">signRsaSha512</a></td>
-                                <td width="70%"><p>Returns RSA-SHA512 based signature value for the given data.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#signRsaSha384">signRsaSha384</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-SHA384-based signature value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#verifyRsaMd5Signature">verifyRsaMd5Signature</a></td>
-                                <td width="70%"><p>Verify RSA-MD5 based signature.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#signRsaSha512">signRsaSha512</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the RSA-SHA512-based signature value for the given data.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#verifyRsaSha1Signature">verifyRsaSha1Signature</a></td>
-                                <td width="70%"><p>Verify RSA-SHA1 based signature.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#verifyRsaMd5Signature">verifyRsaMd5Signature</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Verifies the RSA-MD5-based signature.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#verifyRsaSha256Signature">verifyRsaSha256Signature</a></td>
-                                <td width="70%"><p>Verify RSA-SHA256 based signature.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#verifyRsaSha1Signature">verifyRsaSha1Signature</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Verifies the RSA-SHA1-based signature.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#verifyRsaSha384Signature">verifyRsaSha384Signature</a></td>
-                                <td width="70%"><p>Verify RSA-SHA384 based signature.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#verifyRsaSha256Signature">verifyRsaSha256Signature</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Verifies the RSA-SHA256-based signature.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#verifyRsaSha512Signature">verifyRsaSha512Signature</a></td>
-                                <td width="70%"><p>Verify RSA-SHA512 based signature.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#verifyRsaSha384Signature">verifyRsaSha384Signature</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Verifies the RSA-SHA384-based signature.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
+                        
+                            <tr>
+                                <td width="30%"><a class="functions " href="#verifyRsaSha512Signature">verifyRsaSha512Signature</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Verifies the RSA-SHA512-based signature.
+                                    </div>
+                                </td>
+                            </tr>
+                        
+                    </tbody>
                 </table>
                 <div>
                     
                         <div>
                             
                                 <div class="method-content">
-    <div class="main-method-title here" id="crc32b" title="crc32b">
-             <a class="url-link" href="#crc32b">
+    <div class="main-method-title here" id="buildRsaPublicKey" title="buildRsaPublicKey">
+             <a class="url-link" href="#buildRsaPublicKey">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> crc32b </h2>
-        
+            <h2 > buildRsaPublicKey </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input)</p>
-            <b> returns </b><span class="builtin-type">string</span> 
+            <p>(<span class="builtin-type">string</span> modulus, <span class="builtin-type">string</span> exponent)</p>
+            
+                <b> returns </b><a href="../crypto/records/PublicKey.html">PublicKey</a> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns Hex encoded CRC32B value for the provided element.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the <code>crypto:PublicKey</code> created with the modulus and exponent retrieved from the JWK's endpoint.</p>
+<pre><code class="language-ballerina"> string modulus = &quot;luZFdW1ynitztkWLC6xKegbRWxky...&quot;;
+ string exponent = &quot;AQAB&quot;;
+ crypto:PublicKey|crypto:Error publicKey = crypto:buildRsaPublicKey(modulus, exponent);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >modulus</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value for checksum generation</p>
-</p>
+                        <p>
+                            
+                            <p>JWK modulus value ('n' parameter) for the RSA public key</p>
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+                
+            <div class="params-listing">
+                <ul>
+                    <li>
+                        <span >exponent</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
+                        
+                    </li>
+                    <li>
+                        <p>
+                            
+                            <p>JWK exponent value ('e' paramenter) for the RSA public key</p>
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    
+
+    
+        
+        <div class="returns-listing">
+            <ul>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../crypto/records/PublicKey.html">PublicKey</a> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Reference to the public key or else a <code>crypto:Error</code> if the modulus or exponent is invalid</p>
+</li>
+            </ul>
+        </div>
+        
+    
+</div>
+                            
+                                <div class="method-content">
+    <div class="main-method-title here" id="crc32b" title="crc32b">
+             <a class="url-link" href="#crc32b">
+                <img class="url-link-img" src="../html-template-resources/images/link.svg">
+            </a>
+            <h2 > crc32b </h2>
+        <span class="method-types">
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input)</p>
+            
+                <b> returns </b><span class="builtin-type">string</span> 
+            
+        </span>
+    </div>
+    <div class="function-desc">
+        
+        <p>Returns the Hex-encoded CRC32B value for the provided element.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  string checksum = crypto:crc32b(data);
+</code></pre>
+
+    </div>
+    
+        <div class="data-wrapper">
+            <h3 class="param-title">Parameters</h3>
+                
+            <div class="params-listing">
+                <ul>
+                    <li>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
+                        
+                    </li>
+                    <li>
+                        <p>
+                            
+                            <p>Value for checksum generation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1178,29 +955,42 @@
              <a class="url-link" href="#decodePrivateKey">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> decodePrivateKey </h2>
-        
+            <h2 > decodePrivateKey </h2>
         <span class="method-types">
             <p>(<a href="../crypto/records/KeyStore.html">KeyStore</a> | <a href="../crypto/records/TrustStore.html">TrustStore</a> keyStore, <span class="builtin-type">string</span> keyAlias, <span class="builtin-type">string</span> keyPassword)</p>
-            <b> returns </b><a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/errors.html#Error">Error</a> 
+            
+                <b> returns </b><a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Read a private key from the provided PKCS#12 archive file.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Reads a private key from the provided PKCS#12 archive file.</p>
+<pre><code class="language-ballerina">  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey|crypto:Error privateKey = crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        keyStore<span class="type">  <a href="../crypto/records/KeyStore.html">KeyStore</a> | <a href="../crypto/records/TrustStore.html">TrustStore</a> </span>
+                        <span >keyStore</span>
+                        <span class="type">  <a href="../crypto/records/KeyStore.html">KeyStore</a> | <a href="../crypto/records/TrustStore.html">TrustStore</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key store or Trust store configurations</p>
-</p>
+                        <p>
+                            
+                            <p>Key store or Trust store configurations</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1208,12 +998,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        keyAlias<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >keyAlias</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key alias</p>
-</p>
+                        <p>
+                            
+                            <p>Key alias</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1221,12 +1015,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        keyPassword<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >keyPassword</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key password</p>
-</p>
+                        <p>
+                            
+                            <p>Key password</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1239,7 +1037,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Reference to the private key or <code>Error</code> if private key was unreadable</p>
+                <li><p>Reference to the private key or else a <code>crypto:Error</code> if the private key was unreadable</p>
 </li>
             </ul>
         </div>
@@ -1252,29 +1050,42 @@
              <a class="url-link" href="#decodePublicKey">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> decodePublicKey </h2>
-        
+            <h2 > decodePublicKey </h2>
         <span class="method-types">
             <p>(<a href="../crypto/records/KeyStore.html">KeyStore</a> | <a href="../crypto/records/TrustStore.html">TrustStore</a> keyStore, <span class="builtin-type">string</span> keyAlias)</p>
-            <b> returns </b><a href="../crypto/records/PublicKey.html">PublicKey</a> | <a href="../crypto/errors.html#Error">Error</a> 
+            
+                <b> returns </b><a href="../crypto/records/PublicKey.html">PublicKey</a> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Read a public key from the provided PKCS#12 archive file.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Reads a public key from the provided PKCS#12 archive file.</p>
+<pre><code class="language-ballerina">  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PublicKey|crypto:Error publicKey = crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        keyStore<span class="type">  <a href="../crypto/records/KeyStore.html">KeyStore</a> | <a href="../crypto/records/TrustStore.html">TrustStore</a> </span>
+                        <span >keyStore</span>
+                        <span class="type">  <a href="../crypto/records/KeyStore.html">KeyStore</a> | <a href="../crypto/records/TrustStore.html">TrustStore</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key store or Trust store configurations</p>
-</p>
+                        <p>
+                            
+                            <p>Key store or Trust store configurations</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1282,12 +1093,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        keyAlias<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >keyAlias</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key alias</p>
-</p>
+                        <p>
+                            
+                            <p>Key alias</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1300,7 +1115,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../crypto/records/PublicKey.html">PublicKey</a> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Reference to the public key or <code>Error</code> if private key was unreadable</p>
+                <li><p>Reference to the public key or else a <code>crypto:Error</code> if the private key was unreadable</p>
 </li>
             </ul>
         </div>
@@ -1313,29 +1128,49 @@
              <a class="url-link" href="#decryptAesCbc">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> decryptAesCbc </h2>
-        
+            <h2 > decryptAesCbc </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key, <span class="builtin-type">byte</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key, <span class="array-type"><span class="builtin-type">byte</span>[]</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns AES CBC decrypted value for the given AES CBC encrypted data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the AES-CBC-decrypted value for the given AES-CBC-encrypted data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina!&quot;;
+  byte[] data = dataString.toBytes();
+  byte[16] key = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      key[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[16] initialVector = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      initialVector[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[] cipherText = checkpanic crypto:encryptAesCbc(data, key, initialVector);
+  byte[]|crypto:Error plainText = crypto:decryptAesCbc(cipherText, key, initialVector);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be decrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be decrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1343,12 +1178,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Encryption key</p>
-</p>
+                        <p>
+                            
+                            <p>Encryption key</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1356,12 +1195,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        iv<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >iv</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Initialization vector</p>
-</p>
+                        <p>
+                            
+                            <p>Initialization vector</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1369,12 +1212,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
                         <span class="default"> (default PKCS5)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1386,8 +1233,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Decrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Decrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1400,29 +1247,45 @@
              <a class="url-link" href="#decryptAesEcb">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> decryptAesEcb </h2>
-        
+            <h2 > decryptAesEcb </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns AES ECB decrypted value for the given AES ECB encrypted data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the AES-ECB-decrypted value for the given AES-ECB-encrypted data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina!&quot;;
+  byte[] data = dataString.toBytes();
+  byte[16] key = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      key[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[] cipherText = checkpanic crypto:encryptAesEcb(data, key);
+  byte[]|crypto:Error plainText = crypto:decryptAesEcb(cipherText, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be decrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be decrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1430,12 +1293,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Encryption key</p>
-</p>
+                        <p>
+                            
+                            <p>Encryption key</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1443,12 +1310,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
                         <span class="default"> (default PKCS5)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1460,8 +1331,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Decrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Decrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1474,29 +1345,49 @@
              <a class="url-link" href="#decryptAesGcm">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> decryptAesGcm </h2>
-        
+            <h2 > decryptAesGcm </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key, <span class="builtin-type">byte</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding, <span class="builtin-type">int</span> tagSize)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key, <span class="array-type"><span class="builtin-type">byte</span>[]</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding, <span class="builtin-type">int</span> tagSize)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns AES GCM decrypted value for the given AES GCM encrypted data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the AES-GCM-decrypted value for the given AES-GCM-encrypted data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina!&quot;;
+  byte[] data = dataString.toBytes();
+  byte[16] key = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      key[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[16] initialVector = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      initialVector[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[] cipherText = checkpanic crypto:encryptAesGcm(data, key, initialVector);
+  byte[]|crypto:Error plainText = crypto:decryptAesGcm(cipherText, key, initialVector);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be decrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be decrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1504,12 +1395,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Encryption key</p>
-</p>
+                        <p>
+                            
+                            <p>Encryption key</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1517,12 +1412,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        iv<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >iv</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Initialization vector</p>
-</p>
+                        <p>
+                            
+                            <p>Initialization vector</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1530,12 +1429,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
                         <span class="default"> (default PKCS5)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1543,12 +1446,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        tagSize<span class="type">  <span class="builtin-type">int</span> </span>
+                        <span >tagSize</span>
+                        <span class="type">  <span class="builtin-type">int</span> </span>
                         <span class="default"> (default 128)</span>
                     </li>
                     <li>
-                        <p><p>Tag size</p>
-</p>
+                        <p>
+                            
+                            <p>Tag size</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1560,8 +1467,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Decrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Decrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1574,29 +1481,47 @@
              <a class="url-link" href="#decryptRsaEcb">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> decryptRsaEcb </h2>
-        
+            <h2 > decryptRsaEcb </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> key, <a href="../crypto/types.html#RsaPadding">RsaPadding</a> padding)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> key, <a href="../crypto/types.html#RsaPadding">RsaPadding</a> padding)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA decrypted value for the given RSA encrypted data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-decrypted value for the given RSA-encrypted data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PublicKey publicKey = checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  crypto:PrivateKey privateKey = checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[] cipherText = checkpanic crypto:encryptRsaEcb(data, publicKey);
+  byte[]|crypto:Error plainText = checkpanic crypto:decryptRsaEcb(cipherText, privateKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be decrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be decrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1604,12 +1529,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >key</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private or public key used for encryption</p>
-</p>
+                        <p>
+                            
+                            <p>Private or public key used for encryption</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1617,12 +1546,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#RsaPadding">RsaPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#RsaPadding">RsaPadding</a> </span>
                         <span class="default"> (default PKCS1)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1634,8 +1567,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Decrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Decrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1648,29 +1581,48 @@
              <a class="url-link" href="#encryptAesCbc">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> encryptAesCbc </h2>
-        
+            <h2 > encryptAesCbc </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key, <span class="builtin-type">byte</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key, <span class="array-type"><span class="builtin-type">byte</span>[]</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns AES CBC encrypted value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the AES-CBC-encrypted value for the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina!&quot;;
+  byte[] data = dataString.toBytes();
+  byte[16] key = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      key[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[16] initialVector = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      initialVector[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[]|crypto:Error cipherText = crypto:encryptAesCbc(data, key, initialVector);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be encrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be encrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1678,12 +1630,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Encryption key</p>
-</p>
+                        <p>
+                            
+                            <p>Encryption key</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1691,12 +1647,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        iv<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >iv</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Initialization vector</p>
-</p>
+                        <p>
+                            
+                            <p>Initialization vector</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1704,12 +1664,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
                         <span class="default"> (default PKCS5)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1721,8 +1685,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Encrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Encrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1735,29 +1699,44 @@
              <a class="url-link" href="#encryptAesEcb">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> encryptAesEcb </h2>
-        
+            <h2 > encryptAesEcb </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns AES ECB encrypted value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the AES-ECB-encrypted value for the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina!&quot;;
+  byte[] data = dataString.toBytes();
+  byte[16] key = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      key[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[]|crypto:Error cipherText = crypto:encryptAesEcb(data, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be encrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be encrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1765,12 +1744,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Encryption key</p>
-</p>
+                        <p>
+                            
+                            <p>Encryption key</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1778,12 +1761,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
                         <span class="default"> (default PKCS5)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1795,8 +1782,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Encrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Encrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1809,29 +1796,48 @@
              <a class="url-link" href="#encryptAesGcm">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> encryptAesGcm </h2>
-        
+            <h2 > encryptAesGcm </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key, <span class="builtin-type">byte</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding, <span class="builtin-type">int</span> tagSize)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key, <span class="array-type"><span class="builtin-type">byte</span>[]</span> iv, <a href="../crypto/types.html#AesPadding">AesPadding</a> padding, <span class="builtin-type">int</span> tagSize)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns AES GCM encrypted value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the AES-GCM-encrypted value for the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina!&quot;;
+  byte[] data = dataString.toBytes();
+  byte[16] key = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      key[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[16] initialVector = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  foreach var i in 0...15 {
+      initialVector[i] = &lt;byte&gt;math:randomInRange(0, 255);
+  }
+  byte[]|crypto:Error cipherText = crypto:encryptAesGcm(data, key, initialVector);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be encrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be encrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1839,12 +1845,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Encryption key</p>
-</p>
+                        <p>
+                            
+                            <p>Encryption key</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1852,12 +1862,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        iv<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >iv</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Initialization vector</p>
-</p>
+                        <p>
+                            
+                            <p>Initialization vector</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1865,12 +1879,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#AesPadding">AesPadding</a> </span>
                         <span class="default"> (default PKCS5)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1878,12 +1896,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        tagSize<span class="type">  <span class="builtin-type">int</span> </span>
+                        <span >tagSize</span>
+                        <span class="type">  <span class="builtin-type">int</span> </span>
                         <span class="default"> (default 128)</span>
                     </li>
                     <li>
-                        <p><p>Tag size</p>
-</p>
+                        <p>
+                            
+                            <p>Tag size</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1895,8 +1917,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Encrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Encrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1909,29 +1931,45 @@
              <a class="url-link" href="#encryptRsaEcb">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> encryptRsaEcb </h2>
-        
+            <h2 > encryptRsaEcb </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> key, <a href="../crypto/types.html#RsaPadding">RsaPadding</a> padding)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> key, <a href="../crypto/types.html#RsaPadding">RsaPadding</a> padding)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA encrypted value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-encrypted value for the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PublicKey publicKey = checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  byte[]|crypto:Error cipherText = crypto:encryptRsaEcb(data, publicKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be encrypted</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be encrypted</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1939,12 +1977,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >key</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> | <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private or public key used for encryption</p>
-</p>
+                        <p>
+                            
+                            <p>Private or public key used for encryption</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1952,12 +1994,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        padding<span class="type">  <a href="../crypto/types.html#RsaPadding">RsaPadding</a> </span>
+                        <span >padding</span>
+                        <span class="type">  <a href="../crypto/types.html#RsaPadding">RsaPadding</a> </span>
                         <span class="default"> (default PKCS1)</span>
                     </li>
                     <li>
-                        <p><p>The padding</p>
-</p>
+                        <p>
+                            
+                            <p>The padding</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1969,8 +2015,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Encrypted data or <code>Error</code> if key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>Encrypted data or else a <code>crypto:Error</code> if the key is invalid</p>
 </li>
             </ul>
         </div>
@@ -1983,29 +2029,40 @@
              <a class="url-link" href="#hashMd5">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hashMd5 </h2>
-        
+            <h2 > hashMd5 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the MD5 hash of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the MD5 hash of the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina&quot;;
+  byte[] data = dataString.toBytes();
+  byte[] hash = crypto:hashMd5(data);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2017,7 +2074,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>Hashed output</p>
 </li>
             </ul>
@@ -2031,29 +2088,40 @@
              <a class="url-link" href="#hashSha1">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hashSha1 </h2>
-        
+            <h2 > hashSha1 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the SHA-1 hash of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the SHA-1 hash of the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina&quot;;
+  byte[] data = dataString.toBytes();
+  byte[] hash = crypto:hashSha1(data);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2065,7 +2133,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>Hashed output</p>
 </li>
             </ul>
@@ -2079,29 +2147,40 @@
              <a class="url-link" href="#hashSha256">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hashSha256 </h2>
-        
+            <h2 > hashSha256 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the SHA-256 hash of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the SHA-256 hash of the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina&quot;;
+  byte[] data = dataString.toBytes();
+  byte[] hash = crypto:hashSha256(data);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2113,7 +2192,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>Hashed output</p>
 </li>
             </ul>
@@ -2127,29 +2206,40 @@
              <a class="url-link" href="#hashSha384">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hashSha384 </h2>
-        
+            <h2 > hashSha384 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the SHA-384 hash of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the SHA-384 hash of the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina&quot;;
+  byte[] data = dataString.toBytes();
+  byte[] hash = crypto:hashSha384(data);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2161,7 +2251,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>Hashed output</p>
 </li>
             </ul>
@@ -2175,29 +2265,40 @@
              <a class="url-link" href="#hashSha512">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hashSha512 </h2>
-        
+            <h2 > hashSha512 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the SHA-512 hash of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the SHA-512 hash of the given data.</p>
+<pre><code class="language-ballerina">  string dataString = &quot;Hello Ballerina&quot;;
+  byte[] data = dataString.toBytes();
+  byte[] hash = crypto:hashSha512(data);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2209,7 +2310,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>Hashed output</p>
 </li>
             </ul>
@@ -2223,29 +2324,42 @@
              <a class="url-link" href="#hmacMd5">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hmacMd5 </h2>
-        
+            <h2 > hmacMd5 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the HMAC using MD-5 hash function of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the HMAC using the MD-5 hash function of the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  string keyString = &quot;some-secret&quot;;
+  byte[] key = keyString.toBytes();
+  byte[] hmac = crypto:hmacMd5(data, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2253,12 +2367,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key used for HMAC generation</p>
-</p>
+                        <p>
+                            
+                            <p>Key used for HMAC generation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2270,7 +2388,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>HMAC output</p>
 </li>
             </ul>
@@ -2284,29 +2402,42 @@
              <a class="url-link" href="#hmacSha1">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hmacSha1 </h2>
-        
+            <h2 > hmacSha1 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the HMAC using SHA-1 hash function of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the HMAC using the SHA-1 hash function of the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  string keyString = &quot;some-secret&quot;;
+  byte[] key = keyString.toBytes();
+  byte[] hmac = crypto:hmacSha1(data, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2314,12 +2445,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key used for HMAC generation</p>
-</p>
+                        <p>
+                            
+                            <p>Key used for HMAC generation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2331,7 +2466,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>HMAC output</p>
 </li>
             </ul>
@@ -2345,29 +2480,42 @@
              <a class="url-link" href="#hmacSha256">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hmacSha256 </h2>
-        
+            <h2 > hmacSha256 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the HMAC using SHA-256 hash function of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the HMAC using the SHA-256 hash function of the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  string keyString = &quot;some-secret&quot;;
+  byte[] key = keyString.toBytes();
+  byte[] hmac = crypto:hmacSha256(data, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2375,12 +2523,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key used for HMAC generation</p>
-</p>
+                        <p>
+                            
+                            <p>Key used for HMAC generation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2392,7 +2544,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>HMAC output</p>
 </li>
             </ul>
@@ -2406,29 +2558,42 @@
              <a class="url-link" href="#hmacSha384">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hmacSha384 </h2>
-        
+            <h2 > hmacSha384 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the HMAC using SHA-384 hash function of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the HMAC using the SHA-384 hash function of the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  string keyString = &quot;some-secret&quot;;
+  byte[] key = keyString.toBytes();
+  byte[] hmac = crypto:hmacSha384(data, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2436,12 +2601,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key used for HMAC generation</p>
-</p>
+                        <p>
+                            
+                            <p>Key used for HMAC generation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2453,7 +2622,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>HMAC output</p>
 </li>
             </ul>
@@ -2467,29 +2636,42 @@
              <a class="url-link" href="#hmacSha512">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> hmacSha512 </h2>
-        
+            <h2 > hmacSha512 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <span class="builtin-type">byte</span> key)</p>
-            <b> returns </b><span class="builtin-type">byte</span> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <span class="array-type"><span class="builtin-type">byte</span>[]</span> key)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the HMAC using SHA-512 hash function of the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the HMAC using the SHA-512 hash function of the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  string keyString = &quot;some-secret&quot;;
+  byte[] key = keyString.toBytes();
+  byte[] hmac = crypto:hmacSha512(data, key);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Value to be hashed</p>
-</p>
+                        <p>
+                            
+                            <p>Value to be hashed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2497,12 +2679,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        key<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >key</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Key used for HMAC generation</p>
-</p>
+                        <p>
+                            
+                            <p>Key used for HMAC generation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2514,7 +2700,7 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span></span>)</li>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span></span>)</li>
                 <li><p>HMAC output</p>
 </li>
             </ul>
@@ -2528,29 +2714,46 @@
              <a class="url-link" href="#signRsaMd5">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> signRsaMd5 </h2>
-        
+            <h2 > signRsaMd5 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA-MD5 based signature value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-MD5-based signature value for the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey =
+      checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[]|crypto:Error signature = crypto:signRsaMd5(data, privateKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be signed</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be signed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2558,12 +2761,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        privateKey<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
+                        <span >privateKey</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private key used for signing</p>
-</p>
+                        <p>
+                            
+                            <p>Private key used for signing</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2575,8 +2782,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>The generated signature or <code>Error</code> if private key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>The generated signature or else a <code>crypto:Error</code> if the private key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2589,29 +2796,46 @@
              <a class="url-link" href="#signRsaSha1">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> signRsaSha1 </h2>
-        
+            <h2 > signRsaSha1 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA-SHA1 based signature value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-SHA1-based signature value for the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey =
+      checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[]|crypto:Error signature = crypto:signRsaSha1(data, privateKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be signed</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be signed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2619,12 +2843,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        privateKey<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
+                        <span >privateKey</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private key used for signing</p>
-</p>
+                        <p>
+                            
+                            <p>Private key used for signing</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2636,8 +2864,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>The generated signature or <code>Error</code> if private key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>The generated signature or else a <code>crypto:Error</code> if the private key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2650,29 +2878,46 @@
              <a class="url-link" href="#signRsaSha256">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> signRsaSha256 </h2>
-        
+            <h2 > signRsaSha256 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA-SHA256 based signature value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-SHA256-based signature value for the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey =
+      checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[]|crypto:Error signature = crypto:signRsaSha256(data, privateKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be signed</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be signed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2680,12 +2925,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        privateKey<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
+                        <span >privateKey</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private key used for signing</p>
-</p>
+                        <p>
+                            
+                            <p>Private key used for signing</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2697,8 +2946,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>The generated signature or <code>Error</code> if private key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>The generated signature or else a <code>crypto:Error</code> if the private key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2711,29 +2960,46 @@
              <a class="url-link" href="#signRsaSha384">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> signRsaSha384 </h2>
-        
+            <h2 > signRsaSha384 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA-SHA384 based signature value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-SHA384-based signature value for the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey =
+      checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[]|crypto:Error signature = crypto:signRsaSha384(data, privateKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be signed</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be signed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2741,12 +3007,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        privateKey<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
+                        <span >privateKey</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private key used for signing.</p>
-</p>
+                        <p>
+                            
+                            <p>Private key used for signing</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2758,8 +3028,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>The generated signature or <code>Error</code> if private key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>The generated signature or else a <code>crypto:Error</code> if the private key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2772,29 +3042,46 @@
              <a class="url-link" href="#signRsaSha512">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> signRsaSha512 </h2>
-        
+            <h2 > signRsaSha512 </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
-            <b> returns </b><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> input, <a href="../crypto/records/PrivateKey.html">PrivateKey</a> privateKey)</p>
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns RSA-SHA512 based signature value for the given data.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the RSA-SHA512-based signature value for the given data.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey =
+      checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[]|crypto:Error signature = crypto:signRsaSha512(data, privateKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        input<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >input</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be signed</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be signed</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2802,12 +3089,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        privateKey<span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
+                        <span >privateKey</span>
+                        <span class="type">  <a href="../crypto/records/PrivateKey.html">PrivateKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Private key used for signing</p>
-</p>
+                        <p>
+                            
+                            <p>Private key used for signing</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2819,8 +3110,8 @@
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">byte</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>The generated signature or <code>Error</code> if private key is invalid</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">byte</span>[]</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
+                <li><p>The generated signature or else a <code>crypto:Error</code> if the private key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2833,29 +3124,47 @@
              <a class="url-link" href="#verifyRsaMd5Signature">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> verifyRsaMd5Signature </h2>
-        
+            <h2 > verifyRsaMd5Signature </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> data, <span class="builtin-type">byte</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> data, <span class="array-type"><span class="builtin-type">byte</span>[]</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Verify RSA-MD5 based signature.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Verifies the RSA-MD5-based signature.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey = checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[] signature = checkpanic crypto:signRsaMd5(data, privateKey);
+  crypto:PublicKey publicKey =  checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  boolean|crypto:Error validity = crypto:verifyRsaMd5Signature(data, signature, publicKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        data<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >data</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be verified</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be verified</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2863,12 +3172,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        signature<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >signature</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Signature value</p>
-</p>
+                        <p>
+                            
+                            <p>Signature value</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2876,12 +3189,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        publicKey<span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >publicKey</span>
+                        <span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Public key used for verification</p>
-</p>
+                        <p>
+                            
+                            <p>Public key used for verification</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2894,7 +3211,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Validity of the signature or <code>Error</code> if public key is invalid</p>
+                <li><p>Validity of the signature or else a <code>crypto:Error</code> if the public key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2907,29 +3224,47 @@
              <a class="url-link" href="#verifyRsaSha1Signature">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> verifyRsaSha1Signature </h2>
-        
+            <h2 > verifyRsaSha1Signature </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> data, <span class="builtin-type">byte</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> data, <span class="array-type"><span class="builtin-type">byte</span>[]</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Verify RSA-SHA1 based signature.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Verifies the RSA-SHA1-based signature.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey = checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[] signature = checkpanic crypto:signRsaMd5(data, privateKey);
+  crypto:PublicKey publicKey =  checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  boolean|crypto:Error validity = crypto:verifyRsaSha1Signature(data, signature, publicKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        data<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >data</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be verified</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be verified</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2937,12 +3272,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        signature<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >signature</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Signature value</p>
-</p>
+                        <p>
+                            
+                            <p>Signature value</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2950,12 +3289,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        publicKey<span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >publicKey</span>
+                        <span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Public key used for verification</p>
-</p>
+                        <p>
+                            
+                            <p>Public key used for verification</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2968,7 +3311,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Validity of the signature or <code>Error</code> if public key is invalid</p>
+                <li><p>Validity of the signature or else a <code>crypto:Error</code> if the public key is invalid</p>
 </li>
             </ul>
         </div>
@@ -2981,29 +3324,47 @@
              <a class="url-link" href="#verifyRsaSha256Signature">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> verifyRsaSha256Signature </h2>
-        
+            <h2 > verifyRsaSha256Signature </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> data, <span class="builtin-type">byte</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> data, <span class="array-type"><span class="builtin-type">byte</span>[]</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Verify RSA-SHA256 based signature.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Verifies the RSA-SHA256-based signature.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey = checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[] signature = checkpanic crypto:signRsaMd5(data, privateKey);
+  crypto:PublicKey publicKey =  checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  boolean|crypto:Error validity = crypto:verifyRsaSha256Signature(data, signature, publicKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        data<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >data</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be verified</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be verified</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3011,12 +3372,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        signature<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >signature</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Signature value</p>
-</p>
+                        <p>
+                            
+                            <p>Signature value</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3024,12 +3389,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        publicKey<span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >publicKey</span>
+                        <span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Public key used for verification</p>
-</p>
+                        <p>
+                            
+                            <p>Public key used for verification</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3042,7 +3411,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Validity of the signature or <code>Error</code> if public key is invalid</p>
+                <li><p>Validity of the signature or else a <code>crypto:Error</code> if the public key is invalid</p>
 </li>
             </ul>
         </div>
@@ -3055,29 +3424,47 @@
              <a class="url-link" href="#verifyRsaSha384Signature">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> verifyRsaSha384Signature </h2>
-        
+            <h2 > verifyRsaSha384Signature </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> data, <span class="builtin-type">byte</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> data, <span class="array-type"><span class="builtin-type">byte</span>[]</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Verify RSA-SHA384 based signature.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Verifies the RSA-SHA384-based signature.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey = checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[] signature = checkpanic crypto:signRsaMd5(data, privateKey);
+  crypto:PublicKey publicKey =  checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  boolean|crypto:Error validity = crypto:verifyRsaSha384Signature(data, signature, publicKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        data<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >data</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be verified</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be verified</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3085,12 +3472,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        signature<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >signature</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Signature value</p>
-</p>
+                        <p>
+                            
+                            <p>Signature value</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3098,12 +3489,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        publicKey<span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >publicKey</span>
+                        <span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Public key used for verification</p>
-</p>
+                        <p>
+                            
+                            <p>Public key used for verification</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3116,7 +3511,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Validity of the signature or <code>Error</code> if public key is invalid</p>
+                <li><p>Validity of the signature or else a <code>crypto:Error</code> if the public key is invalid</p>
 </li>
             </ul>
         </div>
@@ -3129,29 +3524,47 @@
              <a class="url-link" href="#verifyRsaSha512Signature">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> verifyRsaSha512Signature </h2>
-        
+            <h2 > verifyRsaSha512Signature </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">byte</span> data, <span class="builtin-type">byte</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">byte</span>[]</span> data, <span class="array-type"><span class="builtin-type">byte</span>[]</span> signature, <a href="../crypto/records/PublicKey.html">PublicKey</a> publicKey)</p>
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Verify RSA-SHA512 based signature.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Verifies the RSA-SHA512-based signature.</p>
+<pre><code class="language-ballerina">  string stringData = &quot;Hello Ballerina&quot;;
+  byte[] data = stringData.toBytes();
+  crypto:KeyStore keyStore = {
+      path: &quot;/home/ballerina/keystore.p12&quot;,
+      password: &quot;keystorePassword&quot;
+  };
+  crypto:PrivateKey privateKey = checkpanic crypto:decodePrivateKey(keyStore, &quot;keyAlias&quot;, &quot;keyPassword&quot;);
+  byte[] signature = checkpanic crypto:signRsaMd5(data, privateKey);
+  crypto:PublicKey publicKey =  checkpanic crypto:decodePublicKey(keyStore, &quot;keyAlias&quot;);
+  boolean|crypto:Error validity = crypto:verifyRsaSha512Signature(data, signature, publicKey);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        data<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >data</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The content to be verified</p>
-</p>
+                        <p>
+                            
+                            <p>The content to be verified</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3159,12 +3572,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        signature<span class="type">  <span class="builtin-type">byte</span> </span>
+                        <span >signature</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">byte</span>[]</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Signature value</p>
-</p>
+                        <p>
+                            
+                            <p>Signature value</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3172,12 +3589,16 @@
             <div class="params-listing">
                 <ul>
                     <li>
-                        publicKey<span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
+                        <span >publicKey</span>
+                        <span class="type">  <a href="../crypto/records/PublicKey.html">PublicKey</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>Public key used for verification</p>
-</p>
+                        <p>
+                            
+                            <p>Public key used for verification</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -3190,7 +3611,7 @@
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../crypto/errors.html#Error">Error</a></span>)</li>
-                <li><p>Validity of the signature or <code>Error</code> if public key is invalid</p>
+                <li><p>Validity of the signature or else a <code>crypto:Error</code> if the public key is invalid</p>
 </li>
             </ul>
         </div>
@@ -3207,17 +3628,6 @@
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -3243,10 +3653,47 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
         ballerinaHighlighter.highlightSnippets();
     };
 </script>
+
 

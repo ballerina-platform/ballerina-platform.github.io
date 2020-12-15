@@ -48,238 +48,63 @@ function getUrlVars(url) {
     return vars;
 }
 
-/*
- * Following script is adding line numbers to the ballerina code blocks in the gneerated documentation
- */
-function initCodeLineNumbers() {
-    $('pre > code.ballerina, pre > code.language-ballerina').each(function() {
 
-        if ($(this).parent().find('.line-numbers-wrap').length === 0) {
-            //cont the number of rows
-            //Remove the new line from the end of the text
-            var numberOfLines = $(this).text().replace(/\n$/, "").split(/\r\n|\r|\n/).length;
-            var lines = '<div class="line-numbers-wrap">';
 
-            //Iterate all the lines and create div elements with line number
-            for (var i = 1; i <= numberOfLines; i++) {
-                lines = lines + '<div class="line-number">' + i + '</div>';
-            }
-            lines = lines + '</div>';
-            //calculate <pre> height and set it to the container
-            var preHeight = numberOfLines * 18 + 20;
 
-            $(this).parent()
-                .addClass('ballerina-pre-wrapper')
-                .prepend($(lines));
-        }
-
-    });
-}
-
-/*
- * Register ballerina language for highlightJS
- * Grammer: https://github.com/ballerina-platform/ballerina-lang/blob/master/compiler/ballerina-lang/src/main/resources/grammar/BallerinaLexer.g4
- */
-if (typeof hljs === 'object') {
-    hljs.configure({ languages: [] });
-    hljs.registerLanguage('ballerina', function() {
-        return {
-            "k": "if else iterator try catch finally fork join all some while foreach in throw return " +
-                "returns break timeout transaction aborted abort committed failed retries next bind with " +
-                "lengthof typeof enum import version public private attach as native documentation lock " +
-                "from on select group by having order where followed insert into update delete set for " +
-                "window query annotation package type typedesc connector function resource service action " +
-                "worker struct transformer endpoint object const true false reply create parameter match but",
-            "i": {},
-            "c": [{
-                "cN": "ballerinadoc",
-                "b": "/\\*\\*",
-                "e": "\\*/",
-                "r": 0,
-                "c": [{
-                    "cN": "ballerinadoctag",
-                    "b": "(^|\\s)@[A-Za-z]+"
-                }]
-            }, {
-                "cN": "comment",
-                "b": "//",
-                "e": "$",
-                "c": [{
-                    "b": {}
-                }, {
-                    "cN": "label",
-                    "b": "XXX",
-                    "e": "$",
-                    "eW": true,
-                    "r": 0
-                }]
-            }, {
-                "cN": "comment",
-                "b": "/\\*",
-                "e": "\\*/",
-                "c": [{
-                    "b": {}
-                }, {
-                    "cN": "label",
-                    "b": "XXX",
-                    "e": "$",
-                    "eW": true,
-                    "r": 0
-                }, "self"]
-            }, {
-                "cN": "string",
-                "b": "\"",
-                "e": "\"",
-                "i": "\\n",
-                "c": [{
-                    "b": "\\\\[\\s\\S]",
-                    "r": 0
-                }, {
-                    "cN": "constant",
-                    "b": "\\\\[abfnrtv]\\|\\\\x[0-9a-fA-F]*\\\\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]",
-                    "r": 0
-                }]
-            }, {
-                "cN": "number",
-                "b": "(\\b(0b[01_]+)|\\b0[xX][a-fA-F0-9_]+|(\\b[\\d_]+(\\.[\\d_]*)?|\\.[\\d_]+)([eE][-+]?\\d+)?)[lLfF]?",
-                "r": 0
-            }, {
-                "cN": "annotation",
-                "b": "@[A-Za-z]+"
-            }, {
-                "cN": "type",
-                "b": "\\b(boolean|int|float|string|var|any|datatable|table|blob|map|exception|json|xml|xmlns|error|stream|streamlet|aggregation)\\b",
-                "r": 0
-            }]
-        };
-    });
-}
 
 //matching version selected with the URL
-function versionSelectorValue(ver){
-    var pathValue = window.location.pathname;
-    var selected_value = "";
-    if(pathValue.indexOf(ver) > -1){
-        selected_value = "selected='selected'";
+function versionSelectorValue(){
+    let pathValue = window.location.pathname;
+    $("#versions").reset;
+    let options = $("#versions").find("option");
+    let status=0;
+    $.each(options, function (key, option) {
+    
+        let optionText = $(option).val();
+        //let ver = "v" + optionText.replace(".", "-");
+        
+        if(pathValue.indexOf(optionText) > -1){
+            $(option).attr("selected", "selected");
+            status = 1;
+        }        
+    });
+    if(status == 0){
+        $("#versions").prop("selectedIndex", 0);
     }
-    return selected_value;
 }
 
 $(document).ready(function() {
-    var pathValue = window.location.pathname;
-    
-    var menu = '<div class="container">' +
-        '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
-        '<nav class="navbar">' +
-        '<div>' +
-        '<div class="navbar-header">' +
-        '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">' +
-        '<span class="sr-only">&#9776</span>' +
-        '<span class="icon-bar"></span>' +
-        '<span class="icon-bar"></span>' +
-        '<span class="icon-bar"></span>' +
-        '</button>' +
-        '<a class="cMobileLogo" href="/" ><img src="/img/ballerina-logo.svg" alt="Ballerina"/></a>' +
-        '</div>' +
-        '<div id="navbar" class="collapse navbar-collapse">' +
-        '<ul class="nav navbar-nav cTopNav">' +
-        '<li class="active toctree-l1" id="learnli"><a class="cBioTopLink" href="/learn">Learn</a></li>' +
-        '<li class="active toctree-l1" id="Eventsli"><a class="cBioTopLink" href="/learn/events">Events</a></li>' +
-        '<li class="toctree-l1"><a class="cBioTopLink" href="https://central.ballerina.io/" target="_blank">Central</a></li>' +
-        '<li class="toctree-l1" id="openli"><a class="cBioTopLink" href="/community">Community</a></li>' +
-        '<li class="toctree-l1" id="helpli"><a class="cBioTopLink" href="https://blog.ballerina.io">Blog</a></li>' +
-        '<li class="cVersionItem"><div class="cVersionContainer"><lable class="cVlable">Version</lable><select name="versions" id="versions" class="select-css">' +
-        '<option value="/'+pathValue+'" '+versionSelectorValue("")+'>1.0</option>' +
-        '<option value="/v0-991'+pathValue+'" '+versionSelectorValue("991")+'>0.991</option> </select></div></li>' +
-        '</ul>' +
-        '</div>' +
-        '</div>' +
-        '</nav>' +
-        '</div>' +
-        '</div>';
+    // Change version selected in the versions dropdown according to version on the URL.
+    versionSelectorValue();
 
-    var footer = '<div class="container">' +
-        '<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 cBallerina-io-left-col cBallerinaFooterLinks">' +
-        '<ul>' +
-        '<li><a class="cBioFooterLink" href="/downloads">Download</a></li>' +
-        '<li><a class="cBioFooterLink" href="https://github.com/ballerina-lang/ballerina/blob/master/LICENSE">Code License</a></li>' +
-        '<li><a class="cBioFooterLink" href="/license-of-site">Site License</a></li>' +
-        '<li><a class="cBioFooterLink" href="/terms-of-service">TERMS OF SERVICE</a></li>' +
-        '<li><a class="cBioFooterLink" href="/privacy-policy">PRIVACY POLICY</a></li>' +
-        '</ul>' +
-        '</div>' +
-        '<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 cBallerina-io-middle-col cBallerinaFooterSignUp">' +
-        '<p><span>Announcement List</span><br/>' +
-        '<div class="cFormContainer">' +
-        '<form>' +
-        '<div class="cFieldContainer">' +
-        '<input maxlength="90" value="" id="emailUser" name="email" placeholder="I consent to join the email list" title="email" type="text">' +
-        '</div>' +
-        '<div class="cButtonContainer">' +
-        '<a class="cBallerinaButtons subscribeUserForm" href="" id="subscribeUserButton"></a>' +
-        '</div>' +
-        '</form>' +
-        '</div>' +
-        '<div class="cSocialmedia">' +
-        '<ul>' +
-        '<li>' +
-        '<a class="cBioFooterLink" href="https://github.com/ballerina-platform" target="_blank"><img src="/img/github.svg"/></a>' +
-        '</li>' +
-        '<li><a class="cBioFooterLink" href="https://stackoverflow.com/questions/tagged/ballerina" target="_blank"><img src="/img/stackoverflow.svg"/></a></li>' +
-        '<li><a class="cBioFooterLink" href="https://twitter.com/ballerinalang" target="_blank"><img src="/img/twitter.svg"/></a></li>' +
-        '<li><a class="cBioFooterLink" href="/community/slack/"><img src="/img/slack.svg"/></a></li>' +
-        '</ul>' +
-        '<div class="pdframe"></div>' +
-        '</div>' +
-        '</div>' +
-        '<div class="col-xs-12 col-sm-10 col-md-6 col-lg-6 cBallerina-io-right-col">' +
-        //'<div class="cFooterBanner"><a href="https://con.ballerina.io/?utm_source=bio&utm_medium=banner&utm_campaign=bio_footer_banner" class="cFooterBanner-link" target="_blank"><img src="https://con.ballerina.io/wp-content/themes/ballerinacon/images/bcon-logo.png"/></a></div>' +
-        '<p>In the creation of Ballerina, we were inspired by so many technologies. Thank you to all that have come before us (and forgive us if we missed one): Java, Go, C, C++, D, Rust, Haskell, Kotlin, Dart, TypeScript, JavaScript, Python, Perl, Flow, Swift, Elm, RelaxNG, NPM, Crates, Maven, Gradle, Kubernetes, Docker, Envoy, Markdown, GitHub and WSO2.</p></div>' +
-        '</div>';
+    // $("code").addClass('language-java');
+    // $(".ballerina").removeClass('cBasicCode');
+    // $(".bash").removeClass('cBasicCode');
 
-
-
-    // var pathValue = window.location.pathname;
-    // var version =    '<div class="cVersionContainer"><lable class="cVlable">Version</lable>' +
-    // '<select name="versions" id="versions" class="select-css">' +
-    // '<option value="http://v1-0.ballerina.io'+pathValue+'">1.0</option>' +
-    // '<option value="https://v0-991.ballerina.io'+pathValue+'" selected="selected">0.991</option>' +
-    // '</select>'+
-    // '</div>';
-
-    // var homelink =  '<a href="/"><img class="logo" src="html-template-resources/images/ballerina-logo.png"></a>';
-
-    
-    // $('.navi-wrapper-content a').replaceWith(homelink);
-
-
-
-   
-   // $('.cBallerina-io-Logo-row .container').append(version);
-   // $('.navi-wrapper').append(version);
-
-
-    $('#iMainNavigation').append(menu);
-    $('#iBallerinaFooter').append(footer);
-    // $('.cVersionContainer').append (versionselector);
-
-    $("code").addClass('cBasicCode');
+    $("pre").removeClass('highlight');
+    // $("code").addClass('line-numbers');
+    // $("pre").removeClass('line-numbers');
+    $("code").removeClass('cBasicCode');
     $(".ballerina").removeClass('cBasicCode');
+    $("pre").addClass('basic');
+    // $(".ballerina").addClass('language-ballerina');
     $(".bash").removeClass('cBasicCode');
+    $(".language-ballerina").addClass('ballerina');
+
+    
+$("table").addClass('table-striped');
+
 
     $(".cRuntimeContent").addClass('cShow');
 
     $(".cSEQUENCE").addClass('active');
     $(".cRUNTIME").addClass('active');
 
-
-
     $(".cRUNTIME").click(function() {
         $(".cRuntimeContent").addClass('cShow');
         $(".cDeploymentContent").removeClass('cShow');
         $(".cSECUREBYDEFAULTContent").removeClass('cShow');
         $(".cLifecycleContent").removeClass('cShow');
-
     });
 
     $(".cDEPLOYMENT").click(function() {
@@ -299,9 +124,6 @@ $(document).ready(function() {
 
     $(".cSEQUENCEContent").addClass('cShow');
 
-
-
-
     $(".cSEQUENCE").click(function() {
         $(".cSEQUENCEContent").addClass('cShow');
         $(".cCONCURRENCYContent").removeClass('cShow');
@@ -311,7 +133,6 @@ $(document).ready(function() {
         $(".cCLOUDNATIVEContent").removeClass('cShow');
         $(".cBESTPRACTICESENFORCEDContent").removeClass('cShow');
         $(".cBEYONDTHELANGUAGEContent").removeClass('cShow');
-
     });
 
     $(".cCONCURRENCY").click(function() {
@@ -323,7 +144,6 @@ $(document).ready(function() {
         $(".cCLOUDNATIVEContent").removeClass('cShow');
         $(".cBESTPRACTICESENFORCEDContent").removeClass('cShow');
         $(".cBEYONDTHELANGUAGEContent").removeClass('cShow');
-
     });
 
     $(".cTYPE").click(function() {
@@ -391,6 +211,7 @@ $(document).ready(function() {
         $(".cBESTPRACTICESENFORCEDContent").addClass('cShow');
         $(".cBEYONDTHELANGUAGEContent").removeClass('cShow');
        });
+
     $(".cBEYONDTHELANGUAGE").click(function() {
         $(".cSEQUENCEContent").removeClass('cShow');
         $(".cCONCURRENCYContent").removeClass('cShow');
@@ -413,12 +234,6 @@ $(document).ready(function() {
         if ($menuDropWindow.hasClass('cShowcSearchTopMenu')) {
             $searchInput.focus();
         }
-
-
-
-
-
-        
     });
 
     $(document).mouseup(function(e) {
@@ -473,6 +288,20 @@ $(document).ready(function() {
 //        $(".cCollaps-Menu-first").removeClass('cOpenMenu');
 //        $(".cBallerina-io-primitive-types").removeClass('cOpenMenu');
     });
+
+
+    /** 
+     * Privacy policy popup
+     * 
+    */
+    $('.cIUnderstand').click(function () {
+        setCookie('cookie_accepted', '1', 180);
+    });
+    var cookie_policy = is_cookie("cookie_accepted");
+    if (cookie_policy != -1) {
+        $(".cCookie-Policy").addClass('cHide-Policy');
+    }
+    
 
     initCodeLineNumbers();
 
@@ -530,8 +359,29 @@ $(document).ready(function() {
             'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
         $(elem).replaceWith($iframe);
     });
-
+    
 });
+
+//set a cookie in the browser
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+//check the cookie exists
+function is_cookie(cookie_name) {
+    var cookie_string = document.cookie;
+    var cookie_value = "";
+    if (cookie_string.length != 0) {
+        var cookie_value = cookie_string.indexOf(cookie_name);
+    }
+    return cookie_value;
+}
 
 $(function() {
     var pathname = window.location.pathname;
@@ -552,17 +402,25 @@ $(function() {
 });
 
 
-
-
-
 $(document).ready(function() {
- var urlmenu = document.getElementById( 'versions' );
- urlmenu.onchange = function() {    
-    window.open( this.options[ this.selectedIndex ].value , "_self" );
-  }
+    let urlmenu = document.getElementById( 'versions' );
+    urlmenu.onchange = function() {
+        let pathname = window.location.pathname;
+        let splitedPath = pathname.split("/learn/");
+        let selectedOption = this.options[ this.selectedIndex ];
+        let isLatest = selectedOption.getAttribute("data-value") === "latest";
+        let newPath = "";
+        if(isLatest) {
+            newPath =  "/learn/" + splitedPath[1];
+        } else {
+            let selectedValue = selectedOption.value;
+            newPath = "/" + selectedValue + "/learn/" + splitedPath[1];
+        }
+        window.open( newPath , "_self" );
+    };
 
     //subscribe form
-    $("#subscribeUserButtonOS").click(function(event) {
+    $("#subscribeUserButton").click(function(event) {
         event.preventDefault();
         subscribeUserOS();
     });
@@ -577,18 +435,26 @@ $(document).ready(function() {
     });
 
     function subscribeUserOS() {
-        var email = $('#emailUserOS').val();
+        $("#form-error").html("");
+        var email = $('#userEmail').val();
+        var optin = $('#optin').is(":checked");
         $('#subscribeUserMessage').remove("");
         if (email == "") {
-            $('#emailUserOS').val('');
-            $("#emailUserOS").attr("placeholder","Please enter your email.");
+            $("#form-error").text("Please enter your email.");
+            $("#form-error").addClass("cShowBlock");
         } else if (!isEmail(email)) {
-            $('#emailUserOS').val('');
-            $("#emailUserOS").attr("placeholder","Please enter a valid email.");
-        } else {
-            $('#emailUserOS').val('');
-            $(".pdframe").html("<iframe src='https://go.pardot.com/l/142131/2018-03-26/4yl979?email=" + email + "'></iframe>");
-            $("#emailUserOS").attr("placeholder","Your email address has been added.");
+            $("#form-error").text("Please enter a valid email.");
+            $("#form-error").addClass("cShowBlock");
+        } else if(!optin){
+            $("#form-error").text("Please confirm email subscription");
+            $("#form-error").addClass("cShowBlock");
+        }else {
+            $('#subscribeForm').trigger("reset");
+            $(".pdframe").html("<iframe src='https://go.pardot.com/l/142131/2017-02-16/3c6zgy?email=" + email + "'></iframe>");
+            $("#form-status").text("You have successfully subscribed to the newsletter.");
+            $("#form-status").addClass("cShowBlock");
+            $("#form-error").removeClass("cShowBlock");
+            
         }
         return;
     }
@@ -598,45 +464,104 @@ $(document).ready(function() {
         event.preventDefault();
         inviteSlackUser();
     });
-    $('#email').on('keypress', function(event) {
+    $('#slackEmail').on('keypress', function(event) {
         if (event.which === 13) {
             event.preventDefault();
             $(this).attr("disabled", "disabled");
-            var email = $("#email").val();
-            inviteSlackUserService(email);
+            var email = $("#slackEmail").val();
+            if (email == "") {
+                $('#slackEmail').val('');
+                $("#slackEmail").attr("placeholder", "Please enter your email.");
+            } else if (!isEmail(email)) {
+                $('#slackEmail').val('');
+                $("#slackEmail").attr("placeholder", "Please enter a valid email.");
+            } else {
+                $('#slackEmail').val('');
+                $("#slackEmail").attr("placeholder", "Processing...");
+
+                AWS.config.region = 'us-east-1';
+                AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: atob('dXMtZWFzdC0xOjhiMGViNzYzLTUwNWEtNGE0NS04ODA1LTNkY2ZlZGQwNDVhMA=='),
+                }); 
+                var lambda = new AWS.Lambda();
+                var result;
+                
+                if (email == null || email == '') {
+                    input = {};
+                } else {
+                    input = {
+                    email: email
+                    };
+                }
+
+                lambda.invoke({
+                    FunctionName: 'slackService',
+                    Payload: JSON.stringify(input)
+                }, function(err, data) {
+                    if (err) {
+                    result = err;
+                    } else {
+                    result = JSON.parse(data.Payload);
+                    }
+                    if (result.body.ok) {
+                        $('#slackEmail').val('');
+                        $("#slackEmail").attr("placeholder", "Your invitation has been sent to "+email);
+                    } else if(result.body.error == "already_in_team"){
+                        $('#slackEmail').val('');
+                        $("#slackEmail").attr("placeholder", "This email is already subscribed");
+                    }else if(result.body.error == "already_invited"){
+                        $('#slackEmail').val('');
+                        $("#slackEmail").attr("placeholder", "This email is already invited");
+                    }else{
+                        $('#slackEmail').val('');
+                        $("#slackEmail").attr("placeholder", "Something went wrong, try again!");
+                    }
+                });
+            }            
             $(this).removeAttr("disabled");
         }
     });
+
+
+    //Lunr Search field
+    $('#searchBtn').click(function () {
+        let searchText = $('#searchTxt').val();
+        window.location.assign("/search?" + searchText);
+    });
+    $( "#searchTxt" ).keypress(function (event) {
+        if (event.which === 13) {
+            event.preventDefault();
+            let searchText = $('#searchTxt').val();
+            window.location.assign("/search?" + searchText);
+        }
+    });
+
 });
 
+function validate_redirection(path) {
+    $('body').hide();
+    let obsolete_paths = ["/v0-990", "/v0-991", "/v1-0", "/v1-1"];
+    let redirection = {};
+    let status = false;
+    $.each(obsolete_paths, function (key, val) {
+        if (path.startsWith(val)) {
+            redirection = { type: "versioned" };
+            status = true;
+            return;
+        }
+    });
 
+    if (!status) {
+        //read the json data and redirect
+        var dest = redirections[path];
+        //check for the destination URL without trailing slash
+        if (typeof dest == "undefined") {
+            dest = redirections[path.replace(/\/([^\/]*)$/, '$1')];
+        }
 
-// $(document).ready(function() {
-//     var a = function() {
-//       var b = $(window).scrollTop();
-//       var d = $("#scroller-anchor").offset({scroll:false}).top;
-//       var c = $("#scroller");
-//       if (b>d) {
-//         c.css({position:"fixed",top:"0px"})
-//       } else {
-//         c.css({position:"relative",top:""})
-//       }
-//     };
-//     $(window).scroll(a);a()
-//   });
-
-/*
-function sticky_relocate() {
-    var window_top = $(window).scrollTop();
-    var div_top = $('#scroller-anchor').offset().top;
-    if (window_top > div_top) {
-      $('#scroller').addClass('stick');
-    } else {
-      $('#scroller').removeClass('stick');
+        if (dest != "" && typeof dest != "undefined") {
+            redirection = { type: "path", dest: dest };
+        }
     }
-  }
-  
-  $(function() {
-    $(window).scroll(sticky_relocate);
-    sticky_relocate();
-  });*/
+    return redirection;
+}

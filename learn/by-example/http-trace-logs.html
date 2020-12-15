@@ -1,101 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Trace Logs" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Trace Logs</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Trace Logs
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/http-trace-logs
+redirect_from:
+  - /v1-2/learn/by-example/http-trace-logs
+  - /v1-2/learn/by-example/http-trace-logs.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
                 <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">;</span>
@@ -108,25 +20,89 @@
         <span class="nx">path</span><span class="p">:</span> <span class="s">&quot;/&quot;</span>
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">Caller</span> <span class="nx">caller</span><span class="p">,</span> <span class="nx">http</span><span class="p">:</span><span class="nx">Request</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">http</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">clientEP</span> <span class="p">=</span> <span class="nx">new</span><span class="p">(</span><span class="s">&quot;http://httpstat.us&quot;</span><span class="p">);</span>
+        <span class="nx">http</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">clientEP</span> <span class="p">=</span> <span class="nx">new</span> <span class="p">(</span><span class="s">&quot;http://httpstat.us&quot;</span><span class="p">);</span>
         <span class="k">var</span> <span class="nx">resp</span> <span class="p">=</span> <span class="nx">clientEP</span><span class="o">-&gt;</span><span class="nx">forward</span><span class="p">(</span><span class="s">&quot;/200&quot;</span><span class="p">,</span> <span class="nx">req</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">resp</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">Response</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">resp</span><span class="p">);</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Failed to respond to caller&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">result</span><span class="p">);</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Failed to respond to caller&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Failed to fulfill request&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">resp</span><span class="p">);</span>
+            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Failed to fulfill request&quot;</span><span class="p">,</span> <span class="nx">resp</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">Trace</span> <span class="nx">logs</span> <span class="nx">are</span> <span class="nx">logged</span> <span class="nx">at</span> <span class="s">`TRACE`</span> <span class="nx">level</span><span class="p">.</span> 
+<span class="err">#</span> <span class="nx">To</span> <span class="nx">enable</span> <span class="nx">trace</span> <span class="nx">logs</span><span class="p">,</span> <span class="nx">the</span> <span class="nx">log</span> <span class="nx">level</span> <span class="nx">has</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">set</span> <span class="nx">to</span> <span class="s">`TRACE`</span> <span class="nx">using</span> <span class="nx">the</span> <span class="nx">runtime</span> <span class="nx">argument</span><span class="p">:</span> <span class="p">&lt;</span><span class="nx">br</span><span class="p">&gt;</span> <span class="s">`--b7a.http.tracelog.console=true`</span><span class="p">.</span> <span class="p">&lt;</span><span class="nx">br</span><span class="p">&gt;</span>
+<span class="err">#</span> <span class="nx">To</span> <span class="nx">start</span> <span class="nx">the</span> <span class="kd">service</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span> <span class="nx">and</span> <span class="nx">use</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">with</span> <span class="nx">this</span> <span class="nx">runtime</span> <span class="nx">argument</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">http_trace_logs</span><span class="p">.</span><span class="nx">bal</span> <span class="o">--</span><span class="nx">b7a</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">console</span><span class="p">=</span><span class="kc">true</span> 
+<span class="nx">ballerina</span><span class="p">:</span> <span class="nx">HTTP</span> <span class="nx">trace</span> <span class="nx">log</span> <span class="nx">enabled</span>
+<span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">]</span> <span class="nx">started</span> <span class="nx">HTTP</span><span class="o">/</span><span class="nx">WS</span> <span class="nx">listener</span> <span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">9090</span>
+<span class="err">#</span> <span class="nx">In</span> <span class="nx">the</span> <span class="nx">logs</span><span class="p">,</span> <span class="s">`http.downstream`</span> <span class="nx">refers</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">HTTP</span> <span class="nx">traffic</span> <span class="nx">that</span> <span class="nx">flows</span> <span class="nx">between</span> <span class="nx">the</span> <span class="nx">client</span> <span class="nx">and</span> <span class="nx">Ballerina</span><span class="p">,</span> 
+<span class="err">#</span> <span class="k">while</span> <span class="s">`http.upstream`</span> <span class="nx">refers</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">HTTP</span> <span class="nx">traffic</span> <span class="nx">that</span> <span class="nx">flows</span> <span class="nx">between</span> <span class="nx">Ballerina</span> <span class="nx">and</span> <span class="nx">the</span> <span class="nx">backend</span><span class="p">.</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="mi">693</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">]</span> <span class="nx">REGISTERED</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="mi">696</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">ACTIVE</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="mi">745</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">INBOUND</span><span class="p">:</span> <span class="nx">DefaultHttpRequest</span><span class="p">(</span><span class="nx">decodeResult</span><span class="p">:</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">version</span><span class="p">:</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="nx">GET</span> <span class="o">/</span><span class="nx">hello</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<span class="nx">Host</span><span class="p">:</span> <span class="nx">localhost</span><span class="p">:</span><span class="mi">9090</span>
+<span class="nx">User</span><span class="o">-</span><span class="nx">Agent</span><span class="p">:</span> <span class="nx">curl</span><span class="o">/</span><span class="mf">7.58.0</span>
+<span class="nx">Accept</span><span class="p">:</span> <span class="o">*</span><span class="cm">/*</span>
+<span class="cm">[2019-09-08 13:01:12,779] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] INBOUND: EmptyLastHttpContent, 0B</span>
+<span class="cm">[2019-09-08 13:01:12,782] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] READ COMPLETE</span>
+<span class="cm">[2019-09-08 13:01:13,133] TRACE {http.tracelog.upstream} - [id: 0xd79aee99] REGISTERED</span>
+<span class="cm">[2019-09-08 13:01:13,134] TRACE {http.tracelog.upstream} - [id: 0xd79aee99] CONNECT: httpstat.us/23.99.0.12:80, null</span>
+<span class="cm">[2019-09-08 13:01:13,381] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: n/a, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] DEREGISTER</span>
+<span class="cm">[2019-09-08 13:01:13,383] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: n/a, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] ACTIVE</span>
+<span class="cm">[2019-09-08 13:01:13,383] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: n/a, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] UNREGISTERED</span>
+<span class="cm">[2019-09-08 13:01:13,384] TRACE {http.tracelog.upstream} - [id: 0xd79aee99] REGISTERED</span>
+<span class="cm">[2019-09-08 13:01:13,389] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] OUTBOUND: DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)</span>
+<span class="cm">GET /200 HTTP/1.1</span>
+<span class="cm">Accept: */</span><span class="o">*</span>
+<span class="nx">host</span><span class="p">:</span> <span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span>
+<span class="nx">user</span><span class="o">-</span><span class="nx">agent</span><span class="p">:</span> <span class="nx">ballerina</span><span class="o">/</span><span class="mf">1.0.0</span>
+<span class="nx">connection</span><span class="p">:</span> <span class="nx">keep</span><span class="o">-</span><span class="nx">alive</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">394</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">upstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0xd79aee99</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">10.100.5.32</span><span class="p">:</span><span class="mi">39044</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span><span class="o">/</span><span class="mf">23.99.0.12</span><span class="p">:</span><span class="mi">80</span><span class="p">]</span> <span class="nx">OUTBOUND</span><span class="p">:</span> <span class="nx">EmptyLastHttpContent</span><span class="p">,</span> <span class="mi">0</span><span class="nx">B</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">395</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">upstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0xd79aee99</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">10.100.5.32</span><span class="p">:</span><span class="mi">39044</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span><span class="o">/</span><span class="mf">23.99.0.12</span><span class="p">:</span><span class="mi">80</span><span class="p">]</span> <span class="nx">FLUSH</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">653</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">upstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0xd79aee99</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">10.100.5.32</span><span class="p">:</span><span class="mi">39044</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span><span class="o">/</span><span class="mf">23.99.0.12</span><span class="p">:</span><span class="mi">80</span><span class="p">]</span> <span class="nx">INBOUND</span><span class="p">:</span> <span class="nx">DefaultHttpResponse</span><span class="p">(</span><span class="nx">decodeResult</span><span class="p">:</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">version</span><span class="p">:</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="nx">OK</span>
+<span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span><span class="p">:</span> <span class="nx">private</span>
+<span class="nx">Content</span><span class="o">-</span><span class="nx">Length</span><span class="p">:</span> <span class="mi">6</span>
+<span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="p">:</span> <span class="nx">text</span><span class="o">/</span><span class="nx">plain</span><span class="p">;</span> <span class="nx">charset</span><span class="p">=</span><span class="nx">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="nx">Server</span><span class="p">:</span> <span class="nx">Microsoft</span><span class="o">-</span><span class="nx">IIS</span><span class="o">/</span><span class="mf">10.0</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">AspNetMvc</span><span class="o">-</span><span class="nx">Version</span><span class="p">:</span> <span class="mf">5.1</span>
+<span class="nx">Access</span><span class="o">-</span><span class="nx">Control</span><span class="o">-</span><span class="nx">Allow</span><span class="o">-</span><span class="nx">Origin</span><span class="p">:</span> <span class="o">*</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">AspNet</span><span class="o">-</span><span class="nx">Version</span><span class="p">:</span> <span class="mf">4.0.30319</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">Powered</span><span class="o">-</span><span class="nx">By</span><span class="p">:</span> <span class="nx">ASP</span><span class="p">.</span><span class="nx">NET</span>
+<span class="nx">Set</span><span class="o">-</span><span class="nx">Cookie</span><span class="p">:</span> <span class="nx">ARRAffinity</span><span class="p">=</span><span class="mi">8</span><span class="nx">bb96a9f72e760ea135952440e9c62bbfe3a64e8a577005f68697bfd250722b9</span><span class="p">;</span><span class="nx">Path</span><span class="p">=</span><span class="o">/</span><span class="p">;</span><span class="nx">HttpOnly</span><span class="p">;</span><span class="nx">Domain</span><span class="p">=</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span>
+<span class="nx">Date</span><span class="p">:</span> <span class="nx">Sun</span><span class="p">,</span> <span class="mi">08</span> <span class="nx">Sep</span> <span class="mi">2019</span> <span class="mo">07</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">13</span> <span class="nx">GMT</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">685</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">upstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0xd79aee99</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">10.100.5.32</span><span class="p">:</span><span class="mi">39044</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span><span class="o">/</span><span class="mf">23.99.0.12</span><span class="p">:</span><span class="mi">80</span><span class="p">]</span> <span class="nx">INBOUND</span><span class="p">:</span> <span class="nx">DefaultLastHttpContent</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">PooledSlicedByteBuf</span><span class="p">(</span><span class="nx">ridx</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">widx</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">cap</span><span class="p">:</span> <span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="nx">unwrapped</span><span class="p">:</span> <span class="nx">PooledUnsafeDirectByteBuf</span><span class="p">(</span><span class="nx">ridx</span><span class="p">:</span> <span class="mi">409</span><span class="p">,</span> <span class="nx">widx</span><span class="p">:</span> <span class="mi">409</span><span class="p">,</span> <span class="nx">cap</span><span class="p">:</span> <span class="mi">1024</span><span class="p">)),</span> <span class="nx">decoderResult</span><span class="p">:</span> <span class="nx">success</span><span class="p">),</span> <span class="mi">6</span><span class="nx">B</span>
+<span class="mi">200</span> <span class="nx">OK</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">689</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">upstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0xd79aee99</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="o">/</span><span class="mf">10.100.5.32</span><span class="p">:</span><span class="mi">39044</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span><span class="o">/</span><span class="mf">23.99.0.12</span><span class="p">:</span><span class="mi">80</span><span class="p">]</span> <span class="nx">READ</span> <span class="nx">COMPLETE</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">697</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">OUTBOUND</span><span class="p">:</span> <span class="nx">DefaultFullHttpResponse</span><span class="p">(</span><span class="nx">decodeResult</span><span class="p">:</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">version</span><span class="p">:</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span><span class="p">,</span> <span class="nx">content</span><span class="p">:</span> <span class="nx">CompositeByteBuf</span><span class="p">(</span><span class="nx">ridx</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">widx</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">cap</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">components</span><span class="p">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="nx">OK</span>
+<span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span><span class="p">:</span> <span class="nx">private</span>
+<span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="p">:</span> <span class="nx">text</span><span class="o">/</span><span class="nx">plain</span><span class="p">;</span> <span class="nx">charset</span><span class="p">=</span><span class="nx">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">AspNetMvc</span><span class="o">-</span><span class="nx">Version</span><span class="p">:</span> <span class="mf">5.1</span>
+<span class="nx">Access</span><span class="o">-</span><span class="nx">Control</span><span class="o">-</span><span class="nx">Allow</span><span class="o">-</span><span class="nx">Origin</span><span class="p">:</span> <span class="o">*</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">AspNet</span><span class="o">-</span><span class="nx">Version</span><span class="p">:</span> <span class="mf">4.0.30319</span>
+<span class="nx">X</span><span class="o">-</span><span class="nx">Powered</span><span class="o">-</span><span class="nx">By</span><span class="p">:</span> <span class="nx">ASP</span><span class="p">.</span><span class="nx">NET</span>
+<span class="nx">Set</span><span class="o">-</span><span class="nx">Cookie</span><span class="p">:</span> <span class="nx">ARRAffinity</span><span class="p">=</span><span class="mi">8</span><span class="nx">bb96a9f72e760ea135952440e9c62bbfe3a64e8a577005f68697bfd250722b9</span><span class="p">;</span><span class="nx">Path</span><span class="p">=</span><span class="o">/</span><span class="p">;</span><span class="nx">HttpOnly</span><span class="p">;</span><span class="nx">Domain</span><span class="p">=</span><span class="nx">httpstat</span><span class="p">.</span><span class="nx">us</span>
+<span class="nx">Date</span><span class="p">:</span> <span class="nx">Sun</span><span class="p">,</span> <span class="mi">08</span> <span class="nx">Sep</span> <span class="mi">2019</span> <span class="mo">07</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">13</span> <span class="nx">GMT</span>
+<span class="nx">server</span><span class="p">:</span> <span class="nx">Microsoft</span><span class="o">-</span><span class="nx">IIS</span><span class="o">/</span><span class="mf">10.0</span>
+<span class="nx">content</span><span class="o">-</span><span class="nx">length</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="nx">B</span>
+<span class="mi">200</span> <span class="nx">OK</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">698</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">FLUSH</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">703</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">READ</span> <span class="nx">COMPLETE</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">704</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">INACTIVE</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">704</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">CLOSE</span>
+<span class="p">[</span><span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">708</span><span class="p">]</span> <span class="nx">TRACE</span> <span class="p">{</span><span class="nx">http</span><span class="p">.</span><span class="nx">tracelog</span><span class="p">.</span><span class="nx">downstream</span><span class="p">}</span> <span class="o">-</span> <span class="p">[</span><span class="nx">id</span><span class="p">:</span> <span class="mh">0x04eed4c9</span><span class="p">,</span> <span class="nx">correlatedSource</span><span class="p">:</span> <span class="nx">n</span><span class="o">/</span><span class="nx">a</span><span class="p">,</span> <span class="nx">host</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span> <span class="nx">remote</span><span class="p">:</span><span class="nx">localhost</span><span class="o">/</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">54362</span><span class="p">]</span> <span class="nx">UNREGISTERED</span><span class="err">#</span> <span class="nx">Invoke</span> <span class="nx">the</span> <span class="kd">service</span><span class="p">.</span>
+<span class="nx">curl</span> <span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:9090/hello</span>
+<span class="mi">200</span> <span class="nx">OK</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
@@ -162,25 +138,15 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Trace Logs</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/http-trace-logs/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/http-trace-logs/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -217,7 +183,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/http;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/http;
 import ballerina/log;
 </code></pre></div>
 
@@ -230,7 +196,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>@http:ServiceConfig {
+                                    <div class="highlight"><pre><code class=language-ballerina>@http:ServiceConfig {
     basePath: &quot;/hello&quot;
 }
 service helloWorld on new http:Listener(9090) {
@@ -250,7 +216,7 @@ service helloWorld on new http:Listener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        http:Client clientEP = new(&quot;http://httpstat.us&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>        http:Client clientEP = new (&quot;http://httpstat.us&quot;);
 </code></pre></div>
 
                                 </td>
@@ -269,7 +235,7 @@ service helloWorld on new http:Listener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        var resp = clientEP-&gt;forward(&quot;/200&quot;, req);
+                                    <div class="highlight"><pre><code class=language-ballerina>        var resp = clientEP-&gt;forward(&quot;/200&quot;, req);
         if (resp is http:Response) {
 </code></pre></div>
 
@@ -289,7 +255,7 @@ service helloWorld on new http:Listener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            var result = caller-&gt;respond(resp);
+                                    <div class="highlight"><pre><code class=language-ballerina>            var result = caller-&gt;respond(resp);
 </code></pre></div>
 
                                 </td>
@@ -308,11 +274,11 @@ service helloWorld on new http:Listener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>            if (result is error) {
-                log:printError(&quot;Failed to respond to caller&quot;, err = result);
+                                    <div class="highlight"><pre><code class=language-ballerina>            if (result is error) {
+                log:printError(&quot;Failed to respond to caller&quot;, result);
             }
         } else {
-            log:printError(&quot;Failed to fulfill request&quot;, err = resp);
+            log:printError(&quot;Failed to fulfill request&quot;, resp);
         }
     }
 }
@@ -348,39 +314,38 @@ service helloWorld on new http:Listener(9090) {
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># Trace logs are logged at `TRACE` level. 
-# To enable trace logs, the log level has to be set to `TRACE` using the runtime argument: &lt;br&gt; `-e b7a.http.tracelog.console=true`. &lt;br&gt;
+# To enable trace logs, the log level has to be set to `TRACE` using the runtime argument: &lt;br&gt; `--b7a.http.tracelog.console=true`. &lt;br&gt;
 # To start the service, navigate to the directory that contains the
 # `.bal` file and use the `ballerina run` command with this runtime argument.
-$ ballerina run -e b7a.http.tracelog.console=true http_trace_logs.bal
+ballerina run http_trace_logs.bal --b7a.http.tracelog.console=true 
 ballerina: HTTP trace log enabled
-Initiating service(s) in &#39;http_trace_logs.bal&#39;
-[ballerina/http] started HTTP/WS endpoint 0.0.0.0:9090
+[ballerina/http] started HTTP/WS listener 0.0.0.0:9090
 # In the logs, `http.downstream` refers to the HTTP traffic that flows between the client and Ballerina, 
 # while `http.upstream` refers to the HTTP traffic that flows between Ballerina and the backend.
-[2018-10-30 11:43:18,368] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b] REGISTERED
-[2018-10-30 11:43:18,370] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:/127.0.0.1:9090 - remote:/127.0.0.1:42878] ACTIVE
-[2018-10-30 11:43:18,391] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:/127.0.0.1:9090 - remote:/127.0.0.1:42878] INBOUND: DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+[2019-09-08 13:01:12,693] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9] REGISTERED
+[2019-09-08 13:01:12,696] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:/127.0.0.1:9090 - remote:/127.0.0.1:54362] ACTIVE
+[2019-09-08 13:01:12,745] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:/127.0.0.1:9090 - remote:/127.0.0.1:54362] INBOUND: DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
 GET /hello HTTP/1.1
 Host: localhost:9090
 User-Agent: curl/7.58.0
 Accept: */*
-[2018-10-30 11:43:18,403] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] INBOUND: EmptyLastHttpContent, 0B
-[2018-10-30 11:43:18,405] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] READ COMPLETE
-[2018-10-30 11:43:18,611] TRACE {http.tracelog.upstream} - [id: 0x7675af66] REGISTERED
-[2018-10-30 11:43:18,612] TRACE {http.tracelog.upstream} - [id: 0x7675af66] CONNECT: httpstat.us/23.99.0.12:80, null
-[2018-10-30 11:43:18,862] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: n/a, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] DEREGISTER
-[2018-10-30 11:43:18,863] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: n/a, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] ACTIVE
-[2018-10-30 11:43:18,864] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: n/a, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] UNREGISTERED
-[2018-10-30 11:43:18,865] TRACE {http.tracelog.upstream} - [id: 0x7675af66] REGISTERED
-[2018-10-30 11:43:18,869] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: 0xb881cf0b, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] OUTBOUND: DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+[2019-09-08 13:01:12,779] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] INBOUND: EmptyLastHttpContent, 0B
+[2019-09-08 13:01:12,782] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] READ COMPLETE
+[2019-09-08 13:01:13,133] TRACE {http.tracelog.upstream} - [id: 0xd79aee99] REGISTERED
+[2019-09-08 13:01:13,134] TRACE {http.tracelog.upstream} - [id: 0xd79aee99] CONNECT: httpstat.us/23.99.0.12:80, null
+[2019-09-08 13:01:13,381] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: n/a, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] DEREGISTER
+[2019-09-08 13:01:13,383] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: n/a, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] ACTIVE
+[2019-09-08 13:01:13,383] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: n/a, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] UNREGISTERED
+[2019-09-08 13:01:13,384] TRACE {http.tracelog.upstream} - [id: 0xd79aee99] REGISTERED
+[2019-09-08 13:01:13,389] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] OUTBOUND: DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
 GET /200 HTTP/1.1
 Accept: */*
-user-agent: curl/7.58.0
 host: httpstat.us
+user-agent: ballerina/1.0.0
 connection: keep-alive
-[2018-10-30 11:43:18,872] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: 0xb881cf0b, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] OUTBOUND: EmptyLastHttpContent, 0B
-[2018-10-30 11:43:18,873] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: 0xb881cf0b, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] FLUSH
-[2018-10-30 11:43:19,127] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: 0xb881cf0b, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] INBOUND: DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+[2019-09-08 13:01:13,394] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] OUTBOUND: EmptyLastHttpContent, 0B
+[2019-09-08 13:01:13,395] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] FLUSH
+[2019-09-08 13:01:13,653] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] INBOUND: DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
 HTTP/1.1 200 OK
 Cache-Control: private
 Content-Length: 6
@@ -390,12 +355,12 @@ X-AspNetMvc-Version: 5.1
 Access-Control-Allow-Origin: *
 X-AspNet-Version: 4.0.30319
 X-Powered-By: ASP.NET
-Set-Cookie: ARRAffinity=47acb7810732674082d049be48c0d1ebf14425a7baec3e14cb98c492a7657a83;Path=/;HttpOnly;Domain=httpstat.us
-Date: Tue, 30 Oct 2018 06:13:18 GMT
-[2018-10-30 11:43:19,135] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: 0xb881cf0b, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] INBOUND: DefaultLastHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 409, widx: 409, cap: 1024)), decoderResult: success), 6B
+Set-Cookie: ARRAffinity=8bb96a9f72e760ea135952440e9c62bbfe3a64e8a577005f68697bfd250722b9;Path=/;HttpOnly;Domain=httpstat.us
+Date: Sun, 08 Sep 2019 07:31:13 GMT
+[2019-09-08 13:01:13,685] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] INBOUND: DefaultLastHttpContent(data: PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 409, widx: 409, cap: 1024)), decoderResult: success), 6B
 200 OK
-[2018-10-30 11:43:19,137] TRACE {http.tracelog.upstream} - [id: 0x7675af66, correlatedSource: 0xb881cf0b, host:/10.100.5.32:43768 - remote:httpstat.us/23.99.0.12:80] READ COMPLETE
-[2018-10-30 11:43:19,143] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] OUTBOUND: DefaultFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 6, cap: 6, components=1))
+[2019-09-08 13:01:13,689] TRACE {http.tracelog.upstream} - [id: 0xd79aee99, correlatedSource: 0x04eed4c9, host:/10.100.5.32:39044 - remote:httpstat.us/23.99.0.12:80] READ COMPLETE
+[2019-09-08 13:01:13,697] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] OUTBOUND: DefaultFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 6, cap: 6, components=1))
 HTTP/1.1 200 OK
 Cache-Control: private
 Content-Type: text/plain; charset=utf-8
@@ -403,15 +368,16 @@ X-AspNetMvc-Version: 5.1
 Access-Control-Allow-Origin: *
 X-AspNet-Version: 4.0.30319
 X-Powered-By: ASP.NET
-Set-Cookie: ARRAffinity=47acb7810732674082d049be48c0d1ebf14425a7baec3e14cb98c492a7657a83;Path=/;HttpOnly;Domain=httpstat.us
-Date: Tue, 30 Oct 2018 06:13:18 GMT
+Set-Cookie: ARRAffinity=8bb96a9f72e760ea135952440e9c62bbfe3a64e8a577005f68697bfd250722b9;Path=/;HttpOnly;Domain=httpstat.us
+Date: Sun, 08 Sep 2019 07:31:13 GMT
 server: Microsoft-IIS/10.0
 content-length: 6, 6B
 200 OK
-[2018-10-30 11:43:19,144] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] FLUSH
-[2018-10-30 11:43:19,148] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] READ COMPLETE
-[2018-10-30 11:43:19,149] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] INACTIVE
-[2018-10-30 11:43:19,151] TRACE {http.tracelog.downstream} - [id: 0xb881cf0b, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:42878] UNREGISTERED
+[2019-09-08 13:01:13,698] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] FLUSH
+[2019-09-08 13:01:13,703] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] READ COMPLETE
+[2019-09-08 13:01:13,704] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] INACTIVE
+[2019-09-08 13:01:13,704] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] CLOSE
+[2019-09-08 13:01:13,708] TRACE {http.tracelog.downstream} - [id: 0x04eed4c9, correlatedSource: n/a, host:localhost/127.0.0.1:9090 - remote:localhost/127.0.0.1:54362] UNREGISTERED
 </code></pre></div>
 
                                 </td>
@@ -437,7 +403,7 @@ content-length: 6, 6B
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># Invoke the service.
-$ curl http://localhost:9090/hello
+curl http://localhost:9090/hello
 200 OK
 </code></pre></div>
 
@@ -463,56 +429,49 @@ $ curl http://localhost:9090/hello
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

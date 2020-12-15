@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /v1-2/learn/api-docs/ballerina/grpc/clients/Caller
+  - /v1-2/learn/api-docs/ballerina/grpc/clients/Caller.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +10,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module provides support for the gRPC messaging protocol. gRPC is an inter-process communication technology that allows you to connect, invoke and operate distributed heterogeneous applications as easily as making a local function call. The gRPC protocol is layered over HTTP/2 and It uses Protocol Buffers for marshaling/unmarshaling messages. This makes gRPC, highly efficient on wire and a simple service definition framework.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,grpc">
 
     <title>API Docs - Client : Caller</title>
     <script src="../../html-template-resources/jquery.min.js"></script>
@@ -16,6 +24,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +41,7 @@
     <link rel="stylesheet" href="../../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../../html-template-resources/styles/css/font.css">
     <script src="../../html-template-resources/semantic.min.js"></script>
-    <script src="../../vs/monaco.js"></script>
+    <script src="../../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -49,80 +58,87 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../../index.html">
+            <a href="
+    ../../index.html">
     <img class="logo" src="../../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
             <div class="primary-list">
                 <h3>Clients</h3>
                 <ul>
                     
                         <li class="active active-item">
-                            <a href="Caller.html">Caller</a> 
+                            <a href="Caller.html" onclick="menuLinkClick()">Caller</a>
                         </li>
                     
                         <li >
-                            <a href="Client.html">Client</a> 
+                            <a href="Client.html" onclick="menuLinkClick()">Client</a>
                         </li>
                     
                         <li >
-                            <a href="StreamingClient.html">StreamingClient</a> 
+                            <a href="StreamingClient.html" onclick="menuLinkClick()">StreamingClient</a>
                         </li>
                     
                 </ul>
             </div>
             <div class="ui divider"></div>
-            <div class="primary-list module">
+            
+
     
-        <a href="../../grpc/index.html">
+        <div class="version">v1.2.8</div>
+    
+
+
+<div class="primary-list module">
+    
+        <a href="../../grpc/index.html" onclick="menuLinkClick()">
             <h3>grpc</h3>
         </a>
     
     <ul>
         
         <li>
-            <a data="records" href="../../grpc/index.html#records">Records</a>
+            <a data="records" href="../../grpc/index.html#records" onclick="menuLinkClick()">Records</a>
         </li>
         
         
             <li>
-                <a  data="objects" href="../../grpc/index.html#objects">Objects</a>
+                <a  data="objects" href="../../grpc/index.html#objects" onclick="menuLinkClick()">Objects</a>
             </li>
         
         
             <li>
-                <a data="clients" href="../../grpc/index.html#clients">Clients</a>
+                <a data="clients" href="../../grpc/index.html#clients" onclick="menuLinkClick()">Clients</a>
             </li>
         
         
             <li>
-                <a data="listeners" href="../../grpc/index.html#listeners">Listeners</a>
+                <a data="listeners" href="../../grpc/index.html#listeners" onclick="menuLinkClick()">Listeners</a>
             </li>
         
         
             <li>
-                <a data="functions" href="../../grpc/index.html#functions">Functions</a>
+                <a data="functions" href="../../grpc/index.html#functions" onclick="menuLinkClick()">Functions</a>
             </li>
         
         
             <li>
-                <a data="constants" href="../../grpc/index.html#constants">Constants</a>
+                <a data="constants" href="../../grpc/index.html#constants" onclick="menuLinkClick()">Constants</a>
             </li>
         
         
             <li>
-                <a data="annotations" href="../../grpc/index.html#annotations">Annotations</a>
+                <a data="annotations" href="../../grpc/index.html#annotations" onclick="menuLinkClick()">Annotations</a>
             </li>
         
         
             <li>
-                <a data="types" href="../../grpc/index.html#types">Types</a>
+                <a data="types" href="../../grpc/index.html#types" onclick="menuLinkClick()">Types</a>
             </li>
         
         
             <li>
-                <a data="errors" href="../../grpc/index.html#errors">Errors</a>
+                <a data="errors" href="../../grpc/index.html#errors" onclick="menuLinkClick()">Errors</a>
             </li>
         
     </ul>
@@ -151,7 +167,7 @@
                 </li>
             
                 <li>
-                    <a href="../../docker/index.html">docker</a>
+                    <a href="../../email/index.html">email</a>
                 </li>
             
                 <li>
@@ -179,10 +195,6 @@
                 </li>
             
                 <li>
-                    <a href="../../istio/index.html">istio</a>
-                </li>
-            
-                <li>
                     <a href="../../java/index.html">java</a>
                 </li>
             
@@ -207,11 +219,11 @@
                 </li>
             
                 <li>
-                    <a href="../../kubernetes/index.html">kubernetes</a>
+                    <a href="../../lang.array/index.html">lang.array</a>
                 </li>
             
                 <li>
-                    <a href="../../lang.array/index.html">lang.array</a>
+                    <a href="../../lang.boolean/index.html">lang.boolean</a>
                 </li>
             
                 <li>
@@ -267,310 +279,7 @@
                 </li>
             
                 <li>
-                    <a href="../../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-        </div>
-    </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../../index.html">
-    <img class="logo" src="../../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                <div class="primary-list">
-                    <h3>Clients</h3>
-                    <ul>
-                        
-                            <li class="active active-item">
-                                <a href="Caller.html">Caller</a>
-                            </li>
-                        
-                            <li >
-                                <a href="Client.html">Client</a>
-                            </li>
-                        
-                            <li >
-                                <a href="StreamingClient.html">StreamingClient</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-                <div class="ui divider"></div>
-                <div class="primary-list module">
-    
-        <a href="../../grpc/index.html">
-            <h3>grpc</h3>
-        </a>
-    
-    <ul>
-        
-        <li>
-            <a data="records" href="../../grpc/index.html#records">Records</a>
-        </li>
-        
-        
-            <li>
-                <a  data="objects" href="../../grpc/index.html#objects">Objects</a>
-            </li>
-        
-        
-            <li>
-                <a data="clients" href="../../grpc/index.html#clients">Clients</a>
-            </li>
-        
-        
-            <li>
-                <a data="listeners" href="../../grpc/index.html#listeners">Listeners</a>
-            </li>
-        
-        
-            <li>
-                <a data="functions" href="../../grpc/index.html#functions">Functions</a>
-            </li>
-        
-        
-            <li>
-                <a data="constants" href="../../grpc/index.html#constants">Constants</a>
-            </li>
-        
-        
-            <li>
-                <a data="annotations" href="../../grpc/index.html#annotations">Annotations</a>
-            </li>
-        
-        
-            <li>
-                <a data="types" href="../../grpc/index.html#types">Types</a>
-            </li>
-        
-        
-            <li>
-                <a data="errors" href="../../grpc/index.html#errors">Errors</a>
-            </li>
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.xml/index.html">lang.xml</a>
+                    <a href="../../ldap/index.html">ldap</a>
                 </li>
             
                 <li>
@@ -602,7 +311,7 @@
                 </li>
             
                 <li>
-                    <a href="../../openshift/index.html">openshift</a>
+                    <a href="../../rabbitmq/index.html">rabbitmq</a>
                 </li>
             
                 <li>
@@ -615,10 +324,6 @@
             
                 <li>
                     <a href="../../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../../streams/index.html">streams</a>
                 </li>
             
                 <li>
@@ -646,6 +351,10 @@
                 </li>
             
                 <li>
+                    <a href="../../websub/index.html">websub</a>
+                </li>
+            
+                <li>
                     <a href="../../xmlutils/index.html">xmlutils</a>
                 </li>
             
@@ -657,19 +366,18 @@
         <div class="ui divider"></div>
     
 </div>
-            </div>
         </div>
     </div>
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper">
             <h1>
-                <a class="breadcrumb-home" href="../../index.html">
+                <a class="breadcrumb-home" href="
+    ../../index.html">
     <img class="breadcrumb-home-icon" src="../../html-template-resources/images/home.svg">
 </a>
                 <span class="title-type">Clients - </span>
@@ -692,22 +400,19 @@
                                 <tr>
                                     <td class="module-title truncate functions" title="send"><a
                                             class="functions" href="#send">send</a></td>
-                                    <td class="module-desc"><p>Sends outbound response to the caller.</p>
-</td>
+                                    <td class="module-desc"><p>Sends the outbound response to the caller.</td>
                                 </tr>
                             
                                 <tr>
                                     <td class="module-title truncate functions" title="complete"><a
                                             class="functions" href="#complete">complete</a></td>
-                                    <td class="module-desc"><p>Informs the caller, server finished sending messages.</p>
-</td>
+                                    <td class="module-desc"><p>Informs the caller, when the server has sent all the messages.</td>
                                 </tr>
                             
                                 <tr>
                                     <td class="module-title truncate functions" title="sendError"><a
                                             class="functions" href="#sendError">sendError</a></td>
-                                    <td class="module-desc"><p>Sends server error to the caller.</p>
-</td>
+                                    <td class="module-desc"><p>Sends a server error to the caller.</td>
                                 </tr>
                             
                         </table>
@@ -718,25 +423,28 @@
                         <div class="method-list">
                             
                                 
-<a href="#getId">
-    <div class="param-sum">
-        <div class="param-name">
-        getId 
-        </div>
-        <div class="param-details">  </div>
+<div class="param-sum">
+    <div class="param-name " title="getId">
+        <a href="#getId">getId </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Returns the unique identification of the caller.
+    </div>
+</div>
+
                             
                                 
-<a href="#isCancelled">
-    <div class="param-sum">
-        <div class="param-name">
-        isCancelled 
-        </div>
-        <div class="param-details"> <p>Checks whether the connection is closed by the caller.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="isCancelled">
+        <a href="#isCancelled">isCancelled </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Checks whether the connection is closed by the caller.
+    </div>
+</div>
+
                             
                         </div>
                     
@@ -748,20 +456,34 @@
         
     <div class="params-listing">
         <ul>
-            <li> remoteDetails<span class="type">  <a href="../../grpc/records/Remote.html">Remote</a></span>  {}</li>
+            <li> 
+                <span >remoteDetails</span>
+                <span class="type">  <a href="../../grpc/records/Remote.html">Remote</a></span>
+                 <span class="default">(default  {})</span> 
+            </li>
             <li>
-                <p><p>The remote details</p>
-</p>
+                <p>
+                    
+                    <p>The remote details</p>
+
+                </p>
             </li>
         </ul>
     </div>
         
     <div class="params-listing">
         <ul>
-            <li> local<span class="type">  <a href="../../grpc/records/Local.html">Local</a></span>  {}</li>
+            <li> 
+                <span >local</span>
+                <span class="type">  <a href="../../grpc/records/Local.html">Local</a></span>
+                 <span class="default">(default  {})</span> 
+            </li>
             <li>
-                <p><p>The local details</p>
-</p>
+                <p>
+                    
+                    <p>The local details</p>
+
+                </p>
             </li>
         </ul>
     </div>
@@ -769,17 +491,6 @@
 </div>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -804,6 +515,42 @@ contentWrapper.addEventListener("scroll", event => {
   });
 });
 
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
 </script>
 
 <script>
@@ -823,31 +570,40 @@ contentWrapper.addEventListener("scroll", event => {
              <a class="url-link" href="#send">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> send </h2>
-        
+            <h2 > send </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">any</span> res, <a href="../../grpc/objects/Headers.html">Headers</a>? headers)</p>
-            <b> returns </b><a href="../../grpc/types.html#Error">Error</a>? 
+            <p>(<span class="builtin-type">anydata</span> res, <a href="../../grpc/objects/Headers.html">Headers</a>? headers)</p>
+            
+                <b> returns </b><a href="../../grpc/types.html#Error">Error</a>? 
+            
         </span>
-        
     </div>
-    <p><p>Sends outbound response to the caller.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Sends the outbound response to the caller.</p>
+<pre><code class="language-ballerina"> grpc:Error? err = caller-&gt;send(message, headers);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        res<span class="type">  <span class="builtin-type">any</span> </span>
+                        <span >res</span>
+                        <span class="type">  <span class="builtin-type">anydata</span> </span>
                         
                     </li>
                     <li>
-                        <p><ul>
-<li>The outbound response message.</li>
+                        <p>
+                            
+                            <ul>
+<li>The outbound response message</li>
 </ul>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -855,14 +611,18 @@ contentWrapper.addEventListener("scroll", event => {
             <div class="params-listing">
                 <ul>
                     <li>
-                        headers<span class="type">  <a href="../../grpc/objects/Headers.html">Headers</a>? </span>
+                        <span >headers</span>
+                        <span class="type">  <a href="../../grpc/objects/Headers.html">Headers</a>? </span>
                         <span class="default"> (default ())</span>
                     </li>
                     <li>
-                        <p><ul>
-<li>Optional headers parameter. Passes header value if needed. Default sets to nil.</li>
+                        <p>
+                            
+                            <ul>
+<li>Optional headers parameter. The header values are passed only if needed. The default value is <code>()</code></li>
 </ul>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -876,7 +636,7 @@ contentWrapper.addEventListener("scroll", event => {
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../grpc/types.html#Error">Error</a>?</span>)</li>
                 <li><ul>
-<li>Returns an error if encounters an error while sending the response, returns nil otherwise.</li>
+<li>A <code>grpc:Error</code> if an error occurs while sending the response or else <code>()</code></li>
 </ul>
 </li>
             </ul>
@@ -890,24 +650,29 @@ contentWrapper.addEventListener("scroll", event => {
              <a class="url-link" href="#complete">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> complete </h2>
-        
+            <h2 > complete </h2>
         <span class="method-types">
             <p>()</p>
-            <b> returns </b><a href="../../grpc/types.html#Error">Error</a>? 
+            
+                <b> returns </b><a href="../../grpc/types.html#Error">Error</a>? 
+            
         </span>
-        
     </div>
-    <p><p>Informs the caller, server finished sending messages.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Informs the caller, when the server has sent all the messages.</p>
+<pre><code class="language-ballerina"> grpc:Error? result = caller-&gt;complete();
+</code></pre>
+
+    </div>
+    
 
     
         
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../grpc/types.html#Error">Error</a>?</span>)</li>
-                <li><p>Returns an error if encounters an error while sending the response, returns nil otherwise.</p>
+                <li><p>A <code>grpc:Error</code> if an error occurs while sending the response or else <code>()</code></p>
 </li>
             </ul>
         </div>
@@ -920,29 +685,38 @@ contentWrapper.addEventListener("scroll", event => {
              <a class="url-link" href="#sendError">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> sendError </h2>
-        
+            <h2 > sendError </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">int</span> statusCode, <span class="builtin-type">string</span> message, <a href="../../grpc/objects/Headers.html">Headers</a>? headers)</p>
-            <b> returns </b><a href="../../grpc/types.html#Error">Error</a>? 
+            
+                <b> returns </b><a href="../../grpc/types.html#Error">Error</a>? 
+            
         </span>
-        
     </div>
-    <p><p>Sends server error to the caller.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Sends a server error to the caller.</p>
+<pre><code class="language-ballerina"> grpc:Error? result = caller-&gt;sendError(grpc:ABORTED, &quot;Operation aborted&quot;, headers);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        statusCode<span class="type">  <span class="builtin-type">int</span> </span>
+                        <span >statusCode</span>
+                        <span class="type">  <span class="builtin-type">int</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Error status code.</p>
-</p>
+                        <p>
+                            
+                            <p>Error status code</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -950,12 +724,16 @@ contentWrapper.addEventListener("scroll", event => {
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >message</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Error message.</p>
-</p>
+                        <p>
+                            
+                            <p>Error message</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -963,12 +741,16 @@ contentWrapper.addEventListener("scroll", event => {
             <div class="params-listing">
                 <ul>
                     <li>
-                        headers<span class="type">  <a href="../../grpc/objects/Headers.html">Headers</a>? </span>
+                        <span >headers</span>
+                        <span class="type">  <a href="../../grpc/objects/Headers.html">Headers</a>? </span>
                         <span class="default"> (default ())</span>
                     </li>
                     <li>
-                        <p><p>Optional headers parameter. Passes header value if needed. Default sets to nil.</p>
-</p>
+                        <p>
+                            
+                            <p>Optional headers parameter. The header values are passed only if needed. The default value is <code>()</code></p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -981,7 +763,7 @@ contentWrapper.addEventListener("scroll", event => {
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../grpc/types.html#Error">Error</a>?</span>)</li>
-                <li><p>Returns an error if encounters an error while sending the response, returns nil otherwise.</p>
+                <li><p>A <code>grpc:Error</code> if an error occurs while sending the response or else <code>()</code></p>
 </li>
             </ul>
         </div>
@@ -998,23 +780,30 @@ contentWrapper.addEventListener("scroll", event => {
              <a class="url-link" href="#getId">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> getId </h2>
-        
+            <h2 > getId </h2>
         <span class="method-types">
             <p>()</p>
-            <b> returns </b><span class="builtin-type">int</span> 
+            
+                <b> returns </b><span class="builtin-type">int</span> 
+            
         </span>
-        
     </div>
-    <p></p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the unique identification of the caller.</p>
+<pre><code class="language-ballerina"> int result = caller.getId();
+</code></pre>
+
+    </div>
+    
 
     
         
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">int</span></span>)</li>
-                <li></li>
+                <li><p>caller ID</p>
+</li>
             </ul>
         </div>
         
@@ -1026,24 +815,29 @@ contentWrapper.addEventListener("scroll", event => {
              <a class="url-link" href="#isCancelled">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> isCancelled </h2>
-        
+            <h2 > isCancelled </h2>
         <span class="method-types">
             <p>()</p>
-            <b> returns </b><span class="builtin-type">boolean</span> 
+            
+                <b> returns </b><span class="builtin-type">boolean</span> 
+            
         </span>
-        
     </div>
-    <p><p>Checks whether the connection is closed by the caller.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Checks whether the connection is closed by the caller.</p>
+<pre><code class="language-ballerina"> boolean result = caller.isCancelled();
+</code></pre>
+
+    </div>
+    
 
     
         
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span></span>)</li>
-                <li><p>Returns true, if caller already closed the connection. false otherwise.</p>
+                <li><p>True if the caller has already closed the connection or else false</p>
 </li>
             </ul>
         </div>
@@ -1058,17 +852,6 @@ contentWrapper.addEventListener("scroll", event => {
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -1094,10 +877,47 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
         ballerinaHighlighter.highlightSnippets();
     };
 </script>
+
 

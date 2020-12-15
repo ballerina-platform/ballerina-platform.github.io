@@ -29,21 +29,24 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 breadcrumbs:
   root:
-    hide: trure  # show breadcrumbs on root/home page
+    hide: true  # show breadcrumbs on root/home page
     image: false # Show image or title text  
 github_username:  ballerina-platform
-git_repo: ballerina-platform.github.io
-
+git_repo: ballerina-dev-website
+latest_version: 1.2
+#keep_files: ['0.990','0.991',"1.1"]
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
+exclude: ["downloads/RELEASE_NOTE.md","vendor","0.991/","v1-2","v1-1","v1-0","v0-991","v-0.990","0.990"]
 #   - Gemfile.lock
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+dist_server: https://dist.ballerina.io
+plugin_vscode_repo: https://github.com/ballerina-platform/plugin-vscode

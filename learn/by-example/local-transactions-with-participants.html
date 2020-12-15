@@ -1,101 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Local Transactions with participants" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Local Transactions with participants</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Local Transactions with participants
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/local-transactions-with-participants
+redirect_from:
+  - /v1-2/learn/by-example/local-transactions-with-participants
+  - /v1-2/learn/by-example/local-transactions-with-participants.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
                 <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span>
@@ -122,25 +34,50 @@
     <span class="nx">panic</span> <span class="nx">er</span><span class="p">;</span>
 <span class="p">}</span><span class="kd">function</span> <span class="nx">participantOnCommit</span><span class="p">(</span><span class="kt">string</span> <span class="nx">transactionId</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Local participant committed function handler...&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span>  <span class="nx">below</span> <span class="nx">with</span> <span class="nx">the</span> <span class="o">--</span><span class="nx">experimental</span> <span class="nx">option</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="o">--</span><span class="nx">experimental</span> <span class="nx">local_transactions_with_participants</span><span class="p">.</span><span class="nx">bal2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">328</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Created</span> <span class="nx">transaction</span><span class="p">:</span> <span class="nx">bf592603</span><span class="o">-</span><span class="mi">4639</span><span class="o">-</span><span class="mi">4</span><span class="nx">c16</span><span class="o">-</span><span class="mi">9</span><span class="nx">daf</span><span class="o">-</span><span class="mi">605</span><span class="nx">b8e131470</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">343</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Registered</span> <span class="nx">local</span> <span class="nx">participant</span><span class="p">:</span> <span class="mi">5</span><span class="nx">ca42804</span><span class="o">-</span><span class="mi">876</span><span class="nx">c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a69</span><span class="o">-</span><span class="mi">9</span><span class="nx">b34</span><span class="o">-</span><span class="mi">8</span><span class="nx">bc537c8d87a</span><span class="p">:</span><span class="err">$</span><span class="nx">anon</span><span class="err">$</span><span class="p">.</span><span class="err">$</span><span class="mi">1</span> <span class="k">for</span> <span class="nx">transaction</span><span class="p">:</span><span class="nx">bf592603</span><span class="o">-</span><span class="mi">4639</span><span class="o">-</span><span class="mi">4</span><span class="nx">c16</span><span class="o">-</span><span class="mi">9</span><span class="nx">daf</span><span class="o">-</span><span class="mi">605</span><span class="nx">b8e131470</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">344</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">participant</span> <span class="nx">registered</span><span class="p">:</span> <span class="nx">bf592603</span><span class="o">-</span><span class="mi">4639</span><span class="o">-</span><span class="mi">4</span><span class="nx">c16</span><span class="o">-</span><span class="mi">9</span><span class="nx">daf</span><span class="o">-</span><span class="mi">605</span><span class="nx">b8e131470</span> 
+<span class="nx">Invoke</span> <span class="nx">local</span> <span class="nx">participant</span> <span class="kd">function</span><span class="p">.</span>
+<span class="nx">Local</span> <span class="nx">participant</span> <span class="nx">panicked</span><span class="p">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">350</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Running</span> <span class="mi">2</span><span class="o">-</span><span class="nx">phase</span> <span class="nx">commit</span> <span class="k">for</span> <span class="nx">transaction</span><span class="p">:</span> <span class="nx">bf592603</span><span class="o">-</span><span class="mi">4639</span><span class="o">-</span><span class="mi">4</span><span class="nx">c16</span><span class="o">-</span><span class="mi">9</span><span class="nx">daf</span><span class="o">-</span><span class="mi">605</span><span class="nx">b8e131470</span><span class="p">:</span><span class="err">$</span><span class="nx">anon</span><span class="err">$</span><span class="p">.</span><span class="err">$</span><span class="mi">0</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">350</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Local</span> <span class="nx">prepare</span> <span class="nx">failed</span><span class="p">,</span> <span class="nx">aborting</span><span class="p">..</span> 
+<span class="nx">Retrying</span> <span class="nx">transaction</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">359</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Created</span> <span class="nx">transaction</span><span class="p">:</span> <span class="mi">371</span><span class="nx">da573</span><span class="o">-</span><span class="mf">8e4</span><span class="nx">f</span><span class="o">-</span><span class="mf">436e-99</span><span class="nx">b3</span><span class="o">-</span><span class="nx">adc2b9e911a4</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">360</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Registered</span> <span class="nx">local</span> <span class="nx">participant</span><span class="p">:</span> <span class="mi">5</span><span class="nx">ca42804</span><span class="o">-</span><span class="mi">876</span><span class="nx">c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a69</span><span class="o">-</span><span class="mi">9</span><span class="nx">b34</span><span class="o">-</span><span class="mi">8</span><span class="nx">bc537c8d87a</span><span class="p">:</span><span class="err">$</span><span class="nx">anon</span><span class="err">$</span><span class="p">.</span><span class="err">$</span><span class="mi">1</span> <span class="k">for</span> <span class="nx">transaction</span><span class="p">:</span><span class="mi">371</span><span class="nx">da573</span><span class="o">-</span><span class="mf">8e4</span><span class="nx">f</span><span class="o">-</span><span class="mf">436e-99</span><span class="nx">b3</span><span class="o">-</span><span class="nx">adc2b9e911a4</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">361</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">participant</span> <span class="nx">registered</span><span class="p">:</span> <span class="mi">371</span><span class="nx">da573</span><span class="o">-</span><span class="mf">8e4</span><span class="nx">f</span><span class="o">-</span><span class="mf">436e-99</span><span class="nx">b3</span><span class="o">-</span><span class="nx">adc2b9e911a4</span> 
+<span class="nx">Invoke</span> <span class="nx">local</span> <span class="nx">participant</span> <span class="kd">function</span><span class="p">.</span>
+<span class="nx">Local</span> <span class="nx">participant</span> <span class="nx">panicked</span><span class="p">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">362</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Running</span> <span class="mi">2</span><span class="o">-</span><span class="nx">phase</span> <span class="nx">commit</span> <span class="k">for</span> <span class="nx">transaction</span><span class="p">:</span> <span class="mi">371</span><span class="nx">da573</span><span class="o">-</span><span class="mf">8e4</span><span class="nx">f</span><span class="o">-</span><span class="mf">436e-99</span><span class="nx">b3</span><span class="o">-</span><span class="nx">adc2b9e911a4</span><span class="p">:</span><span class="err">$</span><span class="nx">anon</span><span class="err">$</span><span class="p">.</span><span class="err">$</span><span class="mi">0</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">364</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Local</span> <span class="nx">prepare</span> <span class="nx">failed</span><span class="p">,</span> <span class="nx">aborting</span><span class="p">..</span> 
+<span class="nx">Retrying</span> <span class="nx">transaction</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">366</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Created</span> <span class="nx">transaction</span><span class="p">:</span> <span class="mi">9</span><span class="nx">a792401</span><span class="o">-</span><span class="mi">17</span><span class="nx">fd</span><span class="o">-</span><span class="mi">4486</span><span class="o">-</span><span class="nx">bb8e</span><span class="o">-</span><span class="mi">2</span><span class="nx">fb0a79a04a8</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">366</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Registered</span> <span class="nx">local</span> <span class="nx">participant</span><span class="p">:</span> <span class="mi">5</span><span class="nx">ca42804</span><span class="o">-</span><span class="mi">876</span><span class="nx">c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a69</span><span class="o">-</span><span class="mi">9</span><span class="nx">b34</span><span class="o">-</span><span class="mi">8</span><span class="nx">bc537c8d87a</span><span class="p">:</span><span class="err">$</span><span class="nx">anon</span><span class="err">$</span><span class="p">.</span><span class="err">$</span><span class="mi">1</span> <span class="k">for</span> <span class="nx">transaction</span><span class="p">:</span><span class="mi">9</span><span class="nx">a792401</span><span class="o">-</span><span class="mi">17</span><span class="nx">fd</span><span class="o">-</span><span class="mi">4486</span><span class="o">-</span><span class="nx">bb8e</span><span class="o">-</span><span class="mi">2</span><span class="nx">fb0a79a04a8</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">367</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">participant</span> <span class="nx">registered</span><span class="p">:</span> <span class="mi">9</span><span class="nx">a792401</span><span class="o">-</span><span class="mi">17</span><span class="nx">fd</span><span class="o">-</span><span class="mi">4486</span><span class="o">-</span><span class="nx">bb8e</span><span class="o">-</span><span class="mi">2</span><span class="nx">fb0a79a04a8</span> 
+<span class="nx">Invoke</span> <span class="nx">local</span> <span class="nx">participant</span> <span class="kd">function</span><span class="p">.</span>
+<span class="nx">Local</span> <span class="nx">participant</span> <span class="nx">panicked</span><span class="p">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">367</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Running</span> <span class="mi">2</span><span class="o">-</span><span class="nx">phase</span> <span class="nx">commit</span> <span class="k">for</span> <span class="nx">transaction</span><span class="p">:</span> <span class="mi">9</span><span class="nx">a792401</span><span class="o">-</span><span class="mi">17</span><span class="nx">fd</span><span class="o">-</span><span class="mi">4486</span><span class="o">-</span><span class="nx">bb8e</span><span class="o">-</span><span class="mi">2</span><span class="nx">fb0a79a04a8</span><span class="p">:</span><span class="err">$</span><span class="nx">anon</span><span class="err">$</span><span class="p">.</span><span class="err">$</span><span class="mi">0</span> 
+<span class="mi">2020</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">18</span> <span class="mi">11</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">09</span><span class="p">,</span><span class="mi">368</span> <span class="nx">INFO</span>  <span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">transactions</span><span class="p">]</span> <span class="o">-</span> <span class="nx">Local</span> <span class="nx">prepare</span> <span class="nx">failed</span><span class="p">,</span> <span class="nx">aborting</span><span class="p">..</span> 
+<span class="nx">Transaction</span> <span class="nx">aborted</span>
+<span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">]</span> <span class="nx">started</span> <span class="nx">HTTP</span><span class="o">/</span><span class="nx">WS</span> <span class="nx">listener</span> <span class="mf">172.17.0.1</span><span class="p">:</span><span class="mi">35909</span>
+<span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">]</span> <span class="nx">stopped</span> <span class="nx">HTTP</span><span class="o">/</span><span class="nx">WS</span> <span class="nx">listener</span> <span class="mf">172.17.0.1</span><span class="p">:</span><span class="mi">35909</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
                             <h2>Local Transactions with participants</h2>
                             <p><p>A Ballerina transaction is a series of data manipulation statements
- that must either fully complete or fully fail, thereby leaving the
- system in a consistent state. This sample demonstrates the usage of
- transaction local participants. If participant panics, even when it
- is trapped and initiator completes, the transaction is considered failure.
- Ballerina transactions are at experimental stage,
- please use  &ndash;experimental flag to enable them.</p>
+ that must either fully complete or fully fail, thereby, leaving the
+ system in a consistent state. This example demonstrates the usage of
+ transactions with local participants. If the participant panics even when it
+ is trapped and if the initiator completes, the transaction is considered as a failure.
+ Ballerina transactions are at the experimental stage.
+ Hence, use the &ndash;experimental flag to enable them.</p>
 </p>
 
                         </td>
@@ -171,25 +108,15 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Local Transactions with participants</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/local-transactions-with-participants/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/local-transactions-with-participants/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -230,7 +157,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/io;
 </code></pre></div>
 
                                 </td>
@@ -242,7 +169,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/transactions;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/transactions;
 </code></pre></div>
 
                                 </td>
@@ -250,7 +177,8 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Import <code>ballerina/transactions</code> module in order to use participant annotation.</p>
+                                            <p>Import the <code>ballerina/transactions</code> module to use the
+ <code>@transactions:Participant</code> annotation.</p>
 
                                         </div>
                                     </div>
@@ -261,7 +189,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
 </code></pre></div>
 
                                 </td>
@@ -273,7 +201,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    transaction {
+                                    <div class="highlight"><pre><code class=language-ballerina>    transaction {
 </code></pre></div>
 
                                 </td>
@@ -281,7 +209,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p><code>transaction</code> blocks initiates the transaction, it&rsquo;s called the initiator.</p>
+                                            <p>The <code>transaction</code> block initiates the transaction. Thus, it is called the initiator.</p>
 
                                         </div>
                                     </div>
@@ -292,7 +220,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        var res = trap localTransactionParticipant();
+                                    <div class="highlight"><pre><code class=language-ballerina>        var res = trap localTransactionParticipant();
         if (res is error) {
 </code></pre></div>
 
@@ -301,7 +229,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Invoke local participant.</p>
+                                            <p>Invokes the local participant.</p>
 
                                         </div>
                                     </div>
@@ -312,7 +240,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            io:println(&quot;Local participant panicked.&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>            io:println(&quot;Local participant panicked.&quot;);
         }
     } onretry {
         io:println(&quot;Retrying transaction&quot;);
@@ -329,7 +257,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>local participant panicked.</p>
+                                            <p>The local participant gets panicked.</p>
 
                                         </div>
                                     </div>
@@ -340,7 +268,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>@transactions:Participant {
+                                    <div class="highlight"><pre><code class=language-ballerina>@transactions:Participant {
     oncommit: participantOnCommit
 }
 function localTransactionParticipant() {
@@ -355,8 +283,8 @@ function localTransactionParticipant() {
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p><code>@transactions:Participant</code> annotation from <code>transactions</code> package is used to indicate
- function as a local participant.</p>
+                                            <p>The <code>@transactions:Participant</code> annotation from the
+ <code>transactions</code> module is used to indicate the function as a local participant.</p>
 
                                         </div>
                                     </div>
@@ -367,7 +295,7 @@ function localTransactionParticipant() {
                             <tr class="cTR">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>function participantOnCommit(string transactionId) {
+                                    <div class="highlight"><pre><code class=language-ballerina>function participantOnCommit(string transactionId) {
     io:println(&quot;Local participant committed function handler...&quot;);
 }
 </code></pre></div>
@@ -386,6 +314,10 @@ function localTransactionParticipant() {
                                 
                             
                         
+                            
+                                
+                            
+                        
 
                     <div>
 
@@ -393,32 +325,47 @@ function localTransactionParticipant() {
                             
                             <tr class="cTR cOutputTr">
 
-                                <td class="code cOutput">
+                                <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command with --experimental param.
-$ ballerina run  --experimental local_transaction_participants.bal
-[ballerina/http] started HTTP/WS endpoint 172.17.0.1:53605
-2018-12-04 20:14:08,399 INFO  [ballerina/log] - Created transaction: c5fe74ef-da8c-41ab-8ba6-e7c6daceea93
-2018-12-04 20:14:08,416 INFO  [ballerina/log] - Registered local participant: ef90ded8-0a11-4509-b922-c2f3ba501f68:$anon$.$2 for transaction:c5fe74ef-da8c-41ab-8ba6-e7c6daceea93
+# `.bal` file, and execute the `ballerina run` command  below with the --experimental option.
+ballerina run --experimental local_transactions_with_participants.bal
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code cOutput">
+                                    <div class="highlight"><pre><code class=shell-session>2020-03-18 11:57:09,328 INFO  [ballerina/transactions] - Created transaction: bf592603-4639-4c16-9daf-605b8e131470 
+2020-03-18 11:57:09,343 INFO  [ballerina/transactions] - Registered local participant: 5ca42804-876c-4a69-9b34-8bc537c8d87a:$anon$.$1 for transaction:bf592603-4639-4c16-9daf-605b8e131470 
+2020-03-18 11:57:09,344 INFO  [ballerina/transactions] - participant registered: bf592603-4639-4c16-9daf-605b8e131470 
 Invoke local participant function.
 Local participant panicked.
-2018-12-04 20:14:08,421 INFO  [ballerina/log] - Running 2-phase commit for transaction: c5fe74ef-da8c-41ab-8ba6-e7c6daceea93:$anon$.$1
-2018-12-04 20:14:08,422 INFO  [ballerina/log] - Local prepare failed, aborting..
+2020-03-18 11:57:09,350 INFO  [ballerina/transactions] - Running 2-phase commit for transaction: bf592603-4639-4c16-9daf-605b8e131470:$anon$.$0 
+2020-03-18 11:57:09,350 INFO  [ballerina/transactions] - Local prepare failed, aborting.. 
 Retrying transaction
-2018-12-04 20:14:08,428 INFO  [ballerina/log] - Created transaction: be71f53a-aab1-4b90-9174-b48c96a42a00
-2018-12-04 20:14:08,431 INFO  [ballerina/log] - Registered local participant: ef90ded8-0a11-4509-b922-c2f3ba501f68:$anon$.$2 for transaction:be71f53a-aab1-4b90-9174-b48c96a42a00
+2020-03-18 11:57:09,359 INFO  [ballerina/transactions] - Created transaction: 371da573-8e4f-436e-99b3-adc2b9e911a4 
+2020-03-18 11:57:09,360 INFO  [ballerina/transactions] - Registered local participant: 5ca42804-876c-4a69-9b34-8bc537c8d87a:$anon$.$1 for transaction:371da573-8e4f-436e-99b3-adc2b9e911a4 
+2020-03-18 11:57:09,361 INFO  [ballerina/transactions] - participant registered: 371da573-8e4f-436e-99b3-adc2b9e911a4 
 Invoke local participant function.
 Local participant panicked.
-2018-12-04 20:14:08,432 INFO  [ballerina/log] - Running 2-phase commit for transaction: be71f53a-aab1-4b90-9174-b48c96a42a00:$anon$.$1
-2018-12-04 20:14:08,433 INFO  [ballerina/log] - Local prepare failed, aborting..
+2020-03-18 11:57:09,362 INFO  [ballerina/transactions] - Running 2-phase commit for transaction: 371da573-8e4f-436e-99b3-adc2b9e911a4:$anon$.$0 
+2020-03-18 11:57:09,364 INFO  [ballerina/transactions] - Local prepare failed, aborting.. 
 Retrying transaction
-2018-12-04 20:14:08,435 INFO  [ballerina/log] - Created transaction: 2e0c1784-1b17-42e8-a864-ae20d3a25c65
-2018-12-04 20:14:08,437 INFO  [ballerina/log] - Registered local participant: ef90ded8-0a11-4509-b922-c2f3ba501f68:$anon$.$2 for transaction:2e0c1784-1b17-42e8-a864-ae20d3a25c65
+2020-03-18 11:57:09,366 INFO  [ballerina/transactions] - Created transaction: 9a792401-17fd-4486-bb8e-2fb0a79a04a8 
+2020-03-18 11:57:09,366 INFO  [ballerina/transactions] - Registered local participant: 5ca42804-876c-4a69-9b34-8bc537c8d87a:$anon$.$1 for transaction:9a792401-17fd-4486-bb8e-2fb0a79a04a8 
+2020-03-18 11:57:09,367 INFO  [ballerina/transactions] - participant registered: 9a792401-17fd-4486-bb8e-2fb0a79a04a8 
 Invoke local participant function.
 Local participant panicked.
-2018-12-04 20:14:08,437 INFO  [ballerina/log] - Running 2-phase commit for transaction: 2e0c1784-1b17-42e8-a864-ae20d3a25c65:$anon$.$1
-2018-12-04 20:14:08,438 INFO  [ballerina/log] - Local prepare failed, aborting..
+2020-03-18 11:57:09,367 INFO  [ballerina/transactions] - Running 2-phase commit for transaction: 9a792401-17fd-4486-bb8e-2fb0a79a04a8:$anon$.$0 
+2020-03-18 11:57:09,368 INFO  [ballerina/transactions] - Local prepare failed, aborting.. 
 Transaction aborted
+[ballerina/http] started HTTP/WS listener 172.17.0.1:35909
+[ballerina/http] stopped HTTP/WS listener 172.17.0.1:35909
 </code></pre></div>
 
                                 </td>
@@ -443,56 +390,49 @@ Transaction aborted
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

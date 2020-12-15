@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /v1-2/learn/api-docs/ballerina/http/clients/CircuitBreakerClient
+  - /v1-2/learn/api-docs/ballerina/http/clients/CircuitBreakerClient.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +10,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module provides an implementation for connecting and interacting with HTTP, HTTP2, and WebSocket endpoints. The module facilitates two types of network entry points as ‘Client’ and ‘Listener’.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,http">
 
     <title>API Docs - Client : CircuitBreakerClient</title>
     <script src="../../html-template-resources/jquery.min.js"></script>
@@ -16,6 +24,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +41,7 @@
     <link rel="stylesheet" href="../../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../../html-template-resources/styles/css/font.css">
     <script src="../../html-template-resources/semantic.min.js"></script>
-    <script src="../../vs/monaco.js"></script>
+    <script src="../../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -49,116 +58,127 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../../index.html">
+            <a href="
+    ../../index.html">
     <img class="logo" src="../../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
             <div class="primary-list">
                 <h3>Clients</h3>
                 <ul>
                     
                         <li >
-                            <a href="Caller.html">Caller</a> 
+                            <a href="Caller.html" onclick="menuLinkClick()">Caller</a>
                         </li>
                     
                         <li class="active active-item">
-                            <a href="CircuitBreakerClient.html">CircuitBreakerClient</a> 
+                            <a href="CircuitBreakerClient.html" onclick="menuLinkClick()">CircuitBreakerClient</a>
                         </li>
                     
                         <li >
-                            <a href="Client.html">Client</a> 
+                            <a href="Client.html" onclick="menuLinkClick()">Client</a>
                         </li>
                     
                         <li >
-                            <a href="FailoverClient.html">FailoverClient</a> 
+                            <a href="FailoverClient.html" onclick="menuLinkClick()">FailoverClient</a>
                         </li>
                     
                         <li >
-                            <a href="HttpCachingClient.html">HttpCachingClient</a> 
+                            <a href="HttpCachingClient.html" onclick="menuLinkClick()">HttpCachingClient</a>
                         </li>
                     
                         <li >
-                            <a href="HttpClient.html">HttpClient</a> 
+                            <a href="HttpClient.html" onclick="menuLinkClick()">HttpClient</a>
                         </li>
                     
                         <li >
-                            <a href="HttpSecureClient.html">HttpSecureClient</a> 
+                            <a href="HttpSecureClient.html" onclick="menuLinkClick()">HttpSecureClient</a>
                         </li>
                     
                         <li >
-                            <a href="LoadBalanceClient.html">LoadBalanceClient</a> 
+                            <a href="LoadBalanceClient.html" onclick="menuLinkClick()">LoadBalanceClient</a>
                         </li>
                     
                         <li >
-                            <a href="RedirectClient.html">RedirectClient</a> 
+                            <a href="RedirectClient.html" onclick="menuLinkClick()">RedirectClient</a>
                         </li>
                     
                         <li >
-                            <a href="RetryClient.html">RetryClient</a> 
+                            <a href="RetryClient.html" onclick="menuLinkClick()">RetryClient</a>
                         </li>
                     
                         <li >
-                            <a href="WebSocketCaller.html">WebSocketCaller</a> 
+                            <a href="WebSocketCaller.html" onclick="menuLinkClick()">WebSocketCaller</a>
                         </li>
                     
                         <li >
-                            <a href="WebSocketClient.html">WebSocketClient</a> 
+                            <a href="WebSocketClient.html" onclick="menuLinkClick()">WebSocketClient</a>
+                        </li>
+                    
+                        <li >
+                            <a href="WebSocketFailoverClient.html" onclick="menuLinkClick()">WebSocketFailoverClient</a>
                         </li>
                     
                 </ul>
             </div>
             <div class="ui divider"></div>
-            <div class="primary-list module">
+            
+
     
-        <a href="../../http/index.html">
+        <div class="version">v1.2.8</div>
+    
+
+
+<div class="primary-list module">
+    
+        <a href="../../http/index.html" onclick="menuLinkClick()">
             <h3>http</h3>
         </a>
     
     <ul>
         
         <li>
-            <a data="records" href="../../http/index.html#records">Records</a>
+            <a data="records" href="../../http/index.html#records" onclick="menuLinkClick()">Records</a>
         </li>
         
         
             <li>
-                <a  data="objects" href="../../http/index.html#objects">Objects</a>
+                <a  data="objects" href="../../http/index.html#objects" onclick="menuLinkClick()">Objects</a>
             </li>
         
         
             <li>
-                <a data="clients" href="../../http/index.html#clients">Clients</a>
+                <a data="clients" href="../../http/index.html#clients" onclick="menuLinkClick()">Clients</a>
             </li>
         
         
             <li>
-                <a data="listeners" href="../../http/index.html#listeners">Listeners</a>
+                <a data="listeners" href="../../http/index.html#listeners" onclick="menuLinkClick()">Listeners</a>
             </li>
         
         
             <li>
-                <a data="functions" href="../../http/index.html#functions">Functions</a>
+                <a data="functions" href="../../http/index.html#functions" onclick="menuLinkClick()">Functions</a>
             </li>
         
         
             <li>
-                <a data="constants" href="../../http/index.html#constants">Constants</a>
+                <a data="constants" href="../../http/index.html#constants" onclick="menuLinkClick()">Constants</a>
             </li>
         
         
             <li>
-                <a data="annotations" href="../../http/index.html#annotations">Annotations</a>
+                <a data="annotations" href="../../http/index.html#annotations" onclick="menuLinkClick()">Annotations</a>
             </li>
         
         
             <li>
-                <a data="types" href="../../http/index.html#types">Types</a>
+                <a data="types" href="../../http/index.html#types" onclick="menuLinkClick()">Types</a>
             </li>
         
         
             <li>
-                <a data="errors" href="../../http/index.html#errors">Errors</a>
+                <a data="errors" href="../../http/index.html#errors" onclick="menuLinkClick()">Errors</a>
             </li>
         
     </ul>
@@ -187,7 +207,7 @@
                 </li>
             
                 <li>
-                    <a href="../../docker/index.html">docker</a>
+                    <a href="../../email/index.html">email</a>
                 </li>
             
                 <li>
@@ -215,10 +235,6 @@
                 </li>
             
                 <li>
-                    <a href="../../istio/index.html">istio</a>
-                </li>
-            
-                <li>
                     <a href="../../java/index.html">java</a>
                 </li>
             
@@ -243,11 +259,11 @@
                 </li>
             
                 <li>
-                    <a href="../../kubernetes/index.html">kubernetes</a>
+                    <a href="../../lang.array/index.html">lang.array</a>
                 </li>
             
                 <li>
-                    <a href="../../lang.array/index.html">lang.array</a>
+                    <a href="../../lang.boolean/index.html">lang.boolean</a>
                 </li>
             
                 <li>
@@ -303,346 +319,7 @@
                 </li>
             
                 <li>
-                    <a href="../../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-        </div>
-    </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../../index.html">
-    <img class="logo" src="../../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                <div class="primary-list">
-                    <h3>Clients</h3>
-                    <ul>
-                        
-                            <li >
-                                <a href="Caller.html">Caller</a>
-                            </li>
-                        
-                            <li class="active active-item">
-                                <a href="CircuitBreakerClient.html">CircuitBreakerClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="Client.html">Client</a>
-                            </li>
-                        
-                            <li >
-                                <a href="FailoverClient.html">FailoverClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="HttpCachingClient.html">HttpCachingClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="HttpClient.html">HttpClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="HttpSecureClient.html">HttpSecureClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="LoadBalanceClient.html">LoadBalanceClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="RedirectClient.html">RedirectClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="RetryClient.html">RetryClient</a>
-                            </li>
-                        
-                            <li >
-                                <a href="WebSocketCaller.html">WebSocketCaller</a>
-                            </li>
-                        
-                            <li >
-                                <a href="WebSocketClient.html">WebSocketClient</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-                <div class="ui divider"></div>
-                <div class="primary-list module">
-    
-        <a href="../../http/index.html">
-            <h3>http</h3>
-        </a>
-    
-    <ul>
-        
-        <li>
-            <a data="records" href="../../http/index.html#records">Records</a>
-        </li>
-        
-        
-            <li>
-                <a  data="objects" href="../../http/index.html#objects">Objects</a>
-            </li>
-        
-        
-            <li>
-                <a data="clients" href="../../http/index.html#clients">Clients</a>
-            </li>
-        
-        
-            <li>
-                <a data="listeners" href="../../http/index.html#listeners">Listeners</a>
-            </li>
-        
-        
-            <li>
-                <a data="functions" href="../../http/index.html#functions">Functions</a>
-            </li>
-        
-        
-            <li>
-                <a data="constants" href="../../http/index.html#constants">Constants</a>
-            </li>
-        
-        
-            <li>
-                <a data="annotations" href="../../http/index.html#annotations">Annotations</a>
-            </li>
-        
-        
-            <li>
-                <a data="types" href="../../http/index.html#types">Types</a>
-            </li>
-        
-        
-            <li>
-                <a data="errors" href="../../http/index.html#errors">Errors</a>
-            </li>
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../../lang.xml/index.html">lang.xml</a>
+                    <a href="../../ldap/index.html">ldap</a>
                 </li>
             
                 <li>
@@ -674,7 +351,7 @@
                 </li>
             
                 <li>
-                    <a href="../../openshift/index.html">openshift</a>
+                    <a href="../../rabbitmq/index.html">rabbitmq</a>
                 </li>
             
                 <li>
@@ -687,10 +364,6 @@
             
                 <li>
                     <a href="../../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../../streams/index.html">streams</a>
                 </li>
             
                 <li>
@@ -718,6 +391,10 @@
                 </li>
             
                 <li>
+                    <a href="../../websub/index.html">websub</a>
+                </li>
+            
+                <li>
                     <a href="../../xmlutils/index.html">xmlutils</a>
                 </li>
             
@@ -729,19 +406,18 @@
         <div class="ui divider"></div>
     
 </div>
-            </div>
         </div>
     </div>
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper">
             <h1>
-                <a class="breadcrumb-home" href="../../index.html">
+                <a class="breadcrumb-home" href="
+    ../../index.html">
     <img class="breadcrumb-home-icon" src="../../html-template-resources/images/home.svg">
 </a>
                 <span class="title-type">Clients - </span>
@@ -785,7 +461,7 @@
             <ul>
                 <li> <b>circuitBreakerInferredConfig</b><span class="type">  <a href="../../http/records/CircuitBreakerInferredConfig.html">CircuitBreakerInferredConfig</a></span> </li>
                 <li>
-                    <p>Configurations derived from <code>CircuitBreakerConfig</code></p>
+                    <p>Configurations derived from the <code>http:CircuitBreakerConfig</code></p>
 
                 </li>
             </ul>
@@ -795,7 +471,7 @@
             <ul>
                 <li> <b>httpClient</b><span class="type">  <a href="../../http/clients/HttpClient.html">HttpClient</a></span> </li>
                 <li>
-                    <p>The underlying <code>HttpActions</code> instance which will be making the actual network calls</p>
+                    <p>The underlying <code>HttpActions</code> instance, which will be making the actual network calls</p>
 
                 </li>
             </ul>
@@ -822,217 +498,222 @@
                         <div class="method-list">
                             
                                 
-<a href="#post">
-    <div class="param-sum">
-        <div class="param-name">
-        post 
-        </div>
-        <div class="param-details"> <p>The POST remote function implementation of the Circuit Breaker. This wraps the <code>post()</code> function of the underlying
-HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="post">
+        <a href="#post">post </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The POST remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#head">
-    <div class="param-sum">
-        <div class="param-name">
-        head 
-        </div>
-        <div class="param-details"> <p>The HEAD remote function implementation of the Circuit Breaker. This wraps the <code>head()</code> function of the underlying
-HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="head">
+        <a href="#head">head </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The HEAD remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#put">
-    <div class="param-sum">
-        <div class="param-name">
-        put 
-        </div>
-        <div class="param-details"> <p>The PUT remote function implementation of the Circuit Breaker. This wraps the <code>put()</code> function of the underlying
-HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="put">
+        <a href="#put">put </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The PUT remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#execute">
-    <div class="param-sum">
-        <div class="param-name">
-        execute 
-        </div>
-        <div class="param-details"> <p>This wraps the <code>post()</code> function of the underlying HTTP remote functions provider. The <code>execute()</code> function can
-be used to invoke an HTTP call with the given HTTP verb.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="execute">
+        <a href="#execute">execute </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>This wraps the <code>CircuitBreakerClient.
+    </div>
+</div>
+
                             
                                 
-<a href="#patch">
-    <div class="param-sum">
-        <div class="param-name">
-        patch 
-        </div>
-        <div class="param-details"> <p>The PATCH remote function implementation of the Circuit Breaker. This wraps the <code>patch()</code> function of the
-underlying HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="patch">
+        <a href="#patch">patch </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The PATCH remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#delete">
-    <div class="param-sum">
-        <div class="param-name">
-        delete 
-        </div>
-        <div class="param-details"> <p>The DELETE remote function implementation of the Circuit Breaker. This wraps the <code>delete()</code> function of the
-underlying HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="delete">
+        <a href="#delete">delete </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The DELETE remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#get">
-    <div class="param-sum">
-        <div class="param-name">
-        get 
-        </div>
-        <div class="param-details"> <p>The GET remote function implementation of the Circuit Breaker. This wraps the <code>get()</code> function of the underlying
-HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="get">
+        <a href="#get">get </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The GET remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#options">
-    <div class="param-sum">
-        <div class="param-name">
-        options 
-        </div>
-        <div class="param-details"> <p>The OPTIONS remote function implementation of the Circuit Breaker. This wraps the <code>options()</code> function of the
-underlying HTTP remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="options">
+        <a href="#options">options </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>The OPTIONS remote function implementation of the Circuit Breaker.
+    </div>
+</div>
+
                             
                                 
-<a href="#forward">
-    <div class="param-sum">
-        <div class="param-name">
-        forward 
-        </div>
-        <div class="param-details"> <p>This wraps the <code>forward()</code> function of the underlying HTTP remote functions provider. The Forward remote function
-can be used to forward an incoming request to an upstream service as it is.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="forward">
+        <a href="#forward">forward </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>This wraps the <code>CircuitBreakerClient.
+    </div>
+</div>
+
                             
                                 
-<a href="#submit">
-    <div class="param-sum">
-        <div class="param-name">
-        submit 
-        </div>
-        <div class="param-details"> <p>Submits an HTTP request to a service with the specified HTTP verb.
-The <code>submit()</code> function does not give out a <code>Response</code> as the result,
-rather it returns an <code>HttpFuture</code> which can be used to do further interactions with the endpoint.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="submit">
+        <a href="#submit">submit </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Submits an HTTP request to a service with the specified HTTP verb.
+    </div>
+</div>
+
                             
                                 
-<a href="#getResponse">
-    <div class="param-sum">
-        <div class="param-name">
-        getResponse 
-        </div>
-        <div class="param-details"> <p>Retrieves the <code>Response</code> for a previously submitted request.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="getResponse">
+        <a href="#getResponse">getResponse </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Retrieves the <code>http:Response</code> for a previously-submitted request.
+    </div>
+</div>
+
                             
                                 
-<a href="#hasPromise">
-    <div class="param-sum">
-        <div class="param-name">
-        hasPromise 
-        </div>
-        <div class="param-details"> <p>Circuit breaking not supported. Defaults to the <code>hasPromise()</code> function of the underlying HTTP remote functions
-provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="hasPromise">
+        <a href="#hasPromise">hasPromise </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Circuit breaking is not supported.
+    </div>
+</div>
+
                             
                                 
-<a href="#getNextPromise">
-    <div class="param-sum">
-        <div class="param-name">
-        getNextPromise 
-        </div>
-        <div class="param-details"> <p>Retrieves the next available <code>PushPromise</code> for a previously submitted request.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="getNextPromise">
+        <a href="#getNextPromise">getNextPromise </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Retrieves the next available <code>http:PushPromise</code> for a previously-submitted request.
+    </div>
+</div>
+
                             
                                 
-<a href="#getPromisedResponse">
-    <div class="param-sum">
-        <div class="param-name">
-        getPromisedResponse 
-        </div>
-        <div class="param-details"> <p>Retrieves the promised server push <code>Response</code> message.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="getPromisedResponse">
+        <a href="#getPromisedResponse">getPromisedResponse </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Retrieves the promised server push <code>Response</code> message.
+    </div>
+</div>
+
                             
                                 
-<a href="#rejectPromise">
-    <div class="param-sum">
-        <div class="param-name">
-        rejectPromise 
-        </div>
-        <div class="param-details"> <p>Circuit breaking not supported. Defaults to the <code>rejectPromise()</code> function of the underlying HTTP
-remote functions provider.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="rejectPromise">
+        <a href="#rejectPromise">rejectPromise </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Circuit breaking is not supported.
+    </div>
+</div>
+
                             
                                 
-<a href="#forceClose">
-    <div class="param-sum">
-        <div class="param-name">
-        forceClose 
-        </div>
-        <div class="param-details"> <p>Force the circuit into a closed state in which it will allow requests regardless of the error percentage
-until the failure threshold exceeds.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="forceClose">
+        <a href="#forceClose">forceClose </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Force the circuit into a closed state in which it will allow requests regardless of the error percentage
+until the failure threshold exceeds.
+    </div>
+</div>
+
                             
                                 
-<a href="#forceOpen">
-    <div class="param-sum">
-        <div class="param-name">
-        forceOpen 
-        </div>
-        <div class="param-details"> <p>Force the circuit into a open state in which it will suspend all requests
-until <code>resetTimeInMillis</code> interval exceeds.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="forceOpen">
+        <a href="#forceOpen">forceOpen </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Force the circuit into a open state in which it will suspend all requests
+until <code>resetTimeInMillis</code> interval exceeds.
+    </div>
+</div>
+
                             
                                 
-<a href="#getCurrentState">
-    <div class="param-sum">
-        <div class="param-name">
-        getCurrentState 
-        </div>
-        <div class="param-details"> <p>Provides <code>CircuitState</code> of the circuit breaker.</p>
- </div>
+<div class="param-sum">
+    <div class="param-name " title="getCurrentState">
+        <a href="#getCurrentState">getCurrentState </a>
     </div>
-</a>
+    <div class="param-details"> 
+            
+        <p>Provides the <code>http:CircuitState</code> of the circuit breaker.
+    </div>
+</div>
+
                             
                         </div>
                     
@@ -1044,60 +725,102 @@ until <code>resetTimeInMillis</code> interval exceeds.</p>
         
     <div class="params-listing">
         <ul>
-            <li> url<span class="type">  <span class="builtin-type">string</span></span> </li>
+            <li> 
+                <span >url</span>
+                <span class="type">  <span class="builtin-type">string</span></span>
+                
+            </li>
             <li>
-                <p><p>The URL of the target service</p>
-</p>
+                <p>
+                    
+                    <p>The URL of the target service</p>
+
+                </p>
             </li>
         </ul>
     </div>
         
     <div class="params-listing">
         <ul>
-            <li> config<span class="type">  <a href="../../http/records/ClientConfiguration.html">ClientConfiguration</a></span> </li>
+            <li> 
+                <span >config</span>
+                <span class="type">  <a href="../../http/records/ClientConfiguration.html">ClientConfiguration</a></span>
+                
+            </li>
             <li>
-                <p><p>The configurations of the client endpoint associated with this <code>CircuitBreaker</code> instance</p>
-</p>
+                <p>
+                    
+                    <p>The configurations of the client endpoint associated with this <code>CircuitBreaker</code> instance</p>
+
+                </p>
             </li>
         </ul>
     </div>
         
     <div class="params-listing">
         <ul>
-            <li> circuitBreakerInferredConfig<span class="type">  <a href="../../http/records/CircuitBreakerInferredConfig.html">CircuitBreakerInferredConfig</a></span> </li>
+            <li> 
+                <span >circuitBreakerInferredConfig</span>
+                <span class="type">  <a href="../../http/records/CircuitBreakerInferredConfig.html">CircuitBreakerInferredConfig</a></span>
+                
+            </li>
             <li>
-                <p><p>Configurations derived from <code>CircuitBreakerConfig</code></p>
-</p>
+                <p>
+                    
+                    <p>Configurations derived from <code>CircuitBreakerConfig</code></p>
+
+                </p>
             </li>
         </ul>
     </div>
         
     <div class="params-listing">
         <ul>
-            <li> httpClient<span class="type">  <a href="../../http/clients/HttpClient.html">HttpClient</a></span> </li>
+            <li> 
+                <span >httpClient</span>
+                <span class="type">  <a href="../../http/clients/HttpClient.html">HttpClient</a></span>
+                
+            </li>
             <li>
-                <p><p>The underlying <code>HttpActions</code> instance which will be making the actual network calls</p>
-</p>
+                <p>
+                    
+                    <p>The underlying <code>HttpActions</code> instance which will be making the actual network calls</p>
+
+                </p>
             </li>
         </ul>
     </div>
         
     <div class="params-listing">
         <ul>
-            <li> circuitHealth<span class="type">  <a href="../../http/records/CircuitHealth.html">CircuitHealth</a></span> </li>
+            <li> 
+                <span >circuitHealth</span>
+                <span class="type">  <a href="../../http/records/CircuitHealth.html">CircuitHealth</a></span>
+                
+            </li>
             <li>
-                <p><p>The circuit health monitor</p>
-</p>
+                <p>
+                    
+                    <p>The circuit health monitor</p>
+
+                </p>
             </li>
         </ul>
     </div>
         
     <div class="params-listing">
         <ul>
-            <li> currentCircuitState<span class="type">  <a href="../../http/types.html#CircuitState">CircuitState</a></span> CB_CLOSED_STATE</li>
+            <li> 
+                <span >currentCircuitState</span>
+                <span class="type">  <a href="../../http/types.html#CircuitState">CircuitState</a></span>
+                 <span class="default">(default CB_CLOSED_STATE)</span> 
+            </li>
             <li>
-                <p><p>The current state the circuit is in</p>
-</p>
+                <p>
+                    
+                    <p>The current state the circuit is in</p>
+
+                </p>
             </li>
         </ul>
     </div>
@@ -1105,17 +828,6 @@ until <code>resetTimeInMillis</code> interval exceeds.</p>
 </div>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -1141,6 +853,42 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
@@ -1161,30 +909,37 @@ contentWrapper.addEventListener("scroll", event => {
              <a class="url-link" href="#post">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> post </h2>
-        
+            <h2 > post </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The POST remote function implementation of the Circuit Breaker. This wraps the <code>post()</code> function of the underlying
-HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The POST remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.post()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1192,13 +947,17 @@ HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code>
+                        <p>
+                            
+                            <p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code>
 or <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1225,30 +984,37 @@ server</p>
              <a class="url-link" href="#head">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> head </h2>
-        
+            <h2 > head </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The HEAD remote function implementation of the Circuit Breaker. This wraps the <code>head()</code> function of the underlying
-HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The HEAD remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.head()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1256,13 +1022,17 @@ HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         <span class="default"> (default ())</span>
                     </li>
                     <li>
-                        <p><p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code>
+                        <p>
+                            
+                            <p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code>
 or <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1289,30 +1059,37 @@ server</p>
              <a class="url-link" href="#put">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> put </h2>
-        
+            <h2 > put </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The PUT remote function implementation of the Circuit Breaker. This wraps the <code>put()</code> function of the underlying
-HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The PUT remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.put()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1320,13 +1097,17 @@ HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code>
+                        <p>
+                            
+                            <p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code>
 or <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1353,30 +1134,37 @@ server</p>
              <a class="url-link" href="#execute">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> execute </h2>
-        
+            <h2 > execute </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> httpVerb, <span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>This wraps the <code>post()</code> function of the underlying HTTP remote functions provider. The <code>execute()</code> function can
-be used to invoke an HTTP call with the given HTTP verb.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>This wraps the <code>CircuitBreakerClient.post()</code> function of the underlying HTTP remote functions provider.
+The <code>CircuitBreakerClient.execute()</code> function can be used to invoke an HTTP call with the given HTTP verb.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        httpVerb<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >httpVerb</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>HTTP verb to be used for the request</p>
-</p>
+                        <p>
+                            
+                            <p>HTTP verb to be used for the request</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1384,12 +1172,16 @@ be used to invoke an HTTP call with the given HTTP verb.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1397,13 +1189,17 @@ be used to invoke an HTTP call with the given HTTP verb.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code> or
+                        <p>
+                            
+                            <p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code> or
 <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1430,30 +1226,37 @@ server</p>
              <a class="url-link" href="#patch">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> patch </h2>
-        
+            <h2 > patch </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The PATCH remote function implementation of the Circuit Breaker. This wraps the <code>patch()</code> function of the
-underlying HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The PATCH remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.patch()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1461,13 +1264,17 @@ underlying HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code> or
+                        <p>
+                            
+                            <p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code> or
 <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1494,30 +1301,37 @@ server</p>
              <a class="url-link" href="#delete">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> delete </h2>
-        
+            <h2 > delete </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The DELETE remote function implementation of the Circuit Breaker. This wraps the <code>delete()</code> function of the
-underlying HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The DELETE remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.delete()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1525,13 +1339,17 @@ underlying HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         <span class="default"> (default ())</span>
                     </li>
                     <li>
-                        <p><p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code> or
+                        <p>
+                            
+                            <p>A Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>, <code>io:ReadableByteChannel</code> or
 <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1558,30 +1376,37 @@ server</p>
              <a class="url-link" href="#get">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> get </h2>
-        
+            <h2 > get </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The GET remote function implementation of the Circuit Breaker. This wraps the <code>get()</code> function of the underlying
-HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The GET remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.get()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1589,13 +1414,17 @@ HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         <span class="default"> (default ())</span>
                     </li>
                     <li>
-                        <p><p>An optional HTTP request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>,
+                        <p>
+                            
+                            <p>An optional HTTP request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>,
 <code>io:ReadableByteChannel</code> or <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1622,30 +1451,37 @@ server</p>
              <a class="url-link" href="#options">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> options </h2>
-        
+            <h2 > options </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>The OPTIONS remote function implementation of the Circuit Breaker. This wraps the <code>options()</code> function of the
-underlying HTTP remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>The OPTIONS remote function implementation of the Circuit Breaker. This wraps the <code>CircuitBreakerClient.options()</code>
+function of the underlying HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1653,13 +1489,17 @@ underlying HTTP remote functions provider.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         <span class="default"> (default ())</span>
                     </li>
                     <li>
-                        <p><p>An optional HTTP Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>,
+                        <p>
+                            
+                            <p>An optional HTTP Request or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>,
 <code>io:ReadableByteChannel</code> or <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1686,30 +1526,37 @@ server</p>
              <a class="url-link" href="#forward">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> forward </h2>
-        
+            <h2 > forward </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <a href="../../http/objects/Request.html">Request</a> request)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>This wraps the <code>forward()</code> function of the underlying HTTP remote functions provider. The Forward remote function
-can be used to forward an incoming request to an upstream service as it is.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>This wraps the <code>CircuitBreakerClient.forward()</code> function of the underlying HTTP remote functions provider.
+The Forward remote function can be used to forward an incoming request to an upstream service as it is.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>Resource path</p>
-</p>
+                        <p>
+                            
+                            <p>Resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1717,12 +1564,16 @@ can be used to forward an incoming request to an upstream service as it is.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        request<span class="type">  <a href="../../http/objects/Request.html">Request</a> </span>
+                        <span >request</span>
+                        <span class="type">  <a href="../../http/objects/Request.html">Request</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>A Request struct</p>
-</p>
+                        <p>
+                            
+                            <p>A Request struct</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1749,31 +1600,38 @@ server</p>
              <a class="url-link" href="#submit">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> submit </h2>
-        
+            <h2 > submit </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> httpVerb, <span class="builtin-type">string</span> path, <a href="../../http/types.html#RequestMessage">RequestMessage</a> message)</p>
-            <b> returns </b><a href="../../http/objects/HttpFuture.html">HttpFuture</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/HttpFuture.html">HttpFuture</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>Submits an HTTP request to a service with the specified HTTP verb.
-The <code>submit()</code> function does not give out a <code>Response</code> as the result,
-rather it returns an <code>HttpFuture</code> which can be used to do further interactions with the endpoint.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Submits an HTTP request to a service with the specified HTTP verb.
+The <code>CircuitBreakerClient.submit()</code> function does not give out a <code>Response</code> as the result.
+Rather it returns an <code>http:HttpFuture</code> which can be used to do further interactions with the endpoint.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        httpVerb<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >httpVerb</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The HTTP verb value</p>
-</p>
+                        <p>
+                            
+                            <p>The HTTP verb value</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1781,12 +1639,16 @@ rather it returns an <code>HttpFuture</code> which can be used to do further int
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>The resource path</p>
-</p>
+                        <p>
+                            
+                            <p>The resource path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1794,13 +1656,17 @@ rather it returns an <code>HttpFuture</code> which can be used to do further int
             <div class="params-listing">
                 <ul>
                     <li>
-                        message<span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
+                        <span >message</span>
+                        <span class="type">  <a href="../../http/types.html#RequestMessage">RequestMessage</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>An HTTP outbound request message or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>,
+                        <p>
+                            
+                            <p>An HTTP outbound request message or any payload of type <code>string</code>, <code>xml</code>, <code>json</code>, <code>byte[]</code>,
 <code>io:ReadableByteChannel</code> or <code>mime:Entity[]</code></p>
-</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1813,7 +1679,7 @@ rather it returns an <code>HttpFuture</code> which can be used to do further int
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../http/objects/HttpFuture.html">HttpFuture</a> | <a href="../../http/types.html#ClientError">ClientError</a></span>)</li>
-                <li><p>An <code>HttpFuture</code> that represents an asynchronous service invocation, or an <code>http:ClientError</code> if the submission
+                <li><p>An <code>http:HttpFuture</code> that represents an asynchronous service invocation or else an <code>http:ClientError</code> if the submission
 fails</p>
 </li>
             </ul>
@@ -1827,29 +1693,36 @@ fails</p>
              <a class="url-link" href="#getResponse">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> getResponse </h2>
-        
+            <h2 > getResponse </h2>
         <span class="method-types">
             <p>(<a href="../../http/objects/HttpFuture.html">HttpFuture</a> httpFuture)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>Retrieves the <code>Response</code> for a previously submitted request.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Retrieves the <code>http:Response</code> for a previously-submitted request.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        httpFuture<span class="type">  <a href="../../http/objects/HttpFuture.html">HttpFuture</a> </span>
+                        <span >httpFuture</span>
+                        <span class="type">  <a href="../../http/objects/HttpFuture.html">HttpFuture</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>The <code>HttpFuture</code> related to a previous asynchronous invocation</p>
-</p>
+                        <p>
+                            
+                            <p>The <code>http:HttpFuture</code> related to a previous asynchronous invocation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1862,7 +1735,7 @@ fails</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a></span>)</li>
-                <li><p>An HTTP response message, or an <code>http:ClientError</code> if the invocation fails</p>
+                <li><p>An <code>http:Response</code> message or else an <code>http:ClientError</code> if the invocation fails</p>
 </li>
             </ul>
         </div>
@@ -1875,30 +1748,37 @@ fails</p>
              <a class="url-link" href="#hasPromise">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> hasPromise </h2>
-        
+            <h2 > hasPromise </h2>
         <span class="method-types">
             <p>(<a href="../../http/objects/HttpFuture.html">HttpFuture</a> httpFuture)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> 
+            
+                <b> returns </b><span class="builtin-type">boolean</span> 
+            
         </span>
-        
     </div>
-    <p><p>Circuit breaking not supported. Defaults to the <code>hasPromise()</code> function of the underlying HTTP remote functions
-provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Circuit breaking is not supported. The default value is the <code>CircuitBreakerClient.hasPromise()</code> function of the underlying
+HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        httpFuture<span class="type">  <a href="../../http/objects/HttpFuture.html">HttpFuture</a> </span>
+                        <span >httpFuture</span>
+                        <span class="type">  <a href="../../http/objects/HttpFuture.html">HttpFuture</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>The <code>HttpFuture</code> relates to a previous asynchronous invocation</p>
-</p>
+                        <p>
+                            
+                            <p>The <code>http:HttpFuture</code> related to a previous asynchronous invocation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1911,7 +1791,7 @@ provider.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span></span>)</li>
-                <li><p>A <code>boolean</code> that represents whether a <code>PushPromise</code> exists</p>
+                <li><p>A <code>boolean</code>, which represents whether an <code>http:PushPromise</code> exists</p>
 </li>
             </ul>
         </div>
@@ -1924,29 +1804,36 @@ provider.</p>
              <a class="url-link" href="#getNextPromise">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> getNextPromise </h2>
-        
+            <h2 > getNextPromise </h2>
         <span class="method-types">
             <p>(<a href="../../http/objects/HttpFuture.html">HttpFuture</a> httpFuture)</p>
-            <b> returns </b><a href="../../http/objects/PushPromise.html">PushPromise</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/PushPromise.html">PushPromise</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>Retrieves the next available <code>PushPromise</code> for a previously submitted request.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Retrieves the next available <code>http:PushPromise</code> for a previously-submitted request.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        httpFuture<span class="type">  <a href="../../http/objects/HttpFuture.html">HttpFuture</a> </span>
+                        <span >httpFuture</span>
+                        <span class="type">  <a href="../../http/objects/HttpFuture.html">HttpFuture</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>The <code>HttpFuture</code> relates to a previous asynchronous invocation</p>
-</p>
+                        <p>
+                            
+                            <p>The <code>http:HttpFuture</code> related to a previous asynchronous invocation</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1959,7 +1846,7 @@ provider.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../http/objects/PushPromise.html">PushPromise</a> | <a href="../../http/types.html#ClientError">ClientError</a></span>)</li>
-                <li><p>An HTTP <code>PushPromise</code> message, or an <code>http:ClientError</code> if the invocation fails</p>
+                <li><p>An <code>http:PushPromise</code> message or else an <code>http:ClientError</code> if the invocation fails</p>
 </li>
             </ul>
         </div>
@@ -1972,29 +1859,36 @@ provider.</p>
              <a class="url-link" href="#getPromisedResponse">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> getPromisedResponse </h2>
-        
+            <h2 > getPromisedResponse </h2>
         <span class="method-types">
             <p>(<a href="../../http/objects/PushPromise.html">PushPromise</a> promise)</p>
-            <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
+                <b> returns </b><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a> 
+            
         </span>
-        
     </div>
-    <p><p>Retrieves the promised server push <code>Response</code> message.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Retrieves the promised server push <code>Response</code> message.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        promise<span class="type">  <a href="../../http/objects/PushPromise.html">PushPromise</a> </span>
+                        <span >promise</span>
+                        <span class="type">  <a href="../../http/objects/PushPromise.html">PushPromise</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>The related <code>PushPromise</code></p>
-</p>
+                        <p>
+                            
+                            <p>The related <code>http:PushPromise</code></p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2007,7 +1901,7 @@ provider.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../http/objects/Response.html">Response</a> | <a href="../../http/types.html#ClientError">ClientError</a></span>)</li>
-                <li><p>A promised HTTP <code>Response</code> message, or an <code>http:ClientError</code> if the invocation fails</p>
+                <li><p>A promised <code>http:Response</code> message or else an <code>http:ClientError</code> if the invocation fails</p>
 </li>
             </ul>
         </div>
@@ -2020,25 +1914,35 @@ provider.</p>
              <a class="url-link" href="#rejectPromise">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> rejectPromise </h2>
-        
+            <h2 > rejectPromise </h2>
+        <span class="method-types">
+            <p>(<a href="../../http/objects/PushPromise.html">PushPromise</a> promise)</p>
+            
+        </span>
     </div>
-    <p><p>Circuit breaking not supported. Defaults to the <code>rejectPromise()</code> function of the underlying HTTP
-remote functions provider.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Circuit breaking is not supported. The default value is the <code>CircuitBreakerClient.rejectPromise()</code> function of the underlying
+HTTP remote functions provider.</p>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        promise<span class="type">  <a href="../../http/objects/PushPromise.html">PushPromise</a> </span>
+                        <span >promise</span>
+                        <span class="type">  <a href="../../http/objects/PushPromise.html">PushPromise</a> </span>
                         
                     </li>
                     <li>
-                        <p><p>The <code>PushPromise</code> to be rejected</p>
-</p>
+                        <p>
+                            
+                            <p>The <code>http:PushPromise</code> to be rejected</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -2054,13 +1958,19 @@ remote functions provider.</p>
              <a class="url-link" href="#forceClose">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> forceClose </h2>
-        
+            <h2 > forceClose </h2>
+        <span class="method-types">
+            <p>()</p>
+            
+        </span>
     </div>
-    <p><p>Force the circuit into a closed state in which it will allow requests regardless of the error percentage
+    <div class="function-desc">
+        
+        <p>Force the circuit into a closed state in which it will allow requests regardless of the error percentage
 until the failure threshold exceeds.</p>
-</p>
-     
+
+    </div>
+    
 
     
 </div>
@@ -2070,13 +1980,19 @@ until the failure threshold exceeds.</p>
              <a class="url-link" href="#forceOpen">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> forceOpen </h2>
-        
+            <h2 > forceOpen </h2>
+        <span class="method-types">
+            <p>()</p>
+            
+        </span>
     </div>
-    <p><p>Force the circuit into a open state in which it will suspend all requests
+    <div class="function-desc">
+        
+        <p>Force the circuit into a open state in which it will suspend all requests
 until <code>resetTimeInMillis</code> interval exceeds.</p>
-</p>
-     
+
+    </div>
+    
 
     
 </div>
@@ -2086,24 +2002,27 @@ until <code>resetTimeInMillis</code> interval exceeds.</p>
              <a class="url-link" href="#getCurrentState">
                 <img class="url-link-img" src="../../html-template-resources/images/link.svg">
             </a>
-            <h2> getCurrentState </h2>
-        
+            <h2 > getCurrentState </h2>
         <span class="method-types">
             <p>()</p>
-            <b> returns </b><a href="../../http/types.html#CircuitState">CircuitState</a> 
+            
+                <b> returns </b><a href="../../http/types.html#CircuitState">CircuitState</a> 
+            
         </span>
-        
     </div>
-    <p><p>Provides <code>CircuitState</code> of the circuit breaker.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Provides the <code>http:CircuitState</code> of the circuit breaker.</p>
+
+    </div>
+    
 
     
         
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><a href="../../http/types.html#CircuitState">CircuitState</a></span>)</li>
-                <li><p>The current <code>CircuitState</code> of circuit breaker</p>
+                <li><p>The current <code>http:CircuitState</code> of the circuit breaker</p>
 </li>
             </ul>
         </div>
@@ -2118,17 +2037,6 @@ until <code>resetTimeInMillis</code> interval exceeds.</p>
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -2154,10 +2062,47 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
         ballerinaHighlighter.highlightSnippets();
     };
 </script>
+
 

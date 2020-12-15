@@ -1,140 +1,52 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Basic Server Functionalities" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Basic Server Functionalities</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Basic Server Functionalities
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/websocket-basic-sample
+redirect_from:
+  - /v1-2/learn/by-example/websocket-basic-sample
+  - /v1-2/learn/by-example/websocket-basic-sample.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
-                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">log</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">;</span><span class="nd">@http:WebSocketServiceConfig {</span>
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">log</span><span class="p">;</span><span class="kt">string</span> <span class="nx">ping</span> <span class="p">=</span> <span class="s">&quot;ping&quot;</span><span class="p">;</span>
+<span class="nx">byte</span><span class="p">[]</span> <span class="nx">pingData</span> <span class="p">=</span> <span class="nx">ping</span><span class="p">.</span><span class="nx">toBytes</span><span class="p">();</span><span class="nd">@http:WebSocketServiceConfig {</span>
     <span class="nx">path</span><span class="p">:</span> <span class="s">&quot;/basic/ws&quot;</span><span class="p">,</span>
     <span class="nx">subProtocols</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;xml&quot;</span><span class="p">,</span> <span class="s">&quot;json&quot;</span><span class="p">],</span>
     <span class="nx">idleTimeoutInSeconds</span><span class="p">:</span> <span class="mi">120</span>
 <span class="p">}</span>
-<span class="kd">service</span> <span class="nx">basic</span> <span class="nx">on</span> <span class="nx">new</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketListener</span><span class="p">(</span><span class="mi">9090</span><span class="p">)</span> <span class="p">{</span>    <span class="kt">string</span> <span class="nx">ping</span> <span class="p">=</span> <span class="s">&quot;ping&quot;</span><span class="p">;</span>
-    <span class="nx">byte</span><span class="p">[]</span> <span class="nx">pingData</span> <span class="p">=</span> <span class="nx">ping</span><span class="p">.</span><span class="nx">toByteArray</span><span class="p">(</span><span class="s">&quot;UTF-8&quot;</span><span class="p">);</span>
+<span class="kd">service</span> <span class="nx">basic</span> <span class="nx">on</span> <span class="nx">new</span> <span class="nx">http</span><span class="p">:</span><span class="nx">Listener</span><span class="p">(</span><span class="mi">9090</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onOpen</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;\nNew client connected&quot;</span><span class="p">);</span>
-        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Connection ID: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Negotiated Sub protocol: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">negotiatedSubProtocol</span><span class="p">);</span>
-        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Is connection open: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">isOpen</span><span class="p">);</span>
-        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Is connection secured: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">isSecure</span><span class="p">);</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Connection ID: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">getConnectionId</span><span class="p">());</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Negotiated Sub protocol: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">getNegotiatedSubProtocol</span><span class="p">().</span><span class="nx">toString</span><span class="p">());</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Is connection open: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">isOpen</span><span class="p">().</span><span class="nx">toString</span><span class="p">());</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Is connection secured: &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">isSecure</span><span class="p">().</span><span class="nx">toString</span><span class="p">());</span>
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onText</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">,</span> <span class="kt">string</span> <span class="nx">text</span><span class="p">,</span>
                                 <span class="kt">boolean</span> <span class="nx">finalFrame</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;\ntext message: &quot;</span> <span class="o">+</span> <span class="nx">text</span> <span class="o">+</span> <span class="s">&quot; &amp; final fragment: &quot;</span>
-                                                        <span class="o">+</span> <span class="nx">finalFrame</span><span class="p">);</span>        <span class="k">if</span> <span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="s">&quot;ping&quot;</span><span class="p">)</span> <span class="p">{</span>
+                                                        <span class="o">+</span> <span class="nx">finalFrame</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="s">&quot;ping&quot;</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Pinging...&quot;</span><span class="p">);</span>
-            <span class="k">var</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">ping</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">pingData</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending ping&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">err</span><span class="p">);</span>
+            <span class="k">var</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">ping</span><span class="p">(</span><span class="nx">pingData</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketError</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending ping&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">text</span> <span class="o">==</span> <span class="s">&quot;closeMe&quot;</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">error</span><span class="err">?</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">close</span><span class="p">(</span><span class="nx">statusCode</span> <span class="p">=</span> <span class="mi">1001</span><span class="p">,</span>
                             <span class="nx">reason</span> <span class="p">=</span> <span class="s">&quot;You asked me to close the connection&quot;</span><span class="p">,</span>
-                            <span class="nx">timeoutInSecs</span> <span class="p">=</span> <span class="mi">0</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when closing connection&quot;</span><span class="p">,</span>
-                                                                    <span class="nx">err</span> <span class="p">=</span> <span class="nx">result</span><span class="p">);</span>
+                            <span class="nx">timeoutInSeconds</span> <span class="p">=</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketError</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when closing connection&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="k">var</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">pushText</span><span class="p">(</span><span class="s">&quot;You said: &quot;</span> <span class="o">+</span> <span class="nx">text</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when sending text&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">err</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketError</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when sending text&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -143,15 +55,14 @@
         <span class="nx">io</span><span class="p">:</span><span class="nx">print</span><span class="p">(</span><span class="s">&quot;UTF-8 decoded binary message: &quot;</span><span class="p">);</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
         <span class="k">var</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">pushBinary</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when sending binary&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">err</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketError</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when sending binary&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onPing</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">,</span> <span class="nx">byte</span><span class="p">[]</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">var</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">pong</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when closing the connection&quot;</span><span class="p">,</span>
-                            <span class="nx">err</span> <span class="p">=</span> <span class="nx">err</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketError</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when closing the connection&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onPong</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">,</span> <span class="nx">byte</span><span class="p">[]</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -159,29 +70,37 @@
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onIdleTimeout</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;\nReached idle timeout&quot;</span><span class="p">);</span>
-        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Closing connection &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Closing connection &quot;</span> <span class="o">+</span> <span class="nx">caller</span><span class="p">.</span><span class="nx">getConnectionId</span><span class="p">());</span>
         <span class="k">var</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">close</span><span class="p">(</span><span class="nx">statusCode</span> <span class="p">=</span> <span class="mi">1001</span><span class="p">,</span> <span class="nx">reason</span> <span class="p">=</span>
                                     <span class="s">&quot;Connection timeout&quot;</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occured when closing the connection&quot;</span><span class="p">,</span>
-                                <span class="nx">err</span> <span class="p">=</span> <span class="nx">err</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketError</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred when closing the connection&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onError</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">,</span> <span class="nx">error</span> <span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred &quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">err</span><span class="p">);</span>
+        <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error occurred &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">onClose</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">WebSocketCaller</span> <span class="nx">caller</span><span class="p">,</span> <span class="kt">int</span> <span class="nx">statusCode</span><span class="p">,</span>
                                 <span class="kt">string</span> <span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="kt">string</span> <span class="s">`Client left with ${statusCode} because ${reason}`</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">start</span> <span class="nx">the</span> <span class="kd">service</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">websocket_basic_sample</span><span class="p">.</span><span class="nx">bal</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">check</span> <span class="nx">the</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">use</span> <span class="nx">a</span> <span class="nx">Chrome</span> <span class="nx">or</span> <span class="nx">Firefox</span> <span class="nx">JavaScript</span> <span class="nx">console</span> <span class="nx">and</span> <span class="nx">run</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">commands</span><span class="p">.</span> <span class="p">&lt;</span><span class="nx">br</span><span class="p">&gt;</span>
+<span class="err">#</span> <span class="nx">Change</span> <span class="s">`xml`</span> <span class="nx">to</span> <span class="nx">another</span> <span class="nx">sub</span> <span class="nx">protocol</span> <span class="nx">to</span> <span class="nx">observe</span> <span class="nx">the</span> <span class="nx">behavior</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">WebSocket</span> <span class="nx">server</span><span class="p">.</span>
+<span class="k">var</span> <span class="nx">ws</span> <span class="p">=</span> <span class="nx">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s">&quot;ws://localhost:9090/basic/ws&quot;</span><span class="p">,</span> <span class="s">&quot;xml&quot;</span><span class="p">,</span> <span class="s">&quot;my-protocol&quot;</span><span class="p">);</span><span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span> <span class="p">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">data</span><span class="p">)};</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">onclose</span> <span class="p">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frame</span><span class="p">)};</span><span class="err">#</span> <span class="nx">Send</span> <span class="nx">a</span> <span class="kt">message</span><span class="p">.</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span><span class="err">#</span> <span class="nx">Use</span> <span class="nx">an</span> <span class="nx">advanced</span> <span class="nx">client</span> <span class="nx">to</span> <span class="nx">check</span> <span class="nx">the</span> <span class="nx">ping</span> <span class="nx">and</span> <span class="nx">pong</span> <span class="nx">since</span> <span class="nx">the</span> <span class="nx">browser</span> <span class="nx">client</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">have</span> <span class="nx">the</span> <span class="nx">capability</span> <span class="nx">to</span> <span class="nx">send</span> <span class="nx">pings</span><span class="p">.</span>
+<span class="err">#</span> <span class="nx">Use</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">command</span> <span class="nx">to</span> <span class="nx">observe</span> <span class="nx">the</span> <span class="nx">behavior</span> <span class="nx">when</span> <span class="nx">the</span> <span class="nx">server</span> <span class="nx">sends</span> <span class="nx">a</span> <span class="nx">ping</span> <span class="kt">message</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">browser</span> <span class="nx">client</span><span class="p">.</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s">&quot;ping&quot;</span><span class="p">);</span><span class="err">#</span> <span class="nx">Close</span> <span class="nx">the</span> <span class="nx">connection</span><span class="p">.</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s">&quot;I want to go&quot;</span><span class="p">);</span><span class="err">#</span> <span class="nx">Close</span> <span class="nx">the</span> <span class="nx">connection</span> <span class="nx">from</span> <span class="nx">the</span> <span class="nx">server</span> <span class="nx">side</span><span class="p">.</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s">&quot;closeMe&quot;</span><span class="p">);</span><span class="err">#</span> <span class="nx">Wait</span> <span class="k">for</span> <span class="mi">120</span> <span class="nx">seconds</span> <span class="nx">to</span> <span class="nx">check</span> <span class="nx">the</span> <span class="nx">connection</span> <span class="nx">closure</span> <span class="nx">due</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">connection</span> <span class="k">timeout</span> 
+<span class="err">#</span> <span class="nx">or</span> <span class="nx">change</span> <span class="nx">the</span> <span class="k">timeout</span> <span class="nx">in</span> <span class="nx">the</span> <span class="nx">configuration</span> <span class="kd">annotation</span><span class="p">.</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
@@ -194,9 +113,9 @@
                             <div class="cTopButtonContainer">
                                 
                                 <div class="cButtonInfoContainer">
-                                    <a class="prev" href="http-2.0-server-push.html">
+                                    <a class="prev" href="websocket-client.html">
                                         <span>< PREVIOUS</span>
-                                        <p>HTTP 2.0 Server Push</p>
+                                        <p>Client Endpoint</p>
                                     </a>
                                 </div>
                                  
@@ -217,25 +136,15 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Basic Server Functionalities</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/websocket-basic-sample/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/websocket-basic-sample/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -274,8 +183,6 @@
                         
                             
                         
-                            
-                        
 
                     <div>
 
@@ -284,9 +191,9 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/http;
+import ballerina/io;
 import ballerina/log;
-import ballerina/http;
 </code></pre></div>
 
                                 </td>
@@ -298,25 +205,25 @@ import ballerina/http;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>@http:WebSocketServiceConfig {
+                                    <div class="highlight"><pre><code class=language-ballerina>string ping = &quot;ping&quot;;
+byte[] pingData = ping.toBytes();
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>@http:WebSocketServiceConfig {
     path: &quot;/basic/ws&quot;,
     subProtocols: [&quot;xml&quot;, &quot;json&quot;],
     idleTimeoutInSeconds: 120
 }
-service basic on new http:WebSocketListener(9090) {
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string ping = &quot;ping&quot;;
-    byte[] pingData = ping.toByteArray(&quot;UTF-8&quot;);
+service basic on new http:Listener(9090) {
 </code></pre></div>
 
                                 </td>
@@ -328,12 +235,12 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onOpen(http:WebSocketCaller caller) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onOpen(http:WebSocketCaller caller) {
         io:println(&quot;\nNew client connected&quot;);
-        io:println(&quot;Connection ID: &quot; + caller.id);
-        io:println(&quot;Negotiated Sub protocol: &quot; + caller.negotiatedSubProtocol);
-        io:println(&quot;Is connection open: &quot; + caller.isOpen);
-        io:println(&quot;Is connection secured: &quot; + caller.isSecure);
+        io:println(&quot;Connection ID: &quot; + caller.getConnectionId());
+        io:println(&quot;Negotiated Sub protocol: &quot; + caller.getNegotiatedSubProtocol().toString());
+        io:println(&quot;Is connection open: &quot; + caller.isOpen().toString());
+        io:println(&quot;Is connection secured: &quot; + caller.isSecure().toString());
     }
 </code></pre></div>
 
@@ -353,10 +260,30 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onText(http:WebSocketCaller caller, string text,
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onText(http:WebSocketCaller caller, string text,
                                 boolean finalFrame) {
         io:println(&quot;\ntext message: &quot; + text + &quot; &amp; final fragment: &quot;
-                                                        + finalFrame);
+                                                        + finalFrame.toString());
+        if (text == &quot;ping&quot;) {
+            io:println(&quot;Pinging...&quot;);
+            var err = caller-&gt;ping(pingData);
+            if (err is http:WebSocketError) {
+                log:printError(&quot;Error sending ping&quot;, err);
+            }
+        } else if (text == &quot;closeMe&quot;) {
+            error? result = caller-&gt;close(statusCode = 1001,
+                            reason = &quot;You asked me to close the connection&quot;,
+                            timeoutInSeconds = 0);
+            if (result is http:WebSocketError) {
+                log:printError(&quot;Error occurred when closing connection&quot;, result);
+            }
+        } else {
+            var err = caller-&gt;pushText(&quot;You said: &quot; + text);
+            if (err is http:WebSocketError) {
+                log:printError(&quot;Error occurred when sending text&quot;, err);
+            }
+        }
+    }
 </code></pre></div>
 
                                 </td>
@@ -372,48 +299,16 @@ service basic on new http:WebSocketListener(9090) {
                                 </td>
                             </tr>
                             
-                            <tr class="cTR">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        if (text == &quot;ping&quot;) {
-            io:println(&quot;Pinging...&quot;);
-            var err = caller-&gt;ping(self.pingData);
-            if (err is error) {
-                log:printError(&quot;Error sending ping&quot;, err = err);
-            }
-        } else if (text == &quot;closeMe&quot;) {
-            error? result = caller-&gt;close(statusCode = 1001,
-                            reason = &quot;You asked me to close the connection&quot;,
-                            timeoutInSecs = 0);
-            if (result is error) {
-                log:printError(&quot;Error occurred when closing connection&quot;,
-                                                                    err = result);
-            }
-        } else {
-            var err = caller-&gt;pushText(&quot;You said: &quot; + text);
-            if (err is error) {
-                log:printError(&quot;Error occurred when sending text&quot;, err = err);
-            }
-        }
-    }
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                </td>
-                            </tr>
-                            
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onBinary(http:WebSocketCaller caller, byte[] b) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onBinary(http:WebSocketCaller caller, byte[] b) {
         io:println(&quot;\nNew binary message received&quot;);
         io:print(&quot;UTF-8 decoded binary message: &quot;);
         io:println(b);
         var err = caller-&gt;pushBinary(b);
-        if (err is error) {
-            log:printError(&quot;Error occurred when sending binary&quot;, err = err);
+        if (err is http:WebSocketError) {
+            log:printError(&quot;Error occurred when sending binary&quot;, err);
         }
     }
 </code></pre></div>
@@ -434,11 +329,10 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onPing(http:WebSocketCaller caller, byte[] data) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onPing(http:WebSocketCaller caller, byte[] data) {
         var err = caller-&gt;pong(data);
-        if (err is error) {
-            log:printError(&quot;Error occurred when closing the connection&quot;,
-                            err = err);
+        if (err is http:WebSocketError) {
+            log:printError(&quot;Error occurred when closing the connection&quot;, err);
         }
     }
 </code></pre></div>
@@ -460,7 +354,7 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onPong(http:WebSocketCaller caller, byte[] data) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onPong(http:WebSocketCaller caller, byte[] data) {
         io:println(&quot;Pong received&quot;);
     }
 </code></pre></div>
@@ -481,14 +375,13 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onIdleTimeout(http:WebSocketCaller caller) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onIdleTimeout(http:WebSocketCaller caller) {
         io:println(&quot;\nReached idle timeout&quot;);
-        io:println(&quot;Closing connection &quot; + caller.id);
+        io:println(&quot;Closing connection &quot; + caller.getConnectionId());
         var err = caller-&gt;close(statusCode = 1001, reason =
                                     &quot;Connection timeout&quot;);
-        if (err is error) {
-            log:printError(&quot;Error occured when closing the connection&quot;,
-                                err = err);
+        if (err is http:WebSocketError) {
+            log:printError(&quot;Error occurred when closing the connection&quot;, err);
         }
     }
 </code></pre></div>
@@ -510,8 +403,8 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onError(http:WebSocketCaller caller, error err) {
-        log:printError(&quot;Error occurred &quot;, err = err);
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onError(http:WebSocketCaller caller, error err) {
+        log:printError(&quot;Error occurred &quot;, err);
     }
 </code></pre></div>
 
@@ -533,7 +426,7 @@ service basic on new http:WebSocketListener(9090) {
                             <tr class="cTR hover-enable">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function onClose(http:WebSocketCaller caller, int statusCode,
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function onClose(http:WebSocketCaller caller, int statusCode,
                                 string reason) {
         io:println(string `Client left with ${statusCode} because ${reason}`);
     }
@@ -598,8 +491,8 @@ service basic on new http:WebSocketListener(9090) {
 
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To start the service, navigate to the directory that contains the
-# `.bal` file and use the `ballerina run` command.
-$ ballerina run websocket_basic_sample.bal
+# `.bal` file and execute the `ballerina run` command.
+ballerina run websocket_basic_sample.bal
 </code></pre></div>
 
                                 </td>
@@ -613,7 +506,7 @@ $ ballerina run websocket_basic_sample.bal
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To check the sample, use a Chrome or Firefox JavaScript console and run the following commands. &lt;br&gt;
 # Change `xml` to another sub protocol to observe the behavior of the WebSocket server.
-$ var ws = new WebSocket(&quot;ws://localhost:9090/basic/ws&quot;, &quot;xml&quot;, &quot;my-protocol&quot;);
+var ws = new WebSocket(&quot;ws://localhost:9090/basic/ws&quot;, &quot;xml&quot;, &quot;my-protocol&quot;);
 </code></pre></div>
 
                                 </td>
@@ -625,8 +518,8 @@ $ var ws = new WebSocket(&quot;ws://localhost:9090/basic/ws&quot;, &quot;xml&quo
                             <tr class="cTR cOutputTr">
 
                                 <td class="code leading cOutput">
-                                    <div class="highlight"><pre><code class=shell-session>$ ws.onmessage = function(frame) {console.log(frame.data)};
-$ ws.onclose = function(frame) {console.log(frame)};
+                                    <div class="highlight"><pre><code class=shell-session>ws.onmessage = function(frame) {console.log(frame.data)};
+ws.onclose = function(frame) {console.log(frame)};
 </code></pre></div>
 
                                 </td>
@@ -639,7 +532,7 @@ $ ws.onclose = function(frame) {console.log(frame)};
 
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># Send a message.
-$ ws.send(&quot;hello world&quot;);
+ws.send(&quot;hello world&quot;);
 </code></pre></div>
 
                                 </td>
@@ -653,7 +546,7 @@ $ ws.send(&quot;hello world&quot;);
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># Use an advanced client to check the ping and pong since the browser client does not have the capability to send pings.
 # Use the following command to observe the behavior when the server sends a ping message to the browser client.
-$ ws.send(&quot;ping&quot;);
+ws.send(&quot;ping&quot;);
 </code></pre></div>
 
                                 </td>
@@ -666,7 +559,7 @@ $ ws.send(&quot;ping&quot;);
 
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># Close the connection.
-$ ws.close(1000, &quot;I want to go&quot;);
+ws.close(1000, &quot;I want to go&quot;);
 </code></pre></div>
 
                                 </td>
@@ -679,7 +572,7 @@ $ ws.close(1000, &quot;I want to go&quot;);
 
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># Close the connection from the server side.
-$ ws.send(&quot;closeMe&quot;);
+ws.send(&quot;closeMe&quot;);
 </code></pre></div>
 
                                 </td>
@@ -717,56 +610,49 @@ $ ws.send(&quot;closeMe&quot;);
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

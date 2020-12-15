@@ -85,7 +85,13 @@ a.cBBEButton {
     background-image: url("/img/go-bg-green.svg") !important;
     /* -webkit-transform: rotate(30deg); */
 }
-a.cBBEButton p {
+a.cPlayButton {
+    background-color: #fff;
+    background-image: url("/img/main-play-green-btn.svg") !important;
+    /* -webkit-transform: rotate(30deg); */
+}
+
+a.cBBEButton p, a.cPlayButton p {
     color: #464646 !important;
 }
 a.cBBEButton:hover p {
@@ -93,7 +99,7 @@ a.cBBEButton:hover p {
 
 }
 
-a.cBBEButton img {
+a.cBBEButton img, a.cPlayButton img {
 width: 230px;
 
 }
@@ -226,7 +232,7 @@ position: absolute;
 
 
 .cMainCTAContainer {
-    padding-top: 100px;
+    padding-top: 10px;
 }
 
 a.cBallerina-io-Home-main-download-button {
@@ -263,6 +269,7 @@ a.cBallerina-io-Home-main-download-button.cCentralButton {
 
 }
 
+
 a.cBallerina-io-Home-main-download-button.cCentralButton:hover {
     color: #464646;
     background-color: #fff;
@@ -277,6 +284,34 @@ a.cBallerina-io-Home-main-download-button.cCentralButton:hover {
 .row.cBallerinaIntroSection .cBallerina-io-Home-main-download-button.cCentralButton p {
     color: #20b6b0;
 }
+
+
+p a {
+    color: #20b6b0;
+}
+
+ul.cInlinelinklist {
+    padding: 0;
+}
+
+ul.cInlinelinklist li a {
+    color: #20b6b0;
+}
+
+
+ul.cInlinelinklist li {
+	list-style: none !important;
+	padding-left: 40px;
+	background-image: url("/img/toc-bg.svg");
+	background-repeat: no-repeat;
+	background-position: left center;
+	margin: 0 0 10px 0;
+	margin-left: 0 !important;
+	width: 100%;
+	display: block;
+	float: none;
+}
+
 
   @media screen and (max-width: 990px) {
     .cBallerina-io p.cQuotes {

@@ -1,101 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: JSON" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: JSON</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: JSON
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/json
+redirect_from:
+  - /v1-2/learn/by-example/json
+  - /v1-2/learn/by-example/json.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
                 <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
@@ -108,49 +20,54 @@
     <span class="kt">json</span> <span class="nx">j4</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
     <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j4</span><span class="p">);</span>
     <span class="kt">json</span> <span class="nx">j5</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="kt">json</span> <span class="nx">j6</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">name</span><span class="p">:</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="p">:</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="nx">price</span><span class="p">:</span> <span class="nx">j2</span> <span class="p">};</span>
+    <span class="kt">json</span> <span class="nx">j6</span> <span class="p">=</span> <span class="p">{</span><span class="nx">name</span><span class="p">:</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="nx">color</span><span class="p">:</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="nx">price</span><span class="p">:</span> <span class="nx">j2</span><span class="p">};</span>
     <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j6</span><span class="p">);</span>
-    <span class="kt">json</span> <span class="nx">j7</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">first</span><span class="p">:</span> <span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="nx">last</span><span class="p">:</span> <span class="s">&quot;Pala&quot;</span> <span class="p">}];</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j7</span><span class="p">);</span>
-    <span class="kt">json</span> <span class="nx">empty</span> <span class="p">=</span> <span class="p">{};</span>    <span class="kt">int</span> <span class="nx">age</span> <span class="p">=</span> <span class="mi">30</span><span class="p">;</span>
-    <span class="kt">json</span> <span class="nx">p</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">fname</span><span class="p">:</span> <span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="nx">lname</span><span class="p">:</span> <span class="s">&quot;Stallone&quot;</span><span class="p">,</span> <span class="s">&quot;age&quot;</span><span class="p">:</span> <span class="nx">age</span> <span class="p">};</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
-    <span class="kt">json</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">fname</span><span class="p">;</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">firstName</span><span class="p">);</span>
-    <span class="kt">json</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="nx">p</span><span class="p">[</span><span class="s">&quot;lname&quot;</span><span class="p">];</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">lastName</span><span class="p">);</span>
-    <span class="nx">p</span><span class="p">.</span><span class="nx">lname</span> <span class="p">=</span> <span class="s">&quot;Silva&quot;</span><span class="p">;</span>
-    <span class="nx">p</span><span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">31</span><span class="p">;</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
-    <span class="kt">json</span> <span class="nx">p2</span> <span class="p">=</span> <span class="p">{</span>
-         <span class="nx">fname</span><span class="p">:</span> <span class="s">&quot;Peter&quot;</span><span class="p">,</span>
-         <span class="nx">lname</span><span class="p">:</span> <span class="s">&quot;Stallone&quot;</span><span class="p">,</span>
-         <span class="s">&quot;age&quot;</span><span class="p">:</span> <span class="nx">age</span><span class="p">,</span>
-         <span class="nx">address</span><span class="p">:</span> <span class="p">{</span>
-             <span class="nx">line</span><span class="p">:</span> <span class="s">&quot;20 Palm Grove&quot;</span><span class="p">,</span>
-             <span class="nx">city</span><span class="p">:</span> <span class="s">&quot;Colombo 03&quot;</span><span class="p">,</span>
-             <span class="nx">country</span><span class="p">:</span> <span class="s">&quot;Sri Lanka&quot;</span>
-         <span class="p">}</span>
-    <span class="p">};</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">p2</span><span class="p">);</span>    <span class="nx">p2</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">province</span> <span class="p">=</span> <span class="s">&quot;Western&quot;</span><span class="p">;</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">p2</span><span class="p">);</span>
-<span class="p">}</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j6</span><span class="p">.</span><span class="nx">toJsonString</span><span class="p">());</span>
+    <span class="kt">json</span> <span class="nx">j7</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">first</span><span class="p">:</span> <span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="nx">last</span><span class="p">:</span> <span class="s">&quot;Pala&quot;</span><span class="p">}];</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j7</span><span class="p">.</span><span class="nx">toJsonString</span><span class="p">());</span>
+    <span class="kt">json</span> <span class="nx">j8</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">j5</span><span class="p">.</span><span class="nx">mergeJson</span><span class="p">(</span><span class="nx">j7</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j8</span><span class="p">.</span><span class="nx">toJsonString</span><span class="p">());</span>
+    <span class="kt">json</span> <span class="nx">j9</span> <span class="p">=</span> <span class="p">{</span><span class="nx">name</span><span class="p">:</span> <span class="s">&quot;Anne&quot;</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">marks</span><span class="p">:</span> <span class="p">{</span><span class="nx">math</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="nx">language</span><span class="p">:</span> <span class="mi">95</span><span class="p">}};</span>
+    <span class="kt">json</span> <span class="nx">j10</span> <span class="p">=</span> <span class="p">{</span><span class="nx">name</span><span class="p">:</span> <span class="p">(),</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">marks</span><span class="p">:</span> <span class="p">{</span><span class="nx">physics</span><span class="p">:</span> <span class="mi">85</span><span class="p">}};</span>
+    <span class="kt">json</span> <span class="nx">j11</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">j9</span><span class="p">.</span><span class="nx">mergeJson</span><span class="p">(</span><span class="nx">j10</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j11</span><span class="p">.</span><span class="nx">toJsonString</span><span class="p">());</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j9</span> <span class="o">==</span><span class="p">=</span> <span class="nx">j11</span><span class="p">);</span>
+    <span class="kt">json</span><span class="p">|</span><span class="nx">error</span> <span class="nx">j12</span> <span class="p">=</span> <span class="nx">j2</span><span class="p">.</span><span class="nx">mergeJson</span><span class="p">(</span><span class="nx">j3</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j12</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nx">s</span> <span class="p">=</span> <span class="nx">j6</span><span class="p">.</span><span class="nx">toJsonString</span><span class="p">();</span>
+    <span class="kt">json</span> <span class="nx">j13</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">s</span><span class="p">.</span><span class="nx">fromJsonString</span><span class="p">();</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j13</span><span class="p">.</span><span class="nx">toJsonString</span><span class="p">());</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">j6</span> <span class="o">==</span> <span class="nx">j13</span><span class="p">);</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="kt">json</span><span class="p">.</span><span class="nx">bal</span>
+<span class="nx">Apple</span>
+<span class="mf">5.36</span>
+<span class="kc">true</span>
+<span class="kc">false</span>
+<span class="nx">name</span><span class="p">=</span><span class="nx">apple</span> <span class="nx">color</span><span class="p">=</span><span class="nx">red</span> <span class="nx">price</span><span class="p">=</span><span class="mf">5.36</span>
+<span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;color&quot;</span><span class="p">:</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;price&quot;</span><span class="p">:</span><span class="mf">5.36</span><span class="p">}</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;first&quot;</span><span class="p">:</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="s">&quot;last&quot;</span><span class="p">:</span><span class="s">&quot;Pala&quot;</span><span class="p">}]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;first&quot;</span><span class="p">:</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="s">&quot;last&quot;</span><span class="p">:</span><span class="s">&quot;Pala&quot;</span><span class="p">}]</span>
+<span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;Anne&quot;</span><span class="p">,</span> <span class="s">&quot;age&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="s">&quot;marks&quot;</span><span class="p">:{</span><span class="s">&quot;math&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s">&quot;language&quot;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s">&quot;physics&quot;</span><span class="p">:</span><span class="mi">85</span><span class="p">}}</span>
+<span class="kc">true</span>
+<span class="nx">error</span> <span class="p">{</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">lang</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="nx">MergeJsonError</span> <span class="kt">message</span><span class="p">=</span><span class="nx">Cannot</span> <span class="nx">merge</span> <span class="nx">JSON</span> <span class="nx">values</span> <span class="nx">of</span> <span class="nx">types</span> <span class="err">&#39;</span><span class="kt">float</span><span class="err">&#39;</span> <span class="nx">and</span> <span class="err">&#39;</span><span class="kt">boolean</span><span class="err">&#39;</span>
+<span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;color&quot;</span><span class="p">:</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;price&quot;</span><span class="p">:</span><span class="mf">5.36</span><span class="p">}</span>
+<span class="kc">true</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
                             <h2>JSON</h2>
                             <p><p>JSON is a textual format for representing a collection of values:
- a simple value (string, number, “true”, “false”, “null”), an array of values, or an object.
+ a simple value (string, number, &ldquo;true&rdquo;, &ldquo;false&rdquo;, &ldquo;null&rdquo;), an array of values, or an object.
  Ballerina has a single type named <code>json</code> that can represent any JSON value.
- Thus, <code>json</code> is a built-in union type in Ballerina that can contain values of types
- <code>nil</code> (as the <code>null</code> value), <code>boolean</code>, <code>int</code>, <code>float</code>, <code>decimal</code>, <code>string</code>, <code>json[]</code> and <code>map&lt;json&gt;</code>.</p>
+ Thus, <code>json</code> is a built-in union type in Ballerina that can contain values of the types
+ nil (as the <code>null</code> value), <code>boolean</code>, <code>int</code>, <code>float</code>, <code>decimal</code>, <code>string</code>, <code>json[]</code>, and <code>map&lt;json&gt;</code>.</p>
 </p>
 
                         </td>
@@ -158,16 +75,16 @@
                             <div class="cTopButtonContainer">
                                 
                                 <div class="cButtonInfoContainer">
-                                    <a class="prev" href="type-conversion.html">
+                                    <a class="prev" href="streams.html">
                                         <span>< PREVIOUS</span>
-                                        <p>Type Conversion</p>
+                                        <p>Streams</p>
                                     </a>
                                 </div>
                                  
                                 <div class="cButtonInfoContainer">
-                                    <a class="next" href="json-arrays.html">
+                                    <a class="next" href="json-objects.html">
                                         <span>NEXT ></span>
-                                        <p>JSON Arrays</p>
+                                        <p>JSON Objects</p>
                                     </a>
                                 </div>
                                 
@@ -181,25 +98,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>JSON</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/json/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/json/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=99a4db0c2182f056a2f62ba25aeb35d3&file=json.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -248,8 +159,6 @@
                         
                             
                         
-                            
-                        
 
                     <div>
 
@@ -258,7 +167,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/io;
 </code></pre></div>
 
                                 </td>
@@ -270,7 +179,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
 </code></pre></div>
 
                                 </td>
@@ -282,7 +191,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j1 = &quot;Apple&quot;;
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j1 = &quot;Apple&quot;;
     io:println(j1);
 </code></pre></div>
 
@@ -302,7 +211,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j2 = 5.36;
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j2 = 5.36;
     io:println(j2);
 </code></pre></div>
 
@@ -322,7 +231,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j3 = true;
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j3 = true;
     io:println(j3);
 </code></pre></div>
 
@@ -342,7 +251,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j4 = false;
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j4 = false;
     io:println(j4);
 </code></pre></div>
 
@@ -362,7 +271,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j5 = null;
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j5 = null;
 </code></pre></div>
 
                                 </td>
@@ -381,7 +290,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j6 = { name: &quot;apple&quot;, color: &quot;red&quot;, price: j2 };
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j6 = {name: &quot;apple&quot;, color: &quot;red&quot;, price: j2};
     io:println(j6);
 </code></pre></div>
 
@@ -390,7 +299,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Create a JSON Objects.</p>
+                                            <p>Creates a JSON Object. This is equivalent to a <code>map&lt;json&gt;</code>.</p>
 
                                         </div>
                                     </div>
@@ -401,8 +310,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json j7 = [1, false, null, &quot;foo&quot;, { first: &quot;John&quot;, last: &quot;Pala&quot; }];
-    io:println(j7);
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(j6.toJsonString());
 </code></pre></div>
 
                                 </td>
@@ -410,7 +318,8 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Create a JSON Array. They are arrays of any JSON value.</p>
+                                            <p>The <code>.toJsonString()</code> defined for <code>json</code> values returns a <code>string</code> that
+ represents the value in JSON format.</p>
 
                                         </div>
                                     </div>
@@ -421,7 +330,8 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json empty = {};
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j7 = [1, false, null, &quot;foo&quot;, {first: &quot;John&quot;, last: &quot;Pala&quot;}];
+    io:println(j7.toJsonString());
 </code></pre></div>
 
                                 </td>
@@ -429,40 +339,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Create an empty JSON Object.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    int age = 30;
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json p = { fname: &quot;John&quot;, lname: &quot;Stallone&quot;, &quot;age&quot;: age };
-    io:println(p);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Create a JSON object. Keys can be defined with or without quotes.
- Values can be any expression.</p>
+                                            <p>Create a JSON Array. This is equivalent to a <code>json[]</code>.</p>
 
                                         </div>
                                     </div>
@@ -473,8 +350,8 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json firstName = p.fname;
-    io:println(firstName);
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j8 = checkpanic j5.mergeJson(j7);
+    io:println(j8.toJsonString());
 </code></pre></div>
 
                                 </td>
@@ -482,7 +359,9 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>You can access the object values by using dot (.) notation or array index notation.</p>
+                                            <p>The <code>.mergeJson()</code> method can be used to merge two <code>json</code> values.
+ If either of the two values is <code>null</code>, the result of <code>.mergeJson()</code> is
+ the other value.</p>
 
                                         </div>
                                     </div>
@@ -493,8 +372,10 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json lastName = p[&quot;lname&quot;];
-    io:println(lastName);
+                                    <div class="highlight"><pre><code class=language-ballerina>    json j9 = {name: &quot;Anne&quot;, age: null, marks: {math: 90, language: 95}};
+    json j10 = {name: (), age: 20, marks: {physics: 85}};
+    json j11 = checkpanic j9.mergeJson(j10);
+    io:println(j11.toJsonString());
 </code></pre></div>
 
                                 </td>
@@ -502,7 +383,11 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Array index notation allows you to use any string valued expression as the index.</p>
+                                            <p><code>.mergeJson()</code> can also be used to merge two JSON objects.
+ Where both <code>json</code> values are mappings, for each entry in the second,
+ if an entry is not present in the first by the same key, the entry
+ is added to the first mapping. If there is already a field by the same
+ key in the first mapping, <code>.mergeJson()</code> is called recursively.</p>
 
                                         </div>
                                     </div>
@@ -513,9 +398,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    p.lname = &quot;Silva&quot;;
-    p[&quot;age&quot;] = 31;
-    io:println(p);
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(j9 === j11);
 </code></pre></div>
 
                                 </td>
@@ -523,7 +406,8 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>You can add or change object values.</p>
+                                            <p>Reference equality checks between <code>j9</code> and <code>j11</code> evaluate to true since
+ the <code>j9</code> itself is updated and returned if the merge is successful.</p>
 
                                         </div>
                                     </div>
@@ -534,17 +418,8 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    json p2 = {
-         fname: &quot;Peter&quot;,
-         lname: &quot;Stallone&quot;,
-         &quot;age&quot;: age,
-         address: {
-             line: &quot;20 Palm Grove&quot;,
-             city: &quot;Colombo 03&quot;,
-             country: &quot;Sri Lanka&quot;
-         }
-    };
-    io:println(p2);
+                                    <div class="highlight"><pre><code class=language-ballerina>    json|error j12 = j2.mergeJson(j3);
+    io:println(j12);
 </code></pre></div>
 
                                 </td>
@@ -552,7 +427,9 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Create a Nested JSON object.</p>
+                                            <p><code>.mergeJson()</code> returns an <code>error</code> if the values cannot be merged.
+ For example, attempting to merge a mapping value with a non-mapping value
+ or two non-mapping values where neither is <code>null</code>.</p>
 
                                         </div>
                                     </div>
@@ -560,16 +437,46 @@
                                 </td>
                             </tr>
                             
-                            <tr class="cTR">
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    string s = j6.toJsonString();
+    json j13 = checkpanic s.fromJsonString();
+    io:println(j13.toJsonString());
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>The <code>.fromJsonString()</code> defined on <code>string</code> values attempts parsing the
+ string expected to be in the JSON format and returns the represented JSON value
+ if successful. This method returns an error if the string cannot be parsed.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>    p2.address.province = &quot;Western&quot;;
-    io:println(p2);
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(j6 == j13);
 }
 </code></pre></div>
 
                                 </td>
                                 <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>The value would be equal to the original value from which the string
+ was created.</p>
+
+                                        </div>
+                                    </div>
                                     
                                 </td>
                             </tr>
@@ -591,23 +498,21 @@
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command.
-$ ballerina run json.bal
+# `.bal` file, and execute the `ballerina run` command below.
+ballerina run json.bal
 Apple
 5.36
 true
 false
+name=apple color=red price=5.36
 {&quot;name&quot;:&quot;apple&quot;, &quot;color&quot;:&quot;red&quot;, &quot;price&quot;:5.36}
 [1, false, null, &quot;foo&quot;, {&quot;first&quot;:&quot;John&quot;, &quot;last&quot;:&quot;Pala&quot;}]
-{&quot;fname&quot;:&quot;John&quot;, &quot;lname&quot;:&quot;Stallone&quot;, &quot;age&quot;:30}
-John
-Stallone
-{&quot;fname&quot;:&quot;John&quot;, &quot;lname&quot;:&quot;Silva&quot;, &quot;age&quot;:31}
-{&quot;fname&quot;:&quot;Peter&quot;, &quot;lname&quot;:&quot;Stallone&quot;, &quot;age&quot;:30,
-    &quot;address&quot;:{&quot;line&quot;:&quot;20 Palm Grove&quot;, &quot;city&quot;:&quot;Colombo 03&quot;, &quot;country&quot;:&quot;Sri Lanka&quot;}}
-{&quot;fname&quot;:&quot;Peter&quot;, &quot;lname&quot;:&quot;Stallone&quot;, &quot;age&quot;:30,
-    &quot;address&quot;:{&quot;line&quot;:&quot;20 Palm Grove&quot;, &quot;city&quot;:&quot;Colombo 03&quot;,
-        &quot;country&quot;:&quot;Sri Lanka&quot;,&quot;province&quot;:&quot;Western&quot;}}
+[1, false, null, &quot;foo&quot;, {&quot;first&quot;:&quot;John&quot;, &quot;last&quot;:&quot;Pala&quot;}]
+{&quot;name&quot;:&quot;Anne&quot;, &quot;age&quot;:20, &quot;marks&quot;:{&quot;math&quot;:90, &quot;language&quot;:95, &quot;physics&quot;:85}}
+true
+error {ballerina/lang.value}MergeJsonError message=Cannot merge JSON values of types &#39;float&#39; and &#39;boolean&#39;
+{&quot;name&quot;:&quot;apple&quot;, &quot;color&quot;:&quot;red&quot;, &quot;price&quot;:5.36}
+true
 </code></pre></div>
 
                                 </td>
@@ -632,56 +537,49 @@ Stallone
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

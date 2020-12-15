@@ -25,10 +25,10 @@ body .attach-icon {
   opacity: 0.3;
 }
 body .content-wrapper {
-  margin: 0;
+  margin-left: 210px;
   height: 100vh;
-  overflow-y: hidden;
-  position: fixed;
+  overflow-y: scroll;
+  position: inherit;
   font-size: 16px;
   padding-top: 1em;
 }
@@ -39,6 +39,9 @@ body .content-wrapper pre.ballerina-snippet {
   background-color: #f5f7f8;
   padding: 20px;
   overflow-x: auto;
+}
+body .content-wrapper table pre.ballerina-snippet {
+  width: 540px;
 }
 body .content-wrapper pre.ballerina-snippet code.language-ballerina {
   background: none;
@@ -202,6 +205,12 @@ body .content-wrapper .returns-listing ul li:first-child {
 body .content-wrapper .details-table {
   padding-bottom: 20px;
 }
+body .content-wrapper .ui.table.row-border td {
+  border-bottom: 1px solid #e8e9e9;
+}
+body .content-wrapper .ui.table.pad-left td {
+  padding-left: 10px;
+}
 body .content-wrapper .ui.table,
 body .content-wrapper .ui.table tr td {
   border: 0;
@@ -286,10 +295,6 @@ body .content-wrapper .breadcrumb-home-icon {
 body .content-wrapper .breadcrumb-home-icon:hover {
   opacity: 0.7;
 }
-body .content-wrapper:hover {
-  overflow-y: auto;
-  position: inherit;
-}
 body .content-wrapper p {
   line-height: 24px;
 }
@@ -341,8 +346,10 @@ body .content-wrapper .constants .method-list .param-sum .param-name {
   padding-right: 5px;
   line-height: 1.5em;
   font-weight: 500;
-  min-width: 128px;
-  word-break: break-all;
+  min-width: 160px;
+  width: 160px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 body .content-wrapper .constants .method-list .param-sum .param-details {
   align-items: flex-start;
@@ -350,8 +357,11 @@ body .content-wrapper .constants .method-list .param-sum .param-details {
   line-height: 1.5em;
 }
 body .content-wrapper .constants .method-list a {
-  color: #464646;
+  color: #EC407A;
   font-weight: 500;
+}
+body .content-wrapper .constants .method-list a:hover {
+  font-weight: bold;
 }
 body .content-wrapper .constants .method-wrapper .method-span {
   width: auto;
@@ -531,8 +541,8 @@ body .content-wrapper .module-title a:hover {
   font-weight: bold;
 }
 body .content-wrapper .truncate {
-  max-width: 220px;
-  width: 220px;
+  max-width: 240px;
+  width: 240px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -547,6 +557,28 @@ body .content-wrapper .module-desc {
   padding-bottom: 12px;
   color: #555;
 }
+body .content-wrapper .function-desc p {
+  display: block;
+  color: #333;
+}
+body .content-wrapper .stab {
+  background: #FFF5D6;
+  border-color: #FFC600;
+  color: #2f2f2f;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 80%;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-right: .3em;
+  padding: 2px;
+  vertical-align: text-bottom;
+}
+body .content-wrapper .strike {
+  text-decoration: line-through;
+}
 .navi-wrapper,
 .navi-wrapper-sidebar {
   margin: 0;
@@ -554,8 +586,9 @@ body .content-wrapper .module-desc {
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
-  min-width: 210px;
-  float: left;
+  width: 210px;
+  position: fixed;
+  z-index: 1;
   padding-top: 1em;
 }
 .navi-wrapper .navi-wrapper-content,
@@ -570,18 +603,21 @@ body .content-wrapper .module-desc {
   text-align: center;
   margin: 1em;
 }
+.navi-wrapper .org,
+.navi-wrapper-sidebar .org {
+  margin-top: -0.8em;
+  text-align: right;
+  margin-right: 1.4em;
+}
 .navi-wrapper .version,
 .navi-wrapper-sidebar .version {
   text-align: right;
-  margin-right: 7.2em;
-  margin-top: -0.8em;
   margin-bottom: 2em;
   margin-right: 1.4em;
 }
 .navi-wrapper:hover,
 .navi-wrapper-sidebar:hover {
   overflow-y: scroll;
-  position: inherit;
 }
 .navi-wrapper .search input,
 .navi-wrapper-sidebar .search input {
@@ -689,6 +725,7 @@ a.toc.item {
   }
   body .content-wrapper {
     height: auto !important;
+    margin-left: 0;
     overflow-y: visible !important;
   }
   .ui.fixed.menu {
@@ -703,9 +740,9 @@ a.toc.item {
   }
   a.toc.item {
     width: 12px;
-    position: fixed;
-    top: 20px;
-    left: 11px;
+    position: relative;
+    top: 30px;
+    left: 20px;
     opacity: 0.5;
     display: block;
   }
@@ -714,7 +751,7 @@ a.toc.item {
     display: block;
   }
   .navi-wrapper {
-    display: none !important;
+    display: none;
   }
   .navi-wrapper-content {
     width: 250px !important;
@@ -762,7 +799,8 @@ a.toc.item {
     margin-left: 4px;
     padding-left: 35px;
   }
-  .version {
+  .version,
+  .org {
     margin-right: 6em;
   }
 }

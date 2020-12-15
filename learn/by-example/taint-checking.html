@@ -1,137 +1,39 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Taint Checking" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Taint Checking</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Taint Checking
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/taint-checking
+redirect_from:
+  - /v1-2/learn/by-example/taint-checking
+  - /v1-2/learn/by-example/taint-checking.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
-                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">mysql</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nd">@sensitive string secureParameter) {}type Student record {</span>
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">lang</span><span class="p">.</span><span class="err">&#39;</span><span class="kt">int</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerinax</span><span class="o">/</span><span class="nx">java</span><span class="p">.</span><span class="nx">jdbc</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nd">@untainted string secureParameter) {}type Student record {</span>
     <span class="kt">string</span> <span class="nx">firstname</span><span class="p">;</span>
 <span class="p">};</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="kt">string</span><span class="o">...</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">mysql</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">customerDBEP</span> <span class="p">=</span> <span class="nx">new</span> <span class="p">({</span>
-        <span class="nx">host</span><span class="p">:</span> <span class="s">&quot;localhost&quot;</span><span class="p">,</span>
-        <span class="nx">port</span><span class="p">:</span> <span class="mi">3306</span><span class="p">,</span>
-        <span class="nx">name</span><span class="p">:</span> <span class="s">&quot;testdb&quot;</span><span class="p">,</span>
+    <span class="nx">jdbc</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">customerDBEP</span> <span class="p">=</span> <span class="nx">new</span> <span class="p">({</span>
+        <span class="nx">url</span><span class="p">:</span> <span class="s">&quot;jdbc:mysql://localhost:3306/testdb&quot;</span><span class="p">,</span>
         <span class="nx">username</span><span class="p">:</span> <span class="s">&quot;root&quot;</span><span class="p">,</span>
         <span class="nx">password</span><span class="p">:</span> <span class="s">&quot;root&quot;</span><span class="p">,</span>
-        <span class="nx">poolOptions</span><span class="p">:</span> <span class="p">{</span> <span class="nx">maximumPoolSize</span><span class="p">:</span> <span class="mi">5</span> <span class="p">}</span>
+        <span class="nx">poolOptions</span><span class="p">:</span> <span class="p">{</span><span class="nx">maximumPoolSize</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="nx">dbOptions</span><span class="p">:</span> <span class="p">{</span><span class="nx">useSSL</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
     <span class="p">});</span>
     <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">customerDBEP</span><span class="o">-&gt;</span>
-    <span class="nx">select</span><span class="p">(</span><span class="s">&quot;SELECT firstname FROM student WHERE registration_id = &quot;</span> <span class="o">+</span>
-            <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">());</span>
-    <span class="nx">table</span><span class="p">&lt;</span><span class="nx">record</span> <span class="p">{}&gt;</span> <span class="nx">dataTable</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                               <span class="nx">select</span><span class="p">(</span><span class="s">&quot;SELECT firstname FROM student WHERE&quot;</span> <span class="o">+</span>
+                                      <span class="s">&quot; registration_id = &quot;</span> <span class="o">+</span> <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">());</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">panic</span> <span class="nx">result</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">dataTable</span> <span class="p">=</span> <span class="nx">result</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="p">}</span>    <span class="nx">table</span><span class="p">&lt;</span><span class="nx">Student</span><span class="p">&gt;</span> <span class="nx">dataTable</span> <span class="p">=</span> <span class="p">&lt;</span><span class="nx">table</span><span class="p">&lt;</span><span class="nx">Student</span><span class="o">&gt;&gt;</span><span class="nx">result</span><span class="p">;</span>
     <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">isInteger</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="p">{</span>
-        <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nx">untaint</span> <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="nx">userDefinedSecureOperation</span><span class="p">(&lt;</span><span class="err">@</span><span class="nx">untainted</span><span class="p">&gt;</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="nx">error</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">error</span><span class="p">(</span><span class="s">&quot;Validation error: ID should be an integer&quot;</span><span class="p">);</span>
         <span class="nx">panic</span> <span class="nx">err</span><span class="p">;</span>
     <span class="p">}</span>    <span class="k">while</span> <span class="p">(</span><span class="nx">dataTable</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">var</span> <span class="nx">jsonResult</span> <span class="p">=</span> <span class="nx">Student</span><span class="p">.</span><span class="nx">convert</span><span class="p">(</span><span class="nx">dataTable</span><span class="p">.</span><span class="nx">getNext</span><span class="p">());</span>
-        <span class="nx">Student</span> <span class="nx">jsonData</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">jsonResult</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">panic</span> <span class="nx">jsonResult</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">jsonData</span> <span class="p">=</span> <span class="nx">jsonResult</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="nx">Student</span> <span class="nx">jsonData</span> <span class="p">=</span> <span class="nx">dataTable</span><span class="p">.</span><span class="nx">getNext</span><span class="p">();</span>
         <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">firstname</span><span class="p">);</span>        <span class="kt">string</span> <span class="nx">sanitizedData1</span> <span class="p">=</span> <span class="nx">sanitizeAndReturnTainted</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">firstname</span><span class="p">);</span>
         <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nx">sanitizedData1</span><span class="p">);</span>        <span class="kt">string</span> <span class="nx">sanitizedData2</span> <span class="p">=</span> <span class="nx">sanitizeAndReturnUntainted</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">firstname</span><span class="p">);</span>
         <span class="nx">userDefinedSecureOperation</span><span class="p">(</span><span class="nx">sanitizedData2</span><span class="p">);</span>
@@ -139,39 +41,40 @@
     <span class="nx">checkpanic</span> <span class="nx">customerDBEP</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
     <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span><span class="kd">function</span> <span class="nx">sanitizeAndReturnTainted</span><span class="p">(</span><span class="kt">string</span> <span class="nx">input</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">string</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="nx">regEx</span> <span class="p">=</span> <span class="s">&quot;[^a-zA-Z]&quot;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nx">input</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regEx</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">input</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kd">function</span> <span class="nx">sanitizeAndReturnUntainted</span><span class="p">(</span><span class="kt">string</span> <span class="nx">input</span><span class="p">)</span> <span class="nx">returns</span> <span class="nd">@untainted string {</span>
-    <span class="kt">string</span> <span class="nx">regEx</span> <span class="p">=</span> <span class="s">&quot;[^a-zA-Z]&quot;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nx">input</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regEx</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">input</span><span class="p">;</span>
 <span class="p">}</span><span class="kd">function</span> <span class="nx">isInteger</span><span class="p">(</span><span class="kt">string</span> <span class="nx">input</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">boolean</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="nx">regEx</span> <span class="p">=</span> <span class="s">&quot;\\d+&quot;</span><span class="p">;</span>
-    <span class="kt">boolean</span><span class="p">|</span><span class="nx">error</span> <span class="nx">isInt</span> <span class="p">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">matches</span><span class="p">(</span><span class="nx">regEx</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">isInt</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">panic</span> <span class="nx">isInt</span><span class="p">;</span>
+    <span class="k">var</span> <span class="nx">intVal</span> <span class="p">=</span> <span class="p">&#39;int:fromString(</span><span class="nx">input</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">intVal</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">isInt</span><span class="p">;</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">taint_checking</span><span class="p">.</span><span class="nx">bal</span>
+<span class="nx">error</span><span class="p">:</span> <span class="p">.::</span><span class="nx">taint_checking</span><span class="p">.</span><span class="nx">bal</span><span class="p">:</span><span class="mi">60</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span> <span class="nx">tainted</span> <span class="nx">value</span> <span class="nx">passed</span> <span class="nx">to</span> <span class="nx">untainted</span> <span class="nx">parameter</span> <span class="err">&#39;</span><span class="nx">secureParameter</span><span class="err">&#39;</span>
+<span class="nx">error</span><span class="p">:</span> <span class="p">.::</span><span class="nx">taint_checking</span><span class="p">.</span><span class="nx">bal</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span> <span class="nx">tainted</span> <span class="nx">value</span> <span class="nx">passed</span> <span class="nx">to</span> <span class="nx">untainted</span> <span class="nx">parameter</span> <span class="err">&#39;</span><span class="nx">sqlQuery</span><span class="err">&#39;</span>
+<span class="nx">error</span><span class="p">:</span> <span class="p">.::</span><span class="nx">taint_checking</span><span class="p">.</span><span class="nx">bal</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="nx">tainted</span> <span class="nx">value</span> <span class="nx">passed</span> <span class="nx">to</span> <span class="nx">untainted</span> <span class="nx">parameter</span> <span class="err">&#39;</span><span class="nx">secureParameter</span><span class="err">&#39;</span>
+<span class="nx">error</span><span class="p">:</span> <span class="p">.::</span><span class="nx">taint_checking</span><span class="p">.</span><span class="nx">bal</span><span class="p">:</span><span class="mi">65</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span> <span class="nx">tainted</span> <span class="nx">value</span> <span class="nx">passed</span> <span class="nx">to</span> <span class="nx">untainted</span> <span class="nx">parameter</span> <span class="err">&#39;</span><span class="nx">secureParameter</span><span class="err">&#39;</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
                             <h2>Taint Checking</h2>
-                            <p><p>Ballerina is designed to ensure that programs written with Ballerina are inherently secure. Ballerina programs
+                            <p><p>Ballerina is designed to ensure that programs written in Ballerina are inherently secure. Ballerina programs
  are resilient to major security vulnerabilities including SQL injection, path manipulation, file manipulation,
  unauthorized file access, and unvalidated redirect (open redirect).</p>
 
 <p>A taint analysis mechanism is used to achieve this. As a result of the taint analysis mechanism, the Ballerina compiler
  identifies untrusted (tainted) data by observing how tainted data propagates through the program. If untrusted data
- is passed to a security sensitive parameter, a compiler error is generated.</p>
+ is passed to a security sensitive parameter, a compile error is generated.</p>
 </p>
 
                         </td>
@@ -179,9 +82,9 @@
                             <div class="cTopButtonContainer">
                                 
                                 <div class="cButtonInfoContainer">
-                                    <a class="prev" href="task-service-timer.html">
+                                    <a class="prev" href="xslt-transformation.html">
                                         <span>< PREVIOUS</span>
-                                        <p>Task Service Timer</p>
+                                        <p>XSLT Transformation</p>
                                     </a>
                                 </div>
                                  
@@ -202,25 +105,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Taint Checking</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/taint-checking/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/taint-checking/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=8a68bfb7ab6ba70214610b73ce5f5ae7&file=taint_checking.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -273,6 +170,14 @@
                         
                             
                         
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
 
                     <div>
 
@@ -281,7 +186,8 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/mysql;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/lang.&#39;int;
+import ballerinax/java.jdbc;
 </code></pre></div>
 
                                 </td>
@@ -293,7 +199,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>function userDefinedSecureOperation(@sensitive string secureParameter) {
+                                    <div class="highlight"><pre><code class=language-ballerina>function userDefinedSecureOperation(@untainted string secureParameter) {
 </code></pre></div>
 
                                 </td>
@@ -301,7 +207,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>The <code>@sensitive</code> annotation can be used with parameters of user-defined functions. This allow users to restrict
+                                            <p>The <code>@untainted</code> annotation can be used with the parameters of user-defined functions. This allow users to restrict
  passing untrusted (tainted) data into a security sensitive parameter.</p>
 
                                         </div>
@@ -313,7 +219,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>}
+                                    <div class="highlight"><pre><code class=language-ballerina>}
 </code></pre></div>
 
                                 </td>
@@ -325,7 +231,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>type Student record {
+                                    <div class="highlight"><pre><code class=language-ballerina>type Student record {
     string firstname;
 };
 </code></pre></div>
@@ -339,14 +245,13 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main(string... args) {
-    mysql:Client customerDBEP = new ({
-        host: &quot;localhost&quot;,
-        port: 3306,
-        name: &quot;testdb&quot;,
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main(string... args) {
+    jdbc:Client customerDBEP = new ({
+        url: &quot;jdbc:mysql://localhost:3306/testdb&quot;,
         username: &quot;root&quot;,
         password: &quot;root&quot;,
-        poolOptions: { maximumPoolSize: 5 }
+        poolOptions: {maximumPoolSize: 5},
+        dbOptions: {useSSL: false}
     });
 </code></pre></div>
 
@@ -359,15 +264,9 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    var result = customerDBEP-&gt;
-    select(&quot;SELECT firstname FROM student WHERE registration_id = &quot; +
-            args[0], ());
-    table&lt;record {}&gt; dataTable;
-    if (result is error) {
-        panic result;
-    } else {
-        dataTable = result;
-    }
+                                    <div class="highlight"><pre><code class=language-ballerina>    var result = customerDBEP-&gt;
+                               select(&quot;SELECT firstname FROM student WHERE&quot; +
+                                      &quot; registration_id = &quot; + args[0], ());
 </code></pre></div>
 
                                 </td>
@@ -375,13 +274,13 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Sensitive parameters of functions built-in to Ballerina are decorated with the <code>@sensitive</code> annotation. This
- ensures that tainted data cannot pass into the security sensitive parameter.</p>
+                                            <p>Sensitive parameters of functions that are built-in to Ballerina are decorated with the <code>@untainted</code> annotation.
+ This ensures that tainted data cannot pass into the security sensitive parameter.</p>
 
 <p>For example, the taint checking mechanism of Ballerina completely prevents SQL injection vulnerabilities by
  disallowing tainted data in the SQL query.</p>
 
-<p>This line results in a compiler error because the query is appended with a user-provided argument.</p>
+<p>This line results in a compile error because the query is appended with a user-provided argument.</p>
 
                                         </div>
                                     </div>
@@ -389,10 +288,36 @@
                                 </td>
                             </tr>
                             
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (result is error) {
+        panic result;
+    }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    table&lt;Student&gt; dataTable = &lt;table&lt;Student&gt;&gt;result;
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    userDefinedSecureOperation(args[0]);
+                                    <div class="highlight"><pre><code class=language-ballerina>    userDefinedSecureOperation(args[0]);
 </code></pre></div>
 
                                 </td>
@@ -411,7 +336,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    if (isInteger(args[0])) {
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (isInteger(args[0])) {
 </code></pre></div>
 
                                 </td>
@@ -423,7 +348,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        userDefinedSecureOperation(untaint args[0]);
+                                    <div class="highlight"><pre><code class=language-ballerina>        userDefinedSecureOperation(&lt;@untainted&gt;args[0]);
     } else {
         error err = error(&quot;Validation error: ID should be an integer&quot;);
         panic err;
@@ -435,8 +360,8 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>After performing necessary validations and/or escaping, the <code>untaint</code> unary expression can be used to mark
- the proceeding value as <code>trusted</code> and pass it to a sensitive parameter.</p>
+                                            <p>After performing necessary validations and/or escaping, we can use type cast expression with @untainted annotation
+ to mark the proceeding value as <code>trusted</code> and pass it to a sensitive parameter.</p>
 
                                         </div>
                                     </div>
@@ -447,14 +372,8 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    while (dataTable.hasNext()) {
-        var jsonResult = Student.convert(dataTable.getNext());
-        Student jsonData;
-        if (jsonResult is error) {
-            panic jsonResult;
-        } else {
-            jsonData = jsonResult;
-        }
+                                    <div class="highlight"><pre><code class=language-ballerina>    while (dataTable.hasNext()) {
+        Student jsonData = dataTable.getNext();
 </code></pre></div>
 
                                 </td>
@@ -466,7 +385,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        userDefinedSecureOperation(jsonData.firstname);
+                                    <div class="highlight"><pre><code class=language-ballerina>        userDefinedSecureOperation(jsonData.firstname);
 </code></pre></div>
 
                                 </td>
@@ -478,7 +397,7 @@
  denote that the return value should be untrusted (tainted). One such example is the data read from a
  database.</p>
 
-<p>This line results in a compiler error because a value derived from a database read (tainted) is passed to a
+<p>This line results in a compile error because a value derived from a database read (tainted) is passed to a
  sensitive parameter.</p>
 
                                         </div>
@@ -490,7 +409,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        string sanitizedData1 = sanitizeAndReturnTainted(jsonData.firstname);
+                                    <div class="highlight"><pre><code class=language-ballerina>        string sanitizedData1 = sanitizeAndReturnTainted(jsonData.firstname);
 </code></pre></div>
 
                                 </td>
@@ -502,7 +421,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        userDefinedSecureOperation(sanitizedData1);
+                                    <div class="highlight"><pre><code class=language-ballerina>        userDefinedSecureOperation(sanitizedData1);
 </code></pre></div>
 
                                 </td>
@@ -510,7 +429,7 @@
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>This line results in a compiler error because the <code>sanitize</code> function returns a value derived from tainted
+                                            <p>This line results in a compile error because the <code>sanitize</code> function returns a value derived from the tainted
  data. Therefore, the return of the <code>sanitize</code> function is also tainted.</p>
 
                                         </div>
@@ -522,7 +441,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        string sanitizedData2 = sanitizeAndReturnUntainted(jsonData.firstname);
+                                    <div class="highlight"><pre><code class=language-ballerina>        string sanitizedData2 = sanitizeAndReturnUntainted(jsonData.firstname);
 </code></pre></div>
 
                                 </td>
@@ -534,7 +453,7 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        userDefinedSecureOperation(sanitizedData2);
+                                    <div class="highlight"><pre><code class=language-ballerina>        userDefinedSecureOperation(sanitizedData2);
     }
     checkpanic customerDBEP.stop();
     return;
@@ -559,10 +478,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>function sanitizeAndReturnTainted(string input) returns string {
-    string regEx = &quot;[^a-zA-Z]&quot;;
-    return input.replace(regEx, &quot;&quot;);
-}
+                                    <div class="highlight"><pre><code class=language-ballerina>function sanitizeAndReturnTainted(string input) returns string {
 </code></pre></div>
 
                                 </td>
@@ -574,10 +490,27 @@
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>function sanitizeAndReturnUntainted(string input) returns @untainted string {
-    string regEx = &quot;[^a-zA-Z]&quot;;
-    return input.replace(regEx, &quot;&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>    return input;
 }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>transform and sanitize the string here.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>function sanitizeAndReturnUntainted(string input) returns @untainted string {
 </code></pre></div>
 
                                 </td>
@@ -594,16 +527,35 @@
                                 </td>
                             </tr>
                             
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    return input;
+}
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>transform and sanitize the string here.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
                             <tr class="cTR">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>function isInteger(string input) returns boolean {
-    string regEx = &quot;\\d+&quot;;
-    boolean|error isInt = input.matches(regEx);
-    if (isInt is error) {
-        panic isInt;
+                                    <div class="highlight"><pre><code class=language-ballerina>function isInteger(string input) returns boolean {
+    var intVal = &#39;int:fromString(input);
+    if (intVal is error) {
+        return false;
     } else {
-        return isInt;
+        return true;
     }
 }
 </code></pre></div>
@@ -631,12 +583,12 @@
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command.
-$ ballerina run taint_checking.bal
-error: .::taint_checking.bal:32:12: tainted value passed to sensitive parameter &#39;sqlQuery&#39;
-error: .::taint_checking.bal:43:32: tainted value passed to sensitive parameter &#39;secureParameter&#39;
-error: .::taint_checking.bal:68:36: tainted value passed to sensitive parameter &#39;secureParameter&#39;
-error: .::taint_checking.bal:73:36: tainted value passed to sensitive parameter &#39;secureParameter&#39;
+# `.bal` file, and execute the `ballerina run` command below.
+ballerina run taint_checking.bal
+error: .::taint_checking.bal:60:36: tainted value passed to untainted parameter &#39;secureParameter&#39;
+error: .::taint_checking.bal:31:39: tainted value passed to untainted parameter &#39;sqlQuery&#39;
+error: .::taint_checking.bal:41:32: tainted value passed to untainted parameter &#39;secureParameter&#39;
+error: .::taint_checking.bal:65:36: tainted value passed to untainted parameter &#39;secureParameter&#39;
 </code></pre></div>
 
                                 </td>
@@ -661,56 +613,49 @@ error: .::taint_checking.bal:73:36: tainted value passed to sensitive parameter 
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

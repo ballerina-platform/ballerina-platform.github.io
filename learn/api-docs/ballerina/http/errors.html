@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /v1-2/learn/api-docs/ballerina/http/errors
+  - /v1-2/learn/api-docs/ballerina/http/errors.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +10,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module provides an implementation for connecting and interacting with HTTP, HTTP2, and WebSocket endpoints. The module facilitates two types of network entry points as ‘Client’ and ‘Listener’.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,http">
 
     <title>API Docs - Errors : http</title>
     <script src="../html-template-resources/jquery.min.js"></script>
@@ -16,6 +24,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +41,7 @@
     <link rel="stylesheet" href="../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../html-template-resources/styles/css/font.css">
     <script src="../html-template-resources/semantic.min.js"></script>
-    <script src="../vs/monaco.js"></script>
+    <script src="../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -48,212 +57,227 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../index.html">
+            <a href="
+    ../index.html">
     <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
             <div class="primary-list">
                 <h3>Errors</h3>
                 <ul>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#AllLoadBalanceEndpointsFailedError">AllLoadBalanceEndpointsFailedError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#AllRetryAttemptsFailed">AllRetryAttemptsFailed</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#AuthenticationError">AuthenticationError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#AuthorizationError">AuthorizationError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
+                            <a href="#CookieHandlingError">CookieHandlingError</a>
+                        </li>
+                    
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#FailoverActionFailedError">FailoverActionFailedError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#FailoverAllEndpointsFailedError">FailoverAllEndpointsFailedError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#GenericClientError">GenericClientError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#GenericListenerError">GenericListenerError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#Http2ClientError">Http2ClientError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#IdleTimeoutError">IdleTimeoutError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#InitializingInboundRequestError">InitializingInboundRequestError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#InitializingInboundResponseError">InitializingInboundResponseError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#InitializingOutboundRequestError">InitializingOutboundRequestError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#InitializingOutboundResponseError">InitializingOutboundResponseError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#Initiating100ContinueResponseError">Initiating100ContinueResponseError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
+                            <a href="#InvalidCookieError">InvalidCookieError</a>
+                        </li>
+                    
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#LoadBalanceActionError">LoadBalanceActionError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#MaximumWaitTimeExceededError">MaximumWaitTimeExceededError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#ReadingInboundRequestBodyError">ReadingInboundRequestBodyError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#ReadingInboundRequestHeadersError">ReadingInboundRequestHeadersError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#ReadingInboundResponseBodyError">ReadingInboundResponseBodyError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#ReadingInboundResponseHeadersError">ReadingInboundResponseHeadersError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#SslError">SslError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#UnsupportedActionError">UnsupportedActionError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#UpstreamServiceUnavailableError">UpstreamServiceUnavailableError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#Writing100ContinueResponseError">Writing100ContinueResponseError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WritingOutboundRequestBodyError">WritingOutboundRequestBodyError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WritingOutboundRequestHeadersError">WritingOutboundRequestHeadersError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WritingOutboundResponseBodyError">WritingOutboundResponseBodyError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WritingOutboundResponseHeadersError">WritingOutboundResponseHeadersError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsConnectionClosureError">WsConnectionClosureError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsConnectionError">WsConnectionError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsGenericError">WsGenericError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsInvalidContinuationFrameError">WsInvalidContinuationFrameError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsInvalidHandshakeError">WsInvalidHandshakeError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsPayloadTooBigError">WsPayloadTooBigError</a>
                         </li>
                     
-                        <li ></li>
+                        <li  onclick="menuLinkClick()"></li>
                             <a href="#WsProtocolError">WsProtocolError</a>
                         </li>
                     
                 </ul>
             </div>
             <div class="ui divider"></div>
-            <div class="primary-list module">
+            
+
     
-        <a href="../http/index.html">
+        <div class="version">v1.2.8</div>
+    
+
+
+<div class="primary-list module">
+    
+        <a href="../http/index.html" onclick="menuLinkClick()">
             <h3>http</h3>
         </a>
     
     <ul>
         
         <li>
-            <a data="records" href="../http/index.html#records">Records</a>
+            <a data="records" href="../http/index.html#records" onclick="menuLinkClick()">Records</a>
         </li>
         
         
             <li>
-                <a  data="objects" href="../http/index.html#objects">Objects</a>
+                <a  data="objects" href="../http/index.html#objects" onclick="menuLinkClick()">Objects</a>
             </li>
         
         
             <li>
-                <a data="clients" href="../http/index.html#clients">Clients</a>
+                <a data="clients" href="../http/index.html#clients" onclick="menuLinkClick()">Clients</a>
             </li>
         
         
             <li>
-                <a data="listeners" href="../http/index.html#listeners">Listeners</a>
+                <a data="listeners" href="../http/index.html#listeners" onclick="menuLinkClick()">Listeners</a>
             </li>
         
         
             <li>
-                <a data="functions" href="../http/index.html#functions">Functions</a>
+                <a data="functions" href="../http/index.html#functions" onclick="menuLinkClick()">Functions</a>
             </li>
         
         
             <li>
-                <a data="constants" href="../http/index.html#constants">Constants</a>
+                <a data="constants" href="../http/index.html#constants" onclick="menuLinkClick()">Constants</a>
             </li>
         
         
             <li>
-                <a data="annotations" href="../http/index.html#annotations">Annotations</a>
+                <a data="annotations" href="../http/index.html#annotations" onclick="menuLinkClick()">Annotations</a>
             </li>
         
         
             <li>
-                <a data="types" href="../http/index.html#types">Types</a>
+                <a data="types" href="../http/index.html#types" onclick="menuLinkClick()">Types</a>
             </li>
         
         
             <li>
-                <a data="errors" href="../http/index.html#errors">Errors</a>
+                <a data="errors" href="../http/index.html#errors" onclick="menuLinkClick()">Errors</a>
             </li>
         
     </ul>
@@ -282,7 +306,7 @@
                 </li>
             
                 <li>
-                    <a href="../docker/index.html">docker</a>
+                    <a href="../email/index.html">email</a>
                 </li>
             
                 <li>
@@ -310,10 +334,6 @@
                 </li>
             
                 <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
                     <a href="../java/index.html">java</a>
                 </li>
             
@@ -338,11 +358,11 @@
                 </li>
             
                 <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
+                    <a href="../lang.array/index.html">lang.array</a>
                 </li>
             
                 <li>
-                    <a href="../lang.array/index.html">lang.array</a>
+                    <a href="../lang.boolean/index.html">lang.boolean</a>
                 </li>
             
                 <li>
@@ -398,442 +418,7 @@
                 </li>
             
                 <li>
-                    <a href="../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-        </div>
-    </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../index.html">
-    <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                <div class="primary-list">
-                    <h3>Errors</h3>
-                    <ul>
-                        
-                            <li >
-                                <a href="#AllLoadBalanceEndpointsFailedError">AllLoadBalanceEndpointsFailedError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#AllRetryAttemptsFailed">AllRetryAttemptsFailed</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#AuthenticationError">AuthenticationError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#AuthorizationError">AuthorizationError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#FailoverActionFailedError">FailoverActionFailedError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#FailoverAllEndpointsFailedError">FailoverAllEndpointsFailedError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#GenericClientError">GenericClientError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#GenericListenerError">GenericListenerError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#Http2ClientError">Http2ClientError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#IdleTimeoutError">IdleTimeoutError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#InitializingInboundRequestError">InitializingInboundRequestError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#InitializingInboundResponseError">InitializingInboundResponseError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#InitializingOutboundRequestError">InitializingOutboundRequestError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#InitializingOutboundResponseError">InitializingOutboundResponseError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#Initiating100ContinueResponseError">Initiating100ContinueResponseError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#LoadBalanceActionError">LoadBalanceActionError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#MaximumWaitTimeExceededError">MaximumWaitTimeExceededError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#ReadingInboundRequestBodyError">ReadingInboundRequestBodyError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#ReadingInboundRequestHeadersError">ReadingInboundRequestHeadersError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#ReadingInboundResponseBodyError">ReadingInboundResponseBodyError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#ReadingInboundResponseHeadersError">ReadingInboundResponseHeadersError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#SslError">SslError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#UnsupportedActionError">UnsupportedActionError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#UpstreamServiceUnavailableError">UpstreamServiceUnavailableError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#Writing100ContinueResponseError">Writing100ContinueResponseError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WritingOutboundRequestBodyError">WritingOutboundRequestBodyError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WritingOutboundRequestHeadersError">WritingOutboundRequestHeadersError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WritingOutboundResponseBodyError">WritingOutboundResponseBodyError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WritingOutboundResponseHeadersError">WritingOutboundResponseHeadersError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsConnectionClosureError">WsConnectionClosureError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsConnectionError">WsConnectionError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsGenericError">WsGenericError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsInvalidContinuationFrameError">WsInvalidContinuationFrameError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsInvalidHandshakeError">WsInvalidHandshakeError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsPayloadTooBigError">WsPayloadTooBigError</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#WsProtocolError">WsProtocolError</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-                <div class="ui divider"></div>
-                <div class="primary-list module">
-    
-        <a href="../http/index.html">
-            <h3>http</h3>
-        </a>
-    
-    <ul>
-        
-        <li>
-            <a data="records" href="../http/index.html#records">Records</a>
-        </li>
-        
-        
-            <li>
-                <a  data="objects" href="../http/index.html#objects">Objects</a>
-            </li>
-        
-        
-            <li>
-                <a data="clients" href="../http/index.html#clients">Clients</a>
-            </li>
-        
-        
-            <li>
-                <a data="listeners" href="../http/index.html#listeners">Listeners</a>
-            </li>
-        
-        
-            <li>
-                <a data="functions" href="../http/index.html#functions">Functions</a>
-            </li>
-        
-        
-            <li>
-                <a data="constants" href="../http/index.html#constants">Constants</a>
-            </li>
-        
-        
-            <li>
-                <a data="annotations" href="../http/index.html#annotations">Annotations</a>
-            </li>
-        
-        
-            <li>
-                <a data="types" href="../http/index.html#types">Types</a>
-            </li>
-        
-        
-            <li>
-                <a data="errors" href="../http/index.html#errors">Errors</a>
-            </li>
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.xml/index.html">lang.xml</a>
+                    <a href="../ldap/index.html">ldap</a>
                 </li>
             
                 <li>
@@ -865,7 +450,7 @@
                 </li>
             
                 <li>
-                    <a href="../openshift/index.html">openshift</a>
+                    <a href="../rabbitmq/index.html">rabbitmq</a>
                 </li>
             
                 <li>
@@ -878,10 +463,6 @@
             
                 <li>
                     <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
                 </li>
             
                 <li>
@@ -909,6 +490,10 @@
                 </li>
             
                 <li>
+                    <a href="../websub/index.html">websub</a>
+                </li>
+            
+                <li>
                     <a href="../xmlutils/index.html">xmlutils</a>
                 </li>
             
@@ -920,19 +505,18 @@
         <div class="ui divider"></div>
     
 </div>
-            </div>
         </div>
     </div>
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper">
             <h1>
-                <a class="breadcrumb-home" href="../index.html">
+                <a class="breadcrumb-home" href="
+    ../index.html">
     <img class="breadcrumb-home-icon" src="../html-template-resources/images/home.svg">
 </a>
                 <span class="title-type">Errors - </span>
@@ -945,8 +529,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>AllLoadBalanceEndpointsFailedError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >AllLoadBalanceEndpointsFailedError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to all the load balance endpoint failure</p>
 
                                 </li>
@@ -955,8 +544,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>AllRetryAttemptsFailed </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >AllRetryAttemptsFailed </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to all the the retry attempts failure</p>
 
                                 </li>
@@ -965,8 +559,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>AuthenticationError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >AuthenticationError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred due to inbound request authentication failure</p>
 
                                 </li>
@@ -975,8 +574,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>AuthorizationError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >AuthorizationError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred due to inbound request authorization failure</p>
 
                                 </li>
@@ -985,8 +589,28 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>FailoverActionFailedError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >CookieHandlingError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
+                                    <p>Represents a cookie error that occurred when using the cookies</p>
+
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="params-listing">
+                            <ul>
+                                <li>
+                                    <b >FailoverActionFailedError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to failover action failure</p>
 
                                 </li>
@@ -995,8 +619,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>FailoverAllEndpointsFailedError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >FailoverAllEndpointsFailedError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to all the failover endpoint failure</p>
 
                                 </li>
@@ -1005,8 +634,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>GenericClientError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >GenericClientError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a generic client error</p>
 
                                 </li>
@@ -1015,8 +649,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>GenericListenerError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >GenericListenerError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a generic listener error</p>
 
                                 </li>
@@ -1025,8 +664,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>Http2ClientError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >Http2ClientError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents an HTTP/2 client generic error</p>
 
                                 </li>
@@ -1035,8 +679,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>IdleTimeoutError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >IdleTimeoutError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents the error that triggered upon a request/response idle timeout</p>
 
                                 </li>
@@ -1045,8 +694,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>InitializingInboundRequestError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >InitializingInboundRequestError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred due to inbound request initialization failure</p>
 
                                 </li>
@@ -1055,8 +709,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>InitializingInboundResponseError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >InitializingInboundResponseError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to inbound response initialization failure</p>
 
                                 </li>
@@ -1065,8 +724,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>InitializingOutboundRequestError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >InitializingOutboundRequestError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to outbound request initialization failure</p>
 
                                 </li>
@@ -1075,8 +739,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>InitializingOutboundResponseError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >InitializingOutboundResponseError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred due to outbound response initialization failure</p>
 
                                 </li>
@@ -1085,8 +754,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>Initiating100ContinueResponseError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >Initiating100ContinueResponseError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents an error that occurred due to 100 continue response initialization failure</p>
 
                                 </li>
@@ -1095,8 +769,28 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>LoadBalanceActionError </b><span class="type"><a href="../http/records/LoadBalanceActionErrorData.html">LoadBalanceActionErrorData</a></span> </li>
                                 <li>
+                                    <b >InvalidCookieError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
+                                    <p>Represents a cookie error that occurred when sending cookies in the response</p>
+
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="params-listing">
+                            <ul>
+                                <li>
+                                    <b >LoadBalanceActionError </b>
+                                    <span class="type"><a href="../http/records/LoadBalanceActionErrorData.html">LoadBalanceActionErrorData</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     
                                 </li>
                             </ul>
@@ -1104,8 +798,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>MaximumWaitTimeExceededError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >MaximumWaitTimeExceededError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred exceeding maximum wait time</p>
 
                                 </li>
@@ -1114,8 +813,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>ReadingInboundRequestBodyError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >ReadingInboundRequestBodyError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred while writing the inbound request entity body</p>
 
                                 </li>
@@ -1124,8 +828,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>ReadingInboundRequestHeadersError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >ReadingInboundRequestHeadersError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred while reading inbound request headers</p>
 
                                 </li>
@@ -1134,8 +843,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>ReadingInboundResponseBodyError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >ReadingInboundResponseBodyError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred while reading inbound response entity body</p>
 
                                 </li>
@@ -1144,8 +858,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>ReadingInboundResponseHeadersError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >ReadingInboundResponseHeadersError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred while reading inbound response headers</p>
 
                                 </li>
@@ -1154,8 +873,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>SslError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >SslError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to SSL failure</p>
 
                                 </li>
@@ -1164,8 +888,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>UnsupportedActionError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >UnsupportedActionError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to unsupported action invocation</p>
 
                                 </li>
@@ -1174,8 +903,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>UpstreamServiceUnavailableError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >UpstreamServiceUnavailableError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred due to upstream service unavailability</p>
 
                                 </li>
@@ -1184,8 +918,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>Writing100ContinueResponseError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >Writing100ContinueResponseError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents an error that occurred while writing 100 continue response</p>
 
                                 </li>
@@ -1194,8 +933,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WritingOutboundRequestBodyError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WritingOutboundRequestBodyError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred while writing outbound request entity body</p>
 
                                 </li>
@@ -1204,8 +948,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WritingOutboundRequestHeadersError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WritingOutboundRequestHeadersError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a client error that occurred while writing outbound request headers</p>
 
                                 </li>
@@ -1214,8 +963,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WritingOutboundResponseBodyError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WritingOutboundResponseBodyError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred while writing outbound response entity body</p>
 
                                 </li>
@@ -1224,8 +978,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WritingOutboundResponseHeadersError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WritingOutboundResponseHeadersError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Represents a listener error that occurred while writing outbound response headers</p>
 
                                 </li>
@@ -1234,8 +993,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsConnectionClosureError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsConnectionClosureError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised during failures in connection closure</p>
 
                                 </li>
@@ -1244,8 +1008,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsConnectionError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsConnectionError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised during connection failures</p>
 
                                 </li>
@@ -1254,8 +1023,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsGenericError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsGenericError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised for errors not captured by the specific errors</p>
 
                                 </li>
@@ -1264,8 +1038,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsInvalidContinuationFrameError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsInvalidContinuationFrameError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised when an out of order/invalid continuation frame is received</p>
 
                                 </li>
@@ -1274,8 +1053,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsInvalidHandshakeError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsInvalidHandshakeError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised during the handshake when the WebSocket upgrade fails</p>
 
                                 </li>
@@ -1284,8 +1068,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsPayloadTooBigError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsPayloadTooBigError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised when receiving a frame with a payload exceeding the maximum size</p>
 
                                 </li>
@@ -1294,8 +1083,13 @@
                     
                         <div class="params-listing">
                             <ul>
-                                <li> <b>WsProtocolError </b><span class="type"><a href="../http/records/Detail.html">Detail</a></span> </li>
                                 <li>
+                                    <b >WsProtocolError </b>
+                                    <span class="type"><a href="../http/records/Detail.html">Detail</a></span>
+                                    
+                                </li>
+                                <li>
+                                    
                                     <p>Raised when the other side breaks the protocol</p>
 
                                 </li>
@@ -1309,17 +1103,6 @@
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -1345,10 +1128,47 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
         ballerinaHighlighter.highlightSnippets();
     };
 </script>
+
 

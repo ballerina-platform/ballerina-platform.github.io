@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /v1-2/learn/api-docs/ballerina/io/index
+  - /v1-2/learn/api-docs/ballerina/io/index.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,8 +10,12 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module is designed to support input and output operations via channels in a canonical way, either in a blocking,
+or non-blocking manner.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,io">
 
-    <title>API Docs - null/io</title>
+    <title>API Docs - ballerina/io</title>
     <script src="../html-template-resources/jquery.min.js"></script>
 
     <!-- BIO THEME START -->
@@ -16,6 +25,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +42,7 @@
     <link rel="stylesheet" href="../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../html-template-resources/styles/css/font.css">
     <script src="../html-template-resources/semantic.min.js"></script>
-    <script src="../vs/monaco.js"></script>
+    <script src="../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -49,45 +59,56 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../index.html">
+            <a href="
+    ../index.html">
     <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
-            <div class="primary-list module">
+            
+
     
-        <a href="../io/index.html">
+        <div class="version">v1.2.8</div>
+    
+
+
+<div class="primary-list module">
+    
+        <a href="../io/index.html" onclick="menuLinkClick()">
             <h3>io</h3>
         </a>
     
     <ul>
         
+        <li>
+            <a data="records" href="../io/index.html#records" onclick="menuLinkClick()">Records</a>
+        </li>
+        
         
             <li>
-                <a  data="objects" href="../io/index.html#objects">Objects</a>
+                <a  data="objects" href="../io/index.html#objects" onclick="menuLinkClick()">Objects</a>
             </li>
         
         
         
         
             <li>
-                <a data="functions" href="../io/index.html#functions">Functions</a>
+                <a data="functions" href="../io/index.html#functions" onclick="menuLinkClick()">Functions</a>
             </li>
         
         
             <li>
-                <a data="constants" href="../io/index.html#constants">Constants</a>
+                <a data="constants" href="../io/index.html#constants" onclick="menuLinkClick()">Constants</a>
             </li>
         
         
         
             <li>
-                <a data="types" href="../io/index.html#types">Types</a>
+                <a data="types" href="../io/index.html#types" onclick="menuLinkClick()">Types</a>
             </li>
         
         
             <li>
-                <a data="errors" href="../io/index.html#errors">Errors</a>
+                <a data="errors" href="../io/index.html#errors" onclick="menuLinkClick()">Errors</a>
             </li>
         
     </ul>
@@ -116,7 +137,7 @@
                 </li>
             
                 <li>
-                    <a href="../docker/index.html">docker</a>
+                    <a href="../email/index.html">email</a>
                 </li>
             
                 <li>
@@ -144,10 +165,6 @@
                 </li>
             
                 <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
                     <a href="../java/index.html">java</a>
                 </li>
             
@@ -172,11 +189,11 @@
                 </li>
             
                 <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
+                    <a href="../lang.array/index.html">lang.array</a>
                 </li>
             
                 <li>
-                    <a href="../lang.array/index.html">lang.array</a>
+                    <a href="../lang.boolean/index.html">lang.boolean</a>
                 </li>
             
                 <li>
@@ -232,276 +249,7 @@
                 </li>
             
                 <li>
-                    <a href="../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-        </div>
-    </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../index.html">
-    <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                
-                <div class="primary-list module">
-    
-        <a href="../io/index.html">
-            <h3>io</h3>
-        </a>
-    
-    <ul>
-        
-        
-            <li>
-                <a  data="objects" href="../io/index.html#objects">Objects</a>
-            </li>
-        
-        
-        
-        
-            <li>
-                <a data="functions" href="../io/index.html#functions">Functions</a>
-            </li>
-        
-        
-            <li>
-                <a data="constants" href="../io/index.html#constants">Constants</a>
-            </li>
-        
-        
-        
-            <li>
-                <a data="types" href="../io/index.html#types">Types</a>
-            </li>
-        
-        
-            <li>
-                <a data="errors" href="../io/index.html#errors">Errors</a>
-            </li>
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.xml/index.html">lang.xml</a>
+                    <a href="../ldap/index.html">ldap</a>
                 </li>
             
                 <li>
@@ -533,7 +281,7 @@
                 </li>
             
                 <li>
-                    <a href="../openshift/index.html">openshift</a>
+                    <a href="../rabbitmq/index.html">rabbitmq</a>
                 </li>
             
                 <li>
@@ -546,10 +294,6 @@
             
                 <li>
                     <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
                 </li>
             
                 <li>
@@ -577,6 +321,10 @@
                 </li>
             
                 <li>
+                    <a href="../websub/index.html">websub</a>
+                </li>
+            
+                <li>
                     <a href="../xmlutils/index.html">xmlutils</a>
                 </li>
             
@@ -588,21 +336,18 @@
         <div class="ui divider"></div>
     
 </div>
-            </div>
         </div>
     </div>
-
-
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper module-wrapper">
                 <h1>
-                    <a class="breadcrumb-home" href="../index.html">
+                    <a class="breadcrumb-home" href="
+    ../index.html">
     <img class="breadcrumb-home-icon" src="../html-template-resources/images/home.svg">
 </a>
                     
@@ -613,172 +358,52 @@
 <p>This module is designed to support input and output operations via channels in a canonical way, either in a blocking,
 or non-blocking manner.</p>
 <p><img src="resources/package-architecture.svg" alt="architecture" /></p>
-<h2>Channels</h2>
-<p>A channel represents an I/O source or sink of some bytes, characters, or records that are opened for reading, or
-writing, respectively.</p>
-<h2>Byte channels</h2>
-<p>The most primitive channel is the <code>ByteChannel</code> which reads and writes 8-bit bytes.</p>
-<pre><code class="language-ballerina">// Open a file in read mode.
-io:ReadableByteChannel | io:Error readableChannel = io:openReadableFile(&quot;file.txt&quot;);
-
-// Here is how 100 bytes are read from the channel.
-if (readableChannel is io:ReadableByteChannel) {
-    byte[] | io:Error result = readableChannel.read(100);
-}
-
-// Open a file in write mode.
-io:WritableByteChannel | io:Error writableByteChannel = io:openWritableFile(&quot;file.txt&quot;);
-
-// Write some content to the beginning of the file.
-if (writableByteChannel is io:WritableByteChannel) {
-    string someContent = &quot;some cont&quot;;
-    byte[] content = someContent.toBytes();
-    int | io:Error writeResult = writableByteChannel.write(content, 0);
-}
-
-</code></pre>
-<h2>Character channels</h2>
-<p>The <code>CharacterChannel</code> is used to read and write characters. The charset encoding is specified when creating the
-<code>CharacterChannel</code>.</p>
-<pre><code class="language-ballerina">// Create a `ReadableCharacterChannel` from the `ReadableByteChannel`.
-io:ReadableCharacterChannel | io:Error readableCharChannel = 
-       new io:ReadableCharacterChannel(readableChannel, &quot;UTF-8&quot;);
-</code></pre>
-<p>If a <code>ReadableCharacterChannel</code> points to a JSON or XML source, it can be read and then written, directly into a variable of
-the respective type.</p>
-<pre><code class="language-ballerina">// Reading a JSON.
-json | io:Error result = readableCharChannel.readJson();
-</code></pre>
-<pre><code class="language-ballerina">// Reading an XML.
-xml | io:Error result = readableCharChannel.readXml();
-</code></pre>
-<pre><code class="language-ballerina">// Create a `WritableCharacterChannel` from the `WritableByteChannel`.
-io:WritableCharacterChannel | io:Error writableCharChannel = 
-            new io:WritableCharacterChannel(writableByteChannel, &quot;UTF-8&quot;);
-</code></pre>
-<pre><code class="language-ballerina">// Writing a JSON.
-json content = {fname: &quot;Jhon&quot;, lname: &quot;Doe&quot;, age: 40};
-var writeResult = writableCharChannel.writeJson(content);
-if (writeResult is io:Error) {
-    return writeResult;
-} else {
-    io:println(&quot;JSON content written successfully.&quot;);
-}
-</code></pre>
-<h2>Record channels</h2>
-<p>Ballerina also supports I/O for delimited records.</p>
-<pre><code class="language-ballerina">// Create a `ReadableTextRecordChannel` from the `ReadableCharacterChannel`.
-// Records are separated using a new line.
-// Fields of a record are separated using a comma.
-var readableRecordsChannel = 
-        new io:ReadableTextRecordChannel(readableCharChannel, fs = &quot;,&quot;, rs = &quot;\n&quot;);
-
-// Read few records.
-while (readableRecordsChannel.hasNext()) {
-    var result = readableRecordsChannel.getNext();
-    if (result is string[]) {
-        io:println(result); // Retrieved a record.
-    } else {
-        return result; // An IO error occurred when reading the records.
-    }
-}
-</code></pre>
-<p>A <code>.CSV</code> file can be read and written directly into a <code>CSVChannel</code>, as shown in this code snippet.</p>
-<pre><code class="language-ballerina">// Create a `ReadableCSVChannel` from the `ReadableCharacterChannel`.
-var readableCSVChannel = new io:ReadableCSVChannel(readableCharChannel);
-</code></pre>
-<p>Records of the <code>.CSV</code> file can read directly into a table of a matching type.</p>
-<pre><code class="language-ballerina">// First let’s define a type that matches a record in the CSV file.
-type Employee record {
-   string id;
-   string name;
-   float salary;
-};
-
-// Now read the CSV file as a table of Employees and compute total salary.
-float total = 0.0;
-var tableResult = readableCSVChannel.getTable(Employee);
-if (tableResult is table&lt;Employee&gt;) {
-    foreach var x in tableResult {
-      total = total + x.salary;
-    }
-    return total;
-} else {
-    return tableResult; //Return the error back to the caller
-}
-</code></pre>
-<h2>Data Channels</h2>
-<p>Ballerina supports performing data i/o operations</p>
-<p>Person object could be serialized into a file or a network socket in the following manner.</p>
-<pre><code class="language-ballerina">public type Person record {|
-    string name;
-    int age;
-    float income;
-    boolean isMarried;
-|};
-
-// Serialize record into binary.
-function serialize(Person p, io:WritableByteChannel byteChannel) {
-    io:WritableDataChannel dc = new io:WritableDataChannel(byteChannel);
-    var length = p.name.toBytes().length();
-    var lengthResult = dc.writeInt32(length);
-    var nameResult = dc.writeString(p.name, &quot;UTF-8&quot;);
-    var ageResult = dc.writeInt16(p.age);
-    var incomeResult = dc.writeFloat64(p.income);
-    var maritalStatusResult = dc.writeBool(p.isMarried);
-    var closeResult = dc.close();
-}
-
-// Deserialize record into binary.
-function deserialize(io:ReadableByteChannel byteChannel) returns Person {
-    Person person = {name: &quot;&quot;, age: 0, income: 0.0, isMarried: false};
-    int nameLength = 0;
-    string nameValue;
-    io:ReadableDataChannel dc = new io:ReadableDataChannel(byteChannel);
-    // Read 32 bit signed integer.
-    var int32Result = dc.readInt32();
-    if (int32Result is int) {
-        nameLength = int32Result;
-    } else {
-        log:printError(&quot;Error occurred while reading name length&quot;, int32Result);
-    }
-    // Read UTF-8 encoded string represented through specified amount of bytes.
-    var strResult = dc.readString(nameLength, &quot;UTF-8&quot;);
-    if (strResult is string) {
-        person.name = strResult;
-    } else {
-        log:printError(&quot;Error occurred while reading name&quot;, strResult);
-    }
-    // Read 16 bit signed integer.
-    var int16Result = dc.readInt16();
-    if (int16Result is int) {
-        person.age = int16Result;
-    } else {
-        log:printError(&quot;Error occurred while reading age&quot;, int16Result);
-    }
-    // Read 64 bit signed float.
-    var float64Result = dc.readFloat64();
-    if (float64Result is float) {
-        person.income = float64Result;
-    } else {
-        log:printError(&quot;Error occurred while reading income&quot;, float64Result);
-    }
-    // Read boolean.
-    var boolResult = dc.readBool();
-    if (boolResult is boolean) {
-        person.isMarried = boolResult;
-    } else {
-        log:printError(&quot;Error occurred while reading marital status&quot;, boolResult);
-    }
-    // Finally close the data channel.
-    var closeResult = dc.close();
-    return person;
-}
-</code></pre>
+<h3>Channels</h3>
+<p>A channel represents an I/O source or sink of some bytes, characters, or records that are opened for reading or
+writing respectively.</p>
+<h3>Byte channels</h3>
+<p>The most primitive channel is the <code>ByteChannel</code> which reads and writes 8-bit bytes. For an example on the <code>ByteChannel</code>, see the <a href="https://ballerina.io/learn/by-example/byte-io.html">Byte I/O Example</a>.</p>
+<h3>Character channels</h3>
+<p>The <code>CharacterChannel</code> is used to read and write characters. The charset encoding is specified when creating the <code>CharacterChannel</code>. For an example on the <code>CharacterChannel</code>, see the <a href="https://ballerina.io/learn/by-example/character-io.html">Read/Write Files Example</a>.</p>
+<p>If a <code>ReadableCharacterChannel</code> points to a JSON or XML source, it can be read and then written directly into a variable of
+the respective type. For examples on reading/writing JSON or XML sources, see the <a href="https://ballerina.io/learn/by-example/json-io.html">JSON I/O Example</a> and <a href="https://ballerina.io/learn/by-example/xml-io.html">XML I/O Example</a>.</p>
+<h3>Record channels</h3>
+<p>Also, Ballerina supports I/O for delimited records. For an example on reading the records in a text file, see the <a href="https://ballerina.io/learn/by-example/record-io.html">Record I/O Example</a>.</p>
+<p>A <code>.CSV</code> file can be read and written directly into a <code>CSVChannel</code> as shown in this <a href="https://ballerina.io/learn/by-example/csv-io.html">CSV I/O Example</a>.</p>
+<h3>Data Channels</h3>
+<p>Ballerina supports performing data i/o operations.</p>
+<p>A Person object could be serialized into a file or a network socket as seen in the <a href="https://ballerina.io/learn/by-example/data-io.html">Data I/O Example</a>.</p>
 
 
             
+            
+            <section class="method-content" id="records">
+                <div class="main-method-title here">
+                    <a class="url-link" href="#records">
+                        <img class="url-link-img" src="../html-template-resources/images/link.svg">
+                    </a>
+                <h2> Records </h2>
+                </div>
+                <table>
+                    
+                    
+                        <tr>
+                            <td class="module-title truncate records" id="Detail" title="Detail">
+                                <a class="records " href="records/Detail.html">Detail</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Record type to hold the details of an error.
+                            </td>
+                        </tr>
+                    
+                    
+                </table>
+            </section>
+            
+            
 
+            
             
             <section class="method-content" id="objects">
                 <div class="main-method-title here">
@@ -789,129 +414,142 @@ function deserialize(io:ReadableByteChannel byteChannel) returns Person {
                 </div>
                 <table>
                     
+                    
                         <tr>
                             <td class="module-title truncate objects" id="ReadableByteChannel" title="ReadableByteChannel">
-                                <a class="objects"
-                                   href="objects/ReadableByteChannel.html">
-                                    ReadableByteChannel
-                                </a>
+                                <a class="objects " href="objects/ReadableByteChannel.html">ReadableByteChannel</a>
                             </td>
-                            <td class="module-desc"><p>ReadableByteChannel represents an input resource (i.e file). which could be used to source bytes.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>ReadableByteChannel represents an input resource (i.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="ReadableCSVChannel" title="ReadableCSVChannel">
-                                <a class="objects"
-                                   href="objects/ReadableCSVChannel.html">
-                                    ReadableCSVChannel
-                                </a>
+                                <a class="objects " href="objects/ReadableCSVChannel.html">ReadableCSVChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a ReadableCSVChannel which could be used to read records from CSV file.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a ReadableCSVChannel which could be used to read records from CSV file.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="ReadableCharacterChannel" title="ReadableCharacterChannel">
-                                <a class="objects"
-                                   href="objects/ReadableCharacterChannel.html">
-                                    ReadableCharacterChannel
-                                </a>
+                                <a class="objects " href="objects/ReadableCharacterChannel.html">ReadableCharacterChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a channel which could be used to read characters through a given ReadableByteChannel.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a channel, which could be used to read characters through a given ReadableByteChannel.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="ReadableDataChannel" title="ReadableDataChannel">
-                                <a class="objects"
-                                   href="objects/ReadableDataChannel.html">
-                                    ReadableDataChannel
-                                </a>
+                                <a class="objects " href="objects/ReadableDataChannel.html">ReadableDataChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a data channel for reading data.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a data channel for reading data.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="ReadableTextRecordChannel" title="ReadableTextRecordChannel">
-                                <a class="objects"
-                                   href="objects/ReadableTextRecordChannel.html">
-                                    ReadableTextRecordChannel
-                                </a>
+                                <a class="objects " href="objects/ReadableTextRecordChannel.html">ReadableTextRecordChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a channel which will allow to read</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a channel which will allow to read</p>
+
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="StringReader" title="StringReader">
-                                <a class="objects"
-                                   href="objects/StringReader.html">
-                                    StringReader
-                                </a>
+                                <a class="objects " href="objects/StringReader.html">StringReader</a>
                             </td>
-                            <td class="module-desc"><p>Represents a reader which will wrap string content as a channel.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a reader which will wrap string content as a channel.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="WritableByteChannel" title="WritableByteChannel">
-                                <a class="objects"
-                                   href="objects/WritableByteChannel.html">
-                                    WritableByteChannel
-                                </a>
+                                <a class="objects " href="objects/WritableByteChannel.html">WritableByteChannel</a>
                             </td>
-                            <td class="module-desc"><p>WritableByteChannel represents an output resource (i.e file). which could be used to sink bytes.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>WritableByteChannel represents an output resource (i.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="WritableCSVChannel" title="WritableCSVChannel">
-                                <a class="objects"
-                                   href="objects/WritableCSVChannel.html">
-                                    WritableCSVChannel
-                                </a>
+                                <a class="objects " href="objects/WritableCSVChannel.html">WritableCSVChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a WritableCSVChannel which could be used to write records from CSV file.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a WritableCSVChannel, which could be used to write records from the CSV file.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="WritableCharacterChannel" title="WritableCharacterChannel">
-                                <a class="objects"
-                                   href="objects/WritableCharacterChannel.html">
-                                    WritableCharacterChannel
-                                </a>
+                                <a class="objects " href="objects/WritableCharacterChannel.html">WritableCharacterChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a channel which could be used to write characters through a given WritableCharacterChannel.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a channel which could be used to write characters through a given WritableCharacterChannel.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="WritableDataChannel" title="WritableDataChannel">
-                                <a class="objects"
-                                   href="objects/WritableDataChannel.html">
-                                    WritableDataChannel
-                                </a>
+                                <a class="objects " href="objects/WritableDataChannel.html">WritableDataChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a WritableDataChannel for writing data.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a WritableDataChannel for writing data.
+                            </td>
                         </tr>
+                    
+                    
                     
                         <tr>
                             <td class="module-title truncate objects" id="WritableTextRecordChannel" title="WritableTextRecordChannel">
-                                <a class="objects"
-                                   href="objects/WritableTextRecordChannel.html">
-                                    WritableTextRecordChannel
-                                </a>
+                                <a class="objects " href="objects/WritableTextRecordChannel.html">WritableTextRecordChannel</a>
                             </td>
-                            <td class="module-desc"><p>Represents a channel which will allow to write records through a given WritableCharacterChannel.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents a channel, which will allow to write records through a given WritableCharacterChannel.
+                            </td>
                         </tr>
                     
+                    
                 </table>
-             </section>  
+             </section>
+            
             
 
             
@@ -930,74 +568,93 @@ function deserialize(io:ReadableByteChannel byteChannel) returns Person {
                 <table>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="createReadableChannel" title="createReadableChannel"><a
-                                    class="functions" href="functions.html#createReadableChannel">createReadableChannel</a></td>
-                            <td class="module-desc"><p>Creates an in-memory channel which will reference stream of bytes.</p>
-</td>
+                            <td class="module-title truncate functions" id="createReadableChannel" title="createReadableChannel">
+                                <a class="functions " href="functions.html#createReadableChannel">createReadableChannel</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Creates an in-memory channel, which will be a reference stream of bytes.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="openReadableCsvFile" title="openReadableCsvFile"><a
-                                    class="functions" href="functions.html#openReadableCsvFile">openReadableCsvFile</a></td>
-                            <td class="module-desc"><p>Retrieves a readable CSV channel from a give file path.</p>
-</td>
+                            <td class="module-title truncate functions" id="openReadableCsvFile" title="openReadableCsvFile">
+                                <a class="functions " href="functions.html#openReadableCsvFile">openReadableCsvFile</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Retrieves a readable CSV channel from a given file path.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="openReadableFile" title="openReadableFile"><a
-                                    class="functions" href="functions.html#openReadableFile">openReadableFile</a></td>
-                            <td class="module-desc"><p>Retrieves a ReadableByteChannel from a given file path.</p>
-</td>
+                            <td class="module-title truncate functions" id="openReadableFile" title="openReadableFile">
+                                <a class="functions " href="functions.html#openReadableFile">openReadableFile</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Retrieves a <code>ReadableByteChannel</code> from a given file path.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="openWritableCsvFile" title="openWritableCsvFile"><a
-                                    class="functions" href="functions.html#openWritableCsvFile">openWritableCsvFile</a></td>
-                            <td class="module-desc"><p>Retrieves a writable CSV channel from a give file path.</p>
-</td>
+                            <td class="module-title truncate functions" id="openWritableCsvFile" title="openWritableCsvFile">
+                                <a class="functions " href="functions.html#openWritableCsvFile">openWritableCsvFile</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Retrieves a writable CSV channel from a given file path.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="openWritableFile" title="openWritableFile"><a
-                                    class="functions" href="functions.html#openWritableFile">openWritableFile</a></td>
-                            <td class="module-desc"><p>Retrieves a WritableByteChannel from a given file path.</p>
-</td>
+                            <td class="module-title truncate functions" id="openWritableFile" title="openWritableFile">
+                                <a class="functions " href="functions.html#openWritableFile">openWritableFile</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Retrieves a <code>WritableByteChannel</code> from a given file path.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="print" title="print"><a
-                                    class="functions" href="functions.html#print">print</a></td>
-                            <td class="module-desc"><p>Prints <code>any</code> or <code>error</code> value(s) to the STDOUT.</p>
-</td>
+                            <td class="module-title truncate functions" id="print" title="print">
+                                <a class="functions " href="functions.html#print">print</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Prints <code>any</code> or <code>error</code> value(s) to the STDOUT.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="println" title="println"><a
-                                    class="functions" href="functions.html#println">println</a></td>
-                            <td class="module-desc"><p>Prints <code>any</code> or <code>error</code> value(s) to the STDOUT followed by a new line.</p>
-</td>
+                            <td class="module-title truncate functions" id="println" title="println">
+                                <a class="functions " href="functions.html#println">println</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Prints <code>any</code> or <code>error</code> value(s) to the STDOUT followed by a new line.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="readln" title="readln"><a
-                                    class="functions" href="functions.html#readln">readln</a></td>
-                            <td class="module-desc"><p>Returns the input read from STDIN.</p>
-</td>
+                            <td class="module-title truncate functions" id="readln" title="readln">
+                                <a class="functions " href="functions.html#readln">readln</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Retrieves the input read from the STDIN.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate functions" id="sprintf" title="sprintf"><a
-                                    class="functions" href="functions.html#sprintf">sprintf</a></td>
-                            <td class="module-desc"><p>Returns a formatted string using the specified format string and arguments. Following format specifiers are allowed.</p>
-<p>b - boolean</p>
-<p>B - boolean (ALL_CAPS)</p>
-<p>d - int</p>
-<p>f - float</p>
-<p>x - hex</p>
-<p>X - HEX (ALL_CAPS)</p>
-<p>s - string (This specifier is applicable for any of the supported types in Ballerina.
-These values will be converted to their string representation.)</p>
-</td>
+                            <td class="module-title truncate functions" id="sprintf" title="sprintf">
+                                <a class="functions " href="functions.html#sprintf">sprintf</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Returns a formatted string using the specified format string and arguments.
+                            </td>
                         </tr>
                     
                 </table>
@@ -1016,115 +673,163 @@ These values will be converted to their string representation.)</p>
                 <table>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="DEFAULT" title="DEFAULT"><a
-                                    class="constant" href="constants.html#DEFAULT">DEFAULT</a></td>
-                            <td class="module-desc"><p>Would default to the format specified by CSVChannel. Precedence will be given to field separator and record separator.</p>
-</td>
+                            <td class="module-title truncate constant" id="DEFAULT" title="DEFAULT">
+                                <a class="constant " href="constants.html#DEFAULT">DEFAULT</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Default value is the format specified by the CSVChannel.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="CSV" title="CSV"><a
-                                    class="constant" href="constants.html#CSV">CSV</a></td>
-                            <td class="module-desc"><p>Field separator would be &quot;,&quot; and the record separator would be new line.</p>
-</td>
+                            <td class="module-title truncate constant" id="CSV" title="CSV">
+                                <a class="constant " href="constants.html#CSV">CSV</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Field separator will be &quot;,&quot; and the record separator will be a new line.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="TDF" title="TDF"><a
-                                    class="constant" href="constants.html#TDF">TDF</a></td>
-                            <td class="module-desc"><p>Field separator will be tab and record separator will be new line.</p>
-</td>
+                            <td class="module-title truncate constant" id="TDF" title="TDF">
+                                <a class="constant " href="constants.html#TDF">TDF</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Field separator will be a tab and the record separator will be a new line.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="COMMA" title="COMMA"><a
-                                    class="constant" href="constants.html#COMMA">COMMA</a></td>
-                            <td class="module-desc"><p>Comma (,) will be used as the field separator.</p>
-</td>
+                            <td class="module-title truncate constant" id="COMMA" title="COMMA">
+                                <a class="constant " href="constants.html#COMMA">COMMA</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Comma (,) will be used as the field separator.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="TAB" title="TAB"><a
-                                    class="constant" href="constants.html#TAB">TAB</a></td>
-                            <td class="module-desc"><p>Tab (/t) will be use as the field separator.</p>
-</td>
+                            <td class="module-title truncate constant" id="TAB" title="TAB">
+                                <a class="constant " href="constants.html#TAB">TAB</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Tab (/t) will be use as the field separator.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="COLON" title="COLON"><a
-                                    class="constant" href="constants.html#COLON">COLON</a></td>
-                            <td class="module-desc"><p>Colon (:) will be use as the field separator.</p>
-</td>
+                            <td class="module-title truncate constant" id="COLON" title="COLON">
+                                <a class="constant " href="constants.html#COLON">COLON</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Colon (:) will be use as the field separator.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="CONNECTION_TIMED_OUT" title="CONNECTION_TIMED_OUT"><a
-                                    class="constant" href="constants.html#CONNECTION_TIMED_OUT">CONNECTION_TIMED_OUT</a></td>
-                            <td class="module-desc"><p>This will be used to construct a ConnectionTimedOutError.</p>
-</td>
+                            <td class="module-title truncate constant" id="CONNECTION_TIMED_OUT" title="CONNECTION_TIMED_OUT">
+                                <a class="constant " href="constants.html#CONNECTION_TIMED_OUT">CONNECTION_TIMED_OUT</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>This will be used to construct a ConnectionTimedOutError.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="GENERIC_ERROR" title="GENERIC_ERROR"><a
-                                    class="constant" href="constants.html#GENERIC_ERROR">GENERIC_ERROR</a></td>
-                            <td class="module-desc"><p>This will be used to construct an IO GenericError.</p>
-</td>
+                            <td class="module-title truncate constant" id="GENERIC_ERROR" title="GENERIC_ERROR">
+                                <a class="constant " href="constants.html#GENERIC_ERROR">GENERIC_ERROR</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>This will be used to construct an IO GenericError.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="ACCESS_DENIED_ERROR" title="ACCESS_DENIED_ERROR"><a
-                                    class="constant" href="constants.html#ACCESS_DENIED_ERROR">ACCESS_DENIED_ERROR</a></td>
-                            <td class="module-desc"><p>This will be used to construct a AccessDeniedError.</p>
-</td>
+                            <td class="module-title truncate constant" id="ACCESS_DENIED_ERROR" title="ACCESS_DENIED_ERROR">
+                                <a class="constant " href="constants.html#ACCESS_DENIED_ERROR">ACCESS_DENIED_ERROR</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>This will be used to construct a AccessDeniedError.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="FILE_NOT_FOUND_ERROR" title="FILE_NOT_FOUND_ERROR"><a
-                                    class="constant" href="constants.html#FILE_NOT_FOUND_ERROR">FILE_NOT_FOUND_ERROR</a></td>
-                            <td class="module-desc"><p>This will be used to construct a FileNotFoundError.</p>
-</td>
+                            <td class="module-title truncate constant" id="FILE_NOT_FOUND_ERROR" title="FILE_NOT_FOUND_ERROR">
+                                <a class="constant " href="constants.html#FILE_NOT_FOUND_ERROR">FILE_NOT_FOUND_ERROR</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>This will be used to construct a FileNotFoundError.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="END_OF_FILE_ERROR" title="END_OF_FILE_ERROR"><a
-                                    class="constant" href="constants.html#END_OF_FILE_ERROR">END_OF_FILE_ERROR</a></td>
-                            <td class="module-desc"><p>This will be used to construct an EofError.</p>
-</td>
+                            <td class="module-title truncate constant" id="END_OF_FILE_ERROR" title="END_OF_FILE_ERROR">
+                                <a class="constant " href="constants.html#END_OF_FILE_ERROR">END_OF_FILE_ERROR</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>This will be used to construct an EofError.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="CSV_RECORD_SEPARATOR" title="CSV_RECORD_SEPARATOR"><a
-                                    class="constant" href="constants.html#CSV_RECORD_SEPARATOR">CSV_RECORD_SEPARATOR</a></td>
-                            <td class="module-desc"><p>Represents record separator of the CSV file.</p>
-</td>
+                            <td class="module-title truncate constant" id="CSV_RECORD_SEPARATOR" title="CSV_RECORD_SEPARATOR">
+                                <a class="constant " href="constants.html#CSV_RECORD_SEPARATOR">CSV_RECORD_SEPARATOR</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Represents the record separator of the CSV file.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="FS_COLON" title="FS_COLON"><a
-                                    class="constant" href="constants.html#FS_COLON">FS_COLON</a></td>
-                            <td class="module-desc"><p>Represents colon separator which should be used to identify colon separated files.</p>
-</td>
+                            <td class="module-title truncate constant" id="FS_COLON" title="FS_COLON">
+                                <a class="constant " href="constants.html#FS_COLON">FS_COLON</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Represents the colon separator, which should be used to identify colon-separated files.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="MINIMUM_HEADER_COUNT" title="MINIMUM_HEADER_COUNT"><a
-                                    class="constant" href="constants.html#MINIMUM_HEADER_COUNT">MINIMUM_HEADER_COUNT</a></td>
-                            <td class="module-desc"><p>Represents minimum number of headers which will be included in CSV.</p>
-</td>
+                            <td class="module-title truncate constant" id="MINIMUM_HEADER_COUNT" title="MINIMUM_HEADER_COUNT">
+                                <a class="constant " href="constants.html#MINIMUM_HEADER_COUNT">MINIMUM_HEADER_COUNT</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Represents the minimum number of headers, which will be included in the CSV.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="BIG_ENDIAN" title="BIG_ENDIAN"><a
-                                    class="constant" href="constants.html#BIG_ENDIAN">BIG_ENDIAN</a></td>
-                            <td class="module-desc"><p>Specifies the bytes to be in the order of most significant byte first.</p>
-</td>
+                            <td class="module-title truncate constant" id="BIG_ENDIAN" title="BIG_ENDIAN">
+                                <a class="constant " href="constants.html#BIG_ENDIAN">BIG_ENDIAN</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Specifies the bytes to be in the order of most significant byte first.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate constant" id="LITTLE_ENDIAN" title="LITTLE_ENDIAN"><a
-                                    class="constant" href="constants.html#LITTLE_ENDIAN">LITTLE_ENDIAN</a></td>
-                            <td class="module-desc"><p>Specifies the byte order to be the least significant byte first.</p>
-</td>
+                            <td class="module-title truncate constant" id="LITTLE_ENDIAN" title="LITTLE_ENDIAN">
+                                <a class="constant " href="constants.html#LITTLE_ENDIAN">LITTLE_ENDIAN</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Specifies the byte order to be the least significant byte first.
+                            </td>
                         </tr>
                     
                 </table>
@@ -1146,33 +851,32 @@ These values will be converted to their string representation.)</p>
                     
                         <tr>
                             <td class="module-title truncate types" id="Error" title="Error">
-                                <a class="types" href="types.html#Error">Error</a>
+                                <a class="types " href="types.html#Error">Error</a>
                             </td>
-                            <td class="module-desc"><p>Represents IO module related errors.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents IO module related errors.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate types" id="Format" title="Format">
-                                <a class="types" href="types.html#Format">Format</a>
+                                <a class="types " href="types.html#Format">Format</a>
                             </td>
-                            <td class="module-desc"><p>Format which will be used to represent the CSV.</p>
-<p>DEFAULT - Would default to the format specified by CSVChannel. Precedence will be given to field
-separator and record separator.</p>
-<p>CSV - Field separator would be &quot;,&quot; and the record separator would be new line.</p>
-<p>TDF - Field separator will be tab and record separator will be new line.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>The format, which will be used to represent the CSV.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate types" id="Separator" title="Separator">
-                                <a class="types" href="types.html#Separator">Separator</a>
+                                <a class="types " href="types.html#Separator">Separator</a>
                             </td>
-                            <td class="module-desc"><p>Field separators which are supported by DelimitedTextRecordChannel.</p>
-<p>COMMA - Delimited text records would be separated using a comma.</p>
-<p>TAB - Delimited text records would be separated using a tab.</p>
-<p>COLON - Delimited text records would be separated using a colon(:).</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Field separators, which are supported by the <code>DelimitedTextRecordChannel</code>.
+                            </td>
                         </tr>
                     
                 </table>
@@ -1191,42 +895,52 @@ separator and record separator.</p>
                     
                         <tr>
                             <td class="module-title truncate errors" id="AccessDeniedError" title="AccessDeniedError">
-                                <a class="errors" href="errors.html#AccessDeniedError">AccessDeniedError</a>
+                                <a class="errors " href="errors.html#AccessDeniedError">AccessDeniedError</a>
                             </td>
-                            <td class="module-desc"><p>This will get returned due to file permission issues.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>This will get returned due to file permission issues.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate errors" id="ConnectionTimedOutError" title="ConnectionTimedOutError">
-                                <a class="errors" href="errors.html#ConnectionTimedOutError">ConnectionTimedOutError</a>
+                                <a class="errors " href="errors.html#ConnectionTimedOutError">ConnectionTimedOutError</a>
                             </td>
-                            <td class="module-desc"><p>This will return when connection timed out happen when try to connect to a remote host.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>This will return when connection timed out happen when try to connect to a remote host.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate errors" id="EofError" title="EofError">
-                                <a class="errors" href="errors.html#EofError">EofError</a>
+                                <a class="errors " href="errors.html#EofError">EofError</a>
                             </td>
-                            <td class="module-desc"><p>This will get returned if read operations are performed on a channel after it closed.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>This will get returned if read operations are performed on a channel after it closed.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate errors" id="FileNotFoundError" title="FileNotFoundError">
-                                <a class="errors" href="errors.html#FileNotFoundError">FileNotFoundError</a>
+                                <a class="errors " href="errors.html#FileNotFoundError">FileNotFoundError</a>
                             </td>
-                            <td class="module-desc"><p>This will get returned if the file is not available in the given file path.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>This will get returned if the file is not available in the given file path.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate errors" id="GenericError" title="GenericError">
-                                <a class="errors" href="errors.html#GenericError">GenericError</a>
+                                <a class="errors " href="errors.html#GenericError">GenericError</a>
                             </td>
-                            <td class="module-desc"><p>Represents generic IO error. The detail record contains the information related to the error.</p>
-</td>
+                            <td class="module-desc">
+                                
+                                <p>Represents generic IO error.
+                            </td>
                         </tr>
                     
                 </table>
@@ -1238,17 +952,6 @@ separator and record separator.</p>
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -1274,10 +977,47 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
         ballerinaHighlighter.highlightSnippets();
     };
 </script>
+
 

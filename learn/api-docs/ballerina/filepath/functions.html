@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /v1-2/learn/api-docs/ballerina/filepath/functions
+  - /v1-2/learn/api-docs/ballerina/filepath/functions.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +10,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module provides a platform-independent API for working with file paths.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,filepath">
 
     <title>API Docs - Functions : filepath</title>
     <script src="../html-template-resources/jquery.min.js"></script>
@@ -16,6 +24,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +41,7 @@
     <link rel="stylesheet" href="../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../html-template-resources/styles/css/font.css">
     <script src="../html-template-resources/semantic.min.js"></script>
-    <script src="../vs/monaco.js"></script>
+    <script src="../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -49,104 +58,115 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../index.html">
+            <a href="
+    ../index.html">
     <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
             <div class="primary-list">
                 <h3>Functions</h3>
                 <ul>
                     
                         <li >
-                            <a href="#absolute">absolute</a>
+                            <a href="#absolute" onclick="menuLinkClick()">absolute</a>
                         </li>
                     
                         <li >
-                            <a href="#build">build</a>
+                            <a href="#build" onclick="menuLinkClick()">build</a>
                         </li>
                     
                         <li >
-                            <a href="#extension">extension</a>
+                            <a href="#extension" onclick="menuLinkClick()">extension</a>
                         </li>
                     
                         <li >
-                            <a href="#filename">filename</a>
+                            <a href="#filename" onclick="menuLinkClick()">filename</a>
                         </li>
                     
                         <li >
-                            <a href="#getPathListSeparator">getPathListSeparator</a>
+                            <a href="#getPathListSeparator" onclick="menuLinkClick()">getPathListSeparator</a>
                         </li>
                     
                         <li >
-                            <a href="#getPathSeparator">getPathSeparator</a>
+                            <a href="#getPathSeparator" onclick="menuLinkClick()">getPathSeparator</a>
                         </li>
                     
                         <li >
-                            <a href="#isAbsolute">isAbsolute</a>
+                            <a href="#isAbsolute" onclick="menuLinkClick()">isAbsolute</a>
                         </li>
                     
                         <li >
-                            <a href="#isReservedName">isReservedName</a>
+                            <a href="#isReservedName" onclick="menuLinkClick()">isReservedName</a>
                         </li>
                     
                         <li >
-                            <a href="#matches">matches</a>
+                            <a href="#matches" onclick="menuLinkClick()">matches</a>
                         </li>
                     
                         <li >
-                            <a href="#normalize">normalize</a>
+                            <a href="#normalize" onclick="menuLinkClick()">normalize</a>
                         </li>
                     
                         <li >
-                            <a href="#parent">parent</a>
+                            <a href="#parent" onclick="menuLinkClick()">parent</a>
                         </li>
                     
                         <li >
-                            <a href="#relative">relative</a>
+                            <a href="#relative" onclick="menuLinkClick()">relative</a>
                         </li>
                     
                         <li >
-                            <a href="#resolve">resolve</a>
+                            <a href="#resolve" onclick="menuLinkClick()">resolve</a>
                         </li>
                     
                         <li >
-                            <a href="#split">split</a>
+                            <a href="#split" onclick="menuLinkClick()">split</a>
                         </li>
                     
                 </ul>
             </div>
             <div class="ui divider"></div>
-            <div class="primary-list module">
+            
+
     
-        <a href="../filepath/index.html">
+        <div class="version">v1.2.8</div>
+    
+
+
+<div class="primary-list module">
+    
+        <a href="../filepath/index.html" onclick="menuLinkClick()">
             <h3>filepath</h3>
         </a>
     
     <ul>
         
+        <li>
+            <a data="records" href="../filepath/index.html#records" onclick="menuLinkClick()">Records</a>
+        </li>
+        
         
         
         
         
             <li>
-                <a data="functions" href="../filepath/index.html#functions">Functions</a>
+                <a data="functions" href="../filepath/index.html#functions" onclick="menuLinkClick()">Functions</a>
             </li>
         
         
             <li>
-                <a data="constants" href="../filepath/index.html#constants">Constants</a>
+                <a data="constants" href="../filepath/index.html#constants" onclick="menuLinkClick()">Constants</a>
             </li>
         
         
         
             <li>
-                <a data="types" href="../filepath/index.html#types">Types</a>
+                <a data="types" href="../filepath/index.html#types" onclick="menuLinkClick()">Types</a>
             </li>
         
         
             <li>
-                <a data="errors" href="../filepath/index.html#errors">Errors</a>
+                <a data="errors" href="../filepath/index.html#errors" onclick="menuLinkClick()">Errors</a>
             </li>
         
     </ul>
@@ -175,7 +195,7 @@
                 </li>
             
                 <li>
-                    <a href="../docker/index.html">docker</a>
+                    <a href="../email/index.html">email</a>
                 </li>
             
                 <li>
@@ -203,10 +223,6 @@
                 </li>
             
                 <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
                     <a href="../java/index.html">java</a>
                 </li>
             
@@ -231,11 +247,11 @@
                 </li>
             
                 <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
+                    <a href="../lang.array/index.html">lang.array</a>
                 </li>
             
                 <li>
-                    <a href="../lang.array/index.html">lang.array</a>
+                    <a href="../lang.boolean/index.html">lang.boolean</a>
                 </li>
             
                 <li>
@@ -291,334 +307,7 @@
                 </li>
             
                 <li>
-                    <a href="../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-        </div>
-    </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../index.html">
-    <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                <div class="primary-list">
-                    <h3>Functions</h3>
-                    <ul>
-                        
-                            <li >
-                                <a href="#absolute">absolute</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#build">build</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#extension">extension</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#filename">filename</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#getPathListSeparator">getPathListSeparator</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#getPathSeparator">getPathSeparator</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#isAbsolute">isAbsolute</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#isReservedName">isReservedName</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#matches">matches</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#normalize">normalize</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#parent">parent</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#relative">relative</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#resolve">resolve</a>
-                            </li>
-                        
-                            <li >
-                                <a href="#split">split</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-                <div class="ui divider"></div>
-                <div class="primary-list module">
-    
-        <a href="../filepath/index.html">
-            <h3>filepath</h3>
-        </a>
-    
-    <ul>
-        
-        
-        
-        
-        
-            <li>
-                <a data="functions" href="../filepath/index.html#functions">Functions</a>
-            </li>
-        
-        
-            <li>
-                <a data="constants" href="../filepath/index.html#constants">Constants</a>
-            </li>
-        
-        
-        
-            <li>
-                <a data="types" href="../filepath/index.html#types">Types</a>
-            </li>
-        
-        
-            <li>
-                <a data="errors" href="../filepath/index.html#errors">Errors</a>
-            </li>
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.xml/index.html">lang.xml</a>
+                    <a href="../ldap/index.html">ldap</a>
                 </li>
             
                 <li>
@@ -650,7 +339,7 @@
                 </li>
             
                 <li>
-                    <a href="../openshift/index.html">openshift</a>
+                    <a href="../rabbitmq/index.html">rabbitmq</a>
                 </li>
             
                 <li>
@@ -663,10 +352,6 @@
             
                 <li>
                     <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
                 </li>
             
                 <li>
@@ -694,6 +379,10 @@
                 </li>
             
                 <li>
+                    <a href="../websub/index.html">websub</a>
+                </li>
+            
+                <li>
                     <a href="../xmlutils/index.html">xmlutils</a>
                 </li>
             
@@ -705,19 +394,18 @@
         <div class="ui divider"></div>
     
 </div>
-            </div>
         </div>
     </div>
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper">
             <h1>
-                <a class="breadcrumb-home" href="../index.html">
+                <a class="breadcrumb-home" href="
+    ../index.html">
     <img class="breadcrumb-home-icon" src="../html-template-resources/images/home.svg">
 </a>
                 <span class="title-type">Functions - </span>
@@ -726,139 +414,152 @@
                 
             </h1>
             <div class="constants">
-                <table class="ui table details-table">
-                    
-                        <tbody>
+                <table class="ui table row-border details-table">
+                    <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#absolute">absolute</a></td>
-                                <td width="70%"><p>Retrieves the absolute path from the provided location.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#absolute">absolute</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Retrieves the absolute path from the provided location.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#build">build</a></td>
-                                <td width="70%"><p>Joins any number of path elements into a single path</p>
-</td>
+                                <td width="30%"><a class="functions " href="#build">build</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Joins any number of path elements into a single path.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#extension">extension</a></td>
-                                <td width="70%"><p>Retrieves the extension of the file path.
-The extension is the suffix beginning at the final dot in the final element of path.
-it is empty if there is no dot.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#extension">extension</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Retrieves the extension of the file path.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#filename">filename</a></td>
-                                <td width="70%"><p>Retrieves the base name of the file from the provided location.
-The last element of path.
-Trailing path separators are removed before extracting the last element.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#filename">filename</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Retrieves the base name of the file from the provided location,
+which is the last element of the path.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#getPathListSeparator">getPathListSeparator</a></td>
-                                <td width="70%"><p>Returns path list separator of underline operating system.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#getPathListSeparator">getPathListSeparator</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the path variable's separating character for paths of the underlying operating system.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#getPathSeparator">getPathSeparator</a></td>
-                                <td width="70%"><p>Returns path separator of underline operating system.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#getPathSeparator">getPathSeparator</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the path separator of the underlying operating system.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#isAbsolute">isAbsolute</a></td>
-                                <td width="70%"><p>Reports whether the path is absolute.
-A path is absolute if it is independent of the current directory.
-On Unix, a path is absolute if it starts with the root.
-On Windows, a path is absolute if it has a prefix and starts with the root: c:\windows is absolute</p>
-</td>
+                                <td width="30%"><a class="functions " href="#isAbsolute">isAbsolute</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Reports whether the path is absolute.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#isReservedName">isReservedName</a></td>
-                                <td width="70%"><p>Reports whether the filename is reserved.
-Reserved words only exist in windows.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#isReservedName">isReservedName</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Reports whether the filename is reserved.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#matches">matches</a></td>
-                                <td width="70%"><p>Reports whether all of filename matches the provided pattern, not just a substring.
-An error is returned if the pattern is malformed.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#matches">matches</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Reports whether the complete filename (not just a substring of it) matches the provided Glob pattern.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#normalize">normalize</a></td>
-                                <td width="70%"><p>Returns the shortest path name equivalent to path by purely lexical processing.
-Replace multiple Separator elements with a single one.
-Eliminate each . path name element (the current directory).
-Eliminate each inner .. path name element (the parent directory)</p>
-</td>
+                                <td width="30%"><a class="functions " href="#normalize">normalize</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the shortest path name equivalent to the given path.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#parent">parent</a></td>
-                                <td width="70%"><p>Returns the enclosing parent directory.
-If the path is empty, parent returns &quot;.&quot;.
-The returned path does not end in a separator unless it is the root directory.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#parent">parent</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the enclosing parent directory.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#relative">relative</a></td>
-                                <td width="70%"><p>Returns a relative path that is logically equivalent to target path when joined to base path with an intervening
-separator.
-An error is returned if target path can't be made relative to base path.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#relative">relative</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns a relative path, which is logically equivalent to the target path when joined to the base path with an
+intervening separator.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#resolve">resolve</a></td>
-                                <td width="70%"><p>Returns the filepath after the evaluation of any symbolic links.
-If path is relative, the result will be relative to the current directory,
-unless one of the components is an absolute symbolic link.
-Resolve calls normalize on the result.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#resolve">resolve</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Returns the filepath after the evaluation of any symbolic links.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
-                        <tbody>
+                        
                             <tr>
-                                <td width="30%" ><a class="functions" href="#split">split</a></td>
-                                <td width="70%"><p>Splits a list of paths joined by the OS-specific Path Separator.</p>
-</td>
+                                <td width="30%"><a class="functions " href="#split">split</a></td>
+                                <td width="70%">
+                                    <div class="function-desc">
+                                        
+                                        <p>Splits a list of paths joined by the OS-specific path separator.
+                                    </div>
+                                </td>
                             </tr>
-                        </tbody>
-                    
+                        
+                    </tbody>
                 </table>
                 <div>
                     
@@ -869,29 +570,38 @@ Resolve calls normalize on the result.</p>
              <a class="url-link" href="#absolute">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> absolute </h2>
-        
+            <h2 > absolute </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Retrieves the absolute path from the provided location.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Retrieves the absolute path from the provided location.</p>
+<pre><code class="language-ballerina">  string|filepath:Error absolutePath = filepath:absolute(&lt;@untainted&gt; &quot;test.txt&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file path free from potential malicious codes</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -904,7 +614,7 @@ Resolve calls normalize on the result.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>The absolute path reference or an error if the path cannot be derived</p>
+                <li><p>The absolute path reference or else a <code>filepath:Error</code> if the path cannot be derived</p>
 </li>
             </ul>
         </div>
@@ -917,29 +627,38 @@ Resolve calls normalize on the result.</p>
              <a class="url-link" href="#build">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> build </h2>
-        
+            <h2 > build </h2>
         <span class="method-types">
-            <p>(<span class="builtin-type">string</span> parts)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            <p>(<span class="array-type"><span class="builtin-type">string</span>...</span> parts)</p>
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Joins any number of path elements into a single path</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Joins any number of path elements into a single path.</p>
+<pre><code class="language-ballerina">  string|filepath:Error path = filepath:build(&quot;/&quot;, &quot;foo&quot;, &quot;bar&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        parts<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >parts</span>
+                        <span class="type">  <span class="array-type"><span class="builtin-type">string</span>...</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String values of file path parts.</p>
-</p>
+                        <p>
+                            
+                            <p>String values of the file path parts</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -952,7 +671,7 @@ Resolve calls normalize on the result.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>String value of file path.</p>
+                <li><p>String value of the file path or else a <code>filepath:Error</code> if the parts are invalid</p>
 </li>
             </ul>
         </div>
@@ -965,31 +684,40 @@ Resolve calls normalize on the result.</p>
              <a class="url-link" href="#extension">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> extension </h2>
-        
+            <h2 > extension </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Retrieves the extension of the file path.
-The extension is the suffix beginning at the final dot in the final element of path.
-it is empty if there is no dot.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Retrieves the extension of the file path.
+The extension is the suffix beginning at the final dot in the final element of the path.
+It is empty if there is no dot.</p>
+<pre><code class="language-ballerina">  string|filepath:Error extension = filepath:extension(&quot;path.bal&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1002,7 +730,8 @@ it is empty if there is no dot.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>Returns the extension of the file. Empty string if no extension.</p>
+                <li><p>The extension of the file, an empty string if there is no extension,
+or else a <code>filepath:Error</code> if the path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1015,31 +744,40 @@ it is empty if there is no dot.</p>
              <a class="url-link" href="#filename">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> filename </h2>
-        
+            <h2 > filename </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Retrieves the base name of the file from the provided location.
-The last element of path.
+    <div class="function-desc">
+        
+        <p>Retrieves the base name of the file from the provided location,
+which is the last element of the path.
 Trailing path separators are removed before extracting the last element.</p>
-</p>
-     
+<pre><code class="language-ballerina">  string|filepath:Error name = filepath:filename(&quot;/A/B/C.txt&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1052,7 +790,7 @@ Trailing path separators are removed before extracting the last element.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>Returns the name of the file</p>
+                <li><p>The name of the file or else a <code>filepath:Error</code> if the path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1065,24 +803,29 @@ Trailing path separators are removed before extracting the last element.</p>
              <a class="url-link" href="#getPathListSeparator">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> getPathListSeparator </h2>
-        
+            <h2 > getPathListSeparator </h2>
         <span class="method-types">
             <p>()</p>
-            <b> returns </b><span class="builtin-type">string</span> 
+            
+                <b> returns </b><span class="builtin-type">string</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns path list separator of underline operating system.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the path variable's separating character for paths of the underlying operating system.</p>
+<pre><code class="language-ballerina">  string pathListSeparator = filepath:getPathListSeparator();
+</code></pre>
+
+    </div>
+    
 
     
         
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span></span>)</li>
-                <li><p>String value of path list separator</p>
+                <li><p>String value of the path list separator</p>
 </li>
             </ul>
         </div>
@@ -1095,24 +838,29 @@ Trailing path separators are removed before extracting the last element.</p>
              <a class="url-link" href="#getPathSeparator">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> getPathSeparator </h2>
-        
+            <h2 > getPathSeparator </h2>
         <span class="method-types">
             <p>()</p>
-            <b> returns </b><span class="builtin-type">string</span> 
+            
+                <b> returns </b><span class="builtin-type">string</span> 
+            
         </span>
-        
     </div>
-    <p><p>Returns path separator of underline operating system.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the path separator of the underlying operating system.</p>
+<pre><code class="language-ballerina">  string pathSeparator = filepath:getPathSeparator();
+</code></pre>
+
+    </div>
+    
 
     
         
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span></span>)</li>
-                <li><p>String value of path separator</p>
+                <li><p>String value of the path separator</p>
 </li>
             </ul>
         </div>
@@ -1125,32 +873,41 @@ Trailing path separators are removed before extracting the last element.</p>
              <a class="url-link" href="#isAbsolute">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> isAbsolute </h2>
-        
+            <h2 > isAbsolute </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Reports whether the path is absolute.
+    <div class="function-desc">
+        
+        <p>Reports whether the path is absolute.
 A path is absolute if it is independent of the current directory.
 On Unix, a path is absolute if it starts with the root.
-On Windows, a path is absolute if it has a prefix and starts with the root: c:\windows is absolute</p>
-</p>
-     
+On Windows, a path is absolute if it has a prefix and starts with the root: c:\windows.</p>
+<pre><code class="language-ballerina">  boolean|filepath:Error isAbsolute = filepath:isAbsolute(&quot;/A/B/C&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1163,7 +920,8 @@ On Windows, a path is absolute if it has a prefix and starts with the root: c:\w
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>True if path is absolute, else false</p>
+                <li><p><code>true</code> if path is absolute, <code>false</code> otherwise, or else an <code>filepath:Error</code>
+occurred if the path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1176,30 +934,39 @@ On Windows, a path is absolute if it has a prefix and starts with the root: c:\w
              <a class="url-link" href="#isReservedName">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> isReservedName </h2>
-        
+            <h2 > isReservedName </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> name)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> 
+            
+                <b> returns </b><span class="builtin-type">boolean</span> 
+            
         </span>
-        
     </div>
-    <p><p>Reports whether the filename is reserved.
-Reserved words only exist in windows.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Reports whether the filename is reserved.
+Reserved words only exist in Windows.</p>
+<pre><code class="language-ballerina">  boolean|filepath:Error path = filepath:isReservedName(&quot;abc.txt&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        name<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >name</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>filename</p>
-</p>
+                        <p>
+                            
+                            <p>Filename</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1212,7 +979,7 @@ Reserved words only exist in windows.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span></span>)</li>
-                <li><p>true, if path is Windows reserved name.</p>
+                <li><p>True if the path is a Windows reserved name or else false otherwise</p>
 </li>
             </ul>
         </div>
@@ -1225,30 +992,39 @@ Reserved words only exist in windows.</p>
              <a class="url-link" href="#matches">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> matches </h2>
-        
+            <h2 > matches </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path, <span class="builtin-type">string</span> pattern)</p>
-            <b> returns </b><span class="builtin-type">boolean</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">boolean</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Reports whether all of filename matches the provided pattern, not just a substring.
+    <div class="function-desc">
+        
+        <p>Reports whether the complete filename (not just a substring of it) matches the provided Glob pattern.
 An error is returned if the pattern is malformed.</p>
-</p>
-     
+<pre><code class="language-ballerina">  boolean|filepath:Error matches = filepath:matches(&quot;a/b/c.java&quot;, &quot;glob:*.{java,class}&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of the file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1256,12 +1032,16 @@ An error is returned if the pattern is malformed.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        pattern<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >pattern</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of the target file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the target file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1274,7 +1054,8 @@ An error is returned if the pattern is malformed.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">boolean</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>True if filename of the path matches with the pattern, else false</p>
+                <li><p><code>true</code> if the filename of the path matches with the pattern, <code>false</code> otherwise,
+or else an <code>filepath:Error</code> if the path or pattern is invalid</p>
 </li>
             </ul>
         </div>
@@ -1287,32 +1068,41 @@ An error is returned if the pattern is malformed.</p>
              <a class="url-link" href="#normalize">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> normalize </h2>
-        
+            <h2 > normalize </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the shortest path name equivalent to path by purely lexical processing.
-Replace multiple Separator elements with a single one.
-Eliminate each . path name element (the current directory).
-Eliminate each inner .. path name element (the parent directory)</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns the shortest path name equivalent to the given path.
+Replace the multiple separator elements with a single one.
+Eliminate each &quot;.&quot; path name element (the current directory).
+Eliminate each inner &quot;..&quot; path name element (the parent directory).</p>
+<pre><code class="language-ballerina">  string|filepath:Error normalizedPath = filepath:normalize(&quot;foo/../bar&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1325,7 +1115,7 @@ Eliminate each inner .. path name element (the parent directory)</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>Normalized file path</p>
+                <li><p>Normalized file path or else a <code>filepath:Error</code> if the path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1338,31 +1128,40 @@ Eliminate each inner .. path name element (the parent directory)</p>
              <a class="url-link" href="#parent">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> parent </h2>
-        
+            <h2 > parent </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the enclosing parent directory.
+    <div class="function-desc">
+        
+        <p>Returns the enclosing parent directory.
 If the path is empty, parent returns &quot;.&quot;.
 The returned path does not end in a separator unless it is the root directory.</p>
-</p>
-     
+<pre><code class="language-ballerina">  string|filepath:Error parentPath = filepath:parent(&quot;/A/B/C.txt&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file/directory path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1375,7 +1174,8 @@ The returned path does not end in a separator unless it is the root directory.</
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>Path of parent folder or error occurred while getting parent directory</p>
+                <li><p>Path of the parent directory or else a <code>filepath:Error</code>
+if an error occurred while getting the parent directory</p>
 </li>
             </ul>
         </div>
@@ -1388,31 +1188,40 @@ The returned path does not end in a separator unless it is the root directory.</
              <a class="url-link" href="#relative">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> relative </h2>
-        
+            <h2 > relative </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> base, <span class="builtin-type">string</span> target)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns a relative path that is logically equivalent to target path when joined to base path with an intervening
-separator.
-An error is returned if target path can't be made relative to base path.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Returns a relative path, which is logically equivalent to the target path when joined to the base path with an
+intervening separator.
+An error is returned if the target path cannot be made relative to the base path.</p>
+<pre><code class="language-ballerina">  string|filepath:Error relativePath = filepath:relative(&quot;a/b/c&quot;, &quot;a/c/d&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        base<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >base</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of the base file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the base file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1420,12 +1229,16 @@ An error is returned if target path can't be made relative to base path.</p>
             <div class="params-listing">
                 <ul>
                     <li>
-                        target<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >target</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of the target file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the target file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1438,7 +1251,8 @@ An error is returned if target path can't be made relative to base path.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>Returns the extension of the file. Empty string if no extension.</p>
+                <li><p>The extension of the file, empty string otherwise, or else an
+<code>filepath:Error</code> occurred if at least one path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1451,32 +1265,41 @@ An error is returned if target path can't be made relative to base path.</p>
              <a class="url-link" href="#resolve">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> resolve </h2>
-        
+            <h2 > resolve </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Returns the filepath after the evaluation of any symbolic links.
-If path is relative, the result will be relative to the current directory,
+    <div class="function-desc">
+        
+        <p>Returns the filepath after the evaluation of any symbolic links.
+If the path is relative, the result will be relative to the current directory
 unless one of the components is an absolute symbolic link.
-Resolve calls normalize on the result.</p>
-</p>
-     
+Resolves normalising the calls on the result.</p>
+<pre><code class="language-ballerina">  string|filepath:Error resolvedPath = filepath:resolve(&quot;a/b/c&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>Security-validated string value of the file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1489,7 +1312,7 @@ Resolve calls normalize on the result.</p>
         <div class="returns-listing">
             <ul>
                 <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>Resolved file path</p>
+                <li><p>Resolved file path or else a <code>filepath:Error</code> if the path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1502,29 +1325,38 @@ Resolve calls normalize on the result.</p>
              <a class="url-link" href="#split">
                 <img class="url-link-img" src="../html-template-resources/images/link.svg">
             </a>
-            <h2> split </h2>
-        
+            <h2 > split </h2>
         <span class="method-types">
             <p>(<span class="builtin-type">string</span> path)</p>
-            <b> returns </b><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
+                <b> returns </b><span class="array-type"><span class="builtin-type">string</span>[]</span> | <a href="../filepath/types.html#Error">Error</a> 
+            
         </span>
-        
     </div>
-    <p><p>Splits a list of paths joined by the OS-specific Path Separator.</p>
-</p>
-     
+    <div class="function-desc">
+        
+        <p>Splits a list of paths joined by the OS-specific path separator.</p>
+<pre><code class="language-ballerina">  string[]|filepath:Error parts = filepath:split(&quot;/A/B/C&quot;);
+</code></pre>
+
+    </div>
+    
         <div class="data-wrapper">
             <h3 class="param-title">Parameters</h3>
                 
             <div class="params-listing">
                 <ul>
                     <li>
-                        path<span class="type">  <span class="builtin-type">string</span> </span>
+                        <span >path</span>
+                        <span class="type">  <span class="builtin-type">string</span> </span>
                         
                     </li>
                     <li>
-                        <p><p>String value of file path.</p>
-</p>
+                        <p>
+                            
+                            <p>String value of the file path</p>
+
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -1536,8 +1368,8 @@ Resolve calls normalize on the result.</p>
         
         <div class="returns-listing">
             <ul>
-                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="builtin-type">string</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
-                <li><p>String array of part components</p>
+                <li> <h3 class="type">Return Type</h3> (<span class="type"><span class="array-type"><span class="builtin-type">string</span>[]</span> | <a href="../filepath/types.html#Error">Error</a></span>)</li>
+                <li><p>String array of the part components or else a <code>filepath:Error</code> if the path is invalid</p>
 </li>
             </ul>
         </div>
@@ -1554,17 +1386,6 @@ Resolve calls normalize on the result.</p>
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -1590,10 +1411,47 @@ contentWrapper.addEventListener("scroll", event => {
 });
 
 </script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
 
 <script>
     window.onload = (event) => {
         ballerinaHighlighter.highlightSnippets();
     };
 </script>
+
 

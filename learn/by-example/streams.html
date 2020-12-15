@@ -1,155 +1,107 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Streams" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Streams</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Streams
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/streams
+redirect_from:
+  - /v1-2/learn/by-example/streams
+  - /v1-2/learn/by-example/streams.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
                 <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">runtime</span><span class="p">;</span><span class="nx">type</span> <span class="nx">Employee</span> <span class="nx">record</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="nx">id</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="nx">name</span><span class="p">;</span>
-<span class="p">};</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">stream</span><span class="p">&lt;</span><span class="nx">Employee</span><span class="p">&gt;</span> <span class="nx">employeeStream</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
-    <span class="nx">employeeStream</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">printEmployeeName</span><span class="p">);</span>
-    <span class="nx">Employee</span> <span class="nx">e1</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s">&quot;Jane&quot;</span> <span class="p">};</span>
-    <span class="nx">Employee</span> <span class="nx">e2</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s">&quot;Anne&quot;</span> <span class="p">};</span>
-    <span class="nx">Employee</span> <span class="nx">e3</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s">&quot;John&quot;</span> <span class="p">};</span>    <span class="nx">employeeStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">e1</span><span class="p">);</span>
-    <span class="nx">employeeStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">e2</span><span class="p">);</span>
-    <span class="nx">employeeStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">e3</span><span class="p">);</span>
-    <span class="nx">runtime</span><span class="p">:</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-    <span class="nx">stream</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;</span> <span class="nx">temperatureStream</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
-    <span class="nx">temperatureStream</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">printTemperature</span><span class="p">);</span>
-    <span class="nx">temperatureStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="mf">28.0</span><span class="p">);</span>
-    <span class="nx">temperatureStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="mf">30.1</span><span class="p">);</span>
-    <span class="nx">temperatureStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="mf">29.5</span><span class="p">);</span>
-    <span class="nx">runtime</span><span class="p">:</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-    <span class="nx">stream</span><span class="p">&lt;</span><span class="nx">anydata</span><span class="p">&gt;</span> <span class="nx">updateStream</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
-    <span class="nx">updateStream</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">printEvent</span><span class="p">);</span>
-    <span class="nx">updateStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s">&quot;Hello Ballerina!&quot;</span><span class="p">);</span>
-    <span class="nx">updateStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
-    <span class="nx">updateStream</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">e1</span><span class="p">);</span>
-    <span class="nx">runtime</span><span class="p">:</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">printEmployeeName</span><span class="p">(</span><span class="nx">Employee</span> <span class="nx">employee</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Employee event received for Employee Name: &quot;</span>
-                    <span class="o">+</span> <span class="nx">employee</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">printTemperature</span><span class="p">(</span><span class="kt">float</span> <span class="nx">temperature</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Temperature event received: &quot;</span> <span class="o">+</span> <span class="nx">temperature</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">printEvent</span><span class="p">(</span><span class="nx">anydata</span> <span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Event received: &quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="nx">type</span> <span class="nx">OddNumberGenerator</span> <span class="nx">object</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    
+    <span class="nx">public</span> <span class="kd">function</span> <span class="nx">next</span><span class="p">()</span> <span class="nx">returns</span> <span class="nx">record</span> <span class="p">{|</span><span class="kt">int</span> <span class="nx">value</span><span class="p">;|}|</span><span class="nx">error</span><span class="err">?</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="nx">value</span><span class="p">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">i</span><span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">};</span><span class="nx">type</span> <span class="nx">ResultValue</span> <span class="nx">record</span> <span class="p">{|</span>
+    <span class="kt">int</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">|};</span><span class="nx">type</span> <span class="nx">Student</span> <span class="nx">record</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">firstName</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="nx">score</span><span class="p">;</span>
+<span class="p">};</span><span class="nx">type</span> <span class="nx">StudentValue</span> <span class="nx">record</span> <span class="p">{|</span>
+    <span class="nx">Student</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">|};</span><span class="nx">type</span> <span class="nx">FullName</span> <span class="nx">record</span> <span class="p">{|</span>
+    <span class="kt">string</span> <span class="nx">firstName</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">lastName</span><span class="p">;</span>
+<span class="p">|};</span><span class="nx">type</span> <span class="nx">Subscription</span> <span class="nx">record</span> <span class="p">{|</span>
+    <span class="kt">string</span> <span class="nx">firstName</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="nx">score</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">degree</span><span class="p">;</span>
+<span class="p">|};</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">OddNumberGenerator</span> <span class="nx">oddGen</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
+    <span class="k">var</span> <span class="nx">oddNumberStream</span> <span class="p">=</span> <span class="nx">new</span> <span class="nx">stream</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="nx">error</span><span class="p">&gt;(</span><span class="nx">oddGen</span><span class="p">);</span>    <span class="nx">record</span> <span class="p">{|</span><span class="kt">int</span> <span class="nx">value</span><span class="p">;|}|</span><span class="nx">error</span><span class="err">?</span> <span class="nx">oddNumber</span> <span class="p">=</span> <span class="nx">oddNumberStream</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">oddNumber</span> <span class="nx">is</span> <span class="nx">ResultValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Retrieved odd number: &quot;</span><span class="p">,</span> <span class="nx">oddNumber</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Filter records and map them to a different type :&quot;</span><span class="p">);</span>    <span class="nx">Student</span> <span class="nx">s1</span> <span class="p">=</span> <span class="p">{</span><span class="nx">firstName</span><span class="p">:</span> <span class="s">&quot;Alex&quot;</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">:</span> <span class="s">&quot;George&quot;</span><span class="p">,</span> <span class="nx">score</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">};</span>
+    <span class="nx">Student</span> <span class="nx">s2</span> <span class="p">=</span> <span class="p">{</span><span class="nx">firstName</span><span class="p">:</span> <span class="s">&quot;Ranjan&quot;</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">:</span> <span class="s">&quot;Fonseka&quot;</span><span class="p">,</span> <span class="nx">score</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">};</span>
+    <span class="nx">Student</span> <span class="nx">s3</span> <span class="p">=</span> <span class="p">{</span><span class="nx">firstName</span><span class="p">:</span> <span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">:</span> <span class="s">&quot;David&quot;</span><span class="p">,</span> <span class="nx">score</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">};</span>    <span class="nx">Student</span><span class="p">[]</span> <span class="nx">studentList</span> <span class="p">=</span> <span class="p">[</span><span class="nx">s1</span><span class="p">,</span> <span class="nx">s2</span><span class="p">,</span> <span class="nx">s3</span><span class="p">];</span>
+    <span class="nx">stream</span><span class="p">&lt;</span><span class="nx">Student</span><span class="p">&gt;</span> <span class="nx">studentStream</span> <span class="p">=</span> <span class="nx">studentList</span><span class="p">.</span><span class="nx">toStream</span><span class="p">();</span>
+    <span class="nx">stream</span><span class="p">&lt;</span><span class="nx">Subscription</span><span class="p">&gt;</span> <span class="nx">subscriptionStream</span> <span class="p">=</span> <span class="nx">studentStream</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">Student</span> <span class="nx">student</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">student</span><span class="p">.</span><span class="nx">score</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}).</span><span class="err">&#39;</span><span class="kt">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">Student</span> <span class="nx">student</span><span class="p">)</span> <span class="nx">returns</span> <span class="nx">Subscription</span> <span class="p">{</span>
+        <span class="nx">Subscription</span> <span class="nx">subscription</span> <span class="p">=</span> <span class="p">{</span>
+            <span class="nx">firstName</span><span class="p">:</span> <span class="nx">student</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+            <span class="nx">lastName</span><span class="p">:</span> <span class="nx">student</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+            <span class="nx">score</span><span class="p">:</span> <span class="nx">student</span><span class="p">.</span><span class="nx">score</span><span class="p">,</span>
+            <span class="nx">degree</span><span class="p">:</span> <span class="s">&quot;Bachelor of Medicine&quot;</span>
+        <span class="p">};</span>
+        <span class="k">return</span> <span class="nx">subscription</span><span class="p">;</span>
+    <span class="p">});</span>    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Calculate the average score of the subscribed students: &quot;</span><span class="p">);</span>
+    <span class="kt">float</span><span class="err">?</span> <span class="nx">avg</span> <span class="p">=</span> <span class="nx">subscriptionStream</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="kt">float</span> <span class="nx">accum</span><span class="p">,</span> <span class="nx">Student</span> <span class="nx">student</span><span class="p">)</span> <span class="nx">returns</span> <span class="kt">float</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">accum</span> <span class="o">+</span> <span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;</span><span class="nx">student</span><span class="p">.</span><span class="nx">score</span> <span class="o">/</span> <span class="nx">studentList</span><span class="p">.</span><span class="nx">length</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mf">0.0</span><span class="p">);</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">avg</span> <span class="nx">is</span> <span class="kt">float</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Average: &quot;</span><span class="p">,</span> <span class="nx">avg</span><span class="p">);</span>
+    <span class="p">}</span>
+       <span class="nx">stream</span><span class="p">&lt;</span><span class="nx">Student</span><span class="p">&gt;</span> <span class="nx">studentStream2</span> <span class="p">=</span> <span class="nx">studentList</span><span class="p">.</span><span class="nx">toStream</span><span class="p">();</span>    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Calls next method manually and get the next iteration value: &quot;</span><span class="p">);</span>
+    <span class="nx">record</span> <span class="p">{|</span><span class="nx">Student</span> <span class="nx">value</span><span class="p">;|}|</span><span class="nx">error</span><span class="err">?</span> <span class="nx">student</span> <span class="p">=</span> <span class="nx">studentStream2</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">student</span> <span class="nx">is</span> <span class="nx">StudentValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Use foreach method to loop through the rest of the stream: &quot;</span><span class="p">);</span>
+    <span class="nx">error</span><span class="err">?</span> <span class="nx">e</span> <span class="p">=</span> <span class="nx">studentStream2</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">Student</span> <span class="nx">student</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Student &quot;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span> <span class="s">&quot; has a score of &quot;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">score</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;ForEach operation on the stream failed: &quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span>    <span class="nx">stream</span><span class="p">&lt;</span><span class="nx">Student</span><span class="p">&gt;</span> <span class="nx">studentStream3</span> <span class="p">=</span> <span class="nx">studentList</span><span class="p">.</span><span class="nx">toStream</span><span class="p">();</span>
+    <span class="k">var</span> <span class="nx">iterator</span> <span class="p">=</span> <span class="nx">studentStream3</span><span class="p">.</span><span class="nx">iterator</span><span class="p">();</span>
+    <span class="nx">record</span> <span class="p">{|</span><span class="nx">Student</span> <span class="nx">value</span><span class="p">;|}|</span><span class="nx">error</span><span class="err">?</span> <span class="nx">nextStudent</span> <span class="p">=</span> <span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextStudent</span> <span class="nx">is</span> <span class="nx">StudentValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">nextStudent</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">run</span> <span class="nx">this</span> <span class="nx">sample</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">streams</span><span class="p">.</span><span class="nx">balRetrieved</span> <span class="nx">odd</span> <span class="nx">number</span><span class="p">:</span> <span class="mi">3</span>
+<span class="nx">Filter</span> <span class="nx">records</span> <span class="nx">and</span> <span class="kt">map</span> <span class="nx">them</span> <span class="nx">to</span> <span class="nx">a</span> <span class="nx">different</span> <span class="nx">type</span> <span class="p">:</span>
+<span class="nx">Calculate</span> <span class="nx">the</span> <span class="nx">average</span> <span class="nx">score</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">subscribed</span> <span class="nx">students</span><span class="p">:</span> 
+<span class="nx">Average</span><span class="p">:</span> <span class="mf">0.8999999999999999</span>
+<span class="nx">Calls</span> <span class="nx">next</span> <span class="nx">method</span> <span class="nx">manually</span> <span class="nx">and</span> <span class="nx">get</span> <span class="nx">the</span> <span class="nx">next</span> <span class="nx">iteration</span> <span class="nx">value</span><span class="p">:</span> 
+<span class="nx">firstName</span><span class="p">=</span><span class="nx">Alex</span> <span class="nx">lastName</span><span class="p">=</span><span class="nx">George</span> <span class="nx">score</span><span class="p">=</span><span class="mf">1.5</span>
+<span class="nx">Use</span> <span class="nx">foreach</span> <span class="nx">method</span> <span class="nx">to</span> <span class="nx">loop</span> <span class="nx">through</span> <span class="nx">the</span> <span class="nx">rest</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">stream</span><span class="p">:</span> 
+<span class="nx">Student</span> <span class="nx">Ranjan</span> <span class="nx">has</span> <span class="nx">a</span> <span class="nx">score</span> <span class="nx">of</span> <span class="mf">0.9</span>
+<span class="nx">Student</span> <span class="nx">John</span> <span class="nx">has</span> <span class="nx">a</span> <span class="nx">score</span> <span class="nx">of</span> <span class="mf">1.2</span>
+<span class="nx">firstName</span><span class="p">=</span><span class="nx">Alex</span> <span class="nx">lastName</span><span class="p">=</span><span class="nx">George</span> <span class="nx">score</span><span class="p">=</span><span class="mf">1.5</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
                             <h2>Streams</h2>
-                            <p><p>The <code>stream</code> type represents a stream of values, where the constraint type of the stream defines the type of values
- accepted by the stream. Functions allowed on a stream include publishing values to the stream and/or subscribing
- to the stream to receive values that are published to the stream.
- Ballerina Streams is an experimental feature, and requires setting the <code>--experimental</code> option when compiling
- Ballerina files which have streaming constructs.</p>
+                            <p><p>The <code>stream</code> type represents a sequence that may be constructed lazily
+ and is used to iterate over the sequence of values of type T with error type E.
+ <code>stream&lt;T&gt;</code> is short for <code>stream&lt;T, never&gt;</code>.
+ A stream can be iterated over at most once.
+ A stream has a <code>next()</code> method; a stream&rsquo;s iterator works by calling this method.
+ The stream type provides methods similar to lists such as <code>map</code>, <code>foreach</code>, <code>filter</code>, <code>reduce</code>, and <code>iterator</code>.
+ The stream type does not provide a length method. This is a preview feature.</p>
 </p>
 
                         </td>
@@ -157,16 +109,16 @@
                             <div class="cTopButtonContainer">
                                 
                                 <div class="cButtonInfoContainer">
-                                    <a class="prev" href="locks.html">
+                                    <a class="prev" href="type-conversion.html">
                                         <span>< PREVIOUS</span>
-                                        <p>Lock</p>
+                                        <p>Type Conversion</p>
                                     </a>
                                 </div>
                                  
                                 <div class="cButtonInfoContainer">
-                                    <a class="next" href="simple-filtering.html">
+                                    <a class="next" href="json.html">
                                         <span>NEXT ></span>
-                                        <p>Simple Filtering</p>
+                                        <p>JSON</p>
                                     </a>
                                 </div>
                                 
@@ -180,25 +132,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Streams</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/streams/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/streams/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=43acccf240034eca71029a63b3dbad28&file=streams.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -253,6 +199,22 @@
                         
                             
                         
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
 
                     <div>
 
@@ -261,8 +223,48 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/io;
-import ballerina/runtime;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/io;
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>type OddNumberGenerator object {
+    int i = 1;
+    
+    public function next() returns record {|int value;|}|error? {
+        self.i += 2;
+        return {value: self.i};
+    }
+};
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Defines an object called <code>OddNumberGenerator</code>. Each object has its own next() method,
+which gets invoked when the stream&rsquo;s <code>next()</code> function gets called.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>type ResultValue record {|
+    int value;
+|};
 </code></pre></div>
 
                                 </td>
@@ -274,9 +276,10 @@ import ballerina/runtime;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>type Employee record {
-    int id;
-    string name;
+                                    <div class="highlight"><pre><code class=language-ballerina>type Student record {
+    string firstName;
+    string lastName;
+    float score;
 };
 </code></pre></div>
 
@@ -289,7 +292,54 @@ import ballerina/runtime;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>type StudentValue record {|
+    Student value;
+|};
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>type FullName record {|
+    string firstName;
+    string lastName;
+|};
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>type Subscription record {|
+    string firstName;
+    string lastName;
+    float score;
+    string degree;
+|};
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
+    OddNumberGenerator oddGen = new;
 </code></pre></div>
 
                                 </td>
@@ -301,7 +351,7 @@ import ballerina/runtime;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    stream&lt;Employee&gt; employeeStream = new;
+                                    <div class="highlight"><pre><code class=language-ballerina>    var oddNumberStream = new stream&lt;int, error&gt;(oddGen);
 </code></pre></div>
 
                                 </td>
@@ -309,47 +359,7 @@ import ballerina/runtime;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Define a <code>stream</code> constrained by the <code>Employee</code> type.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    employeeStream.subscribe(printEmployeeName);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Subscribe to the <code>employeeStream</code> using a function that accepts <code>Employee</code> values.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    Employee e1 = { id: 1, name: &quot;Jane&quot; };
-    Employee e2 = { id: 2, name: &quot;Anne&quot; };
-    Employee e3 = { id: 3, name: &quot;John&quot; };
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Publish <code>Employee</code> values to the <code>stream</code>.</p>
+                                            <p>Creating a stream passing an OddNumberGenerator object to the stream constructor</p>
 
                                         </div>
                                     </div>
@@ -360,9 +370,59 @@ import ballerina/runtime;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    employeeStream.publish(e1);
-    employeeStream.publish(e2);
-    employeeStream.publish(e3);
+                                    <div class="highlight"><pre><code class=language-ballerina>    record {|int value;|}|error? oddNumber = oddNumberStream.next();
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (oddNumber is ResultValue) {
+        io:println(&quot;Retrieved odd number: &quot;, oddNumber.value);
+    }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(&quot;Filter records and map them to a different type :&quot;);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    Student s1 = {firstName: &quot;Alex&quot;, lastName: &quot;George&quot;, score: 1.5};
+    Student s2 = {firstName: &quot;Ranjan&quot;, lastName: &quot;Fonseka&quot;, score: 0.9};
+    Student s3 = {firstName: &quot;John&quot;, lastName: &quot;David&quot;, score: 1.2};
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    Student[] studentList = [s1, s2, s3];
 </code></pre></div>
 
                                 </td>
@@ -374,7 +434,7 @@ import ballerina/runtime;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    runtime:sleep(1000);
+                                    <div class="highlight"><pre><code class=language-ballerina>    stream&lt;Student&gt; studentStream = studentList.toStream();
 </code></pre></div>
 
                                 </td>
@@ -382,7 +442,7 @@ import ballerina/runtime;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Allow for receipt by subscribers. The <code>printEmployeeName()</code> function should be invoked for each published value.</p>
+                                            <p>Iterable types can be converted to a stream.</p>
 
                                         </div>
                                     </div>
@@ -393,7 +453,17 @@ import ballerina/runtime;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    stream&lt;float&gt; temperatureStream = new;
+                                    <div class="highlight"><pre><code class=language-ballerina>    stream&lt;Subscription&gt; subscriptionStream = studentStream.filter(function (Student student) returns boolean {
+        return student.score &gt; 1;
+    }).&#39;map(function (Student student) returns Subscription {
+        Subscription subscription = {
+            firstName: student.firstName,
+            lastName: student.lastName,
+            score: student.score,
+            degree: &quot;Bachelor of Medicine&quot;
+        };
+        return subscription;
+    });
 </code></pre></div>
 
                                 </td>
@@ -401,7 +471,141 @@ import ballerina/runtime;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Define a stream constrained by the <code>float</code> type.</p>
+                                            <p>The <code>filter</code> and <code>map</code> functions return streams and work lazily.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(&quot;Calculate the average score of the subscribed students: &quot;);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    float? avg = subscriptionStream.reduce(function (float accum, Student student) returns float {
+        return accum + &lt;float&gt;student.score / studentList.length();
+    }, 0.0);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>The <code>reduce</code> function reduces the stream to a single value.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (avg is float) {
+        io:println(&quot;Average: &quot;, avg);
+    }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>       stream&lt;Student&gt; studentStream2 = studentList.toStream();
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>A stream can be iterated at most for once. Hence, another stream gets created from the record list.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(&quot;Calls next method manually and get the next iteration value: &quot;);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    record {|Student value;|}|error? student = studentStream2.next();
+    if (student is StudentValue) {
+        io:println(student.value);
+    }
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>Calls the <code>next()</code> operation to retrieve the data from the stream.</p>
+
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    io:println(&quot;Use foreach method to loop through the rest of the stream: &quot;);
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR hover-enable">
+
+                                <td class="code leading">
+                                    <div class="highlight"><pre><code class=language-ballerina>    error? e = studentStream2.forEach(function (Student student) {
+        io:println(&quot;Student &quot;, student.firstName, &quot; has a score of &quot;, student.score);
+    });
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                    <div class="cCodeDesription">
+                                        <div>
+                                            <p>If there is any error during the iteration of the
+ studentList2 stream, the result stream will terminate and return the error.</p>
 
                                         </div>
                                     </div>
@@ -412,7 +616,9 @@ import ballerina/runtime;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    temperatureStream.subscribe(printTemperature);
+                                    <div class="highlight"><pre><code class=language-ballerina>    if (e is error) {
+        io:println(&quot;ForEach operation on the stream failed: &quot;, e);
+    }
 </code></pre></div>
 
                                 </td>
@@ -420,7 +626,7 @@ import ballerina/runtime;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Subscribe to the <code>temperatureStream</code> using a function that accepts <code>float</code> values.</p>
+                                            <p>Check and handle the error during the iteration of the stream.</p>
 
                                         </div>
                                     </div>
@@ -428,166 +634,15 @@ import ballerina/runtime;
                                 </td>
                             </tr>
                             
-                            <tr class="cTR hover-enable">
+                            <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    temperatureStream.publish(28.0);
-    temperatureStream.publish(30.1);
-    temperatureStream.publish(29.5);
+                                    <div class="highlight"><pre><code class=language-ballerina>    stream&lt;Student&gt; studentStream3 = studentList.toStream();
+    var iterator = studentStream3.iterator();
 </code></pre></div>
 
                                 </td>
                                 <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Publish <code>float</code> values to the stream, indicating temperature.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    runtime:sleep(1000);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Wait for the subscriber to receive the values. The <code>printTemperature()</code> function should be invoked for each
- published value.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    stream&lt;anydata&gt; updateStream = new;
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Define a <code>stream</code> that accepts values of the <code>anydata</code> type.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    updateStream.subscribe(printEvent);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Subscribe to the <code>stream</code> using a function that accepts values of the <code>anydata</code> type.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    updateStream.publish(&quot;Hello Ballerina!&quot;);
-    updateStream.publish(1.0);
-    updateStream.publish(e1);
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Publish values to the <code>stream</code>.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    runtime:sleep(1000);
-}
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>Wait for the subscriber to receive the values. The <code>printEvent()</code> function should be invoked for each published
- value.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>function printEmployeeName(Employee employee) {
-    io:println(&quot;Employee event received for Employee Name: &quot;
-                    + employee.name);
-}
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>This function accepts <code>Employee</code> values and is used to subscribe to a stream.</p>
-
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            
-                            <tr class="cTR hover-enable">
-
-                                <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>function printTemperature(float temperature) {
-    io:println(&quot;Temperature event received: &quot; + temperature);
-}
-</code></pre></div>
-
-                                </td>
-                                <td class="docs">
-                                    
-                                    <div class="cCodeDesription">
-                                        <div>
-                                            <p>This function accepts <code>float</code> values and is used to subscribe to a stream.</p>
-
-                                        </div>
-                                    </div>
                                     
                                 </td>
                             </tr>
@@ -595,8 +650,10 @@ import ballerina/runtime;
                             <tr class="cTR hover-enable">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>function printEvent(anydata event) {
-    io:println(&quot;Event received: &quot;, event);
+                                    <div class="highlight"><pre><code class=language-ballerina>    record {|Student value;|}|error? nextStudent = iterator.next();
+    if (nextStudent is StudentValue) {
+        io:println(nextStudent.value);
+    }
 }
 </code></pre></div>
 
@@ -605,7 +662,7 @@ import ballerina/runtime;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>This function accepts values of <code>anydata</code> type and is used to subscribe to a stream.</p>
+                                            <p>Calls the <code>next()</code> operation on the iterator to retrieve the next data from the stream.</p>
 
                                         </div>
                                     </div>
@@ -621,6 +678,10 @@ import ballerina/runtime;
                                 
                             
                         
+                            
+                                
+                            
+                        
 
                     <div>
 
@@ -628,19 +689,31 @@ import ballerina/runtime;
                             
                             <tr class="cTR cOutputTr">
 
-                                <td class="code cOutput">
+                                <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and execute the `ballerina run` command.
-$ ballerina run --experimental streams.bal
-Employee event received for Employee Name: Jane
-Employee event received for Employee Name: Anne
-Employee event received for Employee Name: John
-Temperature event received: 28.0
-Temperature event received: 30.1
-Temperature event received: 29.5
-Event received: Hello Ballerina!
-Event received: 1.0
-Event received: {id:1, name:&quot;Jane&quot;}
+# `.bal` file and execute the `ballerina run` command below.
+ballerina run streams.bal
+</code></pre></div>
+
+                                </td>
+                                <td class="docs">
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr class="cTR cOutputTr">
+
+                                <td class="code cOutput">
+                                    <div class="highlight"><pre><code class=shell-session>Retrieved odd number: 3
+Filter records and map them to a different type :
+Calculate the average score of the subscribed students: 
+Average: 0.8999999999999999
+Calls next method manually and get the next iteration value: 
+firstName=Alex lastName=George score=1.5
+Use foreach method to loop through the rest of the stream: 
+Student Ranjan has a score of 0.9
+Student John has a score of 1.2
+firstName=Alex lastName=George score=1.5
 </code></pre></div>
 
                                 </td>
@@ -665,56 +738,49 @@ Event received: {id:1, name:&quot;Jane&quot;}
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

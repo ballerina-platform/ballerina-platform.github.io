@@ -83,6 +83,10 @@
     color: #20b6b0 !important;
 }
 
+.wy-breadcrumbs li a:hover , .cBlallerina-io-docs-content-container a:hover {
+    color: #464646 !important;
+}
+
 nav.stickynav,
 .affix {
     position: static;
@@ -176,34 +180,8 @@ li.current a.current {
     display: none;
 }
 
-pre {
-    border: none;
-    border-radius: 0;
-}
 
-.section pre {
-    padding: 0;
-    margin: 20px 0;
-}
 
-pre code {
-    border: none;
-    border-radius: 0;
-    font-size: 12px;
-}
-
-pre code.ballerina {
-    font-size: 14px;
-}
-
-pre code.cBasicCode.hljs:not(.language-ballerina),
-pre code.cBasicCode.hljs:not(.language-ballerina) span,
-code.cBasicCode:not(.language-ballerina) {
-    color: #57595d !important;
-    border: none;
-    border-radius: 0;
-    font-size: 14px;
-}
 
 .cSideBar-Button {
     display: none;
@@ -233,7 +211,7 @@ article ol li,
 .rst-content .toctree-wrapper ul li,
 .wy-plain-list-disc li,
 article ul li {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     font-weight: 300;
     color: #57595d;
@@ -249,7 +227,7 @@ li.cTableTitle {
 }
 
 th {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     font-weight: 400;
 }
@@ -259,7 +237,7 @@ th {
 }
 
 .modal-content {
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 0;
 }
 

@@ -1,129 +1,58 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: File Path" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: File Path</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: File Path
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/filepath
+redirect_from:
+  - /v1-2/learn/by-example/filepath
+  - /v1-2/learn/by-example/filepath.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
                 <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">filepath</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">io</span><span class="p">;</span><span class="nx">public</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="nx">absValue</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">absolute</span><span class="p">(</span><span class="nx">untaint</span> <span class="s">&quot;test.txt&quot;</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="nx">absValue</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">absolute</span><span class="p">(</span><span class="s">&quot;test.txt&quot;</span><span class="p">);</span>
     <span class="kt">boolean</span> <span class="nx">isAbs</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">isAbsolute</span><span class="p">(</span><span class="s">&quot;/A/B/C&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;/A/B/C is absolute: &quot;</span> <span class="o">+</span> <span class="nx">isAbs</span><span class="p">);</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;/A/B/C is absolute: &quot;</span><span class="p">,</span> <span class="nx">isAbs</span><span class="p">);</span>
     <span class="kt">string</span> <span class="nx">name</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">filename</span><span class="p">(</span><span class="s">&quot;/A/B/C&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Filename of /A/B/C: &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span> <span class="c1">// returns C</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Filename of /A/B/C: &quot;</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span> <span class="c1">// returns C</span>
     <span class="kt">string</span> <span class="nx">parentPath</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">parent</span><span class="p">(</span><span class="s">&quot;/A/B/C&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Parent of /A/B/C: &quot;</span> <span class="o">+</span> <span class="nx">parentPath</span><span class="p">);</span> <span class="c1">// returns B</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Parent of /A/B/C: &quot;</span><span class="p">,</span> <span class="nx">parentPath</span><span class="p">);</span> <span class="c1">// returns B</span>
     <span class="kt">string</span> <span class="nx">normalizedPath</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">normalize</span><span class="p">(</span><span class="s">&quot;foo/../bar&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Normalized path of foo/../bar: &quot;</span> <span class="o">+</span> <span class="nx">normalizedPath</span><span class="p">);</span> <span class="c1">// returns bar</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Normalized path of foo/../bar: &quot;</span><span class="p">,</span> <span class="nx">normalizedPath</span><span class="p">);</span> <span class="c1">// returns bar</span>
     <span class="kt">string</span><span class="p">[]</span> <span class="nx">parts</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">split</span><span class="p">(</span><span class="s">&quot;/A/B/C&quot;</span><span class="p">);</span>
     <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="nx">io</span><span class="p">:</span><span class="nx">sprintf</span><span class="p">(</span><span class="s">&quot;Path elements of /A/B/C: %s&quot;</span><span class="p">,</span> <span class="nx">parts</span><span class="p">));</span> <span class="c1">// returns {&quot;A&quot;, &quot;B&quot;, &quot;C&quot;}</span>
     <span class="kt">string</span> <span class="nx">path</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">build</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: &quot;</span> <span class="o">+</span> <span class="nx">path</span><span class="p">);</span> <span class="c1">// On Unix : returns /foo/bar</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: &quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span> <span class="c1">// On Unix : returns /foo/bar</span>
     <span class="kt">string</span> <span class="nx">ext</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">extension</span><span class="p">(</span><span class="s">&quot;path.bal&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Extension of path.bal: &quot;</span> <span class="o">+</span> <span class="nx">ext</span><span class="p">);</span> <span class="c1">// returns bal</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Extension of path.bal: &quot;</span><span class="p">,</span> <span class="nx">ext</span><span class="p">);</span> <span class="c1">// returns bal</span>
     <span class="kt">string</span> <span class="nx">relPath</span> <span class="p">=</span> <span class="nx">checkpanic</span> <span class="nx">filepath</span><span class="p">:</span><span class="nx">relative</span><span class="p">(</span><span class="s">&quot;a/b/c&quot;</span><span class="p">,</span> <span class="s">&quot;a/c/d&quot;</span><span class="p">);</span>
-    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: &quot;</span> <span class="o">+</span> <span class="nx">relPath</span><span class="p">);</span> <span class="c1">// On Unix : returns ../../c/d}</span>
+    <span class="nx">io</span><span class="p">:</span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: &quot;</span><span class="p">,</span> <span class="nx">relPath</span><span class="p">);</span> <span class="c1">// On Unix : returns ../../c/d}# To run this sample, navigate to the directory that contains the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span> <span class="nx">and</span> <span class="nx">issue</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span> <span class="nx">below</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">filepath</span><span class="p">.</span><span class="nx">bal</span>
+<span class="nx">On</span> <span class="nx">Unix</span><span class="p">:</span>
+<span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span> <span class="nx">is</span> <span class="nx">absolute</span><span class="p">:</span> <span class="kc">true</span>
+<span class="nx">Filename</span> <span class="nx">of</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span><span class="p">:</span> <span class="nx">C</span>
+<span class="nx">Parent</span> <span class="nx">of</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span><span class="p">:</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span>
+<span class="nx">Normalized</span> <span class="nx">path</span> <span class="nx">of</span> <span class="nx">foo</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">bar</span><span class="p">:</span> <span class="nx">bar</span>
+<span class="nx">Path</span> <span class="nx">elements</span> <span class="nx">of</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span><span class="p">:</span> <span class="nx">A</span> <span class="nx">B</span> <span class="nx">C</span>
+<span class="nx">Built</span> <span class="nx">path</span> <span class="nx">of</span> <span class="sc">&#39;/&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nx">foo</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nx">bar</span><span class="err">&#39;</span><span class="p">:</span> <span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">bar</span>
+<span class="nx">Extension</span> <span class="nx">of</span> <span class="nx">path</span><span class="p">.</span><span class="nx">bal</span><span class="p">:</span> <span class="nx">bal</span>
+<span class="nx">Relative</span> <span class="nx">path</span> <span class="nx">between</span> <span class="err">&#39;</span><span class="nx">a</span><span class="o">/</span><span class="nx">b</span><span class="o">/</span><span class="nx">c</span><span class="err">&#39;</span> <span class="nx">and</span> <span class="err">&#39;</span><span class="nx">a</span><span class="o">/</span><span class="nx">c</span><span class="o">/</span><span class="nx">d</span><span class="err">&#39;</span><span class="p">:</span> <span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">c</span><span class="o">/</span><span class="nx">dOn</span> <span class="nx">Windows</span><span class="p">:</span>
+<span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span> <span class="nx">is</span> <span class="nx">absolute</span><span class="p">:</span> <span class="kc">false</span>
+<span class="nx">Filename</span> <span class="nx">of</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span><span class="p">:</span> <span class="nx">C</span>
+<span class="nx">Parent</span> <span class="nx">of</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span><span class="p">:</span> <span class="err">\</span><span class="nx">A</span><span class="err">\</span><span class="nx">B</span>
+<span class="nx">Normalized</span> <span class="nx">path</span> <span class="nx">of</span> <span class="nx">foo</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">bar</span><span class="p">:</span> <span class="nx">bar</span>
+<span class="nx">Path</span> <span class="nx">elements</span> <span class="nx">of</span> <span class="o">/</span><span class="nx">A</span><span class="o">/</span><span class="nx">B</span><span class="o">/</span><span class="nx">C</span><span class="p">:</span> <span class="nx">A</span> <span class="nx">B</span> <span class="nx">C</span>
+<span class="nx">Built</span> <span class="nx">path</span> <span class="nx">of</span> <span class="sc">&#39;/&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nx">foo</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="nx">bar</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">\</span><span class="nx">foo</span><span class="err">\</span><span class="nx">bar</span>
+<span class="nx">Extension</span> <span class="nx">of</span> <span class="nx">path</span><span class="p">.</span><span class="nx">bal</span><span class="p">:</span> <span class="nx">bal</span>
+<span class="nx">Relative</span> <span class="nx">path</span> <span class="nx">between</span> <span class="err">&#39;</span><span class="nx">a</span><span class="o">/</span><span class="nx">b</span><span class="o">/</span><span class="nx">c</span><span class="err">&#39;</span> <span class="nx">and</span> <span class="err">&#39;</span><span class="nx">a</span><span class="o">/</span><span class="nx">c</span><span class="o">/</span><span class="nx">d</span><span class="err">&#39;</span><span class="p">:</span> <span class="p">..</span><span class="err">\</span><span class="p">..</span><span class="err">\</span><span class="nx">c</span><span class="err">\</span><span class="nx">d</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
@@ -144,9 +73,9 @@
                                 </div>
                                  
                                 <div class="cButtonInfoContainer">
-                                    <a class="next" href="task-scheduler-appointment.html">
+                                    <a class="next" href="file.html">
                                         <span>NEXT ></span>
-                                        <p>Task Scheduler Appointment</p>
+                                        <p>File</p>
                                     </a>
                                 </div>
                                 
@@ -160,25 +89,19 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>File Path</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/filepath/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/filepath/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
+                                        <li>
+                                            <a target="_blank" href="https://play.ballerina.io/?gist=32e344398e85732abd1f1e0b0c388a55&file=filepath.bal"><img src="/img/main-play-green-btn.svg" /></a>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -227,7 +150,7 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/filepath;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/filepath;
 import ballerina/io;
 </code></pre></div>
 
@@ -240,7 +163,7 @@ import ballerina/io;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>public function main() {
+                                    <div class="highlight"><pre><code class=language-ballerina>public function main() {
 </code></pre></div>
 
                                 </td>
@@ -252,7 +175,7 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string absValue = checkpanic filepath:absolute(untaint &quot;test.txt&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string absValue = checkpanic filepath:absolute(&quot;test.txt&quot;);
 </code></pre></div>
 
                                 </td>
@@ -271,8 +194,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    boolean isAbs = checkpanic filepath:isAbsolute(&quot;/A/B/C&quot;);
-    io:println(&quot;/A/B/C is absolute: &quot; + isAbs);
+                                    <div class="highlight"><pre><code class=language-ballerina>    boolean isAbs = checkpanic filepath:isAbsolute(&quot;/A/B/C&quot;);
+    io:println(&quot;/A/B/C is absolute: &quot;, isAbs);
 </code></pre></div>
 
                                 </td>
@@ -291,8 +214,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string name = checkpanic filepath:filename(&quot;/A/B/C&quot;);
-    io:println(&quot;Filename of /A/B/C: &quot; + name); // returns C
+                                    <div class="highlight"><pre><code class=language-ballerina>    string name = checkpanic filepath:filename(&quot;/A/B/C&quot;);
+    io:println(&quot;Filename of /A/B/C: &quot;, name); // returns C
 </code></pre></div>
 
                                 </td>
@@ -311,8 +234,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string parentPath = checkpanic filepath:parent(&quot;/A/B/C&quot;);
-    io:println(&quot;Parent of /A/B/C: &quot; + parentPath); // returns B
+                                    <div class="highlight"><pre><code class=language-ballerina>    string parentPath = checkpanic filepath:parent(&quot;/A/B/C&quot;);
+    io:println(&quot;Parent of /A/B/C: &quot;, parentPath); // returns B
 </code></pre></div>
 
                                 </td>
@@ -331,8 +254,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string normalizedPath = checkpanic filepath:normalize(&quot;foo/../bar&quot;);
-    io:println(&quot;Normalized path of foo/../bar: &quot; + normalizedPath); // returns bar
+                                    <div class="highlight"><pre><code class=language-ballerina>    string normalizedPath = checkpanic filepath:normalize(&quot;foo/../bar&quot;);
+    io:println(&quot;Normalized path of foo/../bar: &quot;, normalizedPath); // returns bar
 </code></pre></div>
 
                                 </td>
@@ -351,7 +274,7 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string[] parts = checkpanic filepath:split(&quot;/A/B/C&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>    string[] parts = checkpanic filepath:split(&quot;/A/B/C&quot;);
     io:println(io:sprintf(&quot;Path elements of /A/B/C: %s&quot;, parts)); // returns {&quot;A&quot;, &quot;B&quot;, &quot;C&quot;}
 </code></pre></div>
 
@@ -371,8 +294,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string path = checkpanic filepath:build(&quot;/&quot;, &quot;foo&quot;, &quot;bar&quot;);
-    io:println(&quot;Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: &quot; + path); // On Unix : returns /foo/bar
+                                    <div class="highlight"><pre><code class=language-ballerina>    string path = checkpanic filepath:build(&quot;/&quot;, &quot;foo&quot;, &quot;bar&quot;);
+    io:println(&quot;Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: &quot;, path); // On Unix : returns /foo/bar
 </code></pre></div>
 
                                 </td>
@@ -380,7 +303,7 @@ import ballerina/io;
                                     
                                     <div class="cCodeDesription">
                                         <div>
-                                            <p>Join any number of path elements into a single path</p>
+                                            <p>Join any number of path elements into a single path.</p>
 
                                         </div>
                                     </div>
@@ -391,8 +314,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string ext = checkpanic filepath:extension(&quot;path.bal&quot;);
-    io:println(&quot;Extension of path.bal: &quot; + ext); // returns bal
+                                    <div class="highlight"><pre><code class=language-ballerina>    string ext = checkpanic filepath:extension(&quot;path.bal&quot;);
+    io:println(&quot;Extension of path.bal: &quot;, ext); // returns bal
 </code></pre></div>
 
                                 </td>
@@ -411,8 +334,8 @@ import ballerina/io;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    string relPath = checkpanic filepath:relative(&quot;a/b/c&quot;, &quot;a/c/d&quot;);
-    io:println(&quot;Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: &quot; + relPath); // On Unix : returns ../../c/d
+                                    <div class="highlight"><pre><code class=language-ballerina>    string relPath = checkpanic filepath:relative(&quot;a/b/c&quot;, &quot;a/c/d&quot;);
+    io:println(&quot;Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: &quot;, relPath); // On Unix : returns ../../c/d
 </code></pre></div>
 
                                 </td>
@@ -431,7 +354,7 @@ import ballerina/io;
                             <tr class="cTR">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>}
+                                    <div class="highlight"><pre><code class=language-ballerina>}
 </code></pre></div>
 
                                 </td>
@@ -461,14 +384,14 @@ import ballerina/io;
 
                                 <td class="code leading cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To run this sample, navigate to the directory that contains the
-# `.bal` file and issue the `ballerina run` command.
-$ ballerina run filepath.bal
+# `.bal` file and issue the `ballerina run` command below.
+ballerina run filepath.bal
 On Unix:
 /A/B/C is absolute: true
 Filename of /A/B/C: C
 Parent of /A/B/C: /A/B
 Normalized path of foo/../bar: bar
-Path elements of /A/B/C: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+Path elements of /A/B/C: A B C
 Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: /foo/bar
 Extension of path.bal: bal
 Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: ../../c/d
@@ -486,12 +409,12 @@ Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: ../../c/d
                                     <div class="highlight"><pre><code class=shell-session>On Windows:
 /A/B/C is absolute: false
 Filename of /A/B/C: C
-Parent of /A/B/C: \\A\\B
+Parent of /A/B/C: \A\B
 Normalized path of foo/../bar: bar
-Path elements of /A/B/C: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
-Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: \\foo\\bar
+Path elements of /A/B/C: A B C
+Built path of &#39;/&#39;, &#39;foo&#39;, &#39;bar&#39;: \foo\bar
 Extension of path.bal: bal
-Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: ..\\..\\c\\d
+Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: ..\..\c\d
 </code></pre></div>
 
                                 </td>
@@ -516,56 +439,49 @@ Relative path between &#39;a/b/c&#39; and &#39;a/c/d&#39;: ..\\..\\c\\d
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

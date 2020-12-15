@@ -1,106 +1,26 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta property="og:url" content="https://ballerina.io" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Ballerina - Cloud Native Programming Language - Ballerina by Example: Header-Based Routing" />
-    <meta property="og:description" content="Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below. " />
-    <meta property="og:image" content="/img/ballerina-sm.jpg" />
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Ballerina by Example: Header-Based Routing</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92163714-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92163714-2');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PSL2TX4');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for https://ballerinalang.org/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 442732,
-                hjsv: 5
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!--copy to clipboard lib-->
-    <script src="/js/clipboard.js-2.0.0/clipboard.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        var base_url = "";
-    </script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/son4ymv.css">
-
-    <script type="text/javascript" src="/js/highlight.pack.js"></script>
-
-    <script src="/js/ballerina-common.js"></script>
-    <link rel=stylesheet href="/css/ballerina-io.css">
-    <link rel=stylesheet href="/css/ballerina-io-bbe.css">
-    <script src="/search/require.js"></script>
-</head>
-
-<body class="cBallerina-io">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSL2TX4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="row cBallerina-io-Nav" id="iMainNavigation">
-
-    </div>
- 
-    <div class="row cBallerina-io-Gray-row">
+---
+layout: ballerina-example-page
+title: Header-Based Routing
+description: Ballerina by Example is a hands-on introduction to Ballerina using annotated example programs. Check out the first example or browse the full list below.
+permalink: /learn/by-example/header-based-routing
+redirect_from:
+  - /v1-2/learn/by-example/header-based-routing
+  - /v1-2/learn/by-example/header-based-routing.html
+---
+<div class="row cBallerina-io-Gray-row">
         <div class="container cBallerinaBySampleContainer">
             <div class="FullCode">
-                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">log</span><span class="p">;</span><span class="nx">http</span><span class="p">:</span><span class="nx">ClientEndpointConfig</span> <span class="nx">weatherEPConfig</span> <span class="p">=</span> <span class="p">{</span>
-    <span class="nx">followRedirects</span><span class="p">:</span> <span class="p">{</span> <span class="nx">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">maxCount</span><span class="p">:</span> <span class="mi">5</span> <span class="p">}</span>
+                <div class="highlight"><pre><span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">config</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">ballerina</span><span class="o">/</span><span class="nx">log</span><span class="p">;</span><span class="nx">http</span><span class="p">:</span><span class="nx">ClientConfiguration</span> <span class="nx">weatherEPConfig</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="nx">followRedirects</span><span class="p">:</span> <span class="p">{</span><span class="nx">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">maxCount</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+    <span class="nx">secureSocket</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">trustStore</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nx">path</span><span class="p">:</span> <span class="nx">config</span><span class="p">:</span><span class="nx">getAsString</span><span class="p">(</span><span class="s">&quot;b7a.home&quot;</span><span class="p">)</span> <span class="o">+</span>
+                        <span class="s">&quot;/bre/security/ballerinaTruststore.p12&quot;</span><span class="p">,</span>
+            <span class="nx">password</span><span class="p">:</span> <span class="s">&quot;ballerina&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">};</span>
 <span class="nd">@http:ServiceConfig {</span>
     <span class="nx">basePath</span><span class="p">:</span> <span class="s">&quot;/hbr&quot;</span>
@@ -109,16 +29,16 @@
         <span class="nx">methods</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;GET&quot;</span><span class="p">],</span>
         <span class="nx">path</span><span class="p">:</span> <span class="s">&quot;/route&quot;</span>
     <span class="p">}</span>    <span class="kd">resource</span> <span class="kd">function</span> <span class="nx">hbrResource</span><span class="p">(</span><span class="nx">http</span><span class="p">:</span><span class="nx">Caller</span> <span class="nx">caller</span><span class="p">,</span> <span class="nx">http</span><span class="p">:</span><span class="nx">Request</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">http</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">weatherEP</span> <span class="p">=</span> <span class="nx">new</span><span class="p">(</span><span class="s">&quot;http://samples.openweathermap.org&quot;</span><span class="p">,</span>
-                                    <span class="nx">config</span> <span class="p">=</span> <span class="nx">weatherEPConfig</span><span class="p">);</span>
-        <span class="nx">http</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">locationEP</span> <span class="p">=</span> <span class="nx">new</span><span class="p">(</span><span class="s">&quot;http://www.mocky.io&quot;</span><span class="p">);</span>
+        <span class="nx">http</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">weatherEP</span> <span class="p">=</span> <span class="nx">new</span> <span class="p">(</span><span class="s">&quot;http://samples.openweathermap.org&quot;</span><span class="p">,</span>
+                                     <span class="nx">weatherEPConfig</span><span class="p">);</span>
+        <span class="nx">http</span><span class="p">:</span><span class="nx">Client</span> <span class="nx">locationEP</span> <span class="p">=</span> <span class="nx">new</span> <span class="p">(</span><span class="s">&quot;http://www.mocky.io&quot;</span><span class="p">);</span>
         <span class="nx">http</span><span class="p">:</span><span class="nx">Request</span> <span class="nx">newRequest</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
         <span class="k">if</span> <span class="p">(!</span><span class="nx">req</span><span class="p">.</span><span class="nx">hasHeader</span><span class="p">(</span><span class="s">&quot;x-type&quot;</span><span class="p">))</span> <span class="p">{</span>
             <span class="nx">http</span><span class="p">:</span><span class="nx">Response</span> <span class="nx">errorResponse</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
             <span class="nx">errorResponse</span><span class="p">.</span><span class="nx">statusCode</span> <span class="p">=</span> <span class="mi">500</span><span class="p">;</span>
-            <span class="kt">json</span> <span class="nx">errMsg</span> <span class="p">=</span> <span class="p">{</span> <span class="s">&quot;error&quot;</span><span class="p">:</span> <span class="s">&quot;&#39;x-type&#39; header is not found&quot;</span> <span class="p">};</span>
-            <span class="nx">errorResponse</span><span class="p">.</span><span class="nx">setPayload</span><span class="p">(</span><span class="nx">errMsg</span><span class="p">);</span>            <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">errorResponse</span><span class="p">);</span>            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">){</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending response&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">result</span><span class="p">);</span>
+            <span class="kt">json</span> <span class="nx">errMsg</span> <span class="p">=</span> <span class="p">{</span><span class="s">&quot;error&quot;</span><span class="p">:</span> <span class="s">&quot;&#39;x-type&#39; header is not found&quot;</span><span class="p">};</span>
+            <span class="nx">errorResponse</span><span class="p">.</span><span class="nx">setPayload</span><span class="p">(</span><span class="nx">errMsg</span><span class="p">);</span>            <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">errorResponse</span><span class="p">);</span>            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending response&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
@@ -128,25 +48,42 @@
                                         <span class="nx">newRequest</span><span class="p">);</span>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">response</span> <span class="p">=</span>
                 <span class="nx">weatherEP</span><span class="o">-&gt;</span><span class="nx">get</span><span class="p">(</span><span class="s">&quot;/data/2.5/weather?lat=35&amp;lon=139&amp;appid=b1b1&quot;</span><span class="p">,</span>
-                                <span class="kt">message</span> <span class="p">=</span> <span class="nx">newRequest</span><span class="p">);</span>        <span class="p">}</span>        <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">Response</span><span class="p">)</span> <span class="p">{</span>            <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">){</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending response&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">result</span><span class="p">);</span>
+                                 <span class="nx">newRequest</span><span class="p">);</span>        <span class="p">}</span>        <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="nx">is</span> <span class="nx">http</span><span class="p">:</span><span class="nx">Response</span><span class="p">)</span> <span class="p">{</span>            <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending response&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
             <span class="p">}</span>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">http</span><span class="p">:</span><span class="nx">Response</span> <span class="nx">errorResponse</span> <span class="p">=</span> <span class="nx">new</span><span class="p">;</span>
             <span class="nx">errorResponse</span><span class="p">.</span><span class="nx">statusCode</span> <span class="p">=</span> <span class="mi">500</span><span class="p">;</span>
-            <span class="nx">errorResponse</span><span class="p">.</span><span class="nx">setPayload</span><span class="p">(&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">detail</span><span class="p">().</span><span class="kt">message</span><span class="p">);</span>
-            <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">errorResponse</span><span class="p">);</span>            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">){</span>
-                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending response&quot;</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">result</span><span class="p">);</span>
+            <span class="nx">errorResponse</span><span class="p">.</span><span class="nx">setPayload</span><span class="p">(&lt;</span><span class="kt">string</span><span class="p">&gt;</span><span class="nx">response</span><span class="p">.</span><span class="nx">detail</span><span class="p">()</span><span class="err">?</span><span class="p">.</span><span class="kt">message</span><span class="p">);</span>
+            <span class="k">var</span> <span class="nx">result</span> <span class="p">=</span> <span class="nx">caller</span><span class="o">-&gt;</span><span class="nx">respond</span><span class="p">(</span><span class="nx">errorResponse</span><span class="p">);</span>            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="nx">is</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">log</span><span class="p">:</span><span class="nx">printError</span><span class="p">(</span><span class="s">&quot;Error sending response&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">#</span> <span class="nx">To</span> <span class="nx">start</span> <span class="nx">the</span> <span class="kd">service</span><span class="p">,</span> <span class="nx">navigate</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">that</span> <span class="nx">contains</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="s">`.bal`</span> <span class="nx">file</span> <span class="nx">and</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="s">`ballerina run`</span> <span class="nx">command</span>  <span class="nx">below</span> <span class="nx">along</span> <span class="nx">with</span> <span class="nx">the</span>
+<span class="err">#</span> <span class="nx">Ballerina</span> <span class="nx">home</span> <span class="nx">path</span> <span class="k">as</span> <span class="nx">a</span> <span class="nx">config</span><span class="p">.</span>
+<span class="nx">ballerina</span> <span class="nx">run</span> <span class="nx">header_based_routing</span><span class="p">.</span><span class="nx">bal</span> <span class="o">--</span><span class="nx">b7a</span><span class="p">.</span><span class="nx">home</span><span class="p">=&lt;</span><span class="nx">ballerina_home_path</span><span class="p">&gt;</span>
+<span class="p">[</span><span class="nx">ballerina</span><span class="o">/</span><span class="nx">http</span><span class="p">]</span> <span class="nx">started</span> <span class="nx">HTTP</span><span class="o">/</span><span class="nx">WS</span> <span class="nx">listener</span> <span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">9090</span><span class="nx">curl</span> <span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:9090/hbr/route -H &quot;x-type:location&quot;</span>
+<span class="p">{</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Colombo,Sri Lanka&quot;</span><span class="p">,</span>
+    <span class="s">&quot;longitude&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">556.49</span><span class="p">,</span>
+    <span class="s">&quot;latitude&quot;</span><span class="p">:</span> <span class="mf">257.76</span><span class="p">,</span>
+    <span class="s">&quot;altitude&quot;</span><span class="p">:</span> <span class="mi">230</span>
+<span class="p">}</span><span class="nx">curl</span> <span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:9090/hbr/route -H &quot;x-type:weather&quot;</span>
+<span class="p">{</span><span class="s">&quot;coord&quot;</span><span class="p">:{</span><span class="s">&quot;lon&quot;</span><span class="p">:</span><span class="mf">139.01</span><span class="p">,</span><span class="s">&quot;lat&quot;</span><span class="p">:</span><span class="mf">35.02</span><span class="p">},</span><span class="s">&quot;weather&quot;</span><span class="p">:[{</span><span class="s">&quot;id&quot;</span><span class="p">:</span><span class="mi">800</span><span class="p">,</span>
+<span class="s">&quot;main&quot;</span><span class="p">:</span><span class="s">&quot;Clear&quot;</span><span class="p">,</span><span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;clear sky&quot;</span><span class="p">,</span><span class="s">&quot;icon&quot;</span><span class="p">:</span><span class="s">&quot;01n&quot;</span><span class="p">}],</span>
+<span class="s">&quot;base&quot;</span><span class="p">:</span><span class="s">&quot;stations&quot;</span><span class="p">,</span><span class="s">&quot;main&quot;</span><span class="p">:{</span><span class="s">&quot;temp&quot;</span><span class="p">:</span><span class="mf">285.514</span><span class="p">,</span><span class="s">&quot;pressure&quot;</span><span class="p">:</span><span class="mf">1013.75</span><span class="p">,</span>
+<span class="s">&quot;humidity&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s">&quot;temp_min&quot;</span><span class="p">:</span><span class="mf">285.514</span><span class="p">,</span><span class="s">&quot;temp_max&quot;</span><span class="p">:</span><span class="mf">285.514</span><span class="p">,</span>
+<span class="s">&quot;sea_level&quot;</span><span class="p">:</span><span class="mf">1023.22</span><span class="p">,</span><span class="s">&quot;grnd_level&quot;</span><span class="p">:</span><span class="mf">1013.75</span><span class="p">},</span>
+<span class="s">&quot;wind&quot;</span><span class="p">:{</span><span class="s">&quot;speed&quot;</span><span class="p">:</span><span class="mf">5.52</span><span class="p">,</span><span class="s">&quot;deg&quot;</span><span class="p">:</span><span class="mi">311</span><span class="p">},</span><span class="s">&quot;clouds&quot;</span><span class="p">:{</span><span class="s">&quot;all&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span>
+<span class="s">&quot;dt&quot;</span><span class="p">:</span><span class="mi">1485792967</span><span class="p">,</span><span class="s">&quot;sys&quot;</span><span class="p">:{</span><span class="s">&quot;message&quot;</span><span class="p">:</span><span class="mf">0.0025</span><span class="p">,</span><span class="s">&quot;country&quot;</span><span class="p">:</span><span class="s">&quot;JP&quot;</span><span class="p">,</span>
+<span class="s">&quot;sunrise&quot;</span><span class="p">:</span><span class="mi">1485726240</span><span class="p">,</span><span class="s">&quot;sunset&quot;</span><span class="p">:</span><span class="mi">1485763863</span><span class="p">},</span>
+<span class="s">&quot;id&quot;</span><span class="p">:</span><span class="mi">1907296</span><span class="p">,</span><span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;Tawarano&quot;</span><span class="p">,</span><span class="s">&quot;cod&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
 </pre></div>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-
-
                 <table class="cTopInfoContainer cTopControlsContainer">
                     <tr>
                         <td class="cLeftTD">
@@ -159,9 +96,9 @@
                             <div class="cTopButtonContainer">
                                 
                                 <div class="cButtonInfoContainer">
-                                    <a class="prev" href="websocket-chat-application.html">
+                                    <a class="prev" href="websocket-retry.html">
                                         <span>< PREVIOUS</span>
-                                        <p>Chat Application</p>
+                                        <p>Retry</p>
                                     </a>
                                 </div>
                                  
@@ -182,25 +119,15 @@
                     <table class="cTopControlsContainer">
                         <tr>
                             <td class="cLeftTD">
-                                <div class="cBreadcrums">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn">Learn</a></li>
-                                        <li>»</li>
-                                        <li><a href="/learn/by-example">By Example</a></li>
-                                        <li>»</li>
-                                        <li>Header-Based Routing</li>
-                                    </ul>
-                                </div>
                                 <div class="cBBE-links">
                                     <ul>
-                                        <li>
+                                        <!--<li>
                                             <a class="copy"><img src="/img/copy-icon.svg" /></a>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a target="_blank" href="https://github.com/ballerina-lang/ballerina/tree/master/examples/header-based-routing/"><img src="/img/github-logo-green.svg" /></a>
+                                            <a target="_blank" href="https://github.com/ballerina-platform/ballerina-lang/tree/ballerina-1.2.x/examples/header-based-routing/"><img src="/img/github-logo-green.svg" /></a>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                             </td>
@@ -269,7 +196,8 @@
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>import ballerina/http;
+                                    <div class="highlight"><pre><code class=language-ballerina>import ballerina/config;
+import ballerina/http;
 import ballerina/log;
 </code></pre></div>
 
@@ -282,8 +210,15 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>http:ClientEndpointConfig weatherEPConfig = {
-    followRedirects: { enabled: true, maxCount: 5 }
+                                    <div class="highlight"><pre><code class=language-ballerina>http:ClientConfiguration weatherEPConfig = {
+    followRedirects: {enabled: true, maxCount: 5},
+    secureSocket: {
+        trustStore: {
+            path: config:getAsString(&quot;b7a.home&quot;) +
+                        &quot;/bre/security/ballerinaTruststore.p12&quot;,
+            password: &quot;ballerina&quot;
+        }
+    }
 };
 </code></pre></div>
 
@@ -296,7 +231,7 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>@http:ServiceConfig {
+                                    <div class="highlight"><pre><code class=language-ballerina>@http:ServiceConfig {
     basePath: &quot;/hbr&quot;
 }
 </code></pre></div>
@@ -317,7 +252,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>service headerBasedRouting on new http:Listener(9090) {
+                                    <div class="highlight"><pre><code class=language-ballerina>service headerBasedRouting on new http:Listener(9090) {
 </code></pre></div>
 
                                 </td>
@@ -329,7 +264,7 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    @http:ResourceConfig {
+                                    <div class="highlight"><pre><code class=language-ballerina>    @http:ResourceConfig {
         methods: [&quot;GET&quot;],
         path: &quot;/route&quot;
     }
@@ -352,10 +287,10 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>    resource function hbrResource(http:Caller caller, http:Request req) {
-        http:Client weatherEP = new(&quot;http://samples.openweathermap.org&quot;,
-                                    config = weatherEPConfig);
-        http:Client locationEP = new(&quot;http://www.mocky.io&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>    resource function hbrResource(http:Caller caller, http:Request req) {
+        http:Client weatherEP = new (&quot;http://samples.openweathermap.org&quot;,
+                                     weatherEPConfig);
+        http:Client locationEP = new (&quot;http://www.mocky.io&quot;);
 </code></pre></div>
 
                                 </td>
@@ -367,7 +302,7 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        http:Request newRequest = new;
+                                    <div class="highlight"><pre><code class=language-ballerina>        http:Request newRequest = new;
 </code></pre></div>
 
                                 </td>
@@ -386,10 +321,10 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        if (!req.hasHeader(&quot;x-type&quot;)) {
+                                    <div class="highlight"><pre><code class=language-ballerina>        if (!req.hasHeader(&quot;x-type&quot;)) {
             http:Response errorResponse = new;
             errorResponse.statusCode = 500;
-            json errMsg = { &quot;error&quot;: &quot;&#39;x-type&#39; header is not found&quot; };
+            json errMsg = {&quot;error&quot;: &quot;&#39;x-type&#39; header is not found&quot;};
             errorResponse.setPayload(errMsg);
 </code></pre></div>
 
@@ -409,7 +344,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            var result = caller-&gt;respond(errorResponse);
+                                    <div class="highlight"><pre><code class=language-ballerina>            var result = caller-&gt;respond(errorResponse);
 </code></pre></div>
 
                                 </td>
@@ -421,8 +356,8 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            if (result is error){
-                log:printError(&quot;Error sending response&quot;, err = result);
+                                    <div class="highlight"><pre><code class=language-ballerina>            if (result is error) {
+                log:printError(&quot;Error sending response&quot;, result);
             }
             return;
         }
@@ -437,7 +372,7 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        string nameString = req.getHeader(&quot;x-type&quot;);
+                                    <div class="highlight"><pre><code class=language-ballerina>        string nameString = req.getHeader(&quot;x-type&quot;);
 </code></pre></div>
 
                                 </td>
@@ -456,7 +391,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        http:Response|error response;
+                                    <div class="highlight"><pre><code class=language-ballerina>        http:Response|error response;
         if (nameString == &quot;location&quot;) {
 </code></pre></div>
 
@@ -469,7 +404,7 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            response = locationEP-&gt;post(&quot;/v2/5adddd66300000bd2a4b2912&quot;,
+                                    <div class="highlight"><pre><code class=language-ballerina>            response = locationEP-&gt;post(&quot;/v2/5adddd66300000bd2a4b2912&quot;,
                                         newRequest);
 </code></pre></div>
 
@@ -491,7 +426,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        } else {
+                                    <div class="highlight"><pre><code class=language-ballerina>        } else {
 </code></pre></div>
 
                                 </td>
@@ -503,9 +438,9 @@ import ballerina/log;
                             <tr class="cTR hover-enable">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            response =
+                                    <div class="highlight"><pre><code class=language-ballerina>            response =
                 weatherEP-&gt;get(&quot;/data/2.5/weather?lat=35&amp;lon=139&amp;appid=b1b1&quot;,
-                                message = newRequest);
+                                 newRequest);
 </code></pre></div>
 
                                 </td>
@@ -524,7 +459,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        }
+                                    <div class="highlight"><pre><code class=language-ballerina>        }
 </code></pre></div>
 
                                 </td>
@@ -536,7 +471,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        if (response is http:Response) {
+                                    <div class="highlight"><pre><code class=language-ballerina>        if (response is http:Response) {
 </code></pre></div>
 
                                 </td>
@@ -566,7 +501,7 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            var result = caller-&gt;respond(response);
+                                    <div class="highlight"><pre><code class=language-ballerina>            var result = caller-&gt;respond(response);
 </code></pre></div>
 
                                 </td>
@@ -578,8 +513,8 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>            if (result is error){
-                log:printError(&quot;Error sending response&quot;, err = result);
+                                    <div class="highlight"><pre><code class=language-ballerina>            if (result is error) {
+                log:printError(&quot;Error sending response&quot;, result);
             }
 </code></pre></div>
 
@@ -592,10 +527,10 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code leading">
-                                    <div class="highlight"><pre><code class=ballerina>        } else {
+                                    <div class="highlight"><pre><code class=language-ballerina>        } else {
             http:Response errorResponse = new;
             errorResponse.statusCode = 500;
-            errorResponse.setPayload(&lt;string&gt; response.detail().message);
+            errorResponse.setPayload(&lt;string&gt;response.detail()?.message);
             var result = caller-&gt;respond(errorResponse);
 </code></pre></div>
 
@@ -608,8 +543,8 @@ import ballerina/log;
                             <tr class="cTR">
 
                                 <td class="code">
-                                    <div class="highlight"><pre><code class=ballerina>            if (result is error){
-                log:printError(&quot;Error sending response&quot;, err = result);
+                                    <div class="highlight"><pre><code class=language-ballerina>            if (result is error) {
+                log:printError(&quot;Error sending response&quot;, result);
             }
         }
     }
@@ -639,10 +574,10 @@ import ballerina/log;
 
                                 <td class="code cOutput">
                                     <div class="highlight"><pre><code class=shell-session># To start the service, navigate to the directory that contains the
-# `.bal` file and use the `ballerina run` command.
-$ ballerina run header_based_routing.bal
-Initiating service(s) in &#39;header_based_routing.bal&#39;
-[ballerina/http] started HTTP/WS endpoint 0.0.0.0:9090
+# `.bal` file and execute the `ballerina run` command  below along with the
+# Ballerina home path as a config.
+ballerina run header_based_routing.bal --b7a.home=&lt;ballerina_home_path&gt;
+[ballerina/http] started HTTP/WS listener 0.0.0.0:9090
 </code></pre></div>
 
                                 </td>
@@ -671,7 +606,7 @@ Initiating service(s) in &#39;header_based_routing.bal&#39;
                             <tr class="cTR cOutputTr">
 
                                 <td class="code leading cOutput">
-                                    <div class="highlight"><pre><code class=shell-session>$ curl http://localhost:9090/hbr/route -H &quot;x-type:location&quot;
+                                    <div class="highlight"><pre><code class=shell-session>curl http://localhost:9090/hbr/route -H &quot;x-type:location&quot;
 {
     &quot;name&quot;: &quot;Colombo,Sri Lanka&quot;,
     &quot;longitude&quot;: -556.49,
@@ -689,7 +624,7 @@ Initiating service(s) in &#39;header_based_routing.bal&#39;
                             <tr class="cTR cOutputTr">
 
                                 <td class="code cOutput">
-                                    <div class="highlight"><pre><code class=shell-session>$ curl http://localhost:9090/hbr/route -H &quot;x-type:weather&quot;
+                                    <div class="highlight"><pre><code class=shell-session>curl http://localhost:9090/hbr/route -H &quot;x-type:weather&quot;
 {&quot;coord&quot;:{&quot;lon&quot;:139.01,&quot;lat&quot;:35.02},&quot;weather&quot;:[{&quot;id&quot;:800,
 &quot;main&quot;:&quot;Clear&quot;,&quot;description&quot;:&quot;clear sky&quot;,&quot;icon&quot;:&quot;01n&quot;}],
 &quot;base&quot;:&quot;stations&quot;,&quot;main&quot;:{&quot;temp&quot;:285.514,&quot;pressure&quot;:1013.75,
@@ -723,56 +658,49 @@ Initiating service(s) in &#39;header_based_routing.bal&#39;
         </div>
     </div>
 
-    <div id="iBallerinaFooter" class="row cBallerina-io-White-row">
-    </div>
-    <script>
-        $(document).ready(function() {
+     <script>
+            $(document).ready(function() {
 
-            hljs.initHighlightingOnLoad();
+                hljs.initHighlightingOnLoad();
 
-            $(".switch").click(function() {
-                $(".cCodeRight").toggleClass('cShow');
-                $(".cCodeLeft").toggleClass('cHide');
+                $(".switch").click(function() {
+                    $(".cCodeRight").toggleClass('cShow');
+                    $(".cCodeLeft").toggleClass('cHide');
+                });
+
+                // register "copy to clipboard" event to elements with "copy" class
+                var clipboard = new ClipboardJS('.copy', {
+                    text: function(trigger) {
+                        return $('.FullCode').find('pre').text();
+                    }
+                });
+
+                // Register events show hide tooltip on click event
+                clipboard.on('success', function(e) {
+                    setTooltip(e.trigger, 'Copied!');
+                    hideTooltip(e.trigger);
+                });
+
+                clipboard.on('error', function(e) {
+                    setTooltip(e.trigger, 'Failed!');
+                    hideTooltip(e.trigger);
+                });
+
+                $('.copy').tooltip({
+                    trigger: 'click',
+                    placement: 'bottom'
+                });
+                $("a.copy").unbind("click");
             });
 
-            // register "copy to clipboard" event to elements with "copy" class
-            var clipboard = new ClipboardJS('.copy', {
-                text: function(trigger) {
-                    return $('.FullCode').find('pre').text();
-                }
-            });
+            function setTooltip(btn, message) {
+                $(btn).attr('data-original-title', message)
+                    .tooltip('show');
+            }
 
-            // Register events show hide tooltip on click event
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-            });
-
-            clipboard.on('error', function(e) {
-                setTooltip(e.trigger, 'Failed!');
-                hideTooltip(e.trigger);
-            });
-
-            $('.copy').tooltip({
-                trigger: 'click',
-                placement: 'bottom'
-            });
-            $("a.copy").unbind("click");
-        });
-
-        function setTooltip(btn, message) {
-            $(btn).attr('data-original-title', message)
-                .tooltip('show');
-        }
-
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide').removeAttr('data-original-title');
-            }, 1000);
-        }
-    </script>
-
-    <script src="/search/search.js"></script>
-</body>
-
-</html>
+            function hideTooltip(btn) {
+                setTimeout(function() {
+                    $(btn).tooltip('hide').removeAttr('data-original-title');
+                }, 1000);
+            }
+        </script>

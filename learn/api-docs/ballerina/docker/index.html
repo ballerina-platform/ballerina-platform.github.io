@@ -5,8 +5,11 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This module offers an annotation based docker extension implementation for Ballerina.
+">
+    <meta name="keywords" content="ballerina,ballerina lang,api docs,docker">
 
-    <title>API Docs - null/docker</title>
+    <title>API Docs - ballerina/docker</title>
     <script src="../html-template-resources/jquery.min.js"></script>
 
     <!-- BIO THEME START -->
@@ -16,6 +19,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/js/api-doc-template.js"></script>
 <script type="text/javascript" src="/js/ballerina-common.js"></script>
 <link rel="stylesheet" href="/css/ballerina-io.css">
 <link rel="stylesheet" href="/css/ballerina-io-docs.css">
@@ -32,7 +36,7 @@
     <link rel="stylesheet" href="../html-template-resources/styles/css/styles.css">
     <link rel="stylesheet" href="../html-template-resources/styles/css/font.css">
     <script src="../html-template-resources/semantic.min.js"></script>
-    <script src="../vs/monaco.js"></script>
+    <script src="../syntax-highlighter/highlighter.js"></script>
 
 </head>
 
@@ -49,21 +53,26 @@
 <div class="clearfix"></div>
     <div class="navi-wrapper">
         <div class="navi-wrapper-content">
-            <a href="../index.html">
+            <a href="
+    ../index.html">
     <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
 </a>
-<div class="version">v1.0.1</div>
 
-            <div class="primary-list module">
+            
+
     
-        <a href="../docker/index.html">
+
+
+<div class="primary-list module">
+    
+        <a href="../docker/index.html" onclick="menuLinkClick()">
             <h3>docker</h3>
         </a>
     
     <ul>
         
         <li>
-            <a data="records" href="../docker/index.html#records">Records</a>
+            <a data="records" href="../docker/index.html#records" onclick="menuLinkClick()">Records</a>
         </li>
         
         
@@ -73,7 +82,7 @@
         
         
             <li>
-                <a data="annotations" href="../docker/index.html#annotations">Annotations</a>
+                <a data="annotations" href="../docker/index.html#annotations" onclick="menuLinkClick()">Annotations</a>
             </li>
         
         
@@ -88,215 +97,7 @@
         <ul>
             
                 <li>
-                    <a href="../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
                     <a href="../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.xml/index.html">lang.xml</a>
-                </li>
-            
-                <li>
-                    <a href="../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../xslt/index.html">xslt</a>
                 </li>
             
         </ul>
@@ -305,280 +106,16 @@
 </div>
         </div>
     </div>
-
-    <div class="ui vertical sidebar menu">
-        <div class="navi-wrapper-sidebar">
-            <div class="navi-wrapper-content">
-                <a href="../index.html">
-    <img class="logo" src="../html-template-resources/images/ballerina-logo.png">
-</a>
-<div class="version">v1.0.1</div>
-
-                
-                <div class="primary-list module">
-    
-        <a href="../docker/index.html">
-            <h3>docker</h3>
-        </a>
-    
-    <ul>
-        
-        <li>
-            <a data="records" href="../docker/index.html#records">Records</a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-            <li>
-                <a data="annotations" href="../docker/index.html#annotations">Annotations</a>
-            </li>
-        
-        
-        
-    </ul>
-    <div class="ui divider"></div>
-</div>
-
-                <div class="primary-list module-list">
-    
-        <h3>All Modules</h3>
-        <ul>
-            
-                <li>
-                    <a href="../auth/index.html">auth</a>
-                </li>
-            
-                <li>
-                    <a href="../cache/index.html">cache</a>
-                </li>
-            
-                <li>
-                    <a href="../config/index.html">config</a>
-                </li>
-            
-                <li>
-                    <a href="../crypto/index.html">crypto</a>
-                </li>
-            
-                <li>
-                    <a href="../docker/index.html">docker</a>
-                </li>
-            
-                <li>
-                    <a href="../encoding/index.html">encoding</a>
-                </li>
-            
-                <li>
-                    <a href="../file/index.html">file</a>
-                </li>
-            
-                <li>
-                    <a href="../filepath/index.html">filepath</a>
-                </li>
-            
-                <li>
-                    <a href="../grpc/index.html">grpc</a>
-                </li>
-            
-                <li>
-                    <a href="../http/index.html">http</a>
-                </li>
-            
-                <li>
-                    <a href="../io/index.html">io</a>
-                </li>
-            
-                <li>
-                    <a href="../istio/index.html">istio</a>
-                </li>
-            
-                <li>
-                    <a href="../java/index.html">java</a>
-                </li>
-            
-                <li>
-                    <a href="../java.arrays/index.html">java.arrays</a>
-                </li>
-            
-                <li>
-                    <a href="../java.jdbc/index.html">java.jdbc</a>
-                </li>
-            
-                <li>
-                    <a href="../jsonutils/index.html">jsonutils</a>
-                </li>
-            
-                <li>
-                    <a href="../jwt/index.html">jwt</a>
-                </li>
-            
-                <li>
-                    <a href="../kafka/index.html">kafka</a>
-                </li>
-            
-                <li>
-                    <a href="../kubernetes/index.html">kubernetes</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.array/index.html">lang.array</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.decimal/index.html">lang.decimal</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.error/index.html">lang.error</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.float/index.html">lang.float</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.future/index.html">lang.future</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.int/index.html">lang.int</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.map/index.html">lang.map</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.object/index.html">lang.object</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.stream/index.html">lang.stream</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.string/index.html">lang.string</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.table/index.html">lang.table</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.typedesc/index.html">lang.typedesc</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.value/index.html">lang.value</a>
-                </li>
-            
-                <li>
-                    <a href="../lang.xml/index.html">lang.xml</a>
-                </li>
-            
-                <li>
-                    <a href="../log/index.html">log</a>
-                </li>
-            
-                <li>
-                    <a href="../math/index.html">math</a>
-                </li>
-            
-                <li>
-                    <a href="../mime/index.html">mime</a>
-                </li>
-            
-                <li>
-                    <a href="../nats/index.html">nats</a>
-                </li>
-            
-                <li>
-                    <a href="../oauth2/index.html">oauth2</a>
-                </li>
-            
-                <li>
-                    <a href="../observe/index.html">observe</a>
-                </li>
-            
-                <li>
-                    <a href="../openapi/index.html">openapi</a>
-                </li>
-            
-                <li>
-                    <a href="../openshift/index.html">openshift</a>
-                </li>
-            
-                <li>
-                    <a href="../reflect/index.html">reflect</a>
-                </li>
-            
-                <li>
-                    <a href="../runtime/index.html">runtime</a>
-                </li>
-            
-                <li>
-                    <a href="../socket/index.html">socket</a>
-                </li>
-            
-                <li>
-                    <a href="../streams/index.html">streams</a>
-                </li>
-            
-                <li>
-                    <a href="../stringutils/index.html">stringutils</a>
-                </li>
-            
-                <li>
-                    <a href="../system/index.html">system</a>
-                </li>
-            
-                <li>
-                    <a href="../task/index.html">task</a>
-                </li>
-            
-                <li>
-                    <a href="../test/index.html">test</a>
-                </li>
-            
-                <li>
-                    <a href="../time/index.html">time</a>
-                </li>
-            
-                <li>
-                    <a href="../transactions/index.html">transactions</a>
-                </li>
-            
-                <li>
-                    <a href="../xmlutils/index.html">xmlutils</a>
-                </li>
-            
-                <li>
-                    <a href="../xslt/index.html">xslt</a>
-                </li>
-            
-        </ul>
-        <div class="ui divider"></div>
-    
-</div>
-            </div>
-        </div>
-    </div>
-
-
-
     <div class="content-wrapper pusher">
         <div>
-    <a class="toc item"> 
+    <a id="toc" class="toc item" onclick="displayMenu()">
         <img src="../html-template-resources/images/menu.svg">
     </a>
 </div>
         <div class="main-wrapper module-wrapper">
                 <h1>
-                    <a class="breadcrumb-home" href="../index.html">
+                    <a class="breadcrumb-home" href="
+    ../index.html">
     <img class="breadcrumb-home-icon" src="../html-template-resources/images/home.svg">
 </a>
                     
@@ -586,8 +123,13 @@
                     
                 </h1>
                     <h2>Module Overview</h2>
-<p>This module offers an annotation based docker extension implementation for ballerina.</p>
-<h2>Annotation Usage Sample:</h2>
+<p>This module offers an annotation based docker extension implementation for Ballerina.</p>
+<ul>
+<li>For information on the operations, which you can perform with this module, see <a href="/learn/api-docs/ballerina/docker/index.html#records">Records</a>.</li>
+<li>For information on the Deployment, see the<a href="/learn/deployment/docker/">Docker Deployment Guide</a>.</li>
+<li>For examples on the usage of the operations, see the <a href="/learn/by-example/docker-deployment.html">Docker Deployment Example</a>.</li>
+</ul>
+<h3>Annotation Usage Sample:</h3>
 <pre><code class="language-ballerina">import ballerina/http;
 import ballerina/log;
 import ballerina/docker;
@@ -617,7 +159,6 @@ service helloWorld on helloWorldEP {
 
 
             
-
             <section class="method-content" id="records">
                 <div class="main-method-title here">
                     <a class="url-link" href="#records">
@@ -629,33 +170,42 @@ service helloWorld on helloWorldEP {
                     
                         <tr>
                             <td class="module-title truncate records" id="DockerConfiguration" title="DockerConfiguration">
-                                <a class="records"
-                                   href="records/DockerConfiguration.html">DockerConfiguration</a></td>
-                            <td class="module-desc">Docker annotation configuration.
-</td>
+                                <a class="records " href="records/DockerConfiguration.html">DockerConfiguration</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Docker annotation configuration.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate records" id="ExposeConfig" title="ExposeConfig">
-                                <a class="records"
-                                   href="records/ExposeConfig.html">ExposeConfig</a></td>
-                            <td class="module-desc">Expose ports for docker.</td>
+                                <a class="records " href="records/ExposeConfig.html">ExposeConfig</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>Expose ports for docker.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate records" id="FileConfig" title="FileConfig">
-                                <a class="records"
-                                   href="records/FileConfig.html">FileConfig</a></td>
-                            <td class="module-desc">External file type for docker.
-</td>
+                                <a class="records " href="records/FileConfig.html">FileConfig</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>External file type for docker.
+                            </td>
                         </tr>
                     
                         <tr>
                             <td class="module-title truncate records" id="FileConfigs" title="FileConfigs">
-                                <a class="records"
-                                   href="records/FileConfigs.html">FileConfigs</a></td>
-                            <td class="module-desc">External File configurations for docker.
-</td>
+                                <a class="records " href="records/FileConfigs.html">FileConfigs</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>External File configurations for docker.
+                            </td>
                         </tr>
                     
                 </table>
@@ -686,24 +236,33 @@ service helloWorld on helloWorldEP {
                 <table>
                     
                         <tr>
-                            <td class="module-title truncate annotations" id="Config" title="Config"><a
-                                    class="annotations" href="annotations.html#Config">Config</a></td>
-                            <td class="module-desc"><p>@docker:Config annotation to configure docker artifact generation.</p>
-</td>
+                            <td class="module-title truncate annotations" id="Config" title="Config">
+                                <a class="annotations " href="annotations.html#Config">Config</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>@docker:Config annotation to configure docker artifact generation.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate annotations" id="CopyFiles" title="CopyFiles"><a
-                                    class="annotations" href="annotations.html#CopyFiles">CopyFiles</a></td>
-                            <td class="module-desc"><p>@docker:CopyFile annotation to copy external files to docker image.</p>
-</td>
+                            <td class="module-title truncate annotations" id="CopyFiles" title="CopyFiles">
+                                <a class="annotations " href="annotations.html#CopyFiles">CopyFiles</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>@docker:CopyFile annotation to copy external files to docker image.
+                            </td>
                         </tr>
                     
                         <tr>
-                            <td class="module-title truncate annotations" id="Expose" title="Expose"><a
-                                    class="annotations" href="annotations.html#Expose">Expose</a></td>
-                            <td class="module-desc"><p>@docker:Expose annotation to expose ballerina ports.</p>
-</td>
+                            <td class="module-title truncate annotations" id="Expose" title="Expose">
+                                <a class="annotations " href="annotations.html#Expose">Expose</a>
+                            </td>
+                            <td class="module-desc">
+                                
+                                <p>@docker:Expose annotation to expose ballerina ports.
+                            </td>
                         </tr>
                     
                 </table>
@@ -719,17 +278,6 @@ service helloWorld on helloWorldEP {
 </body>
 
 <script>
-    $(document)
-    .ready(function() {
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-
 let mainNavLinks = document.querySelectorAll(".primary-list.module ul li a");
 let mainSections = document.querySelectorAll(".main-wrapper section.method-content");
 
@@ -754,6 +302,42 @@ contentWrapper.addEventListener("scroll", event => {
   });
 });
 
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
+</script>
+<script>
+function menuLinkClick() {
+  if(window.matchMedia("(max-width: 600px)").matches) {
+    document.getElementsByClassName("navi-wrapper")[0].style.display = "none";
+  }
+}
+function displayMenu() {
+  var nav = document.getElementsByClassName("navi-wrapper")[0];
+  var content = document.getElementsByClassName("content-wrapper")[0];
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+    content.style.marginLeft = "210px";
+  } else {
+    nav.style.display = "none";
+    content.style.marginLeft = "0px";
+  }
+}
 </script>
 
 <script>

@@ -796,7 +796,6 @@ To view bug fixes, see the [GitHub milestone for Swan Lake Beta4](https://github
 - Updated to not change the generated unique-service-path after compilation
 
 ### Changes
-
 - Marked all the standard library services as `distinct`
 - Removed all the `info` logs printed from the listeners
 

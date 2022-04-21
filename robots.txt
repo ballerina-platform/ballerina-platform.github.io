@@ -14,3 +14,4 @@ Disallow: /1.2/
 User-agent: Algolia Crawler
 Allow: * 
      
+Sitemap: https://ballerina.io/sitemap.xml

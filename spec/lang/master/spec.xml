@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Ballerina language specification</title>
+  <title>Ballerina Language Specification</title>
   <meta charset="utf-8" />
   <style type="text/css">
     body { font-family: sans-serif; line-height: 1.38;  }
@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1>Ballerina language specification, 2022R2 preview 2022-05-23</h1>
+<h1>Ballerina Language Specification, 2022R3 preview 2022-06-03</h1>
 <p>
 Primary contributors:
 </p>
@@ -12869,6 +12869,17 @@ public isolated function mergeJson(json j1, json j2) returns json|error = extern
 </section>
 <section class="appendix">
 <h2 id="changes">B. Changes since previous releases</h2>
+<section>
+<h3>Summary of changes from 2021R2 to 2022R3</h3>
+<ol>
+<li>The <code>isolated</code> feature can now be used to identify cases where
+strands created by <code>start</code> and named worker can be run safely on
+separate threads.</li>
+<li>The variable declaration in an <code>on fail</code> clause is now
+optional.</li>
+</ol>
+</section>
+
 <section>
 <h3>Summary of changes from 2021R1 to 2022R2</h3>
 <ol>

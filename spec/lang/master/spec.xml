@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1>Ballerina Language Specification, 2022R4 preview 2022-11-02</h1>
+<h1>Ballerina Language Specification, 2022R4 preview 2022-11-04</h1>
 <p>
 Primary contributors:
 </p>
@@ -3801,7 +3801,7 @@ follows:
 </section>
 </section>
 <section>
-<h3>Binding patterns and variables</h3>
+<h3>Binding patterns, variables and identifiers</h3>
 <section>
 <h4>Binding patterns</h4>
 <p>
@@ -4014,6 +4014,23 @@ scope. However, it is a compile error if an identifier is declared with
 block-scope and its scope overlaps with the scope of another declaration of the
 same identifier in the same symbol space also with block-scope.
 </p>
+
+<pre
+class="grammar"><dfn>qualified-identifier</dfn> := <abbr>module-prefix</abbr> <abbr>NoSpaceColon</abbr> (<abbr>identifier</abbr> | <code>client</code>)
+<dfn>module-prefix</dfn> := <abbr>identifier</abbr> | <abbr>predeclared-prefix</abbr>
+</pre>
+<p>
+A <code>module-prefix</code> is a name that is used locally within the source of
+a module to refer to another module. A <code>module-prefix</code> in a
+qualified-identifier must refer to a <code>module-prefix</code> specified in an
+import declaration or external client declaration in the same source part.
+</p>
+<p>
+A qualified-identifier <code><var>m</var>:client</code> refers to the client
+class constructed by the module external client declaration that declares
+<code><var>m</var></code>.
+</p>
+
 </section>
 </section>
 </section>
@@ -9839,22 +9856,13 @@ class="grammar"><dfn>module-part</dfn> := <abbr>import-decl</abbr>* <abbr>other-
 <pre
 class="grammar"><dfn>import-decl</dfn> := <code>import</code> [<abbr>org-name</abbr> <code>/</code>] <abbr>module-name</abbr> [<code>as</code> <abbr>import-prefix</abbr>] <code>;</code>
 <dfn>import-prefix</dfn> := <abbr>module-prefix</abbr> | <code>_</code>
-<dfn>module-prefix</dfn> := <abbr>identifier</abbr> | <abbr>predeclared-prefix</abbr>
 <dfn>org-name</dfn> := <abbr>import-identifier</abbr>
 <dfn>module-name</dfn> := <abbr>import-identifier</abbr> (<code>.</code> <abbr>import-identifier</abbr>)*
 <dfn>import-identifier</dfn> := <abbr>RestrictedIdentifier</abbr>
-
-<dfn>qualified-identifier</dfn> := <abbr>module-prefix</abbr> <abbr>NoSpaceColon</abbr> (<abbr>identifier</abbr> | "<abbr>client</abbr>")
 </pre>
 <p>
 If org-name is omitted, it is defaulted from the organization of the importing
 module.
-</p>
-<p>
-A <code>module-prefix</code> is a name that is used locally within the source of
-a module to refer to another module. A <code>module-prefix</code> in a
-qualified-identifier must refer to a <code>module-prefix</code> specified in an
-import-declaration in the same source part.
 </p>
 <p>
 An import-prefix of <code>_</code> causes the module to be imported without
@@ -13684,6 +13692,8 @@ public isolated function mergeJson(json j1, json j2) returns json|error = extern
 <h3>Summary of changes from 2022R3 to 2022R4</h3>
 <ol>
 <li>Regular expressions have been added as a new data type.</li>
+<li>An external client declaration makes it convenient to declare a client class
+for accessing a service defined in a format such as OpenAPI.</li>
 <li>A <code>byte-array-literal</code> can construct a read-only value.</li>
 <li>An optional semi-colon is now allowed after top-level definitions and
 method definitions that are currentlty terminated by <code>}</code>.</li>

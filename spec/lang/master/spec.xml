@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1>Ballerina Language Specification, 2023R1 preview 2023-06-16</h1>
+<h1>Ballerina Language Specification, 2023R1 preview 2023-06-21</h1>
 <p>
 Primary contributors:
 </p>
@@ -2937,6 +2937,15 @@ Intersection types are particularly useful in conjunction with
 <code>readonly</code>. A set of readonly shapes can be described by
 <code>readonly&amp;T</code>, where <code>T</code> describes the primary aspect
 of the shape.
+</p>
+<p>
+When T is either <code>R&amp;readonly</code> or <code>readonly&amp;R</code>,
+where R is a record type descriptor, and a field in R has a default value with
+closure C, then, if the return type of C belongs to <a
+href="#Cloneable">Cloneable</a>, the field in T has a default value with a
+closure that applies the <a href="#ImmutableClone">ImmutableClone</a> operation
+to result of evaluating C; otherwise, the field in T does not have a default
+value.
 </p>
 </section>
 
@@ -7324,7 +7333,7 @@ a subtype of readonly.
 <section>
 <h4>On conflict clause</h4>
 <pre class="grammar">
-<dfn>on-conflict-clause</dfn> := <code>on</code><sub>NR</sub> <code>conflict</code><sub>NR</sub> <abbr>expression</abbr>
+<dfn>on-conflict-clause</dfn> := <code>on</code> <code>conflict</code><sub>NR</sub> <abbr>expression</abbr>
 </pre>
 <p>
 During the execution of the select clause of query-select-expr that is
@@ -13988,6 +13997,7 @@ used as identifier names).</li>
 calls and other actions.</li>
 <li>Clarify that the <code>self</code> variable in a method is implicitly
 final.</li>
+<li>Regexp type has a filler value.</li>
 </ol>
 </section>
 

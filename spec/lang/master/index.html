@@ -16,7 +16,7 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script src="style/ballerina-language-specification.js"></script>
 </head>
 <body>
-<h1>Ballerina Language Specification, 2023R1</h1>
+<h1>Ballerina Language Specification, 2024R1 preview 2024-03-27</h1>
 <p>
 Primary contributors:
 </p>
@@ -34,7 +34,7 @@ Primary contributors:
 (Other contributors are listed in <a href="#contributors">Appendix D</a>.)
 </p>
 <p>
-Copyright © 2018-2023 <a href="https://wso2.com/">WSO2</a>
+Copyright © 2018-2024 <a href="https://wso2.com/">WSO2</a>
 </p>
 <p>
 Licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
@@ -631,29 +631,31 @@ GitHub repository where this specification is maintained.
 <li>A. <a href="#references">References</a>
 </li>
 <li>B. <a href="#changes">Changes since previous releases</a><ul>
-<li>B.1 <a href="#section_B.1">Summary of changes from 2022R4 to 2023R1</a>
+<li>B.1 <a href="#section_B.1">Summary of changes from 2023R1 to 2024R1</a>
 </li>
-<li>B.2 <a href="#section_B.2">Summary of changes from 2022R3 to 2022R4</a>
+<li>B.2 <a href="#section_B.2">Summary of changes from 2022R4 to 2023R1</a>
 </li>
-<li>B.3 <a href="#section_B.3">Summary of changes from 2022R2 to 2022R3</a>
+<li>B.3 <a href="#section_B.3">Summary of changes from 2022R3 to 2022R4</a>
 </li>
-<li>B.4 <a href="#section_B.4">Summary of changes from 2022R1 to 2022R2</a>
+<li>B.4 <a href="#section_B.4">Summary of changes from 2022R2 to 2022R3</a>
 </li>
-<li>B.5 <a href="#section_B.5">Summary of changes from 2021R1 to 2022R1</a>
+<li>B.5 <a href="#section_B.5">Summary of changes from 2022R1 to 2022R2</a>
 </li>
-<li>B.6 <a href="#section_B.6">Summary of changes from 2020R1 to 2021R1</a>
+<li>B.6 <a href="#section_B.6">Summary of changes from 2021R1 to 2022R1</a>
 </li>
-<li>B.7 <a href="#section_B.7">Summary of changes from 2019R3 to 2020R1</a>
+<li>B.7 <a href="#section_B.7">Summary of changes from 2020R1 to 2021R1</a>
 </li>
-<li>B.8 <a href="#section_B.8">Summary of changes from 2019R2 to 2019R3</a>
+<li>B.8 <a href="#section_B.8">Summary of changes from 2019R3 to 2020R1</a>
 </li>
-<li>B.9 <a href="#section_B.9">Summary of changes from 2019R1 to 2019R2</a>
+<li>B.9 <a href="#section_B.9">Summary of changes from 2019R2 to 2019R3</a>
 </li>
-<li>B.10 <a href="#section_B.10">Summary of changes from 0.990 to 2019R1</a>
+<li>B.10 <a href="#section_B.10">Summary of changes from 2019R1 to 2019R2</a>
 </li>
-<li>B.11 <a href="#section_B.11">Summary of changes from 0.980 to 0.990</a>
+<li>B.11 <a href="#section_B.11">Summary of changes from 0.990 to 2019R1</a>
 </li>
-<li>B.12 <a href="#section_B.12">Summary of changes from 0.970 to 0.980</a>
+<li>B.12 <a href="#section_B.12">Summary of changes from 0.980 to 0.990</a>
+</li>
+<li>B.13 <a href="#section_B.13">Summary of changes from 0.970 to 0.980</a>
 </li>
 </ul>
 </li>
@@ -10926,9 +10928,10 @@ The compiler may infer that a service object or a service object's remote method
 is isolated even it is not explicitly declared as such. In doing so, it analyzes
 a module to determine whether there is a set of declarations and definitions in
 the module, where each of them is a <code>service-decl</code>,
+<code>object-constructor-expr</code>,
 <code>module-var-decl</code>, <code>module-class-defn</code>
 <code>function-defn</code> or <code>method-defn</code>, and none of them
-explicitly specified an <code>isolated</code> qualifier, such that if all them
+explicitly specifies an <code>isolated</code> qualifier, such that if all them
 explicitly specified an <code>isolated</code> qualifier, then they all would
 meet the requirements for <a href="#isolated_functions">isolated functions</a>
 and isolated objects. If so, then the isolated bit of values resulting from them
@@ -14475,7 +14478,13 @@ public isolated function last(Type v, Type... vs) returns Type = external;
 <section class="appendix">
 <h2 id="changes">B. Changes since previous releases</h2>
 <section>
-<h3 id="section_B.1">B.1 Summary of changes from 2022R4 to 2023R1</h3>
+<h3 id="section_B.1">B.1 Summary of changes from 2023R1 to 2024R1</h3>
+<ol>
+<li>Isolated inference can infer <code>isolated</code> for an object constructor expression.</li>
+</ol>
+</section>
+<section>
+<h3 id="section_B.2">B.2 Summary of changes from 2022R4 to 2023R1</h3>
 <ol>
 <li>Query expressions now support grouping and aggregation, using new
 <code>group by</code> and <code>collect</code> clauses.</li>
@@ -14496,7 +14505,7 @@ final.</li>
 </section>
 
 <section>
-<h3 id="section_B.2">B.2 Summary of changes from 2022R3 to 2022R4</h3>
+<h3 id="section_B.3">B.3 Summary of changes from 2022R3 to 2022R4</h3>
 <ol>
 <li>Regular expressions have been added as a new data type. This
 feature has preview status in this release.</li>
@@ -14512,7 +14521,7 @@ over integer sequences with steps other than 1.</li>
 </ol>
 </section>
 <section>
-<h3 id="section_B.3">B.3 Summary of changes from 2022R2 to 2022R3</h3>
+<h3 id="section_B.4">B.4 Summary of changes from 2022R2 to 2022R3</h3>
 <ol>
 <li>Client objects can declare resource methods, which can be accessed using new
 <code>client-resource-access-action</code> syntax. Resource methods are now part
@@ -14540,7 +14549,7 @@ its type is nil.</li>
 </section>
 
 <section>
-<h3 id="section_B.4">B.4 Summary of changes from 2022R1 to 2022R2</h3>
+<h3 id="section_B.5">B.5 Summary of changes from 2022R1 to 2022R2</h3>
 <ol>
 <li>The <code>*</code>, <code>/</code> and <code>%</code> operators now allow
 operands to mix numeric types in specific cases: <code>*</code> allows the case
@@ -14566,7 +14575,7 @@ inferred.</li>
 </ol>
 </section>
 <section>
-<h3 id="section_B.5">B.5 Summary of changes from 2021R1 to 2022R1</h3>
+<h3 id="section_B.6">B.6 Summary of changes from 2021R1 to 2022R1</h3>
 <ol>
 <li>Maps are required to preserve insertion order.</li>
 <li>The static typing rules for <code>==</code> and <code>!=</code> have been
@@ -14608,7 +14617,7 @@ nil.</li>
 </ol>
 </section>
 <section>
-<h3 id="section_B.6">B.6 Summary of changes from 2020R1 to 2021R1</h3>
+<h3 id="section_B.7">B.7 Summary of changes from 2020R1 to 2021R1</h3>
 <ol>
 <li>There has been a major change to how objects works. All object type
 descriptors are what was previously called <em>abstract</em>: they declare
@@ -14682,7 +14691,7 @@ referenced using the <code>function</code> keyword rather than the
 </ol>
 </section>
 <section>
-<h3 id="section_B.7">B.7 Summary of changes from 2019R3 to 2020R1</h3>
+<h3 id="section_B.8">B.8 Summary of changes from 2019R3 to 2020R1</h3>
 <ol>
 <li>Query expressions and query actions have been added. This is the first stage
 of language-integrated query.</li>
@@ -14718,7 +14727,7 @@ types.</li>
 </ol>
 </section>
 <section>
-<h3 id="section_B.8">B.8 Summary of changes from 2019R2 to 2019R3</h3>
+<h3 id="section_B.9">B.9 Summary of changes from 2019R2 to 2019R3</h3>
 <ol>
 <li>An import declaration can use <code>as _</code> to include a module in the
 program without using its symbols.</li>
@@ -14730,7 +14739,7 @@ not a named worker.</li>
 </section>
 
 <section>
-<h3 id="section_B.9">B.9 Summary of changes from 2019R1 to 2019R2</h3>
+<h3 id="section_B.10">B.10 Summary of changes from 2019R1 to 2019R2</h3>
 <ol>
 <li>The concept of a built-in method has been replaced by the concept of a lang
 library. A method call on a value of non-object type is now treated as a
@@ -14776,7 +14785,7 @@ replace the old delimited identifier syntax <code>^"<var>s</var>"</code>.</li>
 
 </section>
 <section>
-<h3 id="section_B.10">B.10 Summary of changes from 0.990 to 2019R1</h3>
+<h3 id="section_B.11">B.11 Summary of changes from 0.990 to 2019R1</h3>
 <p>
 The specification has switched to a new versioning scheme. The <var>n</var>-th
 version of the specification released in year 20<var>xy</var> will be labelled
@@ -14845,7 +14854,7 @@ now required to be specified before named arguments.</li>
 </ol>
 </section>
 <section>
-<h3 id="section_B.11">B.11 Summary of changes from 0.980 to 0.990</h3>
+<h3 id="section_B.12">B.12 Summary of changes from 0.980 to 0.990</h3>
 <p>
 <strong>Structural types and values</strong>
 </p>
@@ -14939,7 +14948,7 @@ definition.</li>
 </ol>
 </section>
 <section>
-<h3 id="section_B.12">B.12 Summary of changes from 0.970 to 0.980</h3>
+<h3 id="section_B.13">B.13 Summary of changes from 0.970 to 0.980</h3>
 <ol>
 <li>The decimal type has been added.</li>
 <li>There are no longer any implicit numeric conversions.</li>

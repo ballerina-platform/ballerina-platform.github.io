@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1>Ballerina Language Specification, 2023R1</h1>
+<h1>Ballerina Language Specification, 2024R1 preview 2024-03-27</h1>
 <p>
 Primary contributors:
 </p>
@@ -27,7 +27,7 @@ Primary contributors:
 (Other contributors are listed in <a href="#contributors">Appendix D</a>.)
 </p>
 <p>
-Copyright © 2018-2023 <a href="https://wso2.com/">WSO2</a>
+Copyright © 2018-2024 <a href="https://wso2.com/">WSO2</a>
 </p>
 <p>
 Licensed under the <a
@@ -10421,9 +10421,10 @@ The compiler may infer that a service object or a service object's remote method
 is isolated even it is not explicitly declared as such. In doing so, it analyzes
 a module to determine whether there is a set of declarations and definitions in
 the module, where each of them is a <code>service-decl</code>,
+<code>object-constructor-expr</code>,
 <code>module-var-decl</code>, <code>module-class-defn</code>
 <code>function-defn</code> or <code>method-defn</code>, and none of them
-explicitly specified an <code>isolated</code> qualifier, such that if all them
+explicitly specifies an <code>isolated</code> qualifier, such that if all them
 explicitly specified an <code>isolated</code> qualifier, then they all would
 meet the requirements for <a href="#isolated_functions">isolated functions</a>
 and isolated objects. If so, then the isolated bit of values resulting from them
@@ -13981,6 +13982,12 @@ public isolated function last(Type v, Type... vs) returns Type = external;
 </section>
 <section class="appendix">
 <h2 id="changes">B. Changes since previous releases</h2>
+<section>
+<h3>Summary of changes from 2023R1 to 2024R1</h3>
+<ol>
+<li>Isolated inference can infer <code>isolated</code> for an object constructor expression.</li>
+</ol>
+</section>
 <section>
 <h3>Summary of changes from 2022R4 to 2023R1</h3>
 <ol>

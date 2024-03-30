@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1>Ballerina Language Specification, 2024R1 preview 2024-03-28</h1>
+<h1>Ballerina Language Specification, 2024R1 preview 2024-03-30</h1>
 <p>
 Primary contributors:
 </p>
@@ -1819,7 +1819,10 @@ resolved. The expression must meet the requirements for an <a
 href="#isolated_functions">isolated function</a>. The closure is evaluated to
 create a field value each time the default is used in the construction of a
 mapping value. The default value does not affect the type described by the type
-descriptor.
+descriptor. It is a compile-time error if a default-expression in an
+individual-field-descriptor contains a checking-expr with a checking-keyword of
+<code>check</code>, i.e. if evaluation of the expression could complete abruptly
+with a check-fail.
 </p>
 <p>
 A <code>record-type-inclusion</code> includes fields from a named record type.
@@ -6757,9 +6760,9 @@ class="grammar"><dfn>checking-expr</dfn> := <abbr>checking-keyword</abbr> <abbr>
 Evaluates expression resulting in value v. If v has basic type error, then
 </p>
 <ul>
-<li>if the checking-keyword is <code>check</code>, then the check-expression
+<li>if the checking-keyword is <code>check</code>, then the checking-expr
 completes abruptly with a check-fail with associated value v;</li>
-<li>if the checking-keyword is <code>checkpanic</code>, then the check-expression
+<li>if the checking-keyword is <code>checkpanic</code>, then the checking-expr
 completes abruptly with a panic with associated value v.</li>
 </ul>
 <p>

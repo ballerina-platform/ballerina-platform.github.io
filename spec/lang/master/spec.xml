@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1>Ballerina Language Specification, 2024R1 preview 2024-06-12</h1>
+<h1>Ballerina Language Specification, 2024R1 preview 2024-07-18</h1>
 <p>
 Primary contributors:
 </p>
@@ -11753,7 +11753,7 @@ public enum SortDirection {
 public type OrderedType ()|boolean|int|float|decimal|string|OrderedType[];
 
 # Sorts an array.
-# If the member type of the array is not sorted, then the `key` function
+# If the member type of the array is not ordered, then the `key` function
 # must be specified.
 # Sorting works the same as with the `sort` clause of query expressions.
 #

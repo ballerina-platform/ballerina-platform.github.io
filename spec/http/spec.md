@@ -30,6 +30,7 @@ The conforming implementation of the specification is released and included in t
         * 2.2.4. [Service class declaration](#224-service-class-declaration)
         * 2.2.5. [Service constructor expression](#225-service-constructor-expression)
         * 2.2.6. [Service contract type](#226-service-contract-type)
+        * 2.2.7. [Relaxed data binding](#227-relaxed-data-binding)
     * 2.3. [Resource](#23-resource)
         * 2.3.1. [Accessor](#231-accessor)
         * 2.3.2. [Resource-name](#232-resource-name)
@@ -59,6 +60,7 @@ The conforming implementation of the specification is released and included in t
             * 2.4.1.7. [Load balance](#2417-load-balance)
             * 2.4.1.8. [Failover](#2418-failover)
             * 2.4.1.9. [Status code binding client](#2419-status-code-binding-client)
+            * 2.4.1.10. [Relaxed data binding client](#24110-relaxed-data-binding-client)
         * 2.4.2. [Client actions](#242-client-action)
             * 2.4.2.1. [Entity body methods](#2421-entity-body-methods)
             * 2.4.2.2. [Non entity body methods](#2422-non-entity-body-methods)
@@ -352,6 +354,23 @@ The service implemented via the service contract type has the following restrict
 - None of the service level, resource level and parameter level HTTP annotation are allowed.
 - The base path is not allowed in the service declaration, and it is inferred from the service contract type.
 - The service declaration cannot have additional resource methods which are not defined in the service contract type.
+
+### 2.2.7. Relaxed data binding
+
+Enables relaxed data binding for the JSON payload binding process, allowing graceful handling of null values and absent fields 
+to reduce type conversion errors and better align with inconsistent API requests.
+
+The following additional rules applies to data projection used for the relaxed data binding,
+
+- For fields that are marked as optional but non-nullable, null values in the response are treated as absent fields instead of causing
+runtime failures.
+- For required fields that are absent in the response are treated as null values instead of causing runtime failures.
+
+```ballerina
+@http:ServiceConfig {
+    laxDataBinding: true
+}
+```
 
 ### 2.3. Resource
 
@@ -1181,6 +1200,7 @@ public type ClientConfiguration record {|
     ClientSecureSocket? secureSocket = ();
     ProxyConfig? proxy = ();
     boolean validation = true;
+    laxDataBinding = false;
 |};
 
 public type ClientHttp1Settings record {|
@@ -1347,6 +1367,21 @@ public function main() {
     // Status code response binding with specific body type
     AlbumsOk|error response2 = albumClient->/v1/albums;
 }
+```
+
+##### 2.4.1.10 Relaxed data binding client
+
+Enables relaxed data binding for the JSON payload binding process, allowing graceful handling of null values and absent fields 
+to reduce type conversion errors and better align with inconsistent API responses.
+
+The following additional rules applies to data projection used for the relaxed data binding,
+
+- For fields that are marked as optional but non-nullable, null values in the response are treated as absent fields instead of causing
+runtime failures.
+- For required fields that are absent in the response are treated as null values instead of causing runtime failures.
+
+```ballerina
+final http:Client relaxedClientEP = check new ("http://localhost:9090", laxDataBinding = true);
 ```
 
 ##### 2.4.2. Client action
